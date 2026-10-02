@@ -1,0 +1,6 @@
+{
+  "name": "Dueffe Moto | Concessionaria Ufficiale & Showroom 3D",
+  "description": "Concessionaria ufficiale moto d'eccellenza. Scopri la gamma, configura le moto con visualizzatore interattivo 3D a 360°, prenota test ride e calcola il finanziamento.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
