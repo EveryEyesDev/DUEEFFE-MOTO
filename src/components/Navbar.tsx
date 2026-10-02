@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { DueffeLogo } from './DueffeLogo';
 import { Calendar, Menu, X, PhoneCall } from 'lucide-react';

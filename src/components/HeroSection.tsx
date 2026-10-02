@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { DueffeLogo } from './DueffeLogo';
 import { Rotate3d, ChevronRight, Gauge, ShieldCheck, Zap } from 'lucide-react';

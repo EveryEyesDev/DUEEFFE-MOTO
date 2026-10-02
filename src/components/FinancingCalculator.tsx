@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Motorcycle } from '../types';
 import { MOTORCYCLES } from '../data/motorcycles';
