@@ -1,19 +1,20 @@
 /**
- * Dueffe Moto - API Client Service
- * Bridges React UI with Laravel REST / Inertia Backend Endpoints
+ * Client API di DUEFFE MOTO.
+ *
+ * Oggi il sito e' statico e non esiste ancora un backend: queste funzioni
+ * ricadono sui dati locali o restituiscono un esito simulato.
+ * Quando il backend sara' pronto bastera' far puntare le fetch agli endpoint veri.
  */
 
-import { Motorcycle, TestRideBooking } from '../types';
+import { Motorcycle, ContactRequest } from '../types';
 import { MOTORCYCLES } from '../data/motorcycles';
 
 export const DueffeApiService = {
-  /**
-   * Fetch all motorcycles from Laravel backend (or fallback to catalog)
-   */
+  /** Elenco moto: dal backend se disponibile, altrimenti dal catalogo locale. */
   async getMotorcycles(): Promise<Motorcycle[]> {
     try {
       const res = await fetch('/api/motorcycles');
-      if (!res.ok) throw new Error('API not available, fallback to local');
+      if (!res.ok) throw new Error('Backend non disponibile');
       return await res.json();
     } catch {
       return MOTORCYCLES;
@@ -21,55 +22,26 @@ export const DueffeApiService = {
   },
 
   /**
-   * Submit a Test Ride booking to Laravel backend (POST /api/test-ride)
+   * Invio di una richiesta di contatto.
+   *
+   * ATTENZIONE: senza backend la richiesta NON viene recapitata a nessuno.
+   * Il valore `delivered` dice se e' stata davvero inviata, cosi' l'interfaccia
+   * non puo' promettere all'utente un invio che non e' avvenuto.
    */
-  async bookTestRide(data: TestRideBooking): Promise<{ success: boolean; bookingId: string }> {
+  async sendContactRequest(
+    data: ContactRequest,
+  ): Promise<{ delivered: boolean; reference?: string }> {
     try {
-      const res = await fetch('/api/test-ride', {
+      const res = await fetch('/api/contatti', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error('Server error');
-      return await res.json();
+      if (!res.ok) throw new Error('Errore del server');
+      const body = await res.json();
+      return { delivered: true, reference: body?.reference };
     } catch {
-      // Graceful offline mock response
-      return {
-        success: true,
-        bookingId: `DF-${Math.floor(100000 + Math.random() * 900000)}`,
-      };
-    }
-  },
-
-  /**
-   * Request a financing calculation quote (POST /api/quote)
-   */
-  async submitQuoteRequest(data: {
-    bikeId: string;
-    email: string;
-    monthlyInstallment: number;
-    downPayment: number;
-    durationMonths: number;
-  }): Promise<{ success: boolean; message: string }> {
-    try {
-      const res = await fetch('/api/quote', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error('Server error');
-      return await res.json();
-    } catch {
-      return {
-        success: true,
-        message: 'Preventivo registrato con successo',
-      };
+      return { delivered: false };
     }
   },
 };

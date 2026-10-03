@@ -1,159 +1,105 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
+
+/**
+ * Logo ufficiale DUE EFFE MOTO.
+ *
+ * DOVE METTERE IL FILE
+ * Salva il logo in: /public/brand/dueffe-logo.png
+ * Se hai il vettoriale, salvalo come dueffe-logo.svg e cambia LOGO_SRC qui sotto.
+ *
+ * SFONDO
+ * Il file in uso e' gia' con lo sfondo trasparente, ricavato dall'originale
+ * su fondo nero conservato qui accanto come dueffe-logo-originale.jpeg.
+ * Per questo FONDO_NERO e' false: il logo viene disegnato cosi' com'e' e
+ * funziona su qualunque fondo, chiaro o scuro.
+ *
+ * Se un giorno sostituirai il file con uno su fondo nero pieno, rimetti
+ * FONDO_NERO a true: i pixel neri verranno fusi e spariranno.
+ */
+const LOGO_SRC = '/brand/dueffe-logo.png';
+const FONDO_NERO = false;
 
 interface DueffeLogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  showRacer?: boolean;
+  /** Testo alternativo per i lettori di schermo. */
+  alt?: string;
 }
+
+/** Altezze in pixel. La larghezza si adatta da sola per non deformare il marchio. */
+const HEIGHT_MAP: Record<NonNullable<DueffeLogoProps['size']>, number> = {
+  sm: 38,
+  md: 60,
+  lg: 96,
+  xl: 215,
+};
 
 export const DueffeLogo: React.FC<DueffeLogoProps> = ({
   className = '',
   size = 'md',
-  showRacer = true,
+  alt = 'DUEFFE MOTO',
 }) => {
-  const sizeMap = {
-    sm: { width: 140, height: 48 },
-    md: { width: 200, height: 68 },
-    lg: { width: 280, height: 96 },
-    xl: { width: 380, height: 130 },
-  };
+  const [failed, setFailed] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const height = HEIGHT_MAP[size];
 
-  const { width, height } = sizeMap[size];
+  // L'immagine puo' fallire PRIMA che React agganci onError (durante l'idratazione).
+  // Al montaggio ricontrolliamo lo stato reale dell'elemento.
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth === 0) {
+      setFailed(true);
+    }
+  }, []);
+
+  if (failed) {
+    return <DueffeWordmarkFallback size={size} className={className} />;
+  }
 
   return (
-    <div className={`inline-flex items-center select-none ${className}`}>
-      <svg
-        viewBox="0 0 400 140"
-        width={width}
-        height={height}
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="overflow-visible"
-        aria-label="Dueffe Moto Logo"
-      >
-        {/* Racer Silhouette atop the wordmark */}
-        {showRacer && (
-          <g transform="translate(130, -5) scale(0.68)">
-            {/* Speed racer contour lines: tucked position, helmet, visor, aero back, handlebars, fairing, tail cowl */}
-            <path
-              d="M 170 55 C 160 40, 145 25, 130 20 C 115 15, 100 20, 95 35 C 90 48, 98 62, 108 65 C 118 68, 130 65, 135 60 C 145 75, 160 85, 175 88 C 190 90, 205 85, 218 75 C 230 65, 240 50, 248 38 L 225 32 C 215 45, 205 55, 192 60 C 182 63, 175 60, 170 55 Z"
-              fill="#FFFFFF"
-            />
-            {/* Racer Helmet & Visor */}
-            <path
-              d="M 120 18 C 112 12, 100 14, 94 22 C 88 30, 90 42, 98 46 C 104 49, 115 48, 122 40 C 127 34, 127 24, 120 18 Z"
-              fill="#FFFFFF"
-            />
-            <path
-              d="M 115 25 C 112 23, 106 25, 103 28 C 100 32, 102 36, 106 37 C 110 38, 116 35, 118 31 Z"
-              fill="#070709"
-            />
-            {/* Streamlined body contour lines */}
-            <path
-              d="M 15 88 C 45 45, 100 25, 160 28 C 220 30, 260 70, 280 92"
-              stroke="#FFFFFF"
-              strokeWidth="4.5"
-              strokeLinecap="round"
-              fill="none"
-            />
-            <path
-              d="M 60 92 C 90 70, 130 62, 170 65 C 205 68, 235 88, 255 105"
-              stroke="#FFFFFF"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-              fill="none"
-            />
-            {/* Aerodynamic Tail / Cowl */}
-            <path
-              d="M 5 95 L 45 78 L 75 90 L 35 105 Z"
-              stroke="#FFFFFF"
-              strokeWidth="3"
-              strokeLinejoin="round"
-              fill="none"
-            />
-            {/* Front clip-on handle & windscreen arc */}
-            <path
-              d="M 230 48 L 260 42 L 285 75 L 255 82 Z"
-              stroke="#FFFFFF"
-              strokeWidth="3"
-              strokeLinejoin="round"
-              fill="none"
-            />
-            {/* Rear wheel arch hint */}
-            <path
-              d="M 10 108 C 25 102, 50 105, 65 118"
-              stroke="#FFFFFF"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-              fill="none"
-            />
-          </g>
-        )}
-
-        {/* Wordmark: "dueffe" in white + red descending stem on 'f' */}
-        <g transform="translate(10, 68)">
-          {/* "due" in white */}
-          <text
-            x="0"
-            y="30"
-            fontFamily="'Syne', 'Plus Jakarta Sans', sans-serif"
-            fontWeight="800"
-            fontSize="48"
-            fill="#FFFFFF"
-            letterSpacing="-0.03em"
-          >
-            due
-          </text>
-
-          {/* First "f" with signature long red tail going down */}
-          {/* Top arc of f in white */}
-          <path
-            d="M 105 10 C 110 5, 118 2, 126 3 L 126 12 C 122 11, 118 12, 115 15 C 114 16, 113 18, 113 22 L 113 24 L 126 24 L 126 31 L 113 31 L 113 72 C 113 75, 110 77, 107 77 L 101 77 C 98 77, 96 75, 96 72 L 96 31 L 88 31 L 88 24 L 96 24 L 96 18 C 96 12, 100 6, 105 10 Z"
-            fill="#E10600"
-          />
-
-          {/* Second "f" and "e" in white */}
-          <text
-            x="126"
-            y="30"
-            fontFamily="'Syne', 'Plus Jakarta Sans', sans-serif"
-            fontWeight="800"
-            fontSize="48"
-            fill="#FFFFFF"
-            letterSpacing="-0.03em"
-          >
-            fe
-          </text>
-
-          {/* "moto" in bold racing italic red */}
-          <text
-            x="14"
-            y="65"
-            fontFamily="'Syne', 'Plus Jakarta Sans', sans-serif"
-            fontWeight="800"
-            fontStyle="italic"
-            fontSize="44"
-            fill="#E10600"
-            letterSpacing="-0.02em"
-          >
-            moto
-          </text>
-        </g>
-      </svg>
-    </div>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      ref={imgRef}
+      src={LOGO_SRC}
+      alt={alt}
+      height={height}
+      style={{
+        height,
+        width: 'auto',
+        ...(FONDO_NERO ? { mixBlendMode: 'screen' as const } : {}),
+      }}
+      className={`block select-none ${className}`}
+      onError={() => setFailed(true)}
+    />
   );
 };
 
-export const DueffeRacerIcon: React.FC<{ className?: string }> = ({ className = 'w-10 h-10' }) => {
+/**
+ * Marchio testuale di ripiego, usato solo se il file del logo manca.
+ * Rispetta i colori del marchio: bianco con le due effe e "moto" in rosso.
+ */
+const DueffeWordmarkFallback: React.FC<{
+  size: NonNullable<DueffeLogoProps['size']>;
+  className?: string;
+}> = ({ size, className = '' }) => {
+  const scale: Record<string, string> = {
+    sm: 'text-lg',
+    md: 'text-2xl',
+    lg: 'text-4xl',
+    xl: 'text-6xl',
+  };
+
   return (
-    <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <path
-        d="M 65 30 C 58 22, 50 15, 42 12 C 35 10, 30 14, 28 20 C 26 26, 30 32, 35 34 C 42 36, 50 33, 54 30 C 60 38, 70 42, 78 40 C 85 38, 90 32, 94 25 L 82 22 C 77 28, 72 32, 65 30 Z"
-        fill="#FFFFFF"
-      />
-      <circle cx="34" cy="18" r="6" fill="#FFFFFF" />
-      <path d="M 5 45 C 20 25, 45 18, 70 19 C 85 20, 95 32, 98 42" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
-      <path d="M 2 48 L 18 42 L 30 47" stroke="#E10600" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <span
+      className={`inline-flex flex-col leading-none font-display font-extrabold tracking-tight select-none ${scale[size]} ${className}`}
+      aria-label="DUEFFE MOTO"
+    >
+      <span className="text-white">
+        due<span className="text-[#D00020]">ff</span>e
+      </span>
+      <span className="text-[#D00020] italic">moto</span>
+    </span>
   );
 };

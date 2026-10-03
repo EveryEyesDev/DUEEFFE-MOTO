@@ -1,316 +1,427 @@
 import { Motorcycle } from '../types';
 
-export const MOTORCYCLES: Motorcycle[] = [
+/**
+ * Catalogo DUE EFFE MOTO.
+ *
+ * DUE ELENCHI
+ *   MOTO_NUOVE  — i modelli a listino, cambiano di rado
+ *   MOTO_USATE  — il parco usato, DA AGGIORNARE UNA VOLTA AL MESE
+ *
+ * FOTOGRAFIE
+ * Cartelle gia' pronte in public/moto/<modello>/
+ * Metti li' le immagini, poi valorizza `image` con la foto principale
+ * e `gallery` con l'elenco completo. Vedi public/moto/LEGGIMI.md.
+ *
+ * PREZZI
+ * Sono franco concessionario e non comprendono la messa su strada.
+ * Alcuni sono promozionali o indicativi: il dettaglio sta in `priceNote`,
+ * che viene mostrato sotto la cifra.
+ *
+ * Dati tecnici da schede ufficiali Moto Morini e stampa di settore,
+ * raccolti a ottobre 2026. Vanno confermati col listino ufficiale.
+ */
+
+export const MOTO_NUOVE: Motorcycle[] = [
   {
-    id: 'dueffe-corse-v4r',
-    name: 'Dueffe Corse V4R',
-    subtitle: 'La pura quintessenza della pista omologata per la strada',
-    category: 'supersport',
-    categoryLabel: 'SuperSport',
-    badge: 'Novità 2026',
-    price: 34900,
-    monthlyEstimate: 369,
-    tagline: '221 CV di pura adrenalina Desmodromica',
-    description: 'Nata dal reparto corse Dueffe Moto, la V4R incarna la massima evoluzione tecnologica aerodinamica. Ali biplano in fibra di carbonio, telaio Front Frame alleggerito e sospensioni elettroniche Öhlins Smart EC 2.0 per dominare ogni curva.',
-    colors: [
-      { name: 'Rosso Corsa Dueffe', hex: '#E10600', metallic: true },
-      { name: 'Stealth Carbon Raven', hex: '#18181b', metallic: false },
-      { name: 'Bianco Perla Tricolore', hex: '#f8fafc', metallic: true },
-    ],
-    specs: {
-      powerHp: 221,
-      torqueNm: 112,
-      displacementCc: 998,
-      weightKg: 172,
-      topSpeedKmH: 315,
-      accel0100: 2.8,
-      fuelCapacityL: 16,
-      seatHeightMm: 835,
-      engineType: 'Desmosedici Stradale V4 a 90°, 4 valvole per cilindro',
-      transmission: '6 marce con Quick Shift Up/Down EVO 2',
-      frontBrakes: '2 dischi semiflottanti da 330 mm, pinze Brembo Monoblocco Stylema®',
-      suspension: 'Forcella Öhlins NPX 25/30 pressurizzata a steli rovesciati da 43 mm',
-    },
-    features: [
-      'Ali aerodinamiche in carbonio con deportanza di 30kg a 270 km/h',
-      'Cerchi forgiati in magnesio Marchesini a 5 razze sdoppiate',
-      'Cruscotto TFT a colori da 5" con modalità Track Evo',
-      'Piattaforma Inerziale a 6 assi Bosch (ABS Cornering EVO, Traction Control)',
-      'Impianto di scarico Akrapovič in titanio',
-    ],
-    hotspots: [
-      {
-        id: 'engine',
-        title: 'Motore Desmosedici V4',
-        description: '998 cc eroganti 221 CV a 15.250 giri/min con albero controrotante e fasatura Twin Pulse.',
-        position: [0, 0.45, 0.1],
-      },
-      {
-        id: 'brakes',
-        title: 'Pinze Brembo Stylema',
-        description: 'Impianto radiale a 4 pistoncini con dischi da 330 mm e ABS Cornering Bosch con funzione Slide-by-Brake.',
-        position: [1.1, 0.35, 0],
-      },
-      {
-        id: 'exhaust',
-        title: 'Scarico Racing Titanio',
-        description: 'Collettori in titanio e terminali sottosella con valvola allo scarico a controllo elettronico.',
-        position: [-0.7, 0.4, 0.3],
-      },
-      {
-        id: 'fairing',
-        title: 'Carena Aerodinamica & Winglets',
-        description: 'Sviluppata nella galleria del vento con winglets che aumentano la stabilità in staccata ad alta velocità.',
-        position: [0.6, 0.9, 0],
-      },
-    ],
-    threeDConfig: {
-      frameColor: '#E10600',
-      styleType: 'supersport',
-      hasFairing: true,
-      hasTallScreen: false,
-    },
-  },
-  {
-    id: 'dueffe-diablo-1200',
-    name: 'Dueffe Diablo 1200',
-    subtitle: 'HyperNaked brutale, muscoli scoperti e controllo millimetrico',
-    category: 'naked',
-    categoryLabel: 'HyperNaked',
-    badge: 'Più Venduta',
-    price: 23400,
-    monthlyEstimate: 249,
-    tagline: 'Il terrore dell’asfalto con 180 CV senza compromessi',
-    description: 'Spogliata di ogni carenatura superflua, la Diablo 1200 esibisce un telaio a traliccio scarlatto e un motore esplosivo. Il manubrio largo offre una leva immediata nei cambi di traiettoria più fulminei.',
-    colors: [
-      { name: 'Nero Opaco & Traliccio Rosso', hex: '#1a1a1a', metallic: false },
-      { name: 'Rosso Scuderia Dueffe', hex: '#d90429', metallic: true },
-      { name: 'Grigio Nardo Aviation', hex: '#64748b', metallic: false },
-    ],
-    specs: {
-      powerHp: 180,
-      torqueNm: 125,
-      displacementCc: 1103,
-      weightKg: 185,
-      topSpeedKmH: 282,
-      accel0100: 3.0,
-      fuelCapacityL: 17,
-      seatHeightMm: 845,
-      engineType: '4 cilindri a V di 90° raffreddato a liquido',
-      transmission: 'Cambio a 6 rapporti con frizione antisaltellamento',
-      frontBrakes: 'Doppio disco flottante da 320 mm, pinze radiali Brembo M4.32',
-      suspension: 'Forcella Showa BPF completamente regolabile da 43 mm',
-    },
-    features: [
-      'Proiettore full-LED con firma luminosa aggressiva DRL Dueffe',
-      'Tre Riding Modes: Race, Sport, Street con mappa acceleratore dedicata',
-      'Telaio a traliccio in tubi d’acciaio ad altissima resistenza',
-      'Wheelie Control e Launch Control progressivo',
-    ],
-    hotspots: [
-      {
-        id: 'chassis',
-        title: 'Telaio Traliccio Scarlatto',
-        description: 'Tubi in acciaio al cromo-molibdeno a spessore differenziato per rigidità torsionale eccellente.',
-        position: [0.1, 0.65, 0],
-      },
-      {
-        id: 'headlight',
-        title: 'Gruppo Ottico LED Predatorio',
-        description: 'Doppio proiettore poliellissoidale con frecce dinamiche integrate.',
-        position: [1.2, 0.95, 0],
-      },
-      {
-        id: 'engine',
-        title: 'V4 High-Torque',
-        description: '125 Nm di coppia massima con erogazione piena fin dai bassi regimi.',
-        position: [-0.1, 0.45, 0],
-      },
-    ],
-    threeDConfig: {
-      frameColor: '#E10600',
-      styleType: 'naked',
-      hasFairing: false,
-      hasTallScreen: false,
-    },
-  },
-  {
-    id: 'dueffe-overland-950',
-    name: 'Dueffe Overland 950 Rally',
-    subtitle: 'Dalla sabbia del deserto ai passi alpini senza confini',
+    id: 'moto-morini-x-cape-700',
+    brand: 'Moto Morini',
+    name: 'X-Cape 700',
+    claim: 'Dove finisce l’asfalto, comincia il bello.',
+    subtitle: 'Crossover bicilindrica da 693 cc, a suo agio dentro e fuori l’asfalto',
+    featured: true,
+    condition: 'nuovo',
     category: 'adventure',
-    categoryLabel: 'Adventure & Tourer',
-    badge: 'Ready to Travel',
-    price: 19800,
-    monthlyEstimate: 219,
-    tagline: 'Oltre 450 km di autonomia con ruota anteriore da 21"',
-    description: 'La compagna definitiva per le grandi esplorazioni. Serbatoio maggiorato da 21 litri, sospensioni a lunga escursione da 230 mm e cerchi a raggi tubeless pensati per l’off-road più impegnativo senza rinunciare al comfort autostradale.',
+    categoryLabel: 'Adventure',
+    tagline: 'La compagna giusta per il viaggio lungo e per il lunedì mattina',
+    description:
+      'Una crossover pensata per chi non vuole scegliere tra strada e sterrato. Il bicilindrico da 693 cc spinge con regolarità, la forcella Marzocchi completamente regolabile lavora bene anche sul rotto, e con 18 litri di serbatoio i trasferimenti non diventano una caccia al distributore. La versione a raggi aggiunge cavalletto centrale e dashcam anteriore.',
+    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    image: '/moto/x-cape-700/vista-01.webp',
+    gallery: [
+      '/moto/x-cape-700/vista-01.webp',
+      '/moto/x-cape-700/vista-02.webp',
+      '/moto/x-cape-700/vista-03.webp',
+      '/moto/x-cape-700/vista-04.webp',
+      '/moto/x-cape-700/vista-05.webp',
+      '/moto/x-cape-700/vista-06.webp',
+      '/moto/x-cape-700/vista-07.webp',
+      '/moto/x-cape-700/vista-08.webp',
+      '/moto/x-cape-700/vista-09.webp',
+      '/moto/x-cape-700/vista-10.webp',
+    ],
+    price: 7190,
+    priceNote:
+      'Franco concessionario, cerchi in lega. A raggi € 7.590, Gold Edition € 7.940. Messa su strada esclusa.',
     colors: [
-      { name: 'Rally Bianco & Rosso Corse', hex: '#f1f5f9', metallic: false },
-      { name: 'Dakar Sand Matt', hex: '#ca8a04', metallic: false },
-      { name: 'Titanium Storm', hex: '#475569', metallic: true },
+      { name: 'Black Ebony', hex: '#141418' },
+      { name: 'Red Passion', hex: '#b11226', metallic: true },
+      { name: 'Carrara White', hex: '#eef0f2' },
     ],
     specs: {
-      powerHp: 113,
-      torqueNm: 96,
-      displacementCc: 937,
-      weightKg: 202,
-      topSpeedKmH: 220,
-      accel0100: 3.7,
-      fuelCapacityL: 21,
-      seatHeightMm: 875,
-      engineType: 'Bicilindrico a L Testastretta 11° con raffreddamento a liquido',
-      transmission: '6 velocità con rapporti corti 1ª e 2ª per il fuoristrada',
-      frontBrakes: 'Doppio disco flottante da 320 mm Brembo, pinze a 4 pistoncini',
-      suspension: 'Forcella Kayaba a steli rovesciati da 46 mm regolabile, escursione 230 mm',
+      displacementCc: 693,
+      powerHp: 70,
+      weightKg: 213,
+      fuelCapacityL: 18,
+      seatHeightMm: 830,
+      engineType: 'Bicilindrico in linea, 4 tempi, Euro 5+. 70 CV (51,5 kW) a 8.500 giri',
+      transmission: 'Cambio a 6 rapporti, finale a catena, frizione antisaltellamento',
+      frontBrakes:
+        'Doppio disco da 298 mm, pinze flottanti Brembo a 2 pistoncini, ABS Bosch disinseribile',
+      suspension:
+        'Forcella rovesciata Marzocchi da 50 mm regolabile, 175 mm di escursione. Dietro monoammortizzatore Kayaba con precarico regolabile da remoto, 165 mm',
     },
     features: [
-      'Ruote a raggi tubeless 21" anteriore e 18" posteriore',
-      'Parabrezza alto touring e paramani rinforzati con anima in alluminio',
-      'Cruise Control elettronico e connettività Bluetooth per navigazione turn-by-turn',
-      'Piastra paramotore in alluminio spazzolato da 4 mm',
-      'Attacchi rapidi per valigie laterali in alluminio',
+      'ABS Bosch disinseribile e controllo di trazione',
+      'Impianto frenante Brembo e frizione antisaltellamento',
+      'Cruscotto TFT a colori',
+      'Serbatoio da 18 litri, 20 con la borsa posteriore',
+      'Cavalletto centrale e dashcam anteriore sulla versione a raggi',
     ],
-    hotspots: [
-      {
-        id: 'suspension',
-        title: 'Forcella Kayaba 230 mm',
-        description: 'Escursione maggiorata studiata per assorbire buche e salti su sterrato.',
-        position: [1.1, 0.6, 0],
-      },
-      {
-        id: 'tank',
-        title: 'Serbatoio 21 Litri',
-        description: 'Sagomato per permettere una perfetta guida in piedi sulle pedane in off-road.',
-        position: [0.2, 0.85, 0],
-      },
-      {
-        id: 'screen',
-        title: 'Cupolino Aerodinamico Rally',
-        description: 'Protezione totale dal vento nei lunghi trasferimenti autostradali.',
-        position: [0.95, 1.25, 0],
-      },
-    ],
-    threeDConfig: {
-      frameColor: '#334155',
-      styleType: 'adventure',
-      hasFairing: true,
-      hasPanniers: true,
-      hasTallScreen: true,
-    },
   },
   {
-    id: 'dueffe-nero-1260',
-    name: 'Dueffe Nero 1260 Cruiser',
-    subtitle: 'Muscoli imponenti, baricentro rasoterra e gomma da 240 mm',
-    category: 'cruiser',
-    categoryLabel: 'Power Cruiser',
-    badge: 'Design Icon',
-    price: 25900,
-    monthlyEstimate: 279,
-    tagline: 'Presenza scenica magnetica e scatto da brucia-semafori',
-    description: 'La sintesi perfetta tra l’aggressività di una drag bike americana e la raffinatezza ciclistica italiana. Forcellone monobraccio posteriore che mette in risalto il cerchio forgiato a canale largo da 240 mm.',
+    id: 'moto-morini-x-cape-1200',
+    brand: 'Moto Morini',
+    name: 'X-Cape 1200',
+    claim: 'Il mondo è più piccolo di quanto sembri.',
+    subtitle: 'Maxi enduro stradale da 1.187 cc e 129 cavalli',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    tagline: 'Quando il viaggio si misura in giorni, non in chilometri',
+    description:
+      'Il passo lungo della gamma adventure. Il bicilindrico a V di 87 gradi mette in strada 129 cavalli con la calma di chi non deve dimostrare niente, e i 24,5 litri di serbatoio spostano il problema dell’autonomia molto più in là. Cruise control, quickshifter e ABS cornering rendono le tappe da autostrada meno faticose di quanto sembri.',
+    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    image: '/moto/x-cape-1200/vista-01.webp',
+    gallery: [
+      '/moto/x-cape-1200/vista-01.webp',
+      '/moto/x-cape-1200/vista-02.webp',
+      '/moto/x-cape-1200/vista-03.webp',
+      '/moto/x-cape-1200/vista-04.webp',
+      '/moto/x-cape-1200/vista-05.webp',
+      '/moto/x-cape-1200/vista-06.webp',
+      '/moto/x-cape-1200/vista-07.webp',
+      '/moto/x-cape-1200/vista-08.webp',
+      '/moto/x-cape-1200/vista-09.webp',
+      '/moto/x-cape-1200/vista-10.webp',
+      '/moto/x-cape-1200/vista-11.webp',
+      '/moto/x-cape-1200/vista-12.webp',
+      '/moto/x-cape-1200/vista-13.webp',
+      '/moto/x-cape-1200/vista-14.webp',
+    ],
+    price: 12990,
+    priceNote:
+      'Franco concessionario, prezzo promozionale fino a settembre 2026. Prezzo di lancio € 13.990. Messa su strada esclusa.',
     colors: [
-      { name: 'Total Black Raven', hex: '#0a0a0a', metallic: false },
-      { name: 'Crimson Shadow Dueffe', hex: '#991b1b', metallic: true },
-      { name: 'Liquid Titanium Matt', hex: '#52525b', metallic: true },
+      { name: 'Viper Black', hex: '#15161a' },
+      { name: 'Arctic White', hex: '#f1f4f6' },
+      { name: 'Energy Red', hex: '#c21f2e', metallic: true },
     ],
     specs: {
-      powerHp: 162,
-      torqueNm: 129,
-      displacementCc: 1262,
-      weightKg: 218,
-      topSpeedKmH: 250,
-      accel0100: 3.2,
-      fuelCapacityL: 17,
-      seatHeightMm: 780,
-      engineType: 'Bicilindrico a L con fasatura variabile DVT',
-      transmission: '6 marce con trasmissione finale a cinghia silenziosa',
-      frontBrakes: 'Brembo M50 monoblocco a 4 pistoncini, dischi da 320 mm',
-      suspension: 'Forcella regolabile da 50 mm e monoammortizzatore orizzontale',
+      displacementCc: 1187,
+      powerHp: 129,
+      weightKg: 259,
+      fuelCapacityL: 24.5,
+      seatHeightMm: 840,
+      engineType: 'Bicilindrico a V di 87°, 4 tempi, Euro 5+. 129 CV (95 kW) a 8.750 giri',
+      transmission: 'Cambio a 6 rapporti con quickshifter, finale a catena',
+      frontBrakes:
+        'Doppio disco da 320 mm, pinze Brembo monoblocco a 4 pistoncini, ABS Bosch cornering disinseribile',
+      suspension:
+        'Forcella rovesciata Kayaba da 48 mm completamente regolabile, 180 mm di escursione. Dietro monoammortizzatore Kayaba con leveraggio progressivo e precarico remoto, 180 mm',
     },
     features: [
-      'Gomma posteriore Pirelli Diablo Rosso III da 240/45 ZR17',
-      'Pedane guidatore regolabili su 3 posizioni differenti',
-      'Trasmissione finale a cinghia in fibra aramidica senza manutenzione',
-      'Avviamento Hands-Free con chiave elettronica in tasca',
+      'ABS Bosch cornering disinseribile e controllo di trazione',
+      'Riding mode e cruise control',
+      'Quickshifter in salita e in scalata',
+      'Cruscotto TFT con connettività',
+      'Sospensioni Kayaba completamente regolabili',
     ],
-    hotspots: [
-      {
-        id: 'rear-tire',
-        title: 'Pneumatico Posteriore 240 mm',
-        description: 'Impronta a terra gigantesca montata su un forcellone monobraccio in alluminio fuso.',
-        position: [-1.0, 0.35, 0],
-      },
-      {
-        id: 'engine-cruiser',
-        title: 'Motore DVT 1262 cc',
-        description: 'Fasatura variabile continua sia all’aspirazione sia allo scarico per fluidità eccezionale.',
-        position: [0, 0.45, 0],
-      },
-    ],
-    threeDConfig: {
-      frameColor: '#18181b',
-      styleType: 'cruiser',
-      hasFairing: false,
-      hasTallScreen: false,
-    },
   },
   {
-    id: 'dueffe-heritage-800',
-    name: 'Dueffe Heritage 800 Café Racer',
-    subtitle: 'Fascino vintage anni 70 unito a freni radiali e iniezione moderna',
-    category: 'heritage',
-    categoryLabel: 'Heritage & Modern Classic',
-    badge: 'Edizione Numerata',
-    price: 13900,
-    monthlyEstimate: 149,
-    tagline: 'Eleganza senza tempo per cultori dello stile autentico',
-    description: 'Ispirata ai leggendari modelli da corsa degli anni d’oro del motociclismo italiano. Serbatoio a goccia con incavi per le ginocchia, semimanubri bassi con specchietti bar-end e sella in pelle sellata a mano.',
+    id: 'moto-morini-alltrhike-450',
+    brand: 'Moto Morini',
+    name: 'Alltrhike 450',
+    claim: 'Leggera abbastanza da portarti ovunque.',
+    subtitle: 'Enduro stradale da 449 cc, leggera e facile da guidare',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    badge: 'Novità',
+    tagline: 'Leggera, alta e sincera: la prima adventure vera',
+    description:
+      'La più accessibile della famiglia. Il bicilindrico da 449 cc eroga 44,8 cavalli, ma sono i 170 chili a secco e la forcella con 208 mm di escursione a fare la differenza: in sella si sta alti, si vede lontano e lo sterrato non spaventa. La versione High Equipped aggiunge paramani, sella e manopole riscaldate, che su una moto da viaggio contano più di dieci cavalli in più.',
+    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    image: '/moto/alltrhike-450/vista-01.webp',
+    gallery: [
+      '/moto/alltrhike-450/vista-01.webp',
+      '/moto/alltrhike-450/vista-02.webp',
+      '/moto/alltrhike-450/vista-03.webp',
+      '/moto/alltrhike-450/vista-04.webp',
+      '/moto/alltrhike-450/vista-05.webp',
+      '/moto/alltrhike-450/vista-06.webp',
+      '/moto/alltrhike-450/vista-07.webp',
+      '/moto/alltrhike-450/vista-08.webp',
+      '/moto/alltrhike-450/vista-09.webp',
+      '/moto/alltrhike-450/vista-10.webp',
+      '/moto/alltrhike-450/vista-11.webp',
+      '/moto/alltrhike-450/vista-12.webp',
+      '/moto/alltrhike-450/vista-13.webp',
+      '/moto/alltrhike-450/vista-14.webp',
+      '/moto/alltrhike-450/vista-15.webp',
+      '/moto/alltrhike-450/vista-16.webp',
+    ],
+    price: 5890,
+    priceNote:
+      'Franco concessionario, versione standard. High Equipped € 6.140 con paramani, sella e manopole riscaldate. Messa su strada esclusa.',
     colors: [
-      { name: 'Silver Smoke & Telaio Rosso', hex: '#94a3b8', metallic: true },
-      { name: 'Rosso Corsa Vintage 70s', hex: '#b91c1c', metallic: false },
-      { name: 'British Racing Emerald', hex: '#064e3b', metallic: false },
+      { name: 'Pure White', hex: '#f2f4f5' },
+      { name: 'Jungle Green', hex: '#3a4a35' },
+      { name: 'Night Black', hex: '#131317' },
     ],
     specs: {
-      powerHp: 73,
-      torqueNm: 67,
-      displacementCc: 803,
-      weightKg: 175,
-      topSpeedKmH: 195,
-      accel0100: 4.2,
+      displacementCc: 449,
+      powerHp: 44.8,
+      weightKg: 170,
+      fuelCapacityL: 18,
+      seatHeightMm: 847,
+      engineType: 'Bicilindrico in linea, 4 tempi, Euro 5+. 44,8 CV (33 kW) a 8.500 giri',
+      transmission: 'Cambio a 6 rapporti, finale a catena',
+      frontBrakes:
+        'Disco da 320 mm, pinza radiale a 4 pistoncini, ABS a due canali con posteriore disinseribile',
+      suspension:
+        'Forcella Kayaba da 41 mm, 208 mm di escursione. Dietro monoammortizzatore regolabile, 190 mm',
+    },
+    features: [
+      'ABS disinseribile al posteriore',
+      'Controllo di trazione disattivabile',
+      'Cruscotto TFT da 5 pollici con navigazione integrata',
+      '170 kg a secco, 190 in ordine di marcia',
+      'Paramani, sella e manopole riscaldate sulla High Equipped',
+    ],
+  },
+  {
+    id: 'moto-morini-seiemmezzo-str',
+    brand: 'Moto Morini',
+    name: 'Seiemmezzo STR',
+    claim: 'Niente di superfluo. Solo la strada.',
+    subtitle: 'Naked da 649 cc, linea essenziale e guida diretta',
+    featured: true,
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Strada',
+    tagline: 'Niente fronzoli, solo il piacere di guidare',
+    description:
+      'Una naked dal disegno pulito, con le meccaniche a vista e un manubrio largo che rende immediati i cambi di direzione. Il bicilindrico da 649 cc tira con onestà, i freni sono Brembo e le sospensioni Kayaba sono regolabili davanti e dietro, cosa non scontata in questa fascia. Facile da vivere in città, piacevole quando la strada si fa curva.',
+    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    image: '/moto/seiemmezzo-str/vista-01.webp',
+    gallery: [
+      '/moto/seiemmezzo-str/vista-01.webp',
+      '/moto/seiemmezzo-str/vista-02.webp',
+      '/moto/seiemmezzo-str/vista-03.webp',
+      '/moto/seiemmezzo-str/vista-04.webp',
+      '/moto/seiemmezzo-str/vista-05.webp',
+      '/moto/seiemmezzo-str/vista-06.webp',
+      '/moto/seiemmezzo-str/vista-07.webp',
+      '/moto/seiemmezzo-str/vista-08.webp',
+      '/moto/seiemmezzo-str/vista-09.webp',
+      '/moto/seiemmezzo-str/vista-10.webp',
+      '/moto/seiemmezzo-str/vista-11.webp',
+      '/moto/seiemmezzo-str/vista-12.webp',
+      '/moto/seiemmezzo-str/vista-13.webp',
+      '/moto/seiemmezzo-str/vista-14.webp',
+      '/moto/seiemmezzo-str/vista-15.webp',
+    ],
+    price: 5590,
+    priceNote:
+      'Franco concessionario, prezzo promozionale 2025-2026. Prezzo standard € 6.340. Messa su strada esclusa.',
+    colors: [
+      { name: 'Starlight White', hex: '#eef1f3' },
+      { name: 'Fire Red', hex: '#c01727', metallic: true },
+      { name: 'Smoky Anthracite', hex: '#3b3f45', metallic: true },
+    ],
+    specs: {
+      displacementCc: 649,
+      powerHp: 61,
+      weightKg: 200,
       fuelCapacityL: 14,
-      seatHeightMm: 805,
-      engineType: 'Bicilindrico a L raffreddato ad aria e olio, 2 valvole per cilindro',
-      transmission: '6 marce con comando frizione idraulico morbidissimo',
-      frontBrakes: 'Disco singolo da 330 mm con pinza radiale Brembo a 4 pistoncini',
-      suspension: 'Forcella Kayaba a steli rovesciati da 41 mm',
+      seatHeightMm: 820,
+      engineType: 'Bicilindrico in linea, 4 tempi, Euro 5. 61 CV (44,5 kW) a 8.250 giri',
+      transmission: 'Cambio a 6 rapporti, finale a catena',
+      frontBrakes: 'Doppio disco da 298 mm, pinze flottanti Brembo a 2 pistoncini',
+      suspension:
+        'Forcella rovesciata Kayaba da 43 mm regolabile, 120 mm di escursione. Dietro monoammortizzatore Kayaba regolabile, 120 mm',
     },
     features: [
-      'Cerchi a raggi con canale in alluminio lucidato a specchio',
-      'Terminale di scarico sdoppiato a tromboncino con finitura nera opaca',
-      'Sella biposto con guscio coprisella removibile in tinta',
-      'Tappo serbatoio Monza in alluminio ricavato dal pieno',
+      'Impianto frenante Brembo',
+      'Sospensioni Kayaba regolabili davanti e dietro',
+      'Pneumatici Pirelli',
+      'Cruscotto TFT',
+      'Navigazione tramite applicazione MotoFun',
     ],
-    hotspots: [
-      {
-        id: 'tank-heritage',
-        title: 'Serbatoio a Goccia',
-        description: 'Guance in alluminio spazzolato intercambiabili con stemma Dueffe Moto in rilievo.',
-        position: [0.1, 0.75, 0],
-      },
-      {
-        id: 'exhaust-heritage',
-        title: 'Doppio Scarico a Cono',
-        description: 'Sound cupo e avvolgente con certificazione Euro 5+.',
-        position: [-0.65, 0.35, 0.25],
-      },
+  },
+  {
+    id: 'moto-morini-calibro-custom',
+    brand: 'Moto Morini',
+    name: 'Calibro Custom',
+    claim: 'Il tempo lo decidi tu.',
+    subtitle: 'Custom da 693 cc con sella a 690 mm e trasmissione a cinghia',
+    condition: 'nuovo',
+    category: 'cruiser',
+    categoryLabel: 'Cruiser',
+    tagline: 'Il piacere di arrivare tardi, ma arrivarci bene',
+    description:
+      'Sella a 690 millimetri da terra, pedane avanzate e trasmissione finale a cinghia: silenziosa, pulita e che non chiede la manutenzione di una catena. Il bicilindrico da 693 cc è lo stesso della X-Cape 700, qui tarato per spingere basso. Una custom pensata per i viaggi senza orologio, con la comodità al primo posto.',
+    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    image: '/moto/calibro-custom/vista-01.webp',
+    gallery: [
+      '/moto/calibro-custom/vista-01.webp',
+      '/moto/calibro-custom/vista-02.webp',
+      '/moto/calibro-custom/vista-03.webp',
+      '/moto/calibro-custom/vista-04.webp',
+      '/moto/calibro-custom/vista-05.webp',
+      '/moto/calibro-custom/vista-06.webp',
+      '/moto/calibro-custom/vista-07.webp',
+      '/moto/calibro-custom/vista-08.webp',
+      '/moto/calibro-custom/vista-09.webp',
+      '/moto/calibro-custom/vista-10.webp',
+      '/moto/calibro-custom/vista-11.webp',
+      '/moto/calibro-custom/vista-12.webp',
+      '/moto/calibro-custom/vista-13.webp',
+      '/moto/calibro-custom/vista-14.webp',
+      '/moto/calibro-custom/vista-15.webp',
+      '/moto/calibro-custom/vista-16.webp',
+      '/moto/calibro-custom/vista-17.webp',
     ],
-    threeDConfig: {
-      frameColor: '#E10600',
-      styleType: 'heritage',
-      hasFairing: false,
-      hasTallScreen: false,
+    price: 7990,
+    priceNote:
+      'Prezzo indicativo franco concessionario, da confermare in salone. Messa su strada esclusa.',
+    colors: [
+      { name: 'Black Ebony', hex: '#141418' },
+      { name: 'Garage Grey', hex: '#54585e', metallic: true },
+    ],
+    specs: {
+      displacementCc: 693,
+      powerHp: 69,
+      weightKg: 198,
+      fuelCapacityL: 15,
+      seatHeightMm: 690,
+      engineType: 'Bicilindrico in linea, 4 tempi, Euro 5+. 69 CV (50,8 kW) a 8.500 giri',
+      transmission: 'Cambio a 6 rapporti, finale a cinghia',
+      frontBrakes: 'Disco singolo da 320 mm, pinza flottante a 2 pistoncini, ABS',
+      suspension:
+        'Forcella tradizionale da 41 mm. Dietro doppio ammortizzatore con precarico molla regolabile',
     },
+    features: [
+      'Trasmissione finale a cinghia, silenziosa e pulita',
+      'Sella a soli 690 mm da terra',
+      'Cruise control',
+      'Cruscotto TFT con connettività per lo smartphone',
+      'Impianto frenante Brembo con ABS',
+    ],
+  },
+  {
+    id: 'moto-morini-calibro-bagger',
+    brand: 'Moto Morini',
+    name: 'Calibro Bagger',
+    claim: 'Parti. Il resto è già a bordo.',
+    subtitle: 'La Calibro da viaggio, con valigie e cupolino di serie',
+    featured: true,
+    condition: 'nuovo',
+    category: 'bagger',
+    categoryLabel: 'Bagger',
+    tagline: 'Tutto quello che ti serve, già a bordo',
+    description:
+      'La versione da grande viaggio della Calibro. Valigie laterali e cupolino arrivano di serie, quindi non c’è da ricomprare mezzo accessorio dopo l’acquisto. Stessa sella bassa a 690 millimetri e stessa trasmissione a cinghia della Cruiser, con dodici chili in più che si sentono poco e si ripagano in protezione e capacità di carico.',
+    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    image: '/moto/calibro-bagger/vista-07.webp',
+    gallery: [
+      '/moto/calibro-bagger/vista-07.webp',
+      '/moto/calibro-bagger/vista-08.webp',
+      '/moto/calibro-bagger/vista-09.webp',
+      '/moto/calibro-bagger/vista-10.webp',
+      '/moto/calibro-bagger/vista-11.webp',
+      '/moto/calibro-bagger/vista-12.webp',
+      '/moto/calibro-bagger/vista-13.webp',
+      '/moto/calibro-bagger/vista-14.webp',
+      '/moto/calibro-bagger/vista-15.webp',
+      '/moto/calibro-bagger/vista-16.webp',
+    ],
+    price: 8990,
+    priceNote:
+      'Prezzo indicativo franco concessionario, da confermare in salone. Messa su strada esclusa.',
+    colors: [
+      { name: 'Black Ebony', hex: '#141418' },
+      { name: 'Garage Grey', hex: '#54585e', metallic: true },
+    ],
+    specs: {
+      displacementCc: 693,
+      powerHp: 69,
+      weightKg: 200,
+      fuelCapacityL: 15,
+      seatHeightMm: 690,
+      engineType: 'Bicilindrico in linea, 4 tempi, Euro 5+. 69 CV (50,8 kW) a 8.500 giri',
+      transmission: 'Cambio a 6 rapporti, finale a cinghia',
+      frontBrakes: 'Disco singolo da 320 mm, pinza flottante a 2 pistoncini, ABS',
+      suspension:
+        'Forcella tradizionale da 41 mm, 120 mm di escursione. Dietro doppio ammortizzatore con precarico molla regolabile',
+    },
+    features: [
+      'Valigie laterali e cupolino di serie',
+      'Trasmissione finale a cinghia',
+      'Sella a 690 mm, 200 kg a secco e 212 in ordine di marcia',
+      'Cruise control',
+      'Cruscotto TFT con connettività per lo smartphone',
+    ],
   },
 ];
+
+/**
+ * MOTO USATE — PRONTA CONSEGNA
+ *
+ * COME SI AGGIORNA, UNA VOLTA AL MESE
+ * Questo e' l'unico elenco da toccare per il parco usato.
+ * Aggiungi un blocco per ogni moto che entra, togli quelle vendute
+ * oppure segnale con `sold: true` se vuoi lasciarle visibili.
+ *
+ * A differenza del nuovo, ogni voce qui e' un mezzo singolo: ha i suoi
+ * chilometri, il suo anno e il suo prezzo.
+ *
+ * ESEMPIO COMPLETO, da copiare e compilare:
+ *
+ * {
+ *   id: 'usato-xcape-650-2022',
+ *   brand: 'Moto Morini',
+ *   name: 'X-Cape 650',
+ *   subtitle: 'Unico proprietario, tagliandi regolari',
+ *   condition: 'usato',
+ *   used: {
+ *     year: 2022,
+ *     km: 12400,
+ *     stockCode: 'U-014',
+ *     warrantyMonths: 12,
+ *     previousOwners: 1,
+ *   },
+ *   category: 'adventure',
+ *   categoryLabel: 'Adventure',
+ *   tagline: 'Pronta da portare via',
+ *   description: 'Moto controllata nella nostra officina prima della vendita.',
+ *   price: 6900,
+ *   image: '/moto/usato-xcape-650-2022/scheda-principale.jpg',
+ *   colors: [],
+ *   specs: { displacementCc: 649, powerHp: 60 },
+ *   features: ['Valigie laterali', 'Paramotore', 'Gomme nuove'],
+ * },
+ */
+export const MOTO_USATE: Motorcycle[] = [
+  // Nessuna moto usata inserita al momento.
+  // Copia l'esempio qui sopra, incollalo dentro queste parentesi e compilalo.
+];
+
+/** Tutto il catalogo, nuovo e usato insieme. */
+export const MOTORCYCLES: Motorcycle[] = [...MOTO_NUOVE, ...MOTO_USATE];
+
+/** Le moto in vetrina sulla home. Se non ne hai segnata nessuna, prende le prime. */
+export function getVetrina(quante = 3): Motorcycle[] {
+  const scelte = MOTORCYCLES.filter((m) => m.featured && !m.used?.sold);
+  return (scelte.length > 0 ? scelte : MOTORCYCLES).slice(0, quante);
+}

@@ -36,5 +36,26 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E10600;
+  background: #D00020;
+}
+
+/*
+ * Scorrimento continuo della striscia dei servizi.
+ *
+ * Il nastro ripete lo stesso gruppo di voci piu' volte, quante ne servono a
+ * coprire lo schermo piu' una di scorta, e scorre esattamente della larghezza
+ * di UN gruppo. A fine corsa il gruppo successivo si trova nella posizione in
+ * cui stava il primo, quindi il ritorno al punto di partenza non si vede.
+ *
+ * La larghezza del gruppo cambia con il testo e con i caratteri caricati,
+ * percio' non e' scritta qui: la misura il componente e la passa come
+ * variabile --larghezza-gruppo.
+ */
+@keyframes scorri-nastro {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-1 * var(--larghezza-gruppo, 50%)), 0, 0);
+  }
 }

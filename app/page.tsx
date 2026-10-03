@@ -1,78 +1,75 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Navbar } from '../src/components/Navbar';
 import { HeroSection } from '../src/components/HeroSection';
-import { MotorcycleShowcase } from '../src/components/MotorcycleShowcase';
+import { ServicesMarquee } from '../src/components/ServicesMarquee';
+import { BikeHighlights } from '../src/components/BikeHighlights';
+import { Reviews } from '../src/components/Reviews';
 import { FinancingCalculator } from '../src/components/FinancingCalculator';
 import { ServicesSection } from '../src/components/ServicesSection';
 import { Footer } from '../src/components/Footer';
-import { TestRideModal } from '../src/components/TestRideModal';
+import { ClosingCta } from '../src/components/ClosingCta';
 import { Motorcycle } from '../src/types';
-import { MOTORCYCLES } from '../src/data/motorcycles';
+import { MOTORCYCLES, MOTO_NUOVE } from '../src/data/motorcycles';
 
-export default function NextLandingPage() {
-  const [testRideModalOpen, setTestRideModalOpen] = useState<boolean>(false);
-  const [selectedBikeForAction, setSelectedBikeForAction] = useState<Motorcycle>(MOTORCYCLES[0]);
+/** Porta in vista una sezione della pagina con uno scorrimento morbido. */
+function scrollToSection(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
 
-  const handleOpenTestRide = (bike?: Motorcycle) => {
-    if (bike) setSelectedBikeForAction(bike);
-    setTestRideModalOpen(true);
-  };
+export default function LandingPage() {
+  return (
+    <Suspense fallback={null}>
+      <Contenuto />
+    </Suspense>
+  );
+}
 
-  const handleSelectForFinancing = (bike: Motorcycle) => {
-    setSelectedBikeForAction(bike);
-    const elem = document.getElementById('finanziamento');
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+function Contenuto() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-  const handleExplore3D = () => {
-    const elem = document.getElementById('visualizzatore-3d');
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // Il catalogo sta su /moto. Quando da li' si chiede di calcolare la rata,
+  // la moto scelta arriva qui nell'indirizzo come ?moto=<id>.
+  const [bikeForFinancing, setBikeForFinancing] = useState<Motorcycle>(MOTO_NUOVE[0]);
 
-  const handleExploreCatalog = () => {
-    const elem = document.getElementById('gamma');
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  useEffect(() => {
+    const id = searchParams.get('moto');
+    if (!id) return;
+    const bike = MOTORCYCLES.find((m) => m.id === id);
+    if (!bike) return;
+    setBikeForFinancing(bike);
+    // Il contenuto compare dopo il caricamento, quindi l'ancora nell'indirizzo
+    // da sola non basta: portiamo noi la sezione in vista.
+    requestAnimationFrame(() => scrollToSection('finanziamento'));
+  }, [searchParams]);
 
   return (
-    <div className="min-h-screen bg-[#070709] text-slate-100 flex flex-col font-sans selection:bg-[#E10600] selection:text-white">
-      <Navbar onOpenTestRide={() => handleOpenTestRide()} />
+    <div className="min-h-screen bg-[#070709] text-slate-100 flex flex-col font-sans selection:bg-[#D00020] selection:text-white">
+      <Navbar />
 
       <main className="flex-1">
-        <HeroSection
-          onExplore3D={handleExplore3D}
-          onExploreCatalog={handleExploreCatalog}
-          onBookTestRide={() => handleOpenTestRide()}
+        <HeroSection onExploreCatalog={() => router.push('/moto')} />
+
+        <ServicesMarquee />
+
+        <BikeHighlights
+          onVediTutte={() => router.push('/moto')}
+          onSelectBike={(bike) => router.push(`/moto?moto=${encodeURIComponent(bike.id)}`)}
         />
 
-        <MotorcycleShowcase
-          onSelectForFinancing={handleSelectForFinancing}
-          onBookTestRide={(bike) => handleOpenTestRide(bike)}
-        />
+        <Reviews />
 
-        <FinancingCalculator
-          initialBike={selectedBikeForAction}
-          onBookTestRide={(bike) => handleOpenTestRide(bike)}
-        />
+        <FinancingCalculator key={bikeForFinancing.id} initialBike={bikeForFinancing} />
 
         <ServicesSection />
+
+        <ClosingCta />
       </main>
 
       <Footer />
-
-      <TestRideModal
-        isOpen={testRideModalOpen}
-        onClose={() => setTestRideModalOpen(false)}
-        preselectedBike={selectedBikeForAction}
-      />
     </div>
   );
 }
