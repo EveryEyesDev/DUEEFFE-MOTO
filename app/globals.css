@@ -9,8 +9,7 @@
 
   body {
     font-family: var(--font-sans);
-    /* Il nero sta sull'elemento html: il body resta trasparente perche'
-       dietro di lui c'e' la griglia tecnica (vedi body::before in fondo). */
+    /* Il nero sta sull'elemento html, vedi in fondo al file. */
     background-color: transparent;
     color: #f1f5f9;
     overflow-x: hidden;
@@ -100,90 +99,12 @@
 }
 
 /*
- * Trama tecnica di fondo.
+ * Il nero di fondo sta sull'elemento html.
  *
- * Una griglia di linee sottilissime su tutta la pagina, come la carta
- * millimetrata dei disegni meccanici. Richiama l'officina e toglie al nero
- * quella sensazione di fondo piatto e vuoto.
- *
- * Due passi sovrapposti: uno largo da 120 pixel che da' struttura e uno
- * fitto da 24 appena accennato. Restano ben sotto il contrasto del testo,
- * quindi si percepiscono senza mai disturbare la lettura. La prima
- * versione era cosi' tenue da non vedersi affatto: adesso e' percepibile
- * ma resta sotto il cinque per cento di contrasto, lontanissima dal
- * livello che darebbe fastidio a leggere.
- *
- * La trama sta su un livello fisso dietro al contenuto, non sul fondo del
- * body: `background-attachment: fixed` obbligava il browser a ridisegnare
- * tutta la griglia ad ogni scorrimento, e si sentiva. Un livello in
- * posizione fissa viene invece composto una volta sola e resta fermo da
- * solo. Il nero di base sta sull'elemento html, cosi' il livello (che sta a
- * z-index -1) si vede comunque, e resta dietro a tutto il contenuto senza
- * interferire con la barra di navigazione ne' con lo showcase.
+ * Qui c'era una trama a griglia, tolta su richiesta: appesantiva la
+ * pagina invece di darle carattere. Il fondo resta pulito.
  */
 html {
   background-color: #070709;
 }
 
-/*
- * LA GRIGLIA TECNICA
- *
- * Una trama di linee sottilissime su tutta la pagina, come la carta
- * millimetrata dei disegni meccanici: richiama l'officina e toglie al nero
- * la sensazione di fondo piatto.
- *
- * Sta DAVANTI al contenuto, non dietro. Dietro non si vedeva: ogni sezione
- * ha il suo fondo pieno e la copriva. Davanti invece passa sopra tutto, e
- * perche' non dia fastidio resta su contrasti bassissimi (sotto il cinque
- * per cento) e non intercetta il puntatore, quindi non interferisce con
- * nessun pulsante.
- *
- * Due passi sovrapposti: uno largo da 120 pixel che da' struttura e uno
- * fitto da 24 appena accennato. Una maschera circolare la fa svanire ai
- * bordi, cosi' si legge dove si posa lo sguardo invece di stendersi
- * uniforme come carta da parati.
- */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
-  background-size:
-    120px 120px,
-    120px 120px,
-    24px 24px,
-    24px 24px;
-  mask-image: radial-gradient(ellipse 110% 85% at 50% 40%, #000 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 110% 85% at 50% 40%, #000 20%, transparent 80%);
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
-  background-size:
-    120px 120px,
-    120px 120px,
-    24px 24px,
-    24px 24px;
-  /*
-    Un alone piu' chiaro al centro e buio ai bordi: la griglia si legge
-    dove lo sguardo si posa e sparisce in periferia, invece di stendersi
-    uniforme come carta da parati.
-  */
-  mask-image: radial-gradient(ellipse 120% 90% at 50% 35%, #000 25%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 120% 90% at 50% 35%, #000 25%, transparent 78%);
-}

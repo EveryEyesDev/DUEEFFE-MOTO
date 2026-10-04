@@ -87,6 +87,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       { name: 'Carrara White', hex: '#eef0f2' },
     ],
     specs: {
+      torqueNm: 68,
       displacementCc: 693,
       powerHp: 70,
       weightKg: 213,
@@ -171,6 +172,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       { name: 'Energy Red', hex: '#c21f2e', metallic: true },
     ],
     specs: {
+      torqueNm: 106,
       displacementCc: 1187,
       powerHp: 129,
       weightKg: 259,
@@ -243,6 +245,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       { name: 'Night Black', hex: '#131317' },
     ],
     specs: {
+      torqueNm: 42,
       displacementCc: 449,
       powerHp: 44.8,
       weightKg: 170,
@@ -328,6 +331,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       { name: 'Smoky Anthracite', hex: '#3b3f45', metallic: true },
     ],
     specs: {
+      torqueNm: 54,
       displacementCc: 649,
       powerHp: 61,
       weightKg: 200,
@@ -397,6 +401,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       { name: 'Garage Grey', hex: '#54585e', metallic: true },
     ],
     specs: {
+      torqueNm: 68,
       displacementCc: 693,
       powerHp: 69,
       weightKg: 198,
@@ -464,6 +469,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       { name: 'Garage Grey', hex: '#54585e', metallic: true },
     ],
     specs: {
+      torqueNm: 68,
       displacementCc: 693,
       powerHp: 69,
       weightKg: 200,
@@ -496,6 +502,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-v-strom-1050de/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-v-strom-1050de/in-strada.webp',
+    price: 13590,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -565,6 +573,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      transmission: '6 marce',
       engineType: 'Bicilindrico a V di 90, 4 tempi, raffr. a liquido, DOHC',
       displacementCc: 1037,
       powerHp: 107,
@@ -589,6 +598,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-v-strom-1050se/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-v-strom-1050se/in-strada.webp',
+    price: 12990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -671,6 +682,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      transmission: '6 marce',
       engineType: 'Bicilindrico a V di 90, 4 tempi, raffr. a liquido, DOHC',
       displacementCc: 1037,
       powerHp: 107,
@@ -695,6 +707,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-address-125/blu-tokyo/lato-destro.webp',
     roadImage: '/moto/suzuki-address-125/in-strada.webp',
+    price: 2590,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'blu-tokyo',
@@ -725,6 +739,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      transmission: 'CVT automatico',
       engineType: 'Monocilindrico, 4 tempi, raffr. ad aria, SOHC',
       displacementCc: 124,
       powerHp: 8.7,
@@ -749,6 +764,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-burgman-street-125-executive/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-burgman-street-125-executive/in-strada.webp',
+    price: 2690,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -831,6 +848,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      transmission: 'CVT automatico',
       engineType: 'Monocilindrico, 4 tempi, raffr. ad aria, SOHC',
       displacementCc: 124,
       powerHp: 8.6,
@@ -855,6 +873,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-8s/blu-san-diego/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-8s/in-strada.webp',
+    price: 7590,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'blu-san-diego',
@@ -962,6 +982,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-v-strom-800se/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-v-strom-800se/in-strada.webp',
+    price: 8890,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -1069,6 +1091,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-8r/blu-miami/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-8r/in-strada.webp',
+    price: 8590,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'blu-miami',
@@ -1150,6 +1174,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-s1000gx/blu-zante/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-s1000gx/in-strada.webp',
+    price: 14990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'blu-zante',
@@ -1231,6 +1257,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-dr-z4s/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-dr-z4s/in-strada.webp',
+    price: 7990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -1286,6 +1314,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-dr-z4sm/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-dr-z4sm/in-strada.webp',
+    price: 7990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -1341,6 +1371,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-s1000-evo/blu-miami/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-s1000-evo/in-strada.webp',
+    price: 12990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'blu-miami',
@@ -1532,6 +1564,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-r1000r/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-r1000r/in-strada.webp',
+    price: 20490,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -1600,6 +1634,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-sv-7gx/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-sv-7gx/in-strada.webp',
+    price: 8290,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -1668,6 +1704,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-r125/blu-zante/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-r125/in-strada.webp',
+    price: 4390,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'blu-zante',
@@ -1713,6 +1751,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-s125/blu-zante/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-s125/in-strada.webp',
+    price: 4190,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'blu-zante',
@@ -1733,6 +1773,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      transmission: '6 marce',
       engineType: '1 cilindro, 4 tempi, DOHC, raffreddamento a liquido',
       displacementCc: 124.4,
       powerHp: 15,
@@ -1769,6 +1810,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      engineType: 'Monocilindrico 4T 449 cc',
+      seatHeightMm: 955,
+      torqueNm: 49,
+      powerHp: 54,
       displacementCc: 449,
       transmission: '5 velocità',
       weightKg: 112,
@@ -1789,6 +1834,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-katana/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-katana/in-strada.webp',
+    price: 14390,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -1845,6 +1892,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      transmission: '6 marce',
       engineType: '4 cilindri, 4 tempi, raffreddamento a liquido',
       displacementCc: 999,
       powerHp: 152,
@@ -1869,6 +1917,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-hayabusa/grigio-pittsburgh/lato-destro.webp',
     roadImage: '/moto/suzuki-hayabusa/in-strada.webp',
+    price: 19990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'grigio-pittsburgh',
@@ -1912,6 +1962,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      transmission: '6 marce',
       engineType: '4 cilindri, 4 tempi, raffreddamento a liquido',
       displacementCc: 1340,
       powerHp: 190,
@@ -1936,6 +1987,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-s1000gt/blu-montreal/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-s1000gt/in-strada.webp',
+    price: 13990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'blu-montreal',
@@ -2005,6 +2058,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      transmission: '6 marce',
       engineType: '4 cilindri, 4 tempi, raffreddamento a liquido',
       displacementCc: 999,
       powerHp: 152,
@@ -2029,6 +2083,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-burgman-400/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-burgman-400/in-strada.webp',
+    price: 6990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -2111,6 +2167,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      transmission: 'CVT automatico',
       engineType: 'Monocilindrico, 4 tempi, raffr. a liquido',
       displacementCc: 400,
       powerHp: 29,
@@ -2135,6 +2192,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-v-strom-800de/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-v-strom-800de/in-strada.webp',
+    price: 9790,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -2258,6 +2317,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Disco 276 mm',
+      engineType: 'Monocilindrico 4T 124,8 cc',
+      weightKg: 129,
+      torqueNm: 12.1,
       displacementCc: 124.8,
       powerHp: 15,
       transmission: '6 marce',
@@ -2293,6 +2356,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Disco 276 mm',
+      engineType: 'Monocilindrico 4T 124,8 cc',
+      weightKg: 129,
+      torqueNm: 12.1,
       displacementCc: 125,
       powerHp: 15,
       transmission: '6 marce',
@@ -2327,6 +2394,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 298 mm',
+      engineType: 'Bicilindrico parallelo 4T 581 cc',
+      weightKg: 190,
+      torqueNm: 57,
       displacementCc: 581,
       powerHp: 63.9,
       transmission: '6 marce',
@@ -2361,6 +2432,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Disco 220 mm',
+      engineType: 'Monocilindrico 4T 124,9 cc',
+      weightKg: 134,
+      torqueNm: 11,
       displacementCc: 124.9,
       transmission: 'Variatore continuo di velocità (CVT)',
       seatHeightMm: 810,
@@ -2394,6 +2469,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Disco 220 mm',
+      engineType: 'Monocilindrico 4T 124,9 cc',
+      weightKg: 133,
+      torqueNm: 11,
       displacementCc: 124.9,
       transmission: 'Variatore continuo di velocità (CVT)',
       seatHeightMm: 785,
@@ -2428,6 +2507,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Disco 220 mm',
+      engineType: 'Monocilindrico 4T 124,9 cc',
+      weightKg: 136,
+      torqueNm: 11,
       displacementCc: 125,
       transmission: 'Variatore continuo di velocità (CVT)',
       seatHeightMm: 795,
@@ -2461,6 +2544,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Disco 220 mm',
+      engineType: 'Monocilindrico 4T 174 cc',
+      weightKg: 137,
+      torqueNm: 15.6,
       displacementCc: 174,
       transmission: 'Variatore continuo di velocità (CVT)',
       seatHeightMm: 800,
@@ -2494,6 +2581,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Disco 220 mm',
+      engineType: 'Monocilindrico 4T 124,9 cc',
+      weightKg: 136,
+      torqueNm: 11,
       displacementCc: 125,
       transmission: 'Variatore continuo di velocità (CVT)',
       seatHeightMm: 800,
@@ -2527,6 +2618,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Disco 220 mm',
+      engineType: 'Monocilindrico 4T 174 cc',
+      weightKg: 140,
+      torqueNm: 16,
       displacementCc: 174,
       transmission: 'Variatore continuo di velocità (CVT)',
       seatHeightMm: 810,
@@ -2560,6 +2655,11 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      seatHeightMm: 770,
+      frontBrakes: 'Disco 260 mm',
+      engineType: 'Monocilindrico 4T 244 cc',
+      weightKg: 155,
+      torqueNm: 23,
       displacementCc: 244,
       transmission: 'Variatore continuo di velocità (CVT)',
       fuelCapacityL: 14,
@@ -2592,6 +2692,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 260 mm',
+      engineType: 'Monocilindrico 4T 350 cc',
+      weightKg: 205,
+      torqueNm: 35,
       displacementCc: 350,
       powerHp: 34,
       transmission: 'Variatore continuo di velocità (CVT)',
@@ -2628,6 +2732,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 260 mm',
+      engineType: 'Bicilindrico 4T 398 cc',
+      weightKg: 220,
+      torqueNm: 42,
       displacementCc: 398,
       powerHp: 42.2,
       transmission: 'Variatore continuo di velocità (CVT)',
@@ -2663,6 +2771,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 300 mm',
+      engineType: 'Monocilindrico 4T 292 cc',
+      weightKg: 159,
+      torqueNm: 24.5,
       displacementCc: 292,
       powerHp: 28.6,
       transmission: '6 marce',
@@ -2698,6 +2810,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 300 mm',
+      engineType: 'Monocilindrico 4T 292 cc',
+      weightKg: 150,
+      torqueNm: 25,
       displacementCc: 292,
       powerHp: 28.6,
       transmission: '6 marce',
@@ -2733,6 +2849,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 298 mm',
+      engineType: 'Bicilindrico 4T 322 cc',
+      weightKg: 156,
+      torqueNm: 31,
       displacementCc: 321.8,
       powerHp: 40.8,
       transmission: '6 marce',
@@ -2769,6 +2889,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 298 mm',
+      engineType: 'Bicilindrico 4T 471 cc',
+      weightKg: 185,
+      torqueNm: 44.5,
       displacementCc: 471,
       powerHp: 47,
       transmission: '6 marce',
@@ -2804,6 +2928,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 298 mm',
+      engineType: 'Bicilindrico 4T 494 cc',
+      weightKg: 185,
+      torqueNm: 44.5,
       displacementCc: 494,
       powerHp: 47.6,
       transmission: '6 marce',
@@ -2839,6 +2967,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Disco 265 mm',
+      engineType: 'Monocilindrico 4T 292 cc',
+      weightKg: 190,
+      torqueNm: 25,
       displacementCc: 292,
       transmission: '6 marce',
       suspension: 'Forcella upside-down ø 41 mm',
@@ -2873,6 +3005,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 298 mm',
+      engineType: 'Bicilindrico 4T 581 cc',
+      weightKg: 206,
+      torqueNm: 57,
       displacementCc: 581,
       powerHp: 63.9,
       transmission: '6 marce',
@@ -2907,6 +3043,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 310 mm',
+      engineType: 'Bicilindrico 4T 798 cc',
+      weightKg: 234,
+      torqueNm: 81,
       displacementCc: 798,
       transmission: '6 marce',
       seatHeightMm: 850,
@@ -2940,6 +3080,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 305 mm',
+      engineType: 'Bicilindrico 4T 895 cc',
+      weightKg: 218,
+      torqueNm: 95,
       displacementCc: 895,
       powerHp: 95.2,
       transmission: '6 marce',
@@ -2975,6 +3119,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: 'Doppio disco 298 mm',
+      engineType: 'Bicilindrico 4T 494 cc',
+      weightKg: 194,
+      torqueNm: 44.5,
       displacementCc: 494,
       powerHp: 47.6,
       transmission: '6 marce',
@@ -2996,6 +3144,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-xwolf-300/unica/lato-destro.webp',
     roadImage: '/moto/voge-xwolf-300/in-strada.webp',
+    price: 4990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
@@ -3008,6 +3158,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      frontBrakes: '4 dischi CBS',
+      engineType: 'Monocilindrico 4T 271 cc',
+      weightKg: 245,
+      torqueNm: 21,
       displacementCc: 270,
       powerHp: 19,
       transmission: 'Automatico (con retromarcia), ridotta',
@@ -3039,6 +3193,11 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      seatHeightMm: 900,
+      frontBrakes: '4 dischi',
+      engineType: 'Monocilindrico 4T 500 cc',
+      weightKg: 348,
+      torqueNm: 53,
       displacementCc: 500,
       powerHp: 42.9,
       transmission: 'Automatico (con retromarcia), ridotta',

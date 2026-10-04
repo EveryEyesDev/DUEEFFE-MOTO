@@ -81,20 +81,19 @@ def ripulisci(percorso):
 
     rgb = a[:, :, :3]
     bianco = (alpha > 0) & (rgb.min(axis=2) > CHIARO) &              ((rgb.max(axis=2) - rgb.min(axis=2)) < SENZA_TINTA)
-    if not bianco.any():
-        return 0
+    # Niente uscite anticipate qui: anche senza bianco puro restano da
+    # applicare le rifiniture piu' sotto, ed e' proprio quello che serviva
+    # alla striscia grigia a terra, che bianca non e'.
 
     # Da dove partiamo: il bianco nelle ultime righe della moto, cioe' a terra.
     inizio = max(alto, basso - max(2, int((basso - alto) * SUOLO)))
     partenze = np.zeros_like(bianco)
     partenze[inizio:basso + 1, :] = True
     semi = bianco & partenze
-    if not semi.any():
-        return 0
 
     # Ci allarghiamo nel bianco a partire da li', riga per riga.
     ombra = semi.copy()
-    for _ in range(400):
+    for _ in range(400 if semi.any() else 0):
         cresciuto = ombra.copy()
         cresciuto[1:, :] |= ombra[:-1, :]
         cresciuto[:-1, :] |= ombra[1:, :]
@@ -104,6 +103,43 @@ def ripulisci(percorso):
         if cresciuto.sum() == ombra.sum():
             break
         ombra = cresciuto
+
+    """
+    Due rifiniture, perche' il solo allargamento nel bianco non basta.
+
+    La prima: niente sta sotto le gomme. Troviamo la riga piu' bassa dove
+    c'e' moto vera (scuro o colorato: gomme, motore, vernice) e cancelliamo
+    tutto quello che sta sotto. E' l'alone sfumato dello scatto, e non puo'
+    essere nient'altro: sotto il punto d'appoggio non c'e' motocicletta.
+
+    La seconda: le macchie bianche piene dentro la parte bassa, come quella
+    fra ruota anteriore e motore. Sono chiuse dalle gomme, quindi
+    l'allargamento da terra non le raggiunge. Le togliamo solo se sono
+    bianco quasi puro e del tutto senza tinta, e solo nella fascia bassa:
+    una carena bianca sta piu' in alto ed e' meno neutra, e resta intera.
+    """
+    L = rgb.mean(axis=2)
+    vivacita = rgb.max(axis=2) - rgb.min(axis=2)
+    moto_vera = (alpha > 128) & ((L < 110) | (vivacita > 45))
+    righe_moto = np.where(moto_vera.any(axis=1))[0]
+    if len(righe_moto):
+        suolo = righe_moto[-1]
+        sotto_terra = np.zeros_like(bianco)
+        sotto_terra[suolo + 1:, :] = True
+        ombra |= (alpha > 0) & sotto_terra
+
+    fascia = np.zeros_like(bianco)
+    fascia[alto + int((basso - alto) * 0.60):basso + 1, :] = True
+    ombra |= (alpha > 0) & fascia & (rgb.min(axis=2) > 225) & (vivacita < 10)
+
+    # La terza, che e' quella che chiude il discorso: la striscia a terra.
+    # Non e' bianca, e' grigia, e la soglia sul bianco non la prendeva.
+    # Misurata, sta sul grigio 127 con vivacita' zero, mentre le gomme che
+    # le stanno accanto sono sul 47. Nell'ultimo ottavo della moto, quindi,
+    # tutto cio' che e' grigio neutro e piu' chiaro di una gomma e' ombra.
+    piede = np.zeros_like(bianco)
+    piede[basso - int((basso - alto) * 0.12):basso + 1, :] = True
+    ombra |= (alpha > 0) & piede & (vivacita < 14) & (L > 95)
 
     quanti = int(ombra.sum())
     if quanti == 0:
