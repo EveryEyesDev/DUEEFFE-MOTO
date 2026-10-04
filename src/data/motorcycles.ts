@@ -35,19 +35,12 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'La compagna giusta per il viaggio lungo e per il lunedì mattina',
     description:
       'Una crossover pensata per chi non vuole scegliere tra strada e sterrato. Il bicilindrico da 693 cc spinge con regolarità, la forcella Marzocchi completamente regolabile lavora bene anche sul rotto, e con 18 litri di serbatoio i trasferimenti non diventano una caccia al distributore. La versione a raggi aggiunge cavalletto centrale e dashcam anteriore.',
-    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
-    image: '/moto/x-cape-700/vista-01.webp',
+    // Immagini ufficiali Moto Morini: profili studio e una su strada
+    image: '/moto/x-cape-700/vista-1.webp',
     gallery: [
-      '/moto/x-cape-700/vista-01.webp',
-      '/moto/x-cape-700/vista-02.webp',
-      '/moto/x-cape-700/vista-03.webp',
-      '/moto/x-cape-700/vista-04.webp',
-      '/moto/x-cape-700/vista-05.webp',
-      '/moto/x-cape-700/vista-06.webp',
-      '/moto/x-cape-700/vista-07.webp',
-      '/moto/x-cape-700/vista-08.webp',
-      '/moto/x-cape-700/vista-09.webp',
-      '/moto/x-cape-700/vista-10.webp',
+      '/moto/x-cape-700/vista-1.webp',
+      '/moto/x-cape-700/vista-2.webp',
+      '/moto/x-cape-700/in-strada.webp',
     ],
     price: 7190,
     priceNote:
@@ -90,23 +83,14 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Quando il viaggio si misura in giorni, non in chilometri',
     description:
       'Il passo lungo della gamma adventure. Il bicilindrico a V di 87 gradi mette in strada 129 cavalli con la calma di chi non deve dimostrare niente, e i 24,5 litri di serbatoio spostano il problema dell’autonomia molto più in là. Cruise control, quickshifter e ABS cornering rendono le tappe da autostrada meno faticose di quanto sembri.',
-    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
-    image: '/moto/x-cape-1200/vista-01.webp',
+    // Immagini ufficiali Moto Morini: profili studio e una su strada
+    image: '/moto/x-cape-1200/vista-1.webp',
     gallery: [
-      '/moto/x-cape-1200/vista-01.webp',
-      '/moto/x-cape-1200/vista-02.webp',
-      '/moto/x-cape-1200/vista-03.webp',
-      '/moto/x-cape-1200/vista-04.webp',
-      '/moto/x-cape-1200/vista-05.webp',
-      '/moto/x-cape-1200/vista-06.webp',
-      '/moto/x-cape-1200/vista-07.webp',
-      '/moto/x-cape-1200/vista-08.webp',
-      '/moto/x-cape-1200/vista-09.webp',
-      '/moto/x-cape-1200/vista-10.webp',
-      '/moto/x-cape-1200/vista-11.webp',
-      '/moto/x-cape-1200/vista-12.webp',
-      '/moto/x-cape-1200/vista-13.webp',
-      '/moto/x-cape-1200/vista-14.webp',
+      '/moto/x-cape-1200/vista-1.webp',
+      '/moto/x-cape-1200/vista-2.webp',
+      '/moto/x-cape-1200/vista-3.webp',
+      '/moto/x-cape-1200/vista-4.webp',
+      '/moto/x-cape-1200/in-strada.webp',
     ],
     price: 12990,
     priceNote:
@@ -150,25 +134,11 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Leggera, alta e sincera: la prima adventure vera',
     description:
       'La più accessibile della famiglia. Il bicilindrico da 449 cc eroga 44,8 cavalli, ma sono i 170 chili a secco e la forcella con 208 mm di escursione a fare la differenza: in sella si sta alti, si vede lontano e lo sterrato non spaventa. La versione High Equipped aggiunge paramani, sella e manopole riscaldate, che su una moto da viaggio contano più di dieci cavalli in più.',
-    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
-    image: '/moto/alltrhike-450/vista-01.webp',
+    // Immagini ufficiali Moto Morini: profili studio e una su strada
+    image: '/moto/alltrhike-450/vista-1.webp',
     gallery: [
-      '/moto/alltrhike-450/vista-01.webp',
-      '/moto/alltrhike-450/vista-02.webp',
-      '/moto/alltrhike-450/vista-03.webp',
-      '/moto/alltrhike-450/vista-04.webp',
-      '/moto/alltrhike-450/vista-05.webp',
-      '/moto/alltrhike-450/vista-06.webp',
-      '/moto/alltrhike-450/vista-07.webp',
-      '/moto/alltrhike-450/vista-08.webp',
-      '/moto/alltrhike-450/vista-09.webp',
-      '/moto/alltrhike-450/vista-10.webp',
-      '/moto/alltrhike-450/vista-11.webp',
-      '/moto/alltrhike-450/vista-12.webp',
-      '/moto/alltrhike-450/vista-13.webp',
-      '/moto/alltrhike-450/vista-14.webp',
-      '/moto/alltrhike-450/vista-15.webp',
-      '/moto/alltrhike-450/vista-16.webp',
+      '/moto/alltrhike-450/vista-1.webp',
+      '/moto/alltrhike-450/in-strada.webp',
     ],
     price: 5890,
     priceNote:
@@ -212,24 +182,11 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Niente fronzoli, solo il piacere di guidare',
     description:
       'Una naked dal disegno pulito, con le meccaniche a vista e un manubrio largo che rende immediati i cambi di direzione. Il bicilindrico da 649 cc tira con onestà, i freni sono Brembo e le sospensioni Kayaba sono regolabili davanti e dietro, cosa non scontata in questa fascia. Facile da vivere in città, piacevole quando la strada si fa curva.',
-    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
-    image: '/moto/seiemmezzo-str/vista-01.webp',
+    // Immagini ufficiali Moto Morini: profili studio e una su strada
+    image: '/moto/seiemmezzo-str/vista-1.webp',
     gallery: [
-      '/moto/seiemmezzo-str/vista-01.webp',
-      '/moto/seiemmezzo-str/vista-02.webp',
-      '/moto/seiemmezzo-str/vista-03.webp',
-      '/moto/seiemmezzo-str/vista-04.webp',
-      '/moto/seiemmezzo-str/vista-05.webp',
-      '/moto/seiemmezzo-str/vista-06.webp',
-      '/moto/seiemmezzo-str/vista-07.webp',
-      '/moto/seiemmezzo-str/vista-08.webp',
-      '/moto/seiemmezzo-str/vista-09.webp',
-      '/moto/seiemmezzo-str/vista-10.webp',
-      '/moto/seiemmezzo-str/vista-11.webp',
-      '/moto/seiemmezzo-str/vista-12.webp',
-      '/moto/seiemmezzo-str/vista-13.webp',
-      '/moto/seiemmezzo-str/vista-14.webp',
-      '/moto/seiemmezzo-str/vista-15.webp',
+      '/moto/seiemmezzo-str/vista-1.webp',
+      '/moto/seiemmezzo-str/in-strada.webp',
     ],
     price: 5590,
     priceNote:
@@ -271,26 +228,12 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Il piacere di arrivare tardi, ma arrivarci bene',
     description:
       'Sella a 690 millimetri da terra, pedane avanzate e trasmissione finale a cinghia: silenziosa, pulita e che non chiede la manutenzione di una catena. Il bicilindrico da 693 cc è lo stesso della X-Cape 700, qui tarato per spingere basso. Una custom pensata per i viaggi senza orologio, con la comodità al primo posto.',
-    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
-    image: '/moto/calibro-custom/vista-01.webp',
+    // Immagini ufficiali Moto Morini: profili studio e una su strada
+    image: '/moto/calibro-custom/vista-1.webp',
     gallery: [
-      '/moto/calibro-custom/vista-01.webp',
-      '/moto/calibro-custom/vista-02.webp',
-      '/moto/calibro-custom/vista-03.webp',
-      '/moto/calibro-custom/vista-04.webp',
-      '/moto/calibro-custom/vista-05.webp',
-      '/moto/calibro-custom/vista-06.webp',
-      '/moto/calibro-custom/vista-07.webp',
-      '/moto/calibro-custom/vista-08.webp',
-      '/moto/calibro-custom/vista-09.webp',
-      '/moto/calibro-custom/vista-10.webp',
-      '/moto/calibro-custom/vista-11.webp',
-      '/moto/calibro-custom/vista-12.webp',
-      '/moto/calibro-custom/vista-13.webp',
-      '/moto/calibro-custom/vista-14.webp',
-      '/moto/calibro-custom/vista-15.webp',
-      '/moto/calibro-custom/vista-16.webp',
-      '/moto/calibro-custom/vista-17.webp',
+      '/moto/calibro-custom/vista-1.webp',
+      '/moto/calibro-custom/vista-2.webp',
+      '/moto/calibro-custom/in-strada.webp',
     ],
     price: 7990,
     priceNote:
@@ -332,19 +275,11 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Tutto quello che ti serve, già a bordo',
     description:
       'La versione da grande viaggio della Calibro. Valigie laterali e cupolino arrivano di serie, quindi non c’è da ricomprare mezzo accessorio dopo l’acquisto. Stessa sella bassa a 690 millimetri e stessa trasmissione a cinghia della Cruiser, con dodici chili in più che si sentono poco e si ripagano in protezione e capacità di carico.',
-    // Immagini ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
-    image: '/moto/calibro-bagger/vista-07.webp',
+    // Immagini ufficiali Moto Morini: profili studio e una su strada
+    image: '/moto/calibro-bagger/vista-1.webp',
     gallery: [
-      '/moto/calibro-bagger/vista-07.webp',
-      '/moto/calibro-bagger/vista-08.webp',
-      '/moto/calibro-bagger/vista-09.webp',
-      '/moto/calibro-bagger/vista-10.webp',
-      '/moto/calibro-bagger/vista-11.webp',
-      '/moto/calibro-bagger/vista-12.webp',
-      '/moto/calibro-bagger/vista-13.webp',
-      '/moto/calibro-bagger/vista-14.webp',
-      '/moto/calibro-bagger/vista-15.webp',
-      '/moto/calibro-bagger/vista-16.webp',
+      '/moto/calibro-bagger/vista-1.webp',
+      '/moto/calibro-bagger/in-strada.webp',
     ],
     price: 8990,
     priceNote:
