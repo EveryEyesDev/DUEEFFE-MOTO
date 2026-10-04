@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Innesta nel catalogo le voci Suzuki generate dall'importatore.
+Innesta nel catalogo le voci generate da un importatore.
 
 A COSA SERVE
 strumenti/importa-foto-suzuki.py scarica le fotografie e scrive il blocco
@@ -8,7 +8,8 @@ di dati in strumenti/suzuki-generato.ts.txt. Questo script lo infila in
 src/data/motorcycles.ts, dentro MOTO_NUOVE, dopo i modelli Moto Morini.
 
 COME SI USA
-    python strumenti/unisci-suzuki.py
+    python strumenti/unisci-catalogo.py suzuki
+    python strumenti/unisci-catalogo.py voge
 
 E' ripetibile: se le voci Suzuki ci sono gia' le sostituisce, cosi' si puo'
 rilanciare l'importatore quando Suzuki aggiorna la gamma senza ritrovarsi
@@ -17,18 +18,20 @@ i modelli doppi.
 
 import io
 import os
+import re
 import sys
 
-INIZIO = "  // ---- SUZUKI (generato, vedi strumenti/importa-foto-suzuki.py) ----"
-FINE = "  // ---- fine SUZUKI ----"
+MARCA = (sys.argv[1] if len(sys.argv) > 1 else "suzuki").lower()
+INIZIO = "  // ---- %s (generato, vedi strumenti/importa-foto-%s.py) ----" % (MARCA.upper(), MARCA)
+FINE = "  // ---- fine %s ----" % MARCA.upper()
 
-ORIGINE = os.path.join("strumenti", "suzuki-generato.ts.txt")
+ORIGINE = os.path.join("strumenti", "%s-generato.ts.txt" % MARCA)
 CATALOGO = os.path.join("src", "data", "motorcycles.ts")
 
 
 def main():
     if not os.path.isfile(ORIGINE):
-        sys.exit("Manca %s: lancia prima strumenti/importa-foto-suzuki.py" % ORIGINE)
+        sys.exit("Manca %s: lancia prima strumenti/importa-foto-%s.py" % (ORIGINE, MARCA))
 
     generato = io.open(ORIGINE, encoding="utf-8").read()
     # Via l'intestazione di commento: nel catalogo ne mettiamo una nostra.

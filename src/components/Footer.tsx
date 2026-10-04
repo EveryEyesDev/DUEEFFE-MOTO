@@ -10,6 +10,12 @@ import { SocialLinks } from './SocialLinks';
 
 
 export const Footer: React.FC = () => {
+  // Le marche che trattiamo: quelle gia' a catalogo per prime, poi le
+  // altre dichiarate in configurazione, senza ripetizioni.
+  const marche = Array.from(
+    new Set([...MOTO_NUOVE.map((m) => m.brand).sort(), ...SITE.brands]),
+  );
+
   return (
     <footer className="bg-[#050507] border-t border-white/10 text-slate-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
@@ -25,17 +31,25 @@ export const Footer: React.FC = () => {
             <SocialLinks variante="icon" invito={null} />
           </div>
 
-          {/* Gamma */}
+          {/*
+            LE MARCHE, NON L'ELENCO DELLE MOTO
+            Qui prima c'era la lista di tutti i modelli nuovi. Con sei moto
+            ci stava; con una cinquantina diventa un muro di nomi che allunga
+            il fondo pagina e non aiuta nessuno a trovare niente. Restano le
+            marche, che e' l'informazione che la gente cerca davvero in
+            fondo a un sito di concessionaria, e portano al catalogo gia'
+            filtrato su quella marca.
+          */}
           <div className="space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white">Moto nuove</h3>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white">Le marche</h3>
             <ul className="space-y-2">
-              {MOTO_NUOVE.map((bike) => (
-                <li key={bike.id}>
+              {marche.map((marca) => (
+                <li key={marca}>
                   <Link
-                    href={`/moto?moto=${encodeURIComponent(bike.id)}`}
+                    href={`/moto?marca=${encodeURIComponent(marca)}`}
                     className="hover:text-white transition-colors"
                   >
-                    {bike.brand} {bike.name}
+                    {marca}
                   </Link>
                 </li>
               ))}

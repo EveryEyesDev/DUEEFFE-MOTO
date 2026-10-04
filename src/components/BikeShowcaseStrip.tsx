@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Motorcycle } from '../types';
 import { MOTO_NUOVE } from '../data/motorcycles';
 import { ArrowRight, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
@@ -50,13 +50,31 @@ export const BikeShowcaseStrip: React.FC<BikeShowcaseStripProps> = ({
   onTrovaLaTua,
 }) => {
   /*
-    QUANTE MOTO IN VETRINA
-    Lo showcase e' un racconto, non il catalogo: ogni schermata occupa tutto
-    lo schermo, quindi oltre una decina di moto diventa una fila
-    interminabile e nessuno arriva in fondo. Qui mostriamo solo le gamme che
-    hanno la scheda completa, e il catalogo vero sta subito sotto.
+    UNA MOTO PER MARCA
+    Lo showcase e' la vetrina, non il catalogo: ogni schermata occupa tutto
+    lo schermo, quindi una fila di trenta moto non la guarda nessuno fino in
+    fondo. Mostriamo una moto per marca, scelta fra quelle che raccontano
+    meglio la gamma, e il catalogo completo sta subito sotto.
+
+    Se una delle scelte non e' disponibile, al suo posto entra la prima
+    moto di quella marca che ha la scheda completa: cosi' la vetrina non
+    resta mai vuota e non va aggiornata a mano quando cambia il catalogo.
   */
-  const moto = MOTO_NUOVE.filter((m) => m.specs.displacementCc !== undefined).slice(0, 8);
+  const moto = useMemo(() => {
+    const preferite = ['moto-morini-x-cape-700', 'suzuki-gsx-8s', 'voge-valico525dsx'];
+    const marche = Array.from(new Set(MOTO_NUOVE.map((m) => m.brand)));
+
+    return marche
+      .map((marca) => {
+        const dellaMarca = MOTO_NUOVE.filter((m) => m.brand === marca);
+        const scelta = dellaMarca.find((m) => preferite.includes(m.id));
+        if (scelta) return scelta;
+        const completa = dellaMarca.find((m) => m.specs.displacementCc !== undefined);
+        return completa ?? dellaMarca[0];
+      })
+      .filter((m): m is Motorcycle => m !== undefined);
+  }, []);
+
   const totale = moto.length;
 
   const pistaRef = useRef<HTMLDivElement>(null);
@@ -130,63 +148,20 @@ export const BikeShowcaseStrip: React.FC<BikeShowcaseStripProps> = ({
     return () => osservatore.disconnect();
   }, [totale]);
 
-  /**
-   * Rotella del mouse: una moto per volta.
-   *
-   * I trackpad mandano decine di impulsi minuscoli al secondo: senza filtro
-   * la striscia schizzerebbe avanti di tre moto alla volta. Accumuliamo gli
-   * impulsi e, superata una soglia, avanziamo di una schermata ignorando il
-   * resto finche' l'animazione non e' finita.
-   */
-  useEffect(() => {
-    const pista = pistaRef.current;
-    if (!pista || tocco) return;
+  /*
+    LA ROTELLA NON LA TOCCHIAMO PIU'
+    Prima la striscia catturava la rotella del mouse e la trasformava in
+    scorrimento orizzontale. Sembra un'idea carina, ma significa che chi
+    sta leggendo la pagina e passa col puntatore sopra lo showcase si
+    ritrova la pagina bloccata e le moto che scorrono al posto suo: non
+    riesce piu' a scendere. E' il motivo per cui sembrava che il sito si
+    inceppasse.
 
-    const SOGLIA = 10;
-    let accumulato = 0;
-    let occupato = false;
-    let sblocca: number | undefined;
-
-    const onWheel = (e: WheelEvent) => {
-      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
-
-      const max = pista.scrollWidth - pista.clientWidth;
-      const avanti = e.deltaY > 0;
-      const puo = avanti ? pista.scrollLeft < max - 2 : pista.scrollLeft > 2;
-      if (!puo) {
-        accumulato = 0;
-        return;
-      }
-
-      e.preventDefault();
-      if (occupato) return;
-
-      accumulato += e.deltaY;
-      if (Math.abs(accumulato) < SOGLIA) return;
-
-      const passo = accumulato > 0 ? 1 : -1;
-      accumulato = 0;
-      occupato = true;
-
-      const prossima = Math.min(
-        Math.max(schermataVicina(pista) + passo, 0),
-        pista.children.length - 1,
-      );
-      vaiA(prossima);
-
-      window.clearTimeout(sblocca);
-      sblocca = window.setTimeout(() => {
-        occupato = false;
-        accumulato = 0;
-      }, 240);
-    };
-
-    pista.addEventListener('wheel', onWheel, { passive: false });
-    return () => {
-      pista.removeEventListener('wheel', onWheel);
-      window.clearTimeout(sblocca);
-    };
-  }, [tocco, vaiA]);
+    Adesso la rotella fa quello che deve: scorre la pagina. Le moto si
+    cambiano con le frecce, trascinando, o con la tastiera. Lo scorrimento
+    orizzontale del trackpad (due dita di lato) continua a funzionare da
+    solo, perche' e' il comportamento normale di un riquadro che scorre.
+  */
 
   /** Trascinamento col mouse, come si sposta una fotografia sul tavolo. */
   useEffect(() => {

@@ -67,7 +67,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-passion',
         name: 'Red Passion',
-        hex: '#b11226',
+        hex: '#c01727',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/rosso-passion/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/rosso-passion/lato-sinistro.webp' },
@@ -125,7 +125,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'bianco-artic',
         name: 'Arctic White',
-        hex: '#f1f4f6',
+        hex: '#eef0f2',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/bianco-artic/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/bianco-artic/lato-sinistro.webp' },
@@ -138,7 +138,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-viper',
         name: 'Viper Black',
-        hex: '#15161a',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/nero-viper/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/nero-viper/lato-sinistro.webp' },
@@ -151,7 +151,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-energy',
         name: 'Energy Red',
-        hex: '#c21f2e',
+        hex: '#c01727',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/rosso-energy/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/rosso-energy/lato-sinistro.webp' },
@@ -223,7 +223,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'verde-jungle',
         name: 'Jungle Green',
-        hex: '#3a4a35',
+        hex: '#2f6b3a',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/alltrhike-450/verde-jungle/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/alltrhike-450/verde-jungle/lato-sinistro.webp' },
@@ -295,7 +295,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio',
         name: 'Smoky Anthracite',
-        hex: '#3b3f45',
+        hex: '#4a4e55',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/seiemmezzo-str/grigio/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/seiemmezzo-str/grigio/lato-sinistro.webp' },
@@ -308,7 +308,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-passion',
         name: 'Red Passion',
-        hex: '#b11226',
+        hex: '#c01727',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/seiemmezzo-str/rosso-passion/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/seiemmezzo-str/rosso-passion/lato-sinistro.webp' },
@@ -435,7 +435,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-garage',
         name: 'Garage Grey',
-        hex: '#54585e',
+        hex: '#4a4e55',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/calibro-bagger/grigio-garage/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/calibro-bagger/grigio-garage/lato-sinistro.webp' },
@@ -499,8 +499,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Giallo',
+        hex: '#e9d70c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-1/angolo-destro.webp' },
@@ -512,8 +512,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#696a68',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-2/angolo-destro.webp' },
@@ -525,8 +525,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#1a1a1e',
+        name: 'Giallo',
+        hex: '#e8d508',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-3/angolo-destro.webp' },
@@ -538,8 +538,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-4',
-        name: 'Livrea 4',
-        hex: '#1a1a1e',
+        name: 'Argento',
+        hex: '#7c7a7a',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-4/angolo-destro.webp' },
@@ -551,8 +551,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-5',
-        name: 'Livrea 5',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#6b6868',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-5/angolo-destro.webp' },
@@ -582,8 +582,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#6c7176',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-1/angolo-destro.webp' },
@@ -595,8 +595,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#717374',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-2/angolo-destro.webp' },
@@ -608,8 +608,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#727679',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-3/angolo-destro.webp' },
@@ -621,8 +621,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-4',
-        name: 'Livrea 4',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#717475',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-4/angolo-destro.webp' },
@@ -634,8 +634,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-5',
-        name: 'Livrea 5',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#707576',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-5/angolo-destro.webp' },
@@ -647,8 +647,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-6',
-        name: 'Livrea 6',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#707374',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-6/angolo-destro.webp' },
@@ -679,7 +679,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-tokyo',
         name: 'BLU TOKYO',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-address-125/blu-tokyo/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-address-125/blu-tokyo/angolo-destro.webp' },
@@ -692,7 +692,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'bianco-ostuni',
         name: 'BIANCO OSTUNI',
-        hex: '#1a1a1e',
+        hex: '#eef0f2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-address-125/bianco-ostuni/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-address-125/bianco-ostuni/angolo-destro.webp' },
@@ -722,8 +722,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#6a6f75',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/angolo-destro.webp' },
@@ -735,8 +735,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Argento',
+        hex: '#a0a4a3',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-2/angolo-destro.webp' },
@@ -748,8 +748,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#6c6f70',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-3/angolo-destro.webp' },
@@ -761,8 +761,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-4',
-        name: 'Livrea 4',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#6f7375',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-4/angolo-destro.webp' },
@@ -774,8 +774,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-5',
-        name: 'Livrea 5',
-        hex: '#1a1a1e',
+        name: 'Argento',
+        hex: '#a0a19f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-5/angolo-destro.webp' },
@@ -787,8 +787,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-6',
-        name: 'Livrea 6',
-        hex: '#1a1a1e',
+        name: 'Blu',
+        hex: '#0c2a49',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-6/angolo-destro.webp' },
@@ -819,7 +819,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-san-diego',
         name: 'BLU SAN DIEGO',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/blu-san-diego/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/blu-san-diego/angolo-destro.webp' },
@@ -832,7 +832,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-pechino',
         name: 'ROSSO PECHINO',
-        hex: '#1a1a1e',
+        hex: '#c01727',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/rosso-pechino/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/rosso-pechino/angolo-destro.webp' },
@@ -845,7 +845,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-nairobi',
         name: 'NERO NAIROBI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/nero-nairobi/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/nero-nairobi/angolo-destro.webp' },
@@ -858,7 +858,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-capri',
         name: 'BLU CAPRI',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/blu-capri/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/blu-capri/angolo-destro.webp' },
@@ -871,7 +871,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'argento-austin',
         name: 'ARGENTO AUSTIN',
-        hex: '#1a1a1e',
+        hex: '#b7bcc2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/argento-austin/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/argento-austin/angolo-destro.webp' },
@@ -884,7 +884,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-houston',
         name: 'NERO HOUSTON',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/nero-houston/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/nero-houston/angolo-destro.webp' },
@@ -914,8 +914,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Blu',
+        hex: '#4455b2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-1/angolo-destro.webp' },
@@ -927,8 +927,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#717778',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-2/angolo-destro.webp' },
@@ -940,8 +940,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#737578',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-3/angolo-destro.webp' },
@@ -953,8 +953,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-4',
-        name: 'Livrea 4',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#747677',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-4/angolo-destro.webp' },
@@ -966,8 +966,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-5',
-        name: 'Livrea 5',
-        hex: '#1a1a1e',
+        name: 'Giallo',
+        hex: '#d9ca07',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-5/angolo-destro.webp' },
@@ -979,8 +979,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-6',
-        name: 'Livrea 6',
-        hex: '#1a1a1e',
+        name: 'Rosso',
+        hex: '#ef5769',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-6/angolo-destro.webp' },
@@ -1011,7 +1011,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-miami',
         name: 'BLU MIAMI',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8r/blu-miami/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8r/blu-miami/angolo-destro.webp' },
@@ -1024,7 +1024,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'bianco-oslo',
         name: 'BIANCO OSLO',
-        hex: '#1a1a1e',
+        hex: '#eef0f2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8r/bianco-oslo/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8r/bianco-oslo/angolo-destro.webp' },
@@ -1037,7 +1037,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-parigi',
         name: 'NERO PARIGI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8r/nero-parigi/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8r/nero-parigi/angolo-destro.webp' },
@@ -1050,7 +1050,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-miami',
         name: 'BLU MIAMI',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8r/blu-miami/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8r/blu-miami/angolo-destro.webp' },
@@ -1081,7 +1081,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-zante',
         name: 'BLU ZANTE',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/blu-zante/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/blu-zante/angolo-destro.webp' },
@@ -1094,7 +1094,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-berlino',
         name: 'GRIGIO BERLINO',
-        hex: '#1a1a1e',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/angolo-destro.webp' },
@@ -1107,7 +1107,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/angolo-destro.webp' },
@@ -1119,8 +1119,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-4',
-        name: 'Livrea 4',
-        hex: '#1a1a1e',
+        name: 'Rosso',
+        hex: '#b10725',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/livrea-4/angolo-destro.webp' },
@@ -1150,8 +1150,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Giallo',
+        hex: '#f6e904',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4s/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4s/livrea-1/angolo-destro.webp' },
@@ -1163,8 +1163,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#6e6b68',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4s/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4s/livrea-2/angolo-destro.webp' },
@@ -1194,8 +1194,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Blu',
+        hex: '#6e94b4',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4sm/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4sm/livrea-1/angolo-destro.webp' },
@@ -1207,8 +1207,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Argento',
+        hex: '#888b8e',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4sm/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4sm/livrea-2/angolo-destro.webp' },
@@ -1239,7 +1239,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-miami',
         name: 'BLU MIAMI',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000-evo/blu-miami/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000-evo/blu-miami/angolo-destro.webp' },
@@ -1252,7 +1252,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-madrid',
         name: 'ROSSO MADRID',
-        hex: '#1a1a1e',
+        hex: '#c01727',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000-evo/rosso-madrid/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000-evo/rosso-madrid/angolo-destro.webp' },
@@ -1265,7 +1265,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000-evo/nero-dubai/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000-evo/nero-dubai/angolo-destro.webp' },
@@ -1295,8 +1295,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Giallo',
+        hex: '#6d4b09',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8t/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8t/livrea-1/angolo-destro.webp' },
@@ -1308,8 +1308,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Giallo',
+        hex: '#6c4b0a',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8t/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8t/livrea-2/angolo-destro.webp' },
@@ -1321,8 +1321,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#1a1a1e',
+        name: 'Giallo',
+        hex: '#6d4b09',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8t/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8t/livrea-3/angolo-destro.webp' },
@@ -1352,8 +1352,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#696e70',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8tt/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8tt/livrea-1/angolo-destro.webp' },
@@ -1365,8 +1365,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#6f7172',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8tt/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8tt/livrea-2/angolo-destro.webp' },
@@ -1396,8 +1396,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Blu',
+        hex: '#06164c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-r1000r/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-r1000r/livrea-1/angolo-destro.webp' },
@@ -1409,8 +1409,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Rosso',
+        hex: '#903138',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-r1000r/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-r1000r/livrea-2/angolo-destro.webp' },
@@ -1422,8 +1422,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#1a1a1e',
+        name: 'Blu',
+        hex: '#0d2d47',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-r1000r/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-r1000r/livrea-3/angolo-destro.webp' },
@@ -1454,7 +1454,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-miami',
         name: 'BLU MIAMI',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r-evo/blu-miami/lato-destro.webp' },
         ],
@@ -1462,7 +1462,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'bianco-oslo',
         name: 'BIANCO OSLO',
-        hex: '#1a1a1e',
+        hex: '#eef0f2',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r-evo/bianco-oslo/lato-destro.webp' },
         ],
@@ -1470,7 +1470,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-parigi',
         name: 'NERO PARIGI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r-evo/nero-parigi/lato-destro.webp' },
         ],
@@ -1496,7 +1496,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-san-diego',
         name: 'BLU SAN DIEGO',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8s-evo/blu-san-diego/lato-destro.webp' },
         ],
@@ -1504,7 +1504,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-pechino',
         name: 'ROSSO PECHINO',
-        hex: '#1a1a1e',
+        hex: '#c01727',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8s-evo/rosso-pechino/lato-destro.webp' },
         ],
@@ -1512,7 +1512,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-nairobi',
         name: 'NERO NAIROBI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8s-evo/nero-nairobi/lato-destro.webp' },
         ],
@@ -1537,8 +1537,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Blu',
+        hex: '#03508e',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-sv-7gx/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-sv-7gx/livrea-1/angolo-destro.webp' },
@@ -1550,8 +1550,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Argento',
+        hex: '#878685',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-sv-7gx/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-sv-7gx/livrea-2/angolo-destro.webp' },
@@ -1563,8 +1563,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#1a1a1e',
+        name: 'Argento',
+        hex: '#808081',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-sv-7gx/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-sv-7gx/livrea-3/angolo-destro.webp' },
@@ -1595,7 +1595,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-zante',
         name: 'BLU ZANTE',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-r125/blu-zante/lato-destro.webp' },
         ],
@@ -1603,7 +1603,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-detroit',
         name: 'NERO DETROIT',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-r125/nero-detroit/lato-destro.webp' },
         ],
@@ -1629,7 +1629,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-zante',
         name: 'BLU ZANTE',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-plus/blu-zante/lato-destro.webp' },
         ],
@@ -1637,7 +1637,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-berlino',
         name: 'GRIGIO BERLINO',
-        hex: '#1a1a1e',
+        hex: '#4a4e55',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-plus/grigio-berlino/lato-destro.webp' },
         ],
@@ -1645,7 +1645,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-plus/nero-dubai/lato-destro.webp' },
         ],
@@ -1671,7 +1671,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-zante',
         name: 'BLU ZANTE',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-top/blu-zante/lato-destro.webp' },
         ],
@@ -1679,7 +1679,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-berlino',
         name: 'GRIGIO BERLINO',
-        hex: '#1a1a1e',
+        hex: '#4a4e55',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-top/grigio-berlino/lato-destro.webp' },
         ],
@@ -1687,7 +1687,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-top/nero-dubai/lato-destro.webp' },
         ],
@@ -1713,7 +1713,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'verde-rio',
         name: 'VERDE RIO',
-        hex: '#1a1a1e',
+        hex: '#2f6b3a',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400-comfort/verde-rio/lato-destro.webp' },
         ],
@@ -1721,7 +1721,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-las-vegas',
         name: 'BLU LAS VEGAS',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400-comfort/blu-las-vegas/lato-destro.webp' },
         ],
@@ -1729,7 +1729,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-parigi',
         name: 'NERO PARIGI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400-comfort/nero-parigi/lato-destro.webp' },
         ],
@@ -1755,7 +1755,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'bianco-cortina',
         name: 'BIANCO CORTINA',
-        hex: '#1a1a1e',
+        hex: '#eef0f2',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-sv-7gx-bianco-cortina/bianco-cortina/lato-destro.webp' },
         ],
@@ -1781,7 +1781,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-zante',
         name: 'BLU ZANTE',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s125/blu-zante/lato-destro.webp' },
         ],
@@ -1789,7 +1789,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-marrakech',
         name: 'ROSSO MARRAKECH',
-        hex: '#1a1a1e',
+        hex: '#c01727',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s125/rosso-marrakech/lato-destro.webp' },
         ],
@@ -1815,7 +1815,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'giallo-petra',
         name: 'GIALLO PETRA',
-        hex: '#1a1a1e',
+        hex: '#e3c222',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-rm-z450/giallo-petra/lato-destro.webp' },
         ],
@@ -1840,8 +1840,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#1a1a1e',
+        name: 'Blu',
+        hex: '#0c223d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-1/angolo-destro.webp' },
@@ -1853,8 +1853,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#1a1a1e',
+        name: 'Grigio',
+        hex: '#6b6c6b',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-2/angolo-destro.webp' },
@@ -1866,8 +1866,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#1a1a1e',
+        name: 'Argento',
+        hex: '#7e7f7f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-3/angolo-destro.webp' },
@@ -1879,8 +1879,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-4',
-        name: 'Livrea 4',
-        hex: '#1a1a1e',
+        name: 'Blu',
+        hex: '#263495',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-4/angolo-destro.webp' },
@@ -1911,7 +1911,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-pittsburgh',
         name: 'GRIGIO PITTSBURGH',
-        hex: '#1a1a1e',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-hayabusa/grigio-pittsburgh/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-hayabusa/grigio-pittsburgh/angolo-destro.webp' },
@@ -1924,7 +1924,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-rodi',
         name: 'BLU RODI',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-hayabusa/blu-rodi/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-hayabusa/blu-rodi/angolo-destro.webp' },
@@ -1937,7 +1937,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-memphis',
         name: 'NERO MEMPHIS',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-hayabusa/nero-memphis/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-hayabusa/nero-memphis/angolo-destro.webp' },
@@ -1968,7 +1968,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-montreal',
         name: 'BLU MONTREAL',
-        hex: '#1a1a1e',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/angolo-destro.webp' },
@@ -1981,7 +1981,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'bianco-cortina',
         name: 'BIANCO CORTINA',
-        hex: '#1a1a1e',
+        hex: '#eef0f2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/bianco-cortina/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/bianco-cortina/angolo-destro.webp' },
@@ -1994,7 +1994,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#1a1a1e',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/angolo-destro.webp' },
@@ -2007,7 +2007,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-seattle',
         name: 'GRIGIO SEATTLE',
-        hex: '#1a1a1e',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/grigio-seattle/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/grigio-seattle/angolo-destro.webp' },
@@ -2019,8 +2019,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-5',
-        name: 'Livrea 5',
-        hex: '#1a1a1e',
+        name: 'Argento',
+        hex: '#838687',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/livrea-5/angolo-destro.webp' },
@@ -2036,6 +2036,638 @@ export const MOTO_NUOVE: Motorcycle[] = [
     features: [],
   },
   // ---- fine SUZUKI ----
+  // ---- VOGE (generato, vedi strumenti/importa-foto-voge.py) ----
+  {
+    id: 'voge-brivido-125r',
+    brand: 'Voge',
+    name: 'Brivido 125R',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Naked',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-brivido-125r/unica/lato-destro.webp',
+    roadImage: '/moto/voge-brivido-125r/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-brivido-125r/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-brivido-125s',
+    brand: 'Voge',
+    name: 'Brivido 125S',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Naked',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-brivido-125s/unica/lato-destro.webp',
+    roadImage: '/moto/voge-brivido-125s/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-brivido-125s/unica/lato-destro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-brivido-125s/unica/angolo-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-brivido-625r',
+    brand: 'Voge',
+    name: 'Brivido 625R',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Naked',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-brivido-625r/unica/lato-destro.webp',
+    roadImage: '/moto/voge-brivido-625r/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-brivido-625r/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-sfida-sr1-adv',
+    brand: 'Voge',
+    name: 'SFIDA SR1 ADV',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-sfida-sr1-adv/unica/lato-destro.webp',
+    roadImage: '/moto/voge-sfida-sr1-adv/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr1-adv/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-sfida-sr1',
+    brand: 'Voge',
+    name: 'SFIDA SR1',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-sfida-sr1/unica/lato-destro.webp',
+    roadImage: '/moto/voge-sfida-sr1/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr1/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-sfida-sr16-125-air',
+    brand: 'Voge',
+    name: 'SFIDA SR16 125 AIR',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-sfida-sr16-125-air/unica/lato-destro.webp',
+    roadImage: '/moto/voge-sfida-sr16-125-air/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16-125-air/unica/lato-destro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-sfida-sr16-125-air/unica/angolo-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-sfida-sr16-200',
+    brand: 'Voge',
+    name: 'SFIDA SR16 200',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-sfida-sr16-200/unica/lato-destro.webp',
+    roadImage: '/moto/voge-sfida-sr16-200/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16-200/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-sfida-sr16',
+    brand: 'Voge',
+    name: 'SFIDA SR16 125',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-sfida-sr16/unica/lato-destro.webp',
+    roadImage: '/moto/voge-sfida-sr16/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-sfida-sr2-adv',
+    brand: 'Voge',
+    name: 'SFIDA SR2 ADV',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-sfida-sr2-adv/unica/lato-destro.webp',
+    roadImage: '/moto/voge-sfida-sr2-adv/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr2-adv/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-sfida-sr3-2',
+    brand: 'Voge',
+    name: 'SFIDA SR3',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-sfida-sr3-2/unica/lato-destro.webp',
+    roadImage: '/moto/voge-sfida-sr3-2/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr3-2/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-sfida-sr4-max',
+    brand: 'Voge',
+    name: 'SFIDA SR4 MAX',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-sfida-sr4-max/unica/lato-destro.webp',
+    roadImage: '/moto/voge-sfida-sr4-max/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr4-max/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-sfida-sr450x',
+    brand: 'Voge',
+    name: 'SFIDA SR450X',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-sfida-sr450x/unica/lato-destro.webp',
+    roadImage: '/moto/voge-sfida-sr450x/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr450x/unica/lato-destro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-sfida-sr450x/unica/angolo-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-trofeo-300ac',
+    brand: 'Voge',
+    name: 'Trofeo 300AC',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Classic',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-trofeo-300ac/unica/lato-destro.webp',
+    roadImage: '/moto/voge-trofeo-300ac/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-300ac/unica/lato-destro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-trofeo-300ac/unica/angolo-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-trofeo-300acx-scrambler',
+    brand: 'Voge',
+    name: 'TROFEO 300ACX Scrambler',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Classic',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-trofeo-300acx-scrambler/unica/lato-destro.webp',
+    roadImage: '/moto/voge-trofeo-300acx-scrambler/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-300acx-scrambler/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-trofeo-350ac',
+    brand: 'Voge',
+    name: 'Trofeo 350AC',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Classic',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-trofeo-350ac/unica/lato-destro.webp',
+    roadImage: '/moto/voge-trofeo-350ac/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-350ac/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-trofeo-500ac',
+    brand: 'Voge',
+    name: 'Trofeo 500AC',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Classic',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-trofeo-500ac/unica/lato-destro.webp',
+    roadImage: '/moto/voge-trofeo-500ac/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-500ac/unica/lato-destro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-trofeo-500ac/unica/angolo-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-trofeo-525acx',
+    brand: 'Voge',
+    name: 'Trofeo 525 ACX Scrambler',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Classic',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-trofeo-525acx/unica/lato-destro.webp',
+    roadImage: '/moto/voge-trofeo-525acx/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-525acx/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-valico-300-rally',
+    brand: 'Voge',
+    name: 'Valico 300 RALLY',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-valico-300-rally/unica/lato-destro.webp',
+    roadImage: '/moto/voge-valico-300-rally/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-300-rally/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-valico-625dsx',
+    brand: 'Voge',
+    name: 'Valico 625DSX',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-valico-625dsx/unica/lato-destro.webp',
+    roadImage: '/moto/voge-valico-625dsx/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-625dsx/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-valico-800rally',
+    brand: 'Voge',
+    name: 'Valico 800DSX RALLY',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-valico-800rally/unica/lato-destro.webp',
+    roadImage: '/moto/voge-valico-800rally/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-800rally/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-valico-900dsx',
+    brand: 'Voge',
+    name: 'Valico 900DSX',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-valico-900dsx/unica/lato-destro.webp',
+    roadImage: '/moto/voge-valico-900dsx/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-900dsx/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-valico525dsx',
+    brand: 'Voge',
+    name: 'Valico 525DSX',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-valico525dsx/unica/lato-destro.webp',
+    roadImage: '/moto/voge-valico525dsx/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico525dsx/unica/lato-destro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-valico525dsx/unica/angolo-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-xwolf-300',
+    brand: 'Voge',
+    name: 'XWOLF 300',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-xwolf-300/unica/lato-destro.webp',
+    roadImage: '/moto/voge-xwolf-300/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-xwolf-300/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  {
+    id: 'voge-xwolf-550',
+    brand: 'Voge',
+    name: 'XWOLF 550',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/voge-xwolf-550/unica/lato-destro.webp',
+    roadImage: '/moto/voge-xwolf-550/in-strada.webp',
+    colorways: [
+      {
+        slug: 'unica',
+        name: 'Livrea ufficiale',
+        hex: '#1a1a1e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-xwolf-550/unica/lato-destro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {},
+    features: [],
+  },
+  // ---- fine VOGE ----
 ];
 
 /**

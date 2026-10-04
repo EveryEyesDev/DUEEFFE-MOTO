@@ -82,6 +82,8 @@ function Contenuto() {
         />
 
         <MotorcycleShowcase
+          // Il fondo pagina porta qui gia' filtrato sulla marca scelta.
+          marcaIniziale={searchParams.get('marca') ?? undefined}
           selectedBike={selectedBike}
           onSelectBike={setSelectedBike}
           onSelectForFinancing={handleSelectForFinancing}

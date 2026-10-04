@@ -6,6 +6,7 @@ import { MOTO_NUOVE, MOTO_USATE } from '../data/motorcycles';
 import { BikeCard } from './BikeCard';
 import { BikeGallery } from './BikeGallery';
 import {
+  Search,
   Gauge,
   Zap,
   Weight,
@@ -23,6 +24,8 @@ import { SITE } from '../config/site';
 import { formatEuro, formatKm, formatNumero } from '../utils/format';
 
 interface MotorcycleShowcaseProps {
+  /** Marca su cui aprire il catalogo, se si arriva da un collegamento mirato. */
+  marcaIniziale?: string;
   selectedBike: Motorcycle;
   onSelectBike: (bike: Motorcycle) => void;
   onSelectForFinancing: (bike: Motorcycle) => void;
@@ -47,33 +50,73 @@ const valueOr = (value: number | string | undefined, unit = ''): string => {
 };
 
 export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
+  marcaIniziale,
   selectedBike,
   onSelectBike,
   onSelectForFinancing,
 }) => {
   const [reparto, setReparto] = useState<BikeCondition>('nuovo');
   const [categoria, setCategoria] = useState<BikeCategory>('all');
-  const [marca, setMarca] = useState<string>('tutte');
+  const [marca, setMarca] = useState<string>(marcaIniziale ?? 'tutte');
+  const [fascia, setFascia] = useState<string>('tutte');
+  const [cerca, setCerca] = useState('');
 
   const elenco = reparto === 'nuovo' ? MOTO_NUOVE : MOTO_USATE;
 
   /*
-    FILTRO PER MARCA
+    I FILTRI
     Con una gamma sola bastava la categoria. Adesso che a catalogo ci sono
-    decine di modelli di marche diverse, chi arriva cercando una Suzuki non
-    deve scorrere tutto: le marche le ricaviamo da quello che c'e'
-    davvero in elenco, cosi' il filtro non mostra mai una scelta vuota.
+    decine di modelli di marche diverse, servono piu' strade per arrivare
+    alla moto giusta: la marca, il tipo, la fascia di prezzo e la ricerca
+    per nome, che e' quella che usa chi sa gia' cosa vuole.
+
+    Marche e categorie non sono scritte a mano: le ricaviamo da quello che
+    c'e' davvero in elenco, cosi' non si offre mai un filtro che non
+    seleziona niente.
   */
   const marche = Array.from(new Set(elenco.map((b) => b.brand))).sort();
 
+  const categorieDisponibili = CATEGORIES.filter(
+    (c) => c.key === 'all' || elenco.some((b) => b.category === c.key),
+  );
+
+  /*
+    LE FASCE DI PREZZO
+    Una moto senza prezzo pubblicato non puo' finire in nessuna fascia: la
+    mostriamo solo quando non si sta filtrando per prezzo. Meglio non
+    farla comparire che farla comparire nella fascia sbagliata.
+  */
+  const FASCE: { key: string; label: string; dentro: (p?: number) => boolean }[] = [
+    { key: 'tutte', label: 'Tutti i prezzi', dentro: () => true },
+    { key: 'fino5', label: 'Fino a 5.000 €', dentro: (p) => p !== undefined && p < 5000 },
+    { key: '5a10', label: '5.000 – 10.000 €', dentro: (p) => p !== undefined && p >= 5000 && p < 10000 },
+    { key: 'oltre10', label: 'Oltre 10.000 €', dentro: (p) => p !== undefined && p >= 10000 },
+  ];
+  const fasciaScelta = FASCE.find((f) => f.key === fascia) ?? FASCE[0];
+  const quanteConPrezzo = elenco.filter((b) => b.price !== undefined).length;
+
+  const testo = cerca.trim().toLowerCase();
   const moto = elenco.filter(
     (b) =>
       (marca === 'tutte' || b.brand === marca) &&
-      (categoria === 'all' || b.category === categoria),
+      (categoria === 'all' || b.category === categoria) &&
+      fasciaScelta.dentro(b.price) &&
+      (testo === '' ||
+        `${b.brand} ${b.name} ${b.categoryLabel}`.toLowerCase().includes(testo)),
   );
 
-  // Cambiando reparto o marca si riparte da tutte le categorie: altrimenti
-  // si resta su un filtro che non seleziona piu' niente.
+  const filtriAttivi =
+    marca !== 'tutte' || categoria !== 'all' || fascia !== 'tutte' || testo !== '';
+
+  const azzeraFiltri = () => {
+    setMarca('tutte');
+    setCategoria('all');
+    setFascia('tutte');
+    setCerca('');
+  };
+
+  // Cambiando marca si riparte da tutte le categorie: altrimenti si resta
+  // su un filtro che per quella marca non seleziona piu' niente.
   const cambiaMarca = (nuova: string) => {
     setMarca(nuova);
     setCategoria('all');
@@ -163,45 +206,111 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
           </div>
         )}
 
-        {/* Filtri per marca */}
-        {marche.length > 1 && (
-          <div className="flex items-center justify-start sm:justify-center gap-1.5 overflow-x-auto pb-4 mb-3">
-            {['tutte', ...marche].map((m) => (
-              <button
-                key={m}
-                onClick={() => cambiaMarca(m)}
-                aria-pressed={marca === m}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg whitespace-nowrap transition-all ${
-                  marca === m
-                    ? 'bg-white text-slate-900'
-                    : 'bg-transparent text-slate-400 hover:text-white border border-white/10'
-                }`}
-              >
-                {m === 'tutte' ? 'Tutte le marche' : m}
-              </button>
-            ))}
-          </div>
-        )}
+        {/*
+          LA BARRA DEI FILTRI
+          Tre file di pulsanti e una casella di ricerca. L'ordine non e'
+          casuale: prima la marca, che e' il primo modo in cui la gente
+          pensa a una moto, poi il tipo, poi il prezzo. Sotto, il conto di
+          quante moto restano, cosi' si capisce subito l'effetto di quello
+          che si e' scelto.
+        */}
+        <div className="mb-8 space-y-3">
+          {/* Marca */}
+          {marche.length > 1 && (
+            <div className="flex items-center justify-start sm:justify-center gap-1.5 overflow-x-auto pb-1">
+              {['tutte', ...marche].map((m) => (
+                <button
+                  key={m}
+                  onClick={() => cambiaMarca(m)}
+                  aria-pressed={marca === m}
+                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg whitespace-nowrap transition-all ${
+                    marca === m
+                      ? 'bg-white text-slate-900'
+                      : 'bg-transparent text-slate-400 hover:text-white border border-white/10'
+                  }`}
+                >
+                  {m === 'tutte' ? 'Tutte le marche' : m}
+                </button>
+              ))}
+            </div>
+          )}
 
-        {/* Filtri per categoria */}
-        {moto.length > 0 && (
-          <div className="flex items-center justify-start sm:justify-center gap-1.5 overflow-x-auto pb-4 mb-8">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.key}
-                onClick={() => setCategoria(cat.key)}
-                aria-pressed={categoria === cat.key}
-                className={`px-4 py-2 text-xs font-medium rounded-lg whitespace-nowrap transition-all ${
-                  categoria === cat.key
-                    ? 'bg-[#D00020] text-white shadow-lg shadow-red-900/40 font-semibold'
-                    : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+          {/* Tipo di moto */}
+          {categorieDisponibili.length > 2 && (
+            <div className="flex items-center justify-start sm:justify-center gap-1.5 overflow-x-auto pb-1">
+              {categorieDisponibili.map((cat) => (
+                <button
+                  key={cat.key}
+                  onClick={() => setCategoria(cat.key)}
+                  aria-pressed={categoria === cat.key}
+                  className={`px-4 py-2 text-xs font-medium rounded-lg whitespace-nowrap transition-all ${
+                    categoria === cat.key
+                      ? 'bg-[#D00020] text-white shadow-lg shadow-red-900/40 font-semibold'
+                      : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Prezzo e ricerca */}
+          <div className="flex flex-wrap items-center justify-start sm:justify-center gap-1.5">
+            {quanteConPrezzo > 0 &&
+              FASCE.map((f) => (
+                <button
+                  key={f.key}
+                  onClick={() => setFascia(f.key)}
+                  aria-pressed={fascia === f.key}
+                  className={`px-4 py-2 text-xs font-medium rounded-lg whitespace-nowrap transition-all ${
+                    fascia === f.key
+                      ? 'bg-white/90 text-slate-900 font-semibold'
+                      : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5'
+                  }`}
+                >
+                  {f.label}
+                </button>
+              ))}
+
+            <label className="relative">
+              <span className="sr-only">Cerca una moto</span>
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500" />
+              <input
+                type="search"
+                value={cerca}
+                onChange={(e) => setCerca(e.target.value)}
+                placeholder="Cerca per nome"
+                className="w-48 pl-9 pr-3 py-2 text-xs rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:border-[#D00020] transition-colors"
+              />
+            </label>
           </div>
-        )}
+
+          {/* Quante ne restano */}
+          <p className="text-center text-xs text-slate-500">
+            {moto.length === elenco.length
+              ? `${elenco.length} modelli`
+              : `${moto.length} di ${elenco.length} modelli`}
+            {filtriAttivi && (
+              <>
+                {' · '}
+                <button
+                  onClick={azzeraFiltri}
+                  className="text-[#D00020] font-semibold hover:underline"
+                >
+                  azzera i filtri
+                </button>
+              </>
+            )}
+          </p>
+
+          {fascia !== 'tutte' && quanteConPrezzo < elenco.length && (
+            <p className="text-center text-[11px] text-slate-500">
+              Di {elenco.length - quanteConPrezzo} modelli non abbiamo ancora pubblicato il
+              prezzo: non compaiono finche' filtri per fascia.
+            </p>
+          )}
+        </div>
 
         {/* Griglia del catalogo */}
         {moto.length > 0 ? (
