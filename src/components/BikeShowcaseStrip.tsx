@@ -49,7 +49,14 @@ export const BikeShowcaseStrip: React.FC<BikeShowcaseStripProps> = ({
   onApriMoto,
   onTrovaLaTua,
 }) => {
-  const moto = MOTO_NUOVE;
+  /*
+    QUANTE MOTO IN VETRINA
+    Lo showcase e' un racconto, non il catalogo: ogni schermata occupa tutto
+    lo schermo, quindi oltre una decina di moto diventa una fila
+    interminabile e nessuno arriva in fondo. Qui mostriamo solo le gamme che
+    hanno la scheda completa, e il catalogo vero sta subito sotto.
+  */
+  const moto = MOTO_NUOVE.filter((m) => m.specs.displacementCc !== undefined).slice(0, 8);
   const totale = moto.length;
 
   const pistaRef = useRef<HTMLDivElement>(null);
