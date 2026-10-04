@@ -21,6 +21,10 @@ COSA CONSIDERA SBAGLIATO
     il segno di uno scatto scontornato su fondo pieno;
   - scatto piatto: pochissima varieta' di colore, tipico dei dettagli
     ravvicinati e delle immagini di sfondo;
+  - superficie senza dettaglio: una fotografia vera ha trama dappertutto
+    (asfalto, cielo, case), mentre uno scatto da studio ha grandi campiture
+    lisce. E' la prova che smaschera i fondi diagonali dei costruttori, che
+    hanno colori vivaci e quindi superano gli altri controlli;
   - inquadratura stretta: piu' alta che larga, o quasi quadrata, che nel
     riquadro del catalogo si vede male.
 """
@@ -41,6 +45,23 @@ QUOTA_BIANCO = 0.30
 VARIETA_MINIMA = 0.055
 # Sotto questa proporzione l'inquadratura e' troppo stretta per il catalogo.
 PROPORZIONE_MINIMA = 1.25
+# Oltre questa quota di superficie liscia non e' una scena, e' uno studio.
+QUOTA_LISCIA = 0.46
+
+
+def superficie_liscia(a):
+    """
+    Quanta parte dell'immagine e' senza dettaglio.
+
+    Misuriamo quanto cambia il colore fra un pixel e il vicino. In una
+    fotografia vera cambia dappertutto, perche' ci sono asfalto, ghiaia,
+    foglie, nuvole. In uno scatto da studio il fondo e' liscio e il valore
+    resta vicino a zero su grandi superfici.
+    """
+    grigio = a.mean(axis=2)
+    orizzontale = np.abs(np.diff(grigio, axis=1))[:-1, :]
+    verticale = np.abs(np.diff(grigio, axis=0))[:, :-1]
+    return float(((orizzontale + verticale) < 4).mean())
 
 
 def esamina(percorso):
@@ -65,6 +86,10 @@ def esamina(percorso):
 
     if proporzione < PROPORZIONE_MINIMA:
         motivi.append("inquadratura stretta (%.2f:1)" % proporzione)
+
+    liscia = superficie_liscia(a)
+    if liscia > QUOTA_LISCIA:
+        motivi.append("senza trama (%.0f%% liscio)" % (liscia * 100))
 
     return motivi
 

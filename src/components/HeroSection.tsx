@@ -14,7 +14,7 @@ const HIGHLIGHTS = [
   {
     icon: Bike,
     value: `${SITE.brands.length} marchi`,
-    label: SITE.primaryBrands.join(' · ') + ' e altri',
+    label: SITE.primaryBrands.join(' · '),
   },
   {
     icon: Rotate3d,
@@ -67,7 +67,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreCatalog }) =>
 
         {/* Descrizione */}
         <p className="max-w-2xl text-base sm:text-lg text-slate-400 font-normal leading-relaxed mb-10 text-balance">
-          Concessionaria multimarca: {SITE.primaryBrands.join(', ')} e altri. Vendita e
+          Concessionaria ufficiale {SITE.primaryBrands.join(', ')}. Vendita e
           assistenza con la cura di chi guida davvero. Guarda la gamma con{' '}
           <strong className="text-white font-semibold">foto e schede tecniche</strong>, poi vieni
           a vederle dal vivo in salone.

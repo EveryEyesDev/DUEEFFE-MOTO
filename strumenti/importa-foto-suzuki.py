@@ -209,21 +209,51 @@ def indirizzo360(slug, livrea, fotogramma):
     return "%s/modelli/360/%s/img/data/grade1/color%d/%s.webp" % (BASE, slug, livrea, fotogramma)
 
 
+def forme_del_nome(slug):
+    """
+    I modi in cui Suzuki puo' aver scritto il nome del modello nel giro a
+    360 gradi.
+
+    Di norma e' lo stesso della pagina ("gsx-8s"), ma non sempre: il
+    Burgman 400 sta sotto "burgman400" senza trattini e la V-Strom 800DE
+    sotto "v-strom800de", con il trattino solo nel nome della famiglia.
+    Non c'e' una regola, quindi le proviamo nell'ordine dal piu' probabile
+    al meno, e ci fermiamo alla prima che risponde.
+    """
+    forme = [slug, slug.replace("-", "")]
+    # "v-strom-800de" -> "v-strom800de": via solo i trattini dopo il primo.
+    pezzi = slug.split("-")
+    if len(pezzi) > 2:
+        forme.append(pezzi[0] + "-" + "".join(pezzi[1:]))
+        forme.append("-".join(pezzi[:2]) + "".join(pezzi[2:]))
+    fuori = []
+    for f in forme:
+        if f not in fuori:
+            fuori.append(f)
+    return fuori
+
+
 def giro360(slug):
     """
-    Quante livree ha il giro a 360 gradi di questo modello, zero se non c'e'.
+    Il nome giusto del giro a 360 gradi e quante livree ha.
 
-    Non esiste un elenco da leggere: le cartelle sono numerate di seguito,
-    quindi proviamo finche' il sito risponde.
+    Torna (nome, quante). Se il giro non esiste in nessuna forma del nome,
+    torna (slug, 0).
     """
-    quante = 0
-    for n in range(1, 13):
+    for forma in forme_del_nome(slug):
         try:
-            scarica(indirizzo360(slug, n, "04"), tentativi=1)
+            scarica(indirizzo360(forma, 1, "04"), tentativi=1)
         except RuntimeError:
-            break
-        quante = n
-    return quante
+            continue
+        quante = 1
+        for n in range(2, 13):
+            try:
+                scarica(indirizzo360(forma, n, "04"), tentativi=1)
+            except RuntimeError:
+                break
+            quante = n
+        return forma, quante
+    return slug, 0
 
 
 SEGNO = (1, 2, 3)
@@ -449,7 +479,7 @@ def main():
 
         nome = titolo_di(html, slug)
         nomi = nomi_livree(html)
-        quante = giro360(slug)
+        forma360, quante = giro360(slug)
 
         if a.elenca:
             fonte = "giro 360, %d livree" % quante if quante else "solo foto colore"
@@ -464,7 +494,7 @@ def main():
                 fatte = []
                 for vista, fotogramma in VISTE.items():
                     try:
-                        dati = scarica(indirizzo360(slug, n, fotogramma), tentativi=2)
+                        dati = scarica(indirizzo360(forma360, n, fotogramma), tentativi=2)
                     except RuntimeError:
                         continue
                     out = os.path.join(DESTINAZIONE, cartella, slug_livrea, vista + ".webp")

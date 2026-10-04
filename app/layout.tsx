@@ -3,7 +3,7 @@ import './globals.css';
 import { SITE } from '../src/config/site';
 
 const TITLE = `${SITE.brandName} | Concessionaria e officina moto a ${SITE.address.city} (${SITE.address.provinceName})`;
-const DESCRIPTION = `${SITE.legalName}: concessionaria ${SITE.primaryBrands.join(', ')} e altri marchi a ${SITE.address.city}, ${SITE.address.provinceName}. Vendita moto, officina e assistenza. ${SITE.address.street}. Tel. ${SITE.phone.display}.`;
+const DESCRIPTION = `${SITE.legalName}: concessionaria ${SITE.primaryBrands.join(', ')} a ${SITE.address.city}, ${SITE.address.provinceName}. Vendita moto, officina e assistenza. ${SITE.address.street}. Tel. ${SITE.phone.display}.`;
 
 export const metadata: Metadata = {
   title: TITLE,

@@ -41,7 +41,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'bianco-carrara',
         name: 'Carrara White',
-        hex: '#eef0f2',
+        hex: '#cecece',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/bianco-carrara/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/bianco-carrara/lato-sinistro.webp' },
@@ -54,7 +54,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-ebony',
         name: 'Black Ebony',
-        hex: '#141418',
+        hex: '#3c3b39',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/nero-ebony/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/nero-ebony/lato-sinistro.webp' },
@@ -67,7 +67,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-passion',
         name: 'Red Passion',
-        hex: '#c01727',
+        hex: '#b73f3c',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/rosso-passion/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/rosso-passion/lato-sinistro.webp' },
@@ -125,7 +125,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'bianco-artic',
         name: 'Arctic White',
-        hex: '#eef0f2',
+        hex: '#cccccb',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/bianco-artic/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/bianco-artic/lato-sinistro.webp' },
@@ -138,7 +138,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-viper',
         name: 'Viper Black',
-        hex: '#141418',
+        hex: '#3c3b39',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/nero-viper/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/nero-viper/lato-sinistro.webp' },
@@ -151,7 +151,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-energy',
         name: 'Energy Red',
-        hex: '#c01727',
+        hex: '#c95950',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/rosso-energy/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/rosso-energy/lato-sinistro.webp' },
@@ -295,7 +295,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio',
         name: 'Smoky Anthracite',
-        hex: '#4a4e55',
+        hex: '#545454',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/seiemmezzo-str/grigio/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/seiemmezzo-str/grigio/lato-sinistro.webp' },
@@ -308,7 +308,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-passion',
         name: 'Red Passion',
-        hex: '#c01727',
+        hex: '#822426',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/seiemmezzo-str/rosso-passion/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/seiemmezzo-str/rosso-passion/lato-sinistro.webp' },
@@ -365,7 +365,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero',
         name: 'Nero',
-        hex: '#141418',
+        hex: '#3d3c3b',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/calibro-custom/nero/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/calibro-custom/nero/lato-sinistro.webp' },
@@ -435,7 +435,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-garage',
         name: 'Garage Grey',
-        hex: '#4a4e55',
+        hex: '#3c3a37',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/calibro-bagger/grigio-garage/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/calibro-bagger/grigio-garage/lato-sinistro.webp' },
@@ -448,7 +448,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero',
         name: 'Nero',
-        hex: '#141418',
+        hex: '#3b3b3b',
         views: [
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/calibro-bagger/nero/angolo-destro.webp' },
           { id: 'fronte', label: 'Fronte', src: '/moto/calibro-bagger/nero/fronte.webp' },
@@ -500,7 +500,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Giallo',
-        hex: '#e9d70c',
+        hex: '#eddc10',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-1/angolo-destro.webp' },
@@ -513,7 +513,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#696a68',
+        hex: '#383b3b',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-2/angolo-destro.webp' },
@@ -526,7 +526,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Giallo',
-        hex: '#e8d508',
+        hex: '#e3c222',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-3/angolo-destro.webp' },
@@ -539,7 +539,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Argento',
-        hex: '#7c7a7a',
+        hex: '#b7bcc2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-4/angolo-destro.webp' },
@@ -552,7 +552,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Grigio',
-        hex: '#6b6868',
+        hex: '#393b3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-5/angolo-destro.webp' },
@@ -564,7 +564,17 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Bicilindrico a V di 90, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 1037,
+      powerHp: 107,
+      torqueNm: 100,
+      seatHeightMm: 880,
+      weightKg: 252,
+      fuelCapacityL: 20,
+      suspension: 'Forcella telescopica KYB a steli rovesciati completamente regolabile',
+      frontBrakes: 'Doppio disco da 310 mm con pinze Tokico',
+    },
     features: [],
   },
   {
@@ -583,7 +593,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Grigio',
-        hex: '#6c7176',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-1/angolo-destro.webp' },
@@ -596,7 +606,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#717374',
+        hex: '#383b3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-2/angolo-destro.webp' },
@@ -609,7 +619,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Grigio',
-        hex: '#727679',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-3/angolo-destro.webp' },
@@ -622,7 +632,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Grigio',
-        hex: '#717475',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-4/angolo-destro.webp' },
@@ -635,7 +645,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Grigio',
-        hex: '#707576',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-5/angolo-destro.webp' },
@@ -648,7 +658,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-6',
         name: 'Grigio',
-        hex: '#707374',
+        hex: '#383b3d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-6/angolo-destro.webp' },
@@ -660,7 +670,17 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Bicilindrico a V di 90, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 1037,
+      powerHp: 107,
+      torqueNm: 100,
+      seatHeightMm: 855,
+      weightKg: 242,
+      fuelCapacityL: 20,
+      suspension: 'Forcella telescopica KYB a steli rovesciati completamente regolabile',
+      frontBrakes: 'Doppio disco da 310 mm con pinze Tokico',
+    },
     features: [],
   },
   {
@@ -704,7 +724,17 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Monocilindrico, 4 tempi, raffr. ad aria, SOHC',
+      displacementCc: 124,
+      powerHp: 8.7,
+      torqueNm: 10,
+      seatHeightMm: 770,
+      weightKg: 105,
+      fuelCapacityL: 5,
+      suspension: 'Forcella telescopica',
+      frontBrakes: 'Disco da 190 mm',
+    },
     features: [],
   },
   {
@@ -723,7 +753,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Grigio',
-        hex: '#6a6f75',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/angolo-destro.webp' },
@@ -736,7 +766,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Argento',
-        hex: '#a0a4a3',
+        hex: '#f8f9f8',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-2/angolo-destro.webp' },
@@ -749,7 +779,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Grigio',
-        hex: '#6c6f70',
+        hex: '#3c3e3e',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-3/angolo-destro.webp' },
@@ -762,7 +792,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Grigio',
-        hex: '#6f7375',
+        hex: '#383b3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-4/angolo-destro.webp' },
@@ -775,7 +805,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Argento',
-        hex: '#a0a19f',
+        hex: '#fdfefa',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-5/angolo-destro.webp' },
@@ -788,7 +818,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-6',
         name: 'Blu',
-        hex: '#0c2a49',
+        hex: '#213f69',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-6/angolo-destro.webp' },
@@ -800,7 +830,17 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Monocilindrico, 4 tempi, raffr. ad aria, SOHC',
+      displacementCc: 124,
+      powerHp: 8.6,
+      torqueNm: 10,
+      seatHeightMm: 780,
+      weightKg: 112,
+      fuelCapacityL: 5.5,
+      suspension: 'Forcella telescopica',
+      frontBrakes: 'Disco da 190 mm',
+    },
     features: [],
   },
   {
@@ -819,7 +859,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-san-diego',
         name: 'BLU SAN DIEGO',
-        hex: '#1d3f8f',
+        hex: '#0595e6',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/blu-san-diego/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/blu-san-diego/angolo-destro.webp' },
@@ -845,7 +885,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-nairobi',
         name: 'NERO NAIROBI',
-        hex: '#141418',
+        hex: '#353b39',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/nero-nairobi/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/nero-nairobi/angolo-destro.webp' },
@@ -858,7 +898,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-capri',
         name: 'BLU CAPRI',
-        hex: '#1d3f8f',
+        hex: '#0794dd',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/blu-capri/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/blu-capri/angolo-destro.webp' },
@@ -871,7 +911,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'argento-austin',
         name: 'ARGENTO AUSTIN',
-        hex: '#b7bcc2',
+        hex: '#c7cccf',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/argento-austin/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/argento-austin/angolo-destro.webp' },
@@ -884,7 +924,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-houston',
         name: 'NERO HOUSTON',
-        hex: '#141418',
+        hex: '#363b3a',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/nero-houston/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/nero-houston/angolo-destro.webp' },
@@ -896,7 +936,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Bicilindrico parallelo, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 776,
+      powerHp: 83,
+      torqueNm: 78,
+      transmission: '6 marce',
+      seatHeightMm: 810,
+      weightKg: 202,
+      fuelCapacityL: 14,
+      suspension: 'Forcella telescopica KYB a steli rovesciati Ø43',
+      frontBrakes: 'Doppio disco da 310 mm',
+    },
     features: [],
   },
   {
@@ -915,7 +966,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#4455b2',
+        hex: '#3641b2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-1/angolo-destro.webp' },
@@ -928,7 +979,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#717778',
+        hex: '#505457',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-2/angolo-destro.webp' },
@@ -941,7 +992,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Grigio',
-        hex: '#737578',
+        hex: '#393b3d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-3/angolo-destro.webp' },
@@ -954,7 +1005,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Grigio',
-        hex: '#747677',
+        hex: '#515355',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-4/angolo-destro.webp' },
@@ -967,7 +1018,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Giallo',
-        hex: '#d9ca07',
+        hex: '#f3ec27',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-5/angolo-destro.webp' },
@@ -980,7 +1031,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-6',
         name: 'Rosso',
-        hex: '#ef5769',
+        hex: '#c01727',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-6/angolo-destro.webp' },
@@ -992,7 +1043,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Bicilindrico parallelo, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 776,
+      powerHp: 84,
+      torqueNm: 78,
+      transmission: '6 marce',
+      seatHeightMm: 825,
+      weightKg: 223,
+      fuelCapacityL: 20,
+      suspension: 'Forcella telescopica Showa a steli rovesciati regolabile',
+      frontBrakes: 'Doppio disco',
+    },
     features: [],
   },
   {
@@ -1062,7 +1124,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Bicilindrico parallelo, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 776,
+      powerHp: 83,
+      torqueNm: 78,
+      transmission: '6 marce',
+      seatHeightMm: 810,
+      weightKg: 205,
+      fuelCapacityL: 14,
+      suspension: 'Forcella telescopica Showa a steli rovesciati',
+      frontBrakes: 'Doppio disco',
+    },
     features: [],
   },
   {
@@ -1094,7 +1167,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-berlino',
         name: 'GRIGIO BERLINO',
-        hex: '#4a4e55',
+        hex: '#3a3c3e',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/angolo-destro.webp' },
@@ -1107,7 +1180,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#141418',
+        hex: '#2c3735',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/angolo-destro.webp' },
@@ -1120,7 +1193,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Rosso',
-        hex: '#b10725',
+        hex: '#c01727',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/livrea-4/angolo-destro.webp' },
@@ -1132,7 +1205,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: '4 cilindri in linea, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 999,
+      powerHp: 152,
+      torqueNm: 106,
+      transmission: '6 marce',
+      seatHeightMm: 845,
+      weightKg: 232,
+      fuelCapacityL: 19,
+      suspension: 'Forcella telescopica Showa a steli rovesciati regolabile elettronicamente',
+      frontBrakes: 'Doppio disco',
+    },
     features: [],
   },
   {
@@ -1151,7 +1235,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Giallo',
-        hex: '#f6e904',
+        hex: '#f5e703',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4s/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4s/livrea-1/angolo-destro.webp' },
@@ -1164,7 +1248,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#6e6b68',
+        hex: '#3c3e40',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4s/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4s/livrea-2/angolo-destro.webp' },
@@ -1176,7 +1260,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Monocilindrico, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 398,
+      powerHp: 38,
+      torqueNm: 37,
+      transmission: '5 marce',
+      seatHeightMm: 920,
+      weightKg: 151,
+      fuelCapacityL: 8.7,
+      suspension: 'Forcella telescopica KYB da 46 mm a steli rovesciati regolabile',
+      frontBrakes: 'Disco singolo',
+    },
     features: [],
   },
   {
@@ -1195,7 +1290,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#6e94b4',
+        hex: '#5889ae',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4sm/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4sm/livrea-1/angolo-destro.webp' },
@@ -1208,7 +1303,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Argento',
-        hex: '#888b8e',
+        hex: '#dfe3e9',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4sm/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4sm/livrea-2/angolo-destro.webp' },
@@ -1220,7 +1315,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Monocilindrico, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 398,
+      powerHp: 38,
+      torqueNm: 37,
+      transmission: '5 marce',
+      seatHeightMm: 890,
+      weightKg: 154,
+      fuelCapacityL: 8.7,
+      suspension: 'Forcella telescopica KYB da 46 mm a steli rovesciati regolabile',
+      frontBrakes: 'Disco singolo',
+    },
     features: [],
   },
   {
@@ -1265,7 +1371,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#141418',
+        hex: '#383a3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000-evo/nero-dubai/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000-evo/nero-dubai/angolo-destro.webp' },
@@ -1277,7 +1383,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: '4 cilindri in linea, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 999,
+      powerHp: 152,
+      torqueNm: 106,
+      transmission: '6 marce',
+      seatHeightMm: 810,
+      weightKg: 214,
+      fuelCapacityL: 19,
+      suspension: 'Forcella telescopica KYB a steli rovesciati regolabile',
+      frontBrakes: 'Doppio disco da 310 mm',
+    },
     features: [],
   },
   {
@@ -1296,7 +1413,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Giallo',
-        hex: '#6d4b09',
+        hex: '#e3c222',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8t/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8t/livrea-1/angolo-destro.webp' },
@@ -1309,7 +1426,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Giallo',
-        hex: '#6c4b0a',
+        hex: '#e3c222',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8t/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8t/livrea-2/angolo-destro.webp' },
@@ -1322,7 +1439,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Giallo',
-        hex: '#6d4b09',
+        hex: '#e3c222',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8t/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8t/livrea-3/angolo-destro.webp' },
@@ -1334,7 +1451,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Bicilindrico parallelo, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 776,
+      powerHp: 83,
+      torqueNm: 78,
+      transmission: '6 marce',
+      seatHeightMm: 815,
+      weightKg: 201,
+      fuelCapacityL: 16.5,
+      suspension: 'Forcella telescopica KYB a steli rovesciati',
+      frontBrakes: 'Doppio disco con pinza Nissin da 310 mm',
+    },
     features: [],
   },
   {
@@ -1353,7 +1481,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Grigio',
-        hex: '#696e70',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8tt/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8tt/livrea-1/angolo-destro.webp' },
@@ -1366,7 +1494,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#6f7172',
+        hex: '#383b3d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8tt/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8tt/livrea-2/angolo-destro.webp' },
@@ -1378,7 +1506,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Bicilindrico parallelo, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 776,
+      powerHp: 83,
+      torqueNm: 78,
+      transmission: '6 marce',
+      seatHeightMm: 810,
+      weightKg: 203,
+      fuelCapacityL: 16.5,
+      suspension: 'Forcella telescopica KYB a steli rovesciati',
+      frontBrakes: 'Doppio disco con pinza Nissin da 310 mm',
+    },
     features: [],
   },
   {
@@ -1397,7 +1536,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#06164c',
+        hex: '#04113d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-r1000r/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-r1000r/livrea-1/angolo-destro.webp' },
@@ -1410,7 +1549,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Rosso',
-        hex: '#903138',
+        hex: '#c01727',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-r1000r/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-r1000r/livrea-2/angolo-destro.webp' },
@@ -1423,7 +1562,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Blu',
-        hex: '#0d2d47',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-r1000r/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-r1000r/livrea-3/angolo-destro.webp' },
@@ -1435,91 +1574,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
-    features: [],
-  },
-  {
-    id: 'suzuki-gsx-8r-evo',
-    brand: 'Suzuki',
-    name: 'GSX-8R EVO',
-    subtitle: 'Scheda tecnica da completare',
-    condition: 'nuovo',
-    category: 'naked',
-    categoryLabel: 'Naked',
-    tagline: 'Chiedici tutto in salone',
-    description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
-    image: '/moto/suzuki-gsx-8r-evo/blu-miami/lato-destro.webp',
-    roadImage: '/moto/suzuki-gsx-8r-evo/in-strada.webp',
-    colorways: [
-      {
-        slug: 'blu-miami',
-        name: 'BLU MIAMI',
-        hex: '#1d3f8f',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r-evo/blu-miami/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'bianco-oslo',
-        name: 'BIANCO OSLO',
-        hex: '#eef0f2',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r-evo/bianco-oslo/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'nero-parigi',
-        name: 'NERO PARIGI',
-        hex: '#141418',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r-evo/nero-parigi/lato-destro.webp' },
-        ],
-      },
-    ],
-    colors: [],
-    specs: {},
-    features: [],
-  },
-  {
-    id: 'suzuki-gsx-8s-evo',
-    brand: 'Suzuki',
-    name: 'GSX-8S EVO',
-    subtitle: 'Scheda tecnica da completare',
-    condition: 'nuovo',
-    category: 'naked',
-    categoryLabel: 'Naked',
-    tagline: 'Chiedici tutto in salone',
-    description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
-    image: '/moto/suzuki-gsx-8s-evo/blu-san-diego/lato-destro.webp',
-    roadImage: '/moto/suzuki-gsx-8s-evo/in-strada.webp',
-    colorways: [
-      {
-        slug: 'blu-san-diego',
-        name: 'BLU SAN DIEGO',
-        hex: '#1d3f8f',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8s-evo/blu-san-diego/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'rosso-pechino',
-        name: 'ROSSO PECHINO',
-        hex: '#c01727',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8s-evo/rosso-pechino/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'nero-nairobi',
-        name: 'NERO NAIROBI',
-        hex: '#141418',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8s-evo/nero-nairobi/lato-destro.webp' },
-        ],
-      },
-    ],
-    colors: [],
-    specs: {},
+    specs: {
+      engineType: '4 cilindri in linea, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 999.8,
+      powerHp: 195,
+      torqueNm: 110,
+      transmission: '6 marce',
+      seatHeightMm: 825,
+      weightKg: 203,
+      fuelCapacityL: 16,
+      suspension: 'Forcella telescopica Showa BFF a steli rovesciati regolabile',
+      frontBrakes: 'Doppio disco con pinza Brembo da 320 mm',
+    },
     features: [],
   },
   {
@@ -1538,7 +1604,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#03508e',
+        hex: '#0368b4',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-sv-7gx/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-sv-7gx/livrea-1/angolo-destro.webp' },
@@ -1551,7 +1617,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Argento',
-        hex: '#878685',
+        hex: '#b6b3af',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-sv-7gx/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-sv-7gx/livrea-2/angolo-destro.webp' },
@@ -1564,7 +1630,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Argento',
-        hex: '#808081',
+        hex: '#b7bcc2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-sv-7gx/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-sv-7gx/livrea-3/angolo-destro.webp' },
@@ -1576,7 +1642,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: 'Bicilindrico a V di 90, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 645,
+      powerHp: 73,
+      torqueNm: 64,
+      transmission: '6 marce',
+      seatHeightMm: 795,
+      weightKg: 211,
+      fuelCapacityL: 17.4,
+      suspension: 'Forcella telescopica Ø41',
+      frontBrakes: 'Doppio disco da 290 mm',
+    },
     features: [],
   },
   {
@@ -1595,7 +1672,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-zante',
         name: 'BLU ZANTE',
-        hex: '#1d3f8f',
+        hex: '#046cb7',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-r125/blu-zante/lato-destro.webp' },
         ],
@@ -1610,159 +1687,18 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
-    features: [],
-  },
-  {
-    id: 'suzuki-gsx-s1000gx-plus',
-    brand: 'Suzuki',
-    name: 'GSX-S1000GX PLUS',
-    subtitle: 'Scheda tecnica da completare',
-    condition: 'nuovo',
-    category: 'adventure',
-    categoryLabel: 'Sport touring',
-    tagline: 'Chiedici tutto in salone',
-    description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
-    image: '/moto/suzuki-gsx-s1000gx-plus/blu-zante/lato-destro.webp',
-    roadImage: '/moto/suzuki-gsx-s1000gx-plus/in-strada.webp',
-    colorways: [
-      {
-        slug: 'blu-zante',
-        name: 'BLU ZANTE',
-        hex: '#1d3f8f',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-plus/blu-zante/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'grigio-berlino',
-        name: 'GRIGIO BERLINO',
-        hex: '#4a4e55',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-plus/grigio-berlino/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'nero-dubai',
-        name: 'NERO DUBAI',
-        hex: '#141418',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-plus/nero-dubai/lato-destro.webp' },
-        ],
-      },
-    ],
-    colors: [],
-    specs: {},
-    features: [],
-  },
-  {
-    id: 'suzuki-gsx-s1000gx-top',
-    brand: 'Suzuki',
-    name: 'GSX-S1000GX TOP',
-    subtitle: 'Scheda tecnica da completare',
-    condition: 'nuovo',
-    category: 'adventure',
-    categoryLabel: 'Sport touring',
-    tagline: 'Chiedici tutto in salone',
-    description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
-    image: '/moto/suzuki-gsx-s1000gx-top/blu-zante/lato-destro.webp',
-    roadImage: '/moto/suzuki-gsx-s1000gx-top/in-strada.webp',
-    colorways: [
-      {
-        slug: 'blu-zante',
-        name: 'BLU ZANTE',
-        hex: '#1d3f8f',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-top/blu-zante/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'grigio-berlino',
-        name: 'GRIGIO BERLINO',
-        hex: '#4a4e55',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-top/grigio-berlino/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'nero-dubai',
-        name: 'NERO DUBAI',
-        hex: '#141418',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx-top/nero-dubai/lato-destro.webp' },
-        ],
-      },
-    ],
-    colors: [],
-    specs: {},
-    features: [],
-  },
-  {
-    id: 'suzuki-burgman-400-comfort',
-    brand: 'Suzuki',
-    name: 'BURGMAN 400 COMFORT',
-    subtitle: 'Scheda tecnica da completare',
-    condition: 'nuovo',
-    category: 'naked',
-    categoryLabel: 'Scooter',
-    tagline: 'Chiedici tutto in salone',
-    description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
-    image: '/moto/suzuki-burgman-400-comfort/verde-rio/lato-destro.webp',
-    roadImage: '/moto/suzuki-burgman-400-comfort/in-strada.webp',
-    colorways: [
-      {
-        slug: 'verde-rio',
-        name: 'VERDE RIO',
-        hex: '#2f6b3a',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400-comfort/verde-rio/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'blu-las-vegas',
-        name: 'BLU LAS VEGAS',
-        hex: '#1d3f8f',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400-comfort/blu-las-vegas/lato-destro.webp' },
-        ],
-      },
-      {
-        slug: 'nero-parigi',
-        name: 'NERO PARIGI',
-        hex: '#141418',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400-comfort/nero-parigi/lato-destro.webp' },
-        ],
-      },
-    ],
-    colors: [],
-    specs: {},
-    features: [],
-  },
-  {
-    id: 'suzuki-sv-7gx-bianco-cortina',
-    brand: 'Suzuki',
-    name: 'SV-7GX BIANCO CORTINA',
-    subtitle: 'Scheda tecnica da completare',
-    condition: 'nuovo',
-    category: 'adventure',
-    categoryLabel: 'Sport touring',
-    tagline: 'Chiedici tutto in salone',
-    description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
-    image: '/moto/suzuki-sv-7gx-bianco-cortina/bianco-cortina/lato-destro.webp',
-    roadImage: '/moto/suzuki-sv-7gx-bianco-cortina/in-strada.webp',
-    colorways: [
-      {
-        slug: 'bianco-cortina',
-        name: 'BIANCO CORTINA',
-        hex: '#eef0f2',
-        views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-sv-7gx-bianco-cortina/bianco-cortina/lato-destro.webp' },
-        ],
-      },
-    ],
-    colors: [],
-    specs: {},
+    specs: {
+      engineType: '1 cilindro, 4 tempi, raffreddamento a liquido, DOHC',
+      displacementCc: 124.4,
+      powerHp: 15,
+      torqueNm: 11.5,
+      transmission: '6 marce',
+      seatHeightMm: 785,
+      weightKg: 134,
+      fuelCapacityL: 11,
+      suspension: 'Forcella telescopica',
+      frontBrakes: 'Disco da 290 mm',
+    },
     features: [],
   },
   {
@@ -1781,7 +1717,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-zante',
         name: 'BLU ZANTE',
-        hex: '#1d3f8f',
+        hex: '#03519e',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s125/blu-zante/lato-destro.webp' },
         ],
@@ -1789,14 +1725,24 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-marrakech',
         name: 'ROSSO MARRAKECH',
-        hex: '#c01727',
+        hex: '#b40829',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s125/rosso-marrakech/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: '1 cilindro, 4 tempi, DOHC, raffreddamento a liquido',
+      displacementCc: 124.4,
+      powerHp: 15,
+      torqueNm: 11.5,
+      seatHeightMm: 785,
+      weightKg: 134,
+      fuelCapacityL: 11,
+      suspension: 'Forcella telescopica',
+      frontBrakes: 'Disco singolo da 290 mm',
+    },
     features: [],
   },
   {
@@ -1822,7 +1768,13 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 449,
+      transmission: '5 velocità',
+      weightKg: 112,
+      frontBrakes: 'Disco',
+      fuelCapacityL: 6.3,
+    },
     features: [],
   },
   {
@@ -1841,7 +1793,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#0c223d',
+        hex: '#0c2039',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-1/angolo-destro.webp' },
@@ -1854,7 +1806,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#6b6c6b',
+        hex: '#4f5254',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-2/angolo-destro.webp' },
@@ -1867,7 +1819,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Argento',
-        hex: '#7e7f7f',
+        hex: '#c8cccf',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-3/angolo-destro.webp' },
@@ -1880,7 +1832,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Blu',
-        hex: '#263495',
+        hex: '#2d3caf',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-4/angolo-destro.webp' },
@@ -1892,7 +1844,17 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: '4 cilindri, 4 tempi, raffreddamento a liquido',
+      displacementCc: 999,
+      powerHp: 152,
+      torqueNm: 106,
+      seatHeightMm: 825,
+      weightKg: 215,
+      fuelCapacityL: 12,
+      suspension: 'Forcella telescopica KYB a steli rovesciati completamente regolabile',
+      frontBrakes: 'Doppio disco da 310 mm',
+    },
     features: [],
   },
   {
@@ -1949,7 +1911,17 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: '4 cilindri, 4 tempi, raffreddamento a liquido',
+      displacementCc: 1340,
+      powerHp: 190,
+      torqueNm: 150,
+      seatHeightMm: 800,
+      weightKg: 264,
+      fuelCapacityL: 20,
+      suspension: 'Telescopica rovesciata, molla elicoidale ad olio',
+      frontBrakes: 'Doppio disco, Brembo Stylema',
+    },
     features: [],
   },
   {
@@ -1994,7 +1966,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#141418',
+        hex: '#393b3d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/angolo-destro.webp' },
@@ -2020,7 +1992,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Argento',
-        hex: '#838687',
+        hex: '#b7bcc2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/livrea-5/angolo-destro.webp' },
@@ -2032,7 +2004,230 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      engineType: '4 cilindri, 4 tempi, raffreddamento a liquido',
+      displacementCc: 999,
+      powerHp: 152,
+      torqueNm: 106,
+      seatHeightMm: 810,
+      weightKg: 226,
+      fuelCapacityL: 19,
+      suspension: 'Forcella telescopica KYB a steli rovesciati completamente regolabile',
+      frontBrakes: 'Doppio disco da 310 mm con pinze Brembo',
+    },
+    features: [],
+  },
+  {
+    id: 'suzuki-burgman-400',
+    brand: 'Suzuki',
+    name: 'BURGMAN 400',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Scooter',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/suzuki-burgman-400/livrea-1/lato-destro.webp',
+    roadImage: '/moto/suzuki-burgman-400/in-strada.webp',
+    colorways: [
+      {
+        slug: 'livrea-1',
+        name: 'Livrea 1',
+        hex: '#dde3e9',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-1/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-1/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400/livrea-1/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-burgman-400/livrea-1/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-burgman-400/livrea-1/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-burgman-400/livrea-1/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-2',
+        name: 'Livrea 2',
+        hex: '#959ba0',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-2/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-2/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400/livrea-2/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-burgman-400/livrea-2/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-burgman-400/livrea-2/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-burgman-400/livrea-2/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-3',
+        name: 'Livrea 3',
+        hex: '#515657',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-3/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-3/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400/livrea-3/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-burgman-400/livrea-3/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-burgman-400/livrea-3/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-burgman-400/livrea-3/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-4',
+        name: 'Livrea 4',
+        hex: '#364242',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-4/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-4/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400/livrea-4/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-burgman-400/livrea-4/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-burgman-400/livrea-4/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-burgman-400/livrea-4/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-5',
+        name: 'Livrea 5',
+        hex: '#3f5281',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-5/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-5/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400/livrea-5/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-burgman-400/livrea-5/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-burgman-400/livrea-5/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-burgman-400/livrea-5/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-6',
+        name: 'Livrea 6',
+        hex: '#393c3d',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-6/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-6/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-400/livrea-6/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-burgman-400/livrea-6/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-burgman-400/livrea-6/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-burgman-400/livrea-6/lato-sinistro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {
+      engineType: 'Monocilindrico, 4 tempi, raffr. a liquido',
+      displacementCc: 400,
+      powerHp: 29,
+      torqueNm: 35.2,
+      seatHeightMm: 755,
+      weightKg: 218,
+      fuelCapacityL: 13.5,
+      suspension: 'Forcella telescopica',
+      frontBrakes: 'Doppio disco da 260 mm',
+    },
+    features: [],
+  },
+  {
+    id: 'suzuki-v-strom-800de',
+    brand: 'Suzuki',
+    name: 'V-STROM 800DE',
+    subtitle: 'Scheda tecnica da completare',
+    condition: 'nuovo',
+    category: 'adventure',
+    categoryLabel: 'Adventure',
+    tagline: 'Chiedici tutto in salone',
+    description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
+    image: '/moto/suzuki-v-strom-800de/livrea-1/lato-destro.webp',
+    roadImage: '/moto/suzuki-v-strom-800de/in-strada.webp',
+    colorways: [
+      {
+        slug: 'livrea-1',
+        name: 'Livrea 1',
+        hex: '#3c4067',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-1/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-1/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-v-strom-800de/livrea-1/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-v-strom-800de/livrea-1/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-v-strom-800de/livrea-1/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-v-strom-800de/livrea-1/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-2',
+        name: 'Livrea 2',
+        hex: '#e5dd0b',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-2/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-2/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-v-strom-800de/livrea-2/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-v-strom-800de/livrea-2/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-v-strom-800de/livrea-2/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-v-strom-800de/livrea-2/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-3',
+        name: 'Livrea 3',
+        hex: '#3c4066',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-3/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-3/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-v-strom-800de/livrea-3/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-v-strom-800de/livrea-3/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-v-strom-800de/livrea-3/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-v-strom-800de/livrea-3/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-4',
+        name: 'Livrea 4',
+        hex: '#27294f',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-4/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-4/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-v-strom-800de/livrea-4/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-v-strom-800de/livrea-4/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-v-strom-800de/livrea-4/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-v-strom-800de/livrea-4/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-5',
+        name: 'Livrea 5',
+        hex: '#3c4066',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-5/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-5/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-v-strom-800de/livrea-5/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-v-strom-800de/livrea-5/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-v-strom-800de/livrea-5/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-v-strom-800de/livrea-5/lato-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'livrea-6',
+        name: 'Livrea 6',
+        hex: '#3b3d3f',
+        views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-6/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-6/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-v-strom-800de/livrea-6/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/suzuki-v-strom-800de/livrea-6/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-v-strom-800de/livrea-6/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-v-strom-800de/livrea-6/lato-sinistro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {
+      engineType: 'Bicilindrico parallelo, 4 tempi, raffr. a liquido, DOHC',
+      displacementCc: 776,
+      powerHp: 84,
+      torqueNm: 78,
+      transmission: '6 marce',
+      seatHeightMm: 855,
+      weightKg: 230,
+      fuelCapacityL: 20,
+      suspension: 'Forcella telescopica Showa a steli rovesciati regolabile',
+      frontBrakes: 'Doppio disco',
+    },
     features: [],
   },
   // ---- fine SUZUKI ----
@@ -2049,18 +2244,26 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-brivido-125r/unica/lato-destro.webp',
     roadImage: '/moto/voge-brivido-125r/in-strada.webp',
+    price: 2790,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        name: 'Total Black',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-brivido-125r/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 124.8,
+      powerHp: 15,
+      transmission: '6 marce',
+      seatHeightMm: 815,
+      fuelCapacityL: 10,
+    },
     features: [],
   },
   {
@@ -2075,11 +2278,13 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-brivido-125s/unica/lato-destro.webp',
     roadImage: '/moto/voge-brivido-125s/in-strada.webp',
+    price: 3290,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        name: 'Total Black',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-brivido-125s/unica/lato-destro.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-brivido-125s/unica/angolo-destro.webp' },
@@ -2087,7 +2292,13 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 125,
+      powerHp: 15,
+      transmission: '6 marce',
+      seatHeightMm: 790,
+      fuelCapacityL: 15,
+    },
     features: [],
   },
   {
@@ -2102,18 +2313,26 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-brivido-625r/unica/lato-destro.webp',
     roadImage: '/moto/voge-brivido-625r/in-strada.webp',
+    price: 5990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        name: 'Total Black',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-brivido-625r/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 581,
+      powerHp: 63.9,
+      transmission: '6 marce',
+      seatHeightMm: 785,
+      fuelCapacityL: 16.5,
+    },
     features: [],
   },
   {
@@ -2128,18 +2347,25 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-sfida-sr1-adv/unica/lato-destro.webp',
     roadImage: '/moto/voge-sfida-sr1-adv/in-strada.webp',
+    price: 3190,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#686767',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr1-adv/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 124.9,
+      transmission: 'Variatore continuo di velocità (CVT)',
+      seatHeightMm: 810,
+      fuelCapacityL: 8,
+    },
     features: [],
   },
   {
@@ -2154,18 +2380,25 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-sfida-sr1/unica/lato-destro.webp',
     roadImage: '/moto/voge-sfida-sr1/in-strada.webp',
+    price: 2690,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#7f7f7e',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr1/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 124.9,
+      transmission: 'Variatore continuo di velocità (CVT)',
+      seatHeightMm: 785,
+      fuelCapacityL: 8,
+    },
     features: [],
   },
   {
@@ -2180,11 +2413,13 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-sfida-sr16-125-air/unica/lato-destro.webp',
     roadImage: '/moto/voge-sfida-sr16-125-air/in-strada.webp',
+    price: 2390,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#69696d',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16-125-air/unica/lato-destro.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-sfida-sr16-125-air/unica/angolo-destro.webp' },
@@ -2192,7 +2427,12 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 125,
+      transmission: 'Variatore continuo di velocità (CVT)',
+      seatHeightMm: 795,
+      fuelCapacityL: 7.8,
+    },
     features: [],
   },
   {
@@ -2207,18 +2447,25 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-sfida-sr16-200/unica/lato-destro.webp',
     roadImage: '/moto/voge-sfida-sr16-200/in-strada.webp',
+    price: 2890,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#6d6e72',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16-200/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 174,
+      transmission: 'Variatore continuo di velocità (CVT)',
+      seatHeightMm: 800,
+      fuelCapacityL: 7.8,
+    },
     features: [],
   },
   {
@@ -2233,18 +2480,25 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-sfida-sr16/unica/lato-destro.webp',
     roadImage: '/moto/voge-sfida-sr16/in-strada.webp',
+    price: 2790,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#949598',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 125,
+      transmission: 'Variatore continuo di velocità (CVT)',
+      seatHeightMm: 800,
+      fuelCapacityL: 7.8,
+    },
     features: [],
   },
   {
@@ -2259,18 +2513,25 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-sfida-sr2-adv/unica/lato-destro.webp',
     roadImage: '/moto/voge-sfida-sr2-adv/in-strada.webp',
+    price: 3190,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#6b6b6b',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr2-adv/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 174,
+      transmission: 'Variatore continuo di velocità (CVT)',
+      seatHeightMm: 810,
+      fuelCapacityL: 9,
+    },
     features: [],
   },
   {
@@ -2285,18 +2546,24 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-sfida-sr3-2/unica/lato-destro.webp',
     roadImage: '/moto/voge-sfida-sr3-2/in-strada.webp',
+    price: 3990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#656466',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr3-2/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 244,
+      transmission: 'Variatore continuo di velocità (CVT)',
+      fuelCapacityL: 14,
+    },
     features: [],
   },
   {
@@ -2311,18 +2578,27 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-sfida-sr4-max/unica/lato-destro.webp',
     roadImage: '/moto/voge-sfida-sr4-max/in-strada.webp',
+    price: 5490,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#777778',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr4-max/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 350,
+      powerHp: 34,
+      transmission: 'Variatore continuo di velocità (CVT)',
+      suspension: 'Forcella telescopica ø 34,8 mm',
+      seatHeightMm: 775,
+      fuelCapacityL: 12.8,
+    },
     features: [],
   },
   {
@@ -2337,11 +2613,13 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-sfida-sr450x/unica/lato-destro.webp',
     roadImage: '/moto/voge-sfida-sr450x/in-strada.webp',
+    price: 6490,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#5d5e61',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr450x/unica/lato-destro.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-sfida-sr450x/unica/angolo-destro.webp' },
@@ -2349,7 +2627,13 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 398,
+      powerHp: 42.2,
+      transmission: 'Variatore continuo di velocità (CVT)',
+      seatHeightMm: 795,
+      fuelCapacityL: 18,
+    },
     features: [],
   },
   {
@@ -2364,11 +2648,13 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-trofeo-300ac/unica/lato-destro.webp',
     roadImage: '/moto/voge-trofeo-300ac/in-strada.webp',
+    price: 3890,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#5f6062',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-300ac/unica/lato-destro.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-trofeo-300ac/unica/angolo-destro.webp' },
@@ -2376,7 +2662,14 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 292,
+      powerHp: 28.6,
+      transmission: '6 marce',
+      suspension: 'forcella upside-down ø 35 mm',
+      seatHeightMm: 800,
+      fuelCapacityL: 15,
+    },
     features: [],
   },
   {
@@ -2391,18 +2684,27 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-trofeo-300acx-scrambler/unica/lato-destro.webp',
     roadImage: '/moto/voge-trofeo-300acx-scrambler/in-strada.webp',
+    price: 3990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#6f6f70',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-300acx-scrambler/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 292,
+      powerHp: 28.6,
+      transmission: '6 marce',
+      suspension: 'forcella upside-down ø 35 mm',
+      seatHeightMm: 800,
+      fuelCapacityL: 15,
+    },
     features: [],
   },
   {
@@ -2417,18 +2719,27 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-trofeo-350ac/unica/lato-destro.webp',
     roadImage: '/moto/voge-trofeo-350ac/in-strada.webp',
+    price: 4590,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#e9d105',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-350ac/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 321.8,
+      powerHp: 40.8,
+      transmission: '6 marce',
+      suspension: 'forcella upside-down ø 41 mm',
+      seatHeightMm: 785,
+      fuelCapacityL: 12.5,
+    },
     features: [],
   },
   {
@@ -2443,11 +2754,13 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-trofeo-500ac/unica/lato-destro.webp',
     roadImage: '/moto/voge-trofeo-500ac/in-strada.webp',
+    price: 6490,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#706f71',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-500ac/unica/lato-destro.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-trofeo-500ac/unica/angolo-destro.webp' },
@@ -2455,7 +2768,14 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 471,
+      powerHp: 47,
+      transmission: '6 marce',
+      suspension: 'Forcella upside-down ø 41 mm',
+      seatHeightMm: 810,
+      fuelCapacityL: 19,
+    },
     features: [],
   },
   {
@@ -2470,18 +2790,27 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-trofeo-525acx/unica/lato-destro.webp',
     roadImage: '/moto/voge-trofeo-525acx/in-strada.webp',
+    price: 6790,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#6b6b6f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-525acx/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 494,
+      powerHp: 47.6,
+      transmission: '6 marce',
+      suspension: 'Forcella upside-down ø 41 mm',
+      seatHeightMm: 820,
+      fuelCapacityL: 19,
+    },
     features: [],
   },
   {
@@ -2496,18 +2825,26 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-valico-300-rally/unica/lato-destro.webp',
     roadImage: '/moto/voge-valico-300-rally/in-strada.webp',
+    price: 4290,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        name: 'Black Knight',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-300-rally/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 292,
+      transmission: '6 marce',
+      suspension: 'Forcella upside-down ø 41 mm',
+      seatHeightMm: 905,
+      fuelCapacityL: 11,
+    },
     features: [],
   },
   {
@@ -2522,18 +2859,26 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-valico-625dsx/unica/lato-destro.webp',
     roadImage: '/moto/voge-valico-625dsx/in-strada.webp',
+    price: 5990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        name: 'Matt Sand',
+        hex: '#9b8363',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-625dsx/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 581,
+      powerHp: 63.9,
+      transmission: '6 marce',
+      seatHeightMm: 835,
+      fuelCapacityL: 17.6,
+    },
     features: [],
   },
   {
@@ -2548,18 +2893,25 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-valico-800rally/unica/lato-destro.webp',
     roadImage: '/moto/voge-valico-800rally/in-strada.webp',
+    price: 7990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#eed528',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-800rally/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 798,
+      transmission: '6 marce',
+      seatHeightMm: 850,
+      fuelCapacityL: 24,
+    },
     features: [],
   },
   {
@@ -2574,18 +2926,26 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-valico-900dsx/unica/lato-destro.webp',
     roadImage: '/moto/voge-valico-900dsx/in-strada.webp',
+    price: 8990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        name: 'Black Knight',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-900dsx/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 895,
+      powerHp: 95.2,
+      transmission: '6 marce',
+      seatHeightMm: 825,
+      fuelCapacityL: 17,
+    },
     features: [],
   },
   {
@@ -2600,11 +2960,13 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-valico525dsx/unica/lato-destro.webp',
     roadImage: '/moto/voge-valico525dsx/in-strada.webp',
+    price: 5690,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        name: 'Black Knight',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico525dsx/unica/lato-destro.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-valico525dsx/unica/angolo-destro.webp' },
@@ -2612,7 +2974,14 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 494,
+      powerHp: 47.6,
+      transmission: '6 marce',
+      suspension: 'Forcella KAYABA upside-down ø 41 mm',
+      seatHeightMm: 815,
+      fuelCapacityL: 16.5,
+    },
     features: [],
   },
   {
@@ -2631,14 +3000,19 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#5e5f5f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-xwolf-300/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 270,
+      powerHp: 19,
+      transmission: 'Automatico (con retromarcia), ridotta',
+      fuelCapacityL: 14,
+    },
     features: [],
   },
   {
@@ -2657,14 +3031,19 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'unica',
         name: 'Livrea ufficiale',
-        hex: '#1a1a1e',
+        hex: '#5c5956',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-xwolf-550/unica/lato-destro.webp' },
         ],
       },
     ],
     colors: [],
-    specs: {},
+    specs: {
+      displacementCc: 500,
+      powerHp: 42.9,
+      transmission: 'Automatico (con retromarcia), ridotta',
+      fuelCapacityL: 21,
+    },
     features: [],
   },
   // ---- fine VOGE ----

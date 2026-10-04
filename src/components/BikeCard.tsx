@@ -32,7 +32,7 @@ export const BikeCard: React.FC<BikeCardProps> = ({ bike, onSelect, selected = f
       } ${venduta ? 'opacity-60' : ''}`}
     >
       {/* Immagine */}
-      <div className="relative aspect-[4/3] bg-gradient-to-br from-[#181920] to-[#0a0a0d] flex items-center justify-center overflow-hidden">
+      <div className="relative aspect-[16/10] bg-gradient-to-br from-[#181920] to-[#0a0a0d] flex items-center justify-center overflow-hidden">
         {/* Nel catalogo la moto si mostra su strada: e' la fotografia che
             fa innamorare. Le viste studio stanno nel dettaglio. */}
         {bike.roadImage ?? bike.image ? (

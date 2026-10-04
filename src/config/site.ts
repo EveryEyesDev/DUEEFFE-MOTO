@@ -123,16 +123,13 @@ export const SITE = {
    * Tutti i marchi trattati, nell'ordine in cui compaiono
    * sulla scheda Google dell'attivita'.
    */
-  brands: [
-    'Moto Morini',
-    'Voge',
-    'KTM',
-    'Husqvarna',
-    'Suzuki',
-    'Moto Guzzi',
-    'Aprilia',
-    'Piaggio',
-  ],
+  /*
+    I marchi che trattiamo davvero. Qui ce n'erano altri cinque messi come
+    esempio quando il sito era ancora una bozza: su un sito pubblico di
+    concessionaria sono una promessa che non possiamo mantenere, e chi
+    telefona per una KTM resta male. Restano i tre veri.
+  */
+  brands: ['Moto Morini', 'Suzuki', 'Voge'],
 
   /**
    * I marchi su cui il sito punta i riflettori, citati nei testi

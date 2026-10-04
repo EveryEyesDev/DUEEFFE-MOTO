@@ -20,6 +20,8 @@ Dà un punteggio a ogni candidata e prende quella che vince:
   + varieta' dei colori, che distingue una scena vera (strada, cielo,
     case) da un dettaglio ravvicinato o da un fondo pieno;
   - quota di bianco, che smaschera gli scatti da studio;
+  - superficie senza trama, che smaschera i fondi lisci e i dettagli
+    ravvicinati anche quando sono colorati;
   + dimensione del file originale, a parita' di tutto il resto.
 
 Se nessuna candidata raggiunge la sufficienza, non tocca niente: meglio
@@ -87,6 +89,14 @@ def punteggio(dati):
     a = np.array(piccola).astype(int)
 
     bianco = float((a.min(axis=2) > 225).mean())
+
+    # Quanta superficie e' senza dettaglio: il fondo di uno studio e' liscio,
+    # l'asfalto e il paesaggio no.
+    grigio = a.mean(axis=2)
+    orizzontale = np.abs(np.diff(grigio, axis=1))[:-1, :]
+    verticale = np.abs(np.diff(grigio, axis=0))[:, :-1]
+    liscia = float(((orizzontale + verticale) < 4).mean())
+
     grossolano = a // 32
     chiavi = grossolano[:, :, 0] * 64 + grossolano[:, :, 1] * 8 + grossolano[:, :, 2]
     varieta = len(np.unique(chiavi)) / 512
@@ -95,6 +105,7 @@ def punteggio(dati):
     voto += min(proporzione, 2.2) * 1.2        # inquadratura larga
     voto += varieta * 14                        # scena vera, non dettaglio
     voto -= bianco * 9                          # fondo da studio
+    voto -= liscia * 7                          # superficie senza trama
     voto += min(im.width / 2500.0, 1.0) * 0.6   # a parita' di tutto, la piu' grande
     return (voto, im)
 
@@ -105,8 +116,14 @@ def candidate_suzuki(cartella, mappa):
     if not percorso:
         return []
     html = scarica(SUZUKI + percorso, SUZUKI + "/").decode("utf-8", "replace")
-    trovate = re.findall(r"(/upl/cache/Suzuki_[^\"']+?-\d+-(?:2880x1755|800x470)\.jpg)", html, re.I)
-    return [SUZUKI + u for u in dict.fromkeys(trovate) if not re.search(SCARTI, u, re.I)]
+    # La galleria numerata (_1, _2, _3...) raccoglie gli scatti in scena:
+    # la moto in pista, in citta', in viaggio. L'immagine grande di apertura
+    # invece, per certi modelli, e' un fotomontaggio da studio su fondo
+    # diagonale. Percio' guardiamo prima la galleria.
+    galleria = re.findall(r"(/upl/cache/Suzuki_[^\"']+?_\d+-\d+-800x470\.jpg)", html, re.I)
+    apertura = re.findall(r"(/upl/cache/Suzuki_[^\"']+?-\d+-2880x1755\.jpg)", html, re.I)
+    tutte = list(dict.fromkeys(list(galleria) + list(apertura)))
+    return [SUZUKI + u for u in tutte if not re.search(SCARTI, u, re.I)]
 
 
 def candidate_voge(cartella):
@@ -177,7 +194,7 @@ def main():
             continue
 
         migliore = (attuale, None)
-        for url in candidate[:14]:
+        for url in candidate[:18]:
             try:
                 dati = scarica(url, referer)
             except RuntimeError:

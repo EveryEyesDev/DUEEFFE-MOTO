@@ -326,16 +326,41 @@ def main():
                 ", ".join(u.rsplit("/", 1)[-1] for u in scontornate[:4]) or "nessuna"))
             continue
 
-        # La prima e' quasi sempre il profilo, la seconda la tre quarti.
-        etichette = [("lato-destro", "Lato destro"), ("angolo-destro", "Inclinata a destra")]
-        viste = []
-        for indirizzo in scontornate:
-            if len(viste) >= 2:
-                break
+        """
+        QUALE SCATTO E' IL PROFILO
+        Voge pubblica le fotografie senza un ordine, quindi non si puo'
+        dare per scontato che la prima sia il profilo. Lo riconosciamo
+        dalla sagoma: una moto di profilo e' molto piu' larga che alta,
+        una di tre quarti e' piu' compatta. Mettiamo davanti la piu'
+        larga, perche' il profilo e' l'inquadratura che in vetrina fa
+        sembrare la moto una moto.
+        """
+        scaricate = []
+        for indirizzo in scontornate[:4]:
             try:
                 dati = scarica(indirizzo, tentativi=2)
             except RuntimeError:
                 continue
+            try:
+                prova = Image.open(_io.BytesIO(dati))
+                prova.load()
+                prova = prova.convert("RGBA")
+            except Exception:
+                continue
+            if prova.split()[-1].getextrema()[0] == 255:
+                continue  # ha il fondo pieno: non e' scontornata
+            riquadro = prova.split()[-1].getbbox()
+            if riquadro is None:
+                continue
+            larghezza = riquadro[2] - riquadro[0]
+            altezza = max(1, riquadro[3] - riquadro[1])
+            scaricate.append((larghezza / altezza, dati))
+
+        scaricate.sort(key=lambda x: -x[0])
+
+        etichette = [("lato-destro", "Lato destro"), ("angolo-destro", "Inclinata a destra")]
+        viste = []
+        for _, dati in scaricate[:2]:
             vista, etichetta = etichette[len(viste)]
             out = os.path.join(DESTINAZIONE, cartella, "unica", vista + ".webp")
             if salva(dati, out, a.larghezza, a.qualita, True):

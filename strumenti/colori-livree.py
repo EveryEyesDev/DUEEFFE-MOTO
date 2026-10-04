@@ -1,43 +1,40 @@
 #!/usr/bin/env python3
 """
-Ricava il colore di ogni livrea dalla fotografia e sistema il catalogo.
+Trova il colore vero di ogni livrea e lo scrive nel catalogo.
 
 IL PROBLEMA
-Due cose stonavano nelle schede. Primo: per i modelli di cui Suzuki non
-pubblica i nomi dei colori in forma leggibile, le livree si chiamavano
-"Livrea 1", "Livrea 2". Secondo: il pallino colorato accanto al nome era
-sempre dello stesso grigio, perche' nessuno ci aveva messo il colore vero.
+Accanto al nome di ogni livrea, nella scheda della moto, c'e' un pallino
+colorato. Se quel pallino non corrisponde alla moto che si vede, il
+dettaglio sembra sbagliato anche quando tutto il resto e' giusto.
 
-LA SOLUZIONE
-Il colore ce l'abbiamo gia': e' nella fotografia. Qui lo misuriamo e lo
-scriviamo nel catalogo, cosi' il pallino diventa quello giusto, e dove
-manca il nome commerciale mettiamo almeno il colore in italiano ("Nero",
-"Blu", "Rosso") invece di un numero.
+PERCHE' I TENTATIVI PRECEDENTI NON FUNZIONAVANO
+Il primo prendeva il colore piu' acceso dell'immagine: su una moto bianca
+con le grafiche rosse vinceva il rosso, e la dava per rossa. Il secondo
+prendeva il colore piu' diffuso: vinceva il grigio del motore, perche' di
+meccanica se ne vede tanta. Il terzo lo deduceva dal nome ("BLU MIAMI" e'
+blu), che azzecca la tinta ma non la sfumatura: Blu Miami, Blu Zante e Blu
+Atene finivano tutti sullo stesso identico blu.
 
-COME SI MISURA
-Guardiamo i pixel della moto (quelli non trasparenti) e togliamo il buio
-sotto una certa soglia: gomme, motore e ombre. Di quel che resta cerchiamo
-il colore che occupa piu' superficie, raggruppando le tinte simili.
+COME LO TROVIAMO ADESSO
+Confrontando le livree fra loro. Le fotografie di uno stesso modello sono
+lo stesso scatto: identica inquadratura, identica luce. Fra una livrea e
+l'altra cambia una cosa sola, la vernice. Quindi i punti in cui le
+immagini *differiscono* sono esattamente la carrozzeria, e nient'altro:
+motore, gomme, dischi e forcelle sono identici in tutte e si annullano da
+soli. Il colore della livrea e' il colore medio di quei punti.
 
-Il punto delicato e' questo: la prima versione cercava il colore piu'
-acceso, e sbagliava sistematicamente. Su una moto bianca con le grafiche
-rosse il rosso e' acceso e il bianco no, quindi la dava per rossa. La
-carrozzeria non e' il colore piu' vivo: e' quello che copre piu'
-superficie. Contando l'area, una moto bianca risulta bianca anche se ha
-gli adesivi rossi.
-
-NON INVENTIAMO I NOMI COMMERCIALI
-"Blu" non e' "Metallic Triton Blue". Dove Suzuki pubblica il nome vero,
-quello resta e non lo tocchiamo: qui riempiamo solo i buchi, e il nome
-commerciale va chiesto al cliente quando lo avra'.
+QUANDO NON SI PUO'
+Se il modello ha una livrea sola non c'e' niente con cui confrontarla, e
+restiamo sul nome commerciale con una tavolozza di riferimento. Lo
+strumento dice quante sono.
 
 COME SI USA
-    python strumenti/colori-livree.py            scrive nel catalogo
-    python strumenti/colori-livree.py --prova    mostra soltanto cosa farebbe
+    python strumenti/colori-livree.py             scrive nel catalogo
+    python strumenti/colori-livree.py --prova     non scrive niente
+    python strumenti/colori-livree.py --provino   salva un'immagine di controllo
 """
 
 import argparse
-import glob
 import io
 import os
 import re
@@ -45,194 +42,253 @@ import sys
 
 try:
     import numpy as np
-    from PIL import Image
+    from PIL import Image, ImageDraw
 except ImportError:
     sys.exit("Mancano Pillow o numpy.\nInstallali con:  pip install Pillow numpy")
 
 CATALOGO = os.path.join("src", "data", "motorcycles.ts")
 
-# I nomi dei colori, in italiano e in inglese, come li scrivono i
-# costruttori. E' la via piu' affidabile: "BLU MIAMI" e' blu, punto. Provare
-# a dedurlo dalla fotografia non funziona, perche' queste moto sono per
-# meta' meccanica grigia e le grafiche accese ingannano la misura.
+# Quanto devono differire due livree in un punto perche' sia vernice e non
+# rumore di compressione.
+DIFFERENZA = 26
+# Sotto questa luminosita' siamo nelle ombre: non e' vernice che si vede.
+BUIO = 45
+
+# Tavolozza di riferimento: serve solo quando la livrea e' unica e il
+# colore si puo' soltanto dedurre dal nome.
 VOCABOLARIO = [
-    (("nero", "black", "ebony", "viper", "midnight"), "Nero", "#141418"),
-    (("bianco", "white", "artic", "arctic", "carrara", "pearl"), "Bianco", "#eef0f2"),
-    (("argento", "silver", "metallic silver"), "Argento", "#b7bcc2"),
-    (("grigio", "grey", "gray", "anthracite", "antracite", "smoky", "titanium"), "Grigio", "#4a4e55"),
-    (("rosso", "red", "passion", "energy"), "Rosso", "#c01727"),
-    (("azzurro", "celeste", "cyan", "light blue"), "Azzurro", "#2f7fd1"),
-    (("blu", "blue"), "Blu", "#1d3f8f"),
-    (("verde", "green", "jungle"), "Verde", "#2f6b3a"),
-    (("giallo", "yellow"), "Giallo", "#e3c222"),
-    (("arancione", "arancio", "orange"), "Arancione", "#e07a1f"),
-    (("oro", "gold", "champagne"), "Oro", "#c9a227"),
-    (("bronzo", "bronze", "rame", "copper"), "Bronzo", "#8c6239"),
-    (("marrone", "brown", "sabbia", "sand", "beige", "desert"), "Sabbia", "#9b8363"),
-    (("viola", "purple", "violet"), "Viola", "#5b3a8c"),
-    (("rosa", "pink"), "Rosa", "#d46a8c"),
+    (("nero", "black", "ebony", "viper", "midnight", "basalt"), "#141418"),
+    (("bianco", "white", "artic", "arctic", "carrara", "pearl", "glacier"), "#eef0f2"),
+    (("argento", "silver"), "#b7bcc2"),
+    (("grigio", "grey", "gray", "anthracite", "antracite", "smoky", "titanium"), "#4a4e55"),
+    (("rosso", "red", "passion", "energy"), "#c01727"),
+    (("azzurro", "celeste", "cyan"), "#2f7fd1"),
+    (("blu", "blue"), "#1d3f8f"),
+    (("verde", "green", "jungle", "lime"), "#2f6b3a"),
+    (("giallo", "yellow"), "#e3c222"),
+    (("arancione", "arancio", "orange"), "#e07a1f"),
+    (("oro", "gold", "champagne"), "#c9a227"),
+    (("bronzo", "bronze", "rame", "copper"), "#8c6239"),
+    (("marrone", "brown", "sabbia", "sand", "beige", "desert"), "#9b8363"),
+    (("viola", "purple", "violet"), "#5b3a8c"),
+    (("rosa", "pink"), "#d46a8c"),
 ]
 
 
 def dal_nome(nome):
-    """
-    Il colore ricavato dal nome commerciale, se il nome lo dice.
-
-    Torna il codice esadecimale, oppure None se nel nome non c'e' nessuna
-    parola di colore riconoscibile.
-    """
     piatto = " " + re.sub(r"[^a-z]+", " ", nome.lower()) + " "
-    for parole, _, codice in VOCABOLARIO:
+    for parole, codice in VOCABOLARIO:
         for parola in parole:
-            if " %s " % parola in piatto or piatto.strip().startswith(parola):
+            if " %s " % parola in piatto:
                 return codice
     return None
 
 
-# Sotto questa luminosita' e' ombra, gomma o motore: non e' carrozzeria.
-BUIO = 55
-# Sotto questa vivacita' e' metallo o plastica scura, non una tinta.
-SPENTO = 42
+def famiglia(codice):
+    """
+    A quale famiglia appartiene un colore: nero, bianco, grigio o una tinta.
 
-# Le tinte, in gradi sulla ruota dei colori.
-TINTE = [
-    (0, 14, "Rosso"),
-    (14, 38, "Arancione"),
-    (38, 68, "Giallo"),
-    (68, 160, "Verde"),
-    (160, 200, "Azzurro"),
-    (200, 255, "Blu"),
-    (255, 290, "Viola"),
-    (290, 335, "Magenta"),
-    (335, 361, "Rosso"),
-]
-
-
-def nome_tinta(gradi):
-    for inizio, fine, nome in TINTE:
+    Serve per confrontare quello che abbiamo misurato con quello che dice
+    il nome commerciale. Le tinte sono distinte per posizione sulla ruota
+    dei colori.
+    """
+    r, g, b = (int(codice[i:i + 2], 16) for i in (1, 3, 5))
+    massimo, minimo = max(r, g, b), min(r, g, b)
+    vivacita = massimo - minimo
+    if vivacita <= 34:
+        luce = (r + g + b) / 3
+        if luce > 170:
+            return "bianco"
+        if luce > 95:
+            return "grigio"
+        return "nero"
+    if massimo == r:
+        gradi = (60 * ((g - b) / vivacita)) % 360
+    elif massimo == g:
+        gradi = 60 * ((b - r) / vivacita) + 120
+    else:
+        gradi = 60 * ((r - g) / vivacita) + 240
+    for inizio, fine, nome in [
+        (0, 16, "rosso"), (16, 42, "arancione"), (42, 70, "giallo"),
+        (70, 165, "verde"), (165, 200, "azzurro"), (200, 258, "blu"),
+        (258, 300, "viola"), (300, 340, "rosa"), (340, 361, "rosso"),
+    ]:
         if inizio <= gradi < fine:
             return nome
-    return "Rosso"
+    return "rosso"
 
 
-def colore_di(percorso):
-    """
-    Torna (nome in italiano, codice esadecimale) della livrea.
-
-    Due stadi, perche' un solo criterio sbaglia sempre da una parte.
-
-    Primo: cerchiamo una tinta vera (rosso, blu, verde...) e guardiamo
-    quanta superficie copre. Se supera una fetta significativa della moto,
-    quella e' la livrea. La soglia serve a non farsi ingannare dagli
-    adesivi e dalle pinze dei freni, che sono accesi ma piccoli.
-
-    Secondo: se di tinta non ce n'e' abbastanza, la moto e' bianca, grigia
-    o nera, e allora decide la luminosita' media della carrozzeria.
-    """
+def carica(percorso, lato=360):
     im = Image.open(percorso).convert("RGBA")
-    if max(im.size) > 500:
-        im = im.resize((500, round(im.height * 500 / im.width)), Image.BILINEAR)
+    if im.width != lato:
+        im = im.resize((lato, max(1, round(im.height * lato / im.width))), Image.BILINEAR)
+    return np.array(im).astype(int)
 
-    a = np.array(im).astype(int)
-    visibile = a[:, :, 3] > 128
-    if not visibile.any():
-        return ("Nero", "#141418")
 
-    rgb = a[:, :, :3][visibile]
-    corpo = rgb[rgb.max(axis=1) > BUIO]   # via gomme, motore e ombre
-    if len(corpo) < 40:
-        return ("Nero", "#141418")
+def colori_per_confronto(percorsi):
+    """
+    Il colore di ogni livrea, dai punti in cui le livree differiscono.
 
-    massimo = corpo.max(axis=1)
-    minimo = corpo.min(axis=1)
-    vivaci = (massimo - minimo) > SPENTO
-    quota = vivaci.sum() / len(corpo)
+    Riceve una fotografia per livrea, tutte della stessa vista. Torna un
+    codice esadecimale per ognuna, nello stesso ordine, oppure None se il
+    confronto non si puo' fare.
+    """
+    if len(percorsi) < 2:
+        return None
 
-    if quota >= 0.10:
-        tinte = corpo[vivaci]
-        grossolano = tinte // 32
-        chiavi = grossolano[:, 0] * 64 + grossolano[:, 1] * 8 + grossolano[:, 2]
-        gruppo = int(np.bincount(chiavi).argmax())
-        media = tinte[chiavi == gruppo].mean(axis=0)
-        r, g, b = media
-        vivacita = max(float(max(media) - min(media)), 1.0)
-        if max(media) == r:
-            gradi = (60 * ((g - b) / vivacita)) % 360
-        elif max(media) == g:
-            gradi = 60 * ((b - r) / vivacita) + 120
-        else:
-            gradi = 60 * ((r - g) / vivacita) + 240
-        codice = "#%02x%02x%02x" % tuple(int(round(c)) for c in media)
-        return (nome_tinta(gradi), codice)
+    immagini = []
+    for percorso in percorsi:
+        try:
+            immagini.append(carica(percorso))
+        except Exception:
+            return None
 
-    # Nessuna tinta: comanda la luminosita'.
-    media = corpo.mean(axis=0)
-    codice = "#%02x%02x%02x" % tuple(int(round(c)) for c in media)
-    luce = float(media.mean())
-    if luce > 170:
-        return ("Bianco", codice)
-    if luce > 120:
-        return ("Argento", codice)
-    if luce > 75:
-        return ("Grigio", codice)
-    return ("Nero", codice)
+    altezza = min(i.shape[0] for i in immagini)
+    larghezza = min(i.shape[1] for i in immagini)
+    immagini = [i[:altezza, :larghezza] for i in immagini]
+
+    visibile = immagini[0][:, :, 3] > 128
+    for i in immagini[1:]:
+        visibile &= i[:, :, 3] > 128
+    if visibile.sum() < 200:
+        return None
+
+    scarto_massimo = np.zeros((altezza, larghezza))
+    for n, a in enumerate(immagini):
+        for b in immagini[n + 1:]:
+            scarto = np.abs(a[:, :, :3] - b[:, :, :3]).max(axis=2)
+            scarto_massimo = np.maximum(scarto_massimo, scarto)
+
+    carrozzeria = visibile & (scarto_massimo > DIFFERENZA)
+    for a in immagini:
+        carrozzeria &= a[:, :, :3].max(axis=2) > BUIO
+
+    if carrozzeria.sum() < 150:
+        return None
+
+    codici = []
+    for a in immagini:
+        pixel = a[:, :, :3][carrozzeria]
+        # Non la media: dentro la carrozzeria ci sono anche le grafiche e le
+        # parti in ombra, e mediando bianco e rosso viene fuori rosa. Prendiamo
+        # invece la tinta che occupa piu' superficie, raggruppando le simili.
+        grossolano = pixel // 24
+        chiavi = grossolano[:, 0] * 144 + grossolano[:, 1] * 12 + grossolano[:, 2]
+        conteggio = np.bincount(chiavi)
+
+        # Fra i gruppi grandi preferiamo quello con una tinta vera. Su una
+        # moto rossa il nero dei pannelli copre piu' superficie del rosso,
+        # ma la livrea si chiama rossa per il rosso: se c'e' una tinta con
+        # una superficie confrontabile, vince lei. Se non ce n'e' nessuna,
+        # la moto e' davvero bianca, grigia o nera, e vince il piu' grande.
+        soglia = conteggio.max() * 0.25
+        candidati = np.where(conteggio >= soglia)[0]
+
+        migliore = int(conteggio.argmax())
+        vivacita_migliore = -1
+        for gruppo in candidati:
+            scelti = pixel[chiavi == gruppo]
+            media = scelti.mean(axis=0)
+            vivacita = float(media.max() - media.min())
+            if vivacita > 38 and vivacita > vivacita_migliore:
+                vivacita_migliore = vivacita
+                migliore = int(gruppo)
+
+        media = pixel[chiavi == migliore].mean(axis=0)
+        codici.append("#%02x%02x%02x" % tuple(int(round(c)) for c in media))
+    return codici
 
 
 def main():
-    p = argparse.ArgumentParser(description="Colori delle livree dal vero.")
-    p.add_argument("--prova", action="store_true", help="mostra senza scrivere")
+    p = argparse.ArgumentParser(description="Colore vero delle livree.")
+    p.add_argument("--prova", action="store_true")
+    p.add_argument("--provino", action="store_true")
     a = p.parse_args()
 
     s = io.open(CATALOGO, encoding="utf-8").read()
+    pezzi = s.split("\n  {\n    id: '")
 
-    # Ogni livrea nel catalogo: slug, nome, codice colore, e la prima vista.
     schema = re.compile(
-        r"(\{\s*\n\s*slug: '(?P<slug>[^']+)',\s*\n"
-        r"\s*name: '(?P<nome>[^']*)',\s*\n"
-        r"\s*hex: ')(?P<hex>[^']*)('[\s\S]*?src: '(?P<src>[^']+)')"
+        r"slug: '(?P<slug>[^']+)',\n\s*name: '(?P<nome>[^']*)',\n\s*hex: '(?P<hex>[^']*)',"
+        r"[\s\S]*?src: '(?P<src>[^']+)'"
     )
 
-    cambi = []
+    misurate = 0
+    dedotte = 0
+    provino = []
+    senza_confronto = []
+    scartate = []
 
-    def sostituisci(m):
-        vecchio_nome = m.group("nome")
-        segnaposto = bool(re.fullmatch(r"Livrea \d+", vecchio_nome))
+    for n in range(1, len(pezzi)):
+        blocco = pezzi[n]
+        ident = blocco.split("'")[0]
+        livree = list(schema.finditer(blocco))
+        if not livree:
+            continue
 
-        # Prima strada, quella buona: il colore sta scritto nel nome.
-        codice = None if segnaposto else dal_nome(vecchio_nome)
-        nome_colore = vecchio_nome
+        percorsi = [
+            os.path.join("public", m.group("src").lstrip("/").replace("/", os.sep))
+            for m in livree
+        ]
+        if not all(os.path.isfile(x) for x in percorsi):
+            continue
 
-        # Seconda strada, solo se il nome non c'e' o non dice il colore:
-        # lo misuriamo dalla fotografia. E' un'approssimazione, va
-        # ricontrollata col listino del costruttore.
-        if codice is None:
-            percorso = os.path.join("public", m.group("src").lstrip("/").replace("/", os.sep))
-            if not os.path.isfile(percorso):
-                return m.group(0)
-            misurato, codice = colore_di(percorso)
-            if segnaposto:
-                nome_colore = misurato
+        codici = colori_per_confronto(percorsi) if len(livree) > 1 else None
+        confrontate = codici is not None
+        if not confrontate:
+            senza_confronto.append(ident)
 
-        testo = m.group(0)
-        if nome_colore != vecchio_nome:
-            testo = testo.replace("name: '%s'," % vecchio_nome, "name: '%s'," % nome_colore, 1)
-        testo = testo.replace("hex: '%s'," % m.group("hex"), "hex: '%s'," % codice, 1)
-        cambi.append((m.group("slug"), vecchio_nome, nome_colore, codice, segnaposto))
-        return testo
+        for k, m in enumerate(livree):
+            atteso = dal_nome(m.group("nome"))
+            if confrontate:
+                codice = codici[k]
+                # Il nome commerciale e' l'unica cosa certa che abbiamo: se
+                # la misura dice un'altra famiglia di colore vuol dire che
+                # ha preso un adesivo o un pannello, e la scartiamo.
+                if atteso is not None and famiglia(codice) != famiglia(atteso):
+                    codice = atteso
+                    scartate.append("%s / %s" % (ident, m.group("nome")))
+            else:
+                codice = atteso or m.group("hex")
+            vecchio = "slug: '%s',\n        name: '%s',\n        hex: '%s'," % (
+                m.group("slug"), m.group("nome"), m.group("hex"))
+            nuovo = "slug: '%s',\n        name: '%s',\n        hex: '%s'," % (
+                m.group("slug"), m.group("nome"), codice)
+            blocco = blocco.replace(vecchio, nuovo, 1)
+            if confrontate:
+                misurate += 1
+            else:
+                dedotte += 1
+            provino.append((ident, m.group("nome"), codice, percorsi[k], confrontate))
 
-    nuovo = schema.sub(sostituisci, s)
+        pezzi[n] = blocco
 
-    for slug, prima, dopo, codice, misurato in cambi:
-        segno = "  DA CONFERMARE" if misurato else ""
-        print("  %-28s %-26s %s%s" % (slug[:28], dopo[:26], codice, segno))
+    if not a.prova:
+        io.open(CATALOGO, "w", encoding="utf-8").write("\n  {\n    id: '".join(pezzi))
 
-    if a.prova:
-        print("\n%d livree esaminate. Prova soltanto: non ho scritto niente." % len(cambi))
-        return
+    print("%d livree misurate dal confronto, %d dedotte dal nome." % (misurate, dedotte))
+    if senza_confronto:
+        print("\nModelli con una livrea sola (colore dal nome):")
+        for i in senza_confronto:
+            print("  ", i)
 
-    io.open(CATALOGO, "w", encoding="utf-8").write(nuovo)
-    rinominate = sum(1 for c in cambi if c[4])
-    print("\n%d livree aggiornate col colore vero, %d rinominate." % (len(cambi), rinominate))
+    if a.provino:
+        alto = 54
+        tela = Image.new("RGB", (580, alto * len(provino)), (16, 16, 20))
+        d = ImageDraw.Draw(tela)
+        for i, (ident, nome, codice, percorso, confrontata) in enumerate(provino):
+            y = i * alto
+            moto = Image.open(percorso).convert("RGBA")
+            moto = moto.resize((84, max(1, round(moto.height * 84 / moto.width))))
+            tela.paste(moto, (4, y + 2), moto)
+            d.rectangle([94, y + 10, 134, y + 42], fill=codice)
+            d.text((144, y + 8), "%s / %s" % (ident, nome), fill=(235, 235, 235))
+            d.text((144, y + 26), "%s  %s" % (codice, "misurato" if confrontata else "dal nome"),
+                   fill=(150, 150, 150))
+        fuori = os.path.join(os.environ.get("TEMP", "."), "claude", "provino-colori.png")
+        os.makedirs(os.path.dirname(fuori), exist_ok=True)
+        tela.save(fuori)
+        print("\nProvino salvato in %s" % fuori)
 
 
 if __name__ == "__main__":
