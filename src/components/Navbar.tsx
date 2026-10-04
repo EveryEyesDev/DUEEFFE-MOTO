@@ -12,7 +12,6 @@ import { SITE } from '../config/site';
  */
 const NAV_LINKS = [
   { label: 'Le nostre moto', href: '/moto' },
-  { label: 'Recensioni', href: '/#recensioni' },
   { label: 'Finanziamenti', href: '/#finanziamento' },
   { label: 'Officina', href: '/#officina' },
   { label: 'Contatti', href: '/#contatti' },

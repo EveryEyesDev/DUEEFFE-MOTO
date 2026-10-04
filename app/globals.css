@@ -9,7 +9,9 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #070709;
+    /* Il nero sta sull'elemento html: il body resta trasparente perche'
+       dietro di lui c'e' la griglia tecnica (vedi body::before in fondo). */
+    background-color: transparent;
     color: #f1f5f9;
     overflow-x: hidden;
   }
@@ -58,4 +60,82 @@
   to {
     transform: translate3d(calc(-1 * var(--larghezza-gruppo, 50%)), 0, 0);
   }
+}
+
+/*
+ * Strada che scorre sotto la moto nello showcase.
+ *
+ * Sposta la mezzeria tratteggiata di esattamente una campitura (il tratto
+ * bianco piu' il vuoto che lo segue, 240 pixel). Essendo il disegno
+ * ripetuto, dopo una campitura l'immagine coincide con quella di partenza:
+ * il ciclo non si vede e la strada sembra infinita.
+ *
+ * Si muove con `transform` e non con la posizione dello sfondo perche' le
+ * trasformazioni le gestisce la scheda grafica: il browser non ridisegna
+ * nulla ad ogni fotogramma, e lo scorrimento della striscia resta fluido.
+ */
+@keyframes scorri-strada-sinistra {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-240px, 0, 0);
+  }
+}
+
+@keyframes scorri-strada-destra {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(240px, 0, 0);
+  }
+}
+
+/* Chi ha chiesto meno animazioni vede la strada ferma. */
+@media (prefers-reduced-motion: reduce) {
+  .strada-mezzeria {
+    animation: none !important;
+  }
+}
+
+/*
+ * Trama tecnica di fondo.
+ *
+ * Una griglia di linee sottilissime su tutta la pagina, come la carta
+ * millimetrata dei disegni meccanici. Richiama l'officina e toglie al nero
+ * quella sensazione di fondo piatto e vuoto.
+ *
+ * Due passi sovrapposti: uno largo da 120 pixel che da' struttura e uno
+ * fitto da 24 appena accennato. Restano ben sotto il contrasto del testo,
+ * quindi si percepiscono senza mai disturbare la lettura.
+ *
+ * La trama sta su un livello fisso dietro al contenuto, non sul fondo del
+ * body: `background-attachment: fixed` obbligava il browser a ridisegnare
+ * tutta la griglia ad ogni scorrimento, e si sentiva. Un livello in
+ * posizione fissa viene invece composto una volta sola e resta fermo da
+ * solo. Il nero di base sta sull'elemento html, cosi' il livello (che sta a
+ * z-index -1) si vede comunque, e resta dietro a tutto il contenuto senza
+ * interferire con la barra di navigazione ne' con lo showcase.
+ */
+html {
+  background-color: #070709;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.011) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.011) 1px, transparent 1px);
+  background-size:
+    120px 120px,
+    120px 120px,
+    24px 24px,
+    24px 24px;
 }

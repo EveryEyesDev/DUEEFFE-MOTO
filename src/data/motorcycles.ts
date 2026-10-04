@@ -35,12 +35,48 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'La compagna giusta per il viaggio lungo e per il lunedì mattina',
     description:
       'Una crossover pensata per chi non vuole scegliere tra strada e sterrato. Il bicilindrico da 693 cc spinge con regolarità, la forcella Marzocchi completamente regolabile lavora bene anche sul rotto, e con 18 litri di serbatoio i trasferimenti non diventano una caccia al distributore. La versione a raggi aggiunge cavalletto centrale e dashcam anteriore.',
-    // Immagini ufficiali Moto Morini: profili studio e una su strada
-    image: '/moto/x-cape-700/vista-1.webp',
-    gallery: [
-      '/moto/x-cape-700/vista-1.webp',
-      '/moto/x-cape-700/vista-2.webp',
-      '/moto/x-cape-700/in-strada.webp',
+    // Fotografie ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    roadImage: '/moto/x-cape-700/in-strada.webp',
+    colorways: [
+      {
+        slug: 'bianco-carrara',
+        name: 'Carrara White',
+        hex: '#eef0f2',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/bianco-carrara/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/bianco-carrara/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/x-cape-700/bianco-carrara/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/x-cape-700/bianco-carrara/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/x-cape-700/bianco-carrara/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/x-cape-700/bianco-carrara/retro.webp' },
+        ],
+      },
+      {
+        slug: 'nero-ebony',
+        name: 'Black Ebony',
+        hex: '#141418',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/nero-ebony/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/nero-ebony/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/x-cape-700/nero-ebony/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/x-cape-700/nero-ebony/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/x-cape-700/nero-ebony/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/x-cape-700/nero-ebony/retro.webp' },
+        ],
+      },
+      {
+        slug: 'rosso-passion',
+        name: 'Red Passion',
+        hex: '#b11226',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/rosso-passion/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/rosso-passion/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/x-cape-700/rosso-passion/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/x-cape-700/rosso-passion/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/x-cape-700/rosso-passion/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/x-cape-700/rosso-passion/retro.webp' },
+        ],
+      },
     ],
     price: 7190,
     priceNote:
@@ -83,14 +119,48 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Quando il viaggio si misura in giorni, non in chilometri',
     description:
       'Il passo lungo della gamma adventure. Il bicilindrico a V di 87 gradi mette in strada 129 cavalli con la calma di chi non deve dimostrare niente, e i 24,5 litri di serbatoio spostano il problema dell’autonomia molto più in là. Cruise control, quickshifter e ABS cornering rendono le tappe da autostrada meno faticose di quanto sembri.',
-    // Immagini ufficiali Moto Morini: profili studio e una su strada
-    image: '/moto/x-cape-1200/vista-1.webp',
-    gallery: [
-      '/moto/x-cape-1200/vista-1.webp',
-      '/moto/x-cape-1200/vista-2.webp',
-      '/moto/x-cape-1200/vista-3.webp',
-      '/moto/x-cape-1200/vista-4.webp',
-      '/moto/x-cape-1200/in-strada.webp',
+    // Fotografie ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    roadImage: '/moto/x-cape-1200/in-strada.webp',
+    colorways: [
+      {
+        slug: 'bianco-artic',
+        name: 'Arctic White',
+        hex: '#f1f4f6',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/bianco-artic/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/bianco-artic/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/x-cape-1200/bianco-artic/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/x-cape-1200/bianco-artic/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/x-cape-1200/bianco-artic/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/x-cape-1200/bianco-artic/retro.webp' },
+        ],
+      },
+      {
+        slug: 'nero-viper',
+        name: 'Viper Black',
+        hex: '#15161a',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/nero-viper/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/nero-viper/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/x-cape-1200/nero-viper/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/x-cape-1200/nero-viper/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/x-cape-1200/nero-viper/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/x-cape-1200/nero-viper/retro.webp' },
+        ],
+      },
+      {
+        slug: 'rosso-energy',
+        name: 'Energy Red',
+        hex: '#c21f2e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/rosso-energy/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/rosso-energy/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/x-cape-1200/rosso-energy/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/x-cape-1200/rosso-energy/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/x-cape-1200/rosso-energy/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/x-cape-1200/rosso-energy/retro.webp' },
+        ],
+      },
     ],
     price: 12990,
     priceNote:
@@ -134,11 +204,35 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Leggera, alta e sincera: la prima adventure vera',
     description:
       'La più accessibile della famiglia. Il bicilindrico da 449 cc eroga 44,8 cavalli, ma sono i 170 chili a secco e la forcella con 208 mm di escursione a fare la differenza: in sella si sta alti, si vede lontano e lo sterrato non spaventa. La versione High Equipped aggiunge paramani, sella e manopole riscaldate, che su una moto da viaggio contano più di dieci cavalli in più.',
-    // Immagini ufficiali Moto Morini: profili studio e una su strada
-    image: '/moto/alltrhike-450/vista-1.webp',
-    gallery: [
-      '/moto/alltrhike-450/vista-1.webp',
-      '/moto/alltrhike-450/in-strada.webp',
+    // Fotografie ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    roadImage: '/moto/alltrhike-450/in-strada.webp',
+    colorways: [
+      {
+        slug: 'nero',
+        name: 'Nero',
+        hex: '#141418',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/alltrhike-450/nero/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/alltrhike-450/nero/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/alltrhike-450/nero/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/alltrhike-450/nero/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/alltrhike-450/nero/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/alltrhike-450/nero/retro.webp' },
+        ],
+      },
+      {
+        slug: 'verde-jungle',
+        name: 'Jungle Green',
+        hex: '#3a4a35',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/alltrhike-450/verde-jungle/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/alltrhike-450/verde-jungle/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/alltrhike-450/verde-jungle/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/alltrhike-450/verde-jungle/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/alltrhike-450/verde-jungle/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/alltrhike-450/verde-jungle/retro.webp' },
+        ],
+      },
     ],
     price: 5890,
     priceNote:
@@ -182,11 +276,48 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Niente fronzoli, solo il piacere di guidare',
     description:
       'Una naked dal disegno pulito, con le meccaniche a vista e un manubrio largo che rende immediati i cambi di direzione. Il bicilindrico da 649 cc tira con onestà, i freni sono Brembo e le sospensioni Kayaba sono regolabili davanti e dietro, cosa non scontata in questa fascia. Facile da vivere in città, piacevole quando la strada si fa curva.',
-    // Immagini ufficiali Moto Morini: profili studio e una su strada
-    image: '/moto/seiemmezzo-str/vista-1.webp',
-    gallery: [
-      '/moto/seiemmezzo-str/vista-1.webp',
-      '/moto/seiemmezzo-str/in-strada.webp',
+    // Fotografie ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    roadImage: '/moto/seiemmezzo-str/in-strada.webp',
+    colorways: [
+      {
+        slug: 'bianco-carrara',
+        name: 'Carrara White',
+        hex: '#eef0f2',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/seiemmezzo-str/bianco-carrara/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/seiemmezzo-str/bianco-carrara/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/seiemmezzo-str/bianco-carrara/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/seiemmezzo-str/bianco-carrara/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/seiemmezzo-str/bianco-carrara/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/seiemmezzo-str/bianco-carrara/retro.webp' },
+        ],
+      },
+      {
+        slug: 'grigio',
+        name: 'Smoky Anthracite',
+        hex: '#3b3f45',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/seiemmezzo-str/grigio/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/seiemmezzo-str/grigio/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/seiemmezzo-str/grigio/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/seiemmezzo-str/grigio/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/seiemmezzo-str/grigio/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/seiemmezzo-str/grigio/retro.webp' },
+        ],
+      },
+      {
+        slug: 'rosso-passion',
+        name: 'Red Passion',
+        hex: '#b11226',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/seiemmezzo-str/rosso-passion/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/seiemmezzo-str/rosso-passion/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/seiemmezzo-str/rosso-passion/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/seiemmezzo-str/rosso-passion/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/seiemmezzo-str/rosso-passion/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/seiemmezzo-str/rosso-passion/retro.webp' },
+        ],
+      },
     ],
     price: 5590,
     priceNote:
@@ -228,12 +359,35 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Il piacere di arrivare tardi, ma arrivarci bene',
     description:
       'Sella a 690 millimetri da terra, pedane avanzate e trasmissione finale a cinghia: silenziosa, pulita e che non chiede la manutenzione di una catena. Il bicilindrico da 693 cc è lo stesso della X-Cape 700, qui tarato per spingere basso. Una custom pensata per i viaggi senza orologio, con la comodità al primo posto.',
-    // Immagini ufficiali Moto Morini: profili studio e una su strada
-    image: '/moto/calibro-custom/vista-1.webp',
-    gallery: [
-      '/moto/calibro-custom/vista-1.webp',
-      '/moto/calibro-custom/vista-2.webp',
-      '/moto/calibro-custom/in-strada.webp',
+    // Fotografie ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    roadImage: '/moto/calibro-custom/in-strada.webp',
+    colorways: [
+      {
+        slug: 'nero',
+        name: 'Nero',
+        hex: '#141418',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/calibro-custom/nero/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/calibro-custom/nero/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/calibro-custom/nero/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/calibro-custom/nero/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/calibro-custom/nero/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/calibro-custom/nero/retro.webp' },
+        ],
+      },
+      {
+        slug: 'rosso',
+        name: 'Rosso',
+        hex: '#c01727',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/calibro-custom/rosso/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/calibro-custom/rosso/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/calibro-custom/rosso/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/calibro-custom/rosso/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/calibro-custom/rosso/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/calibro-custom/rosso/retro.webp' },
+        ],
+      },
     ],
     price: 7990,
     priceNote:
@@ -275,11 +429,32 @@ export const MOTO_NUOVE: Motorcycle[] = [
     tagline: 'Tutto quello che ti serve, già a bordo',
     description:
       'La versione da grande viaggio della Calibro. Valigie laterali e cupolino arrivano di serie, quindi non c’è da ricomprare mezzo accessorio dopo l’acquisto. Stessa sella bassa a 690 millimetri e stessa trasmissione a cinghia della Cruiser, con dodici chili in più che si sentono poco e si ripagano in protezione e capacità di carico.',
-    // Immagini ufficiali Moto Morini: profili studio e una su strada
-    image: '/moto/calibro-bagger/vista-1.webp',
-    gallery: [
-      '/moto/calibro-bagger/vista-1.webp',
-      '/moto/calibro-bagger/in-strada.webp',
+    // Fotografie ufficiali Moto Morini, scaricate con strumenti/importa-foto-morini.py
+    roadImage: '/moto/calibro-bagger/in-strada.webp',
+    colorways: [
+      {
+        slug: 'grigio-garage',
+        name: 'Garage Grey',
+        hex: '#54585e',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/calibro-bagger/grigio-garage/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/calibro-bagger/grigio-garage/lato-sinistro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/calibro-bagger/grigio-garage/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/calibro-bagger/grigio-garage/angolo-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/calibro-bagger/grigio-garage/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/calibro-bagger/grigio-garage/retro.webp' },
+        ],
+      },
+      {
+        slug: 'nero',
+        name: 'Nero',
+        hex: '#141418',
+        views: [
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/calibro-bagger/nero/angolo-destro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/calibro-bagger/nero/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/calibro-bagger/nero/retro.webp' },
+        ],
+      },
     ],
     price: 8990,
     priceNote:

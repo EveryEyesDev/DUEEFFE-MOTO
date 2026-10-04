@@ -53,22 +53,39 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
 }) => {
   const [reparto, setReparto] = useState<BikeCondition>('nuovo');
   const [categoria, setCategoria] = useState<BikeCategory>('all');
+  const [marca, setMarca] = useState<string>('tutte');
 
   const elenco = reparto === 'nuovo' ? MOTO_NUOVE : MOTO_USATE;
-  const moto = categoria === 'all' ? elenco : elenco.filter((b) => b.category === categoria);
+
+  /*
+    FILTRO PER MARCA
+    Con una gamma sola bastava la categoria. Adesso che a catalogo ci sono
+    decine di modelli di marche diverse, chi arriva cercando una Suzuki non
+    deve scorrere tutto: le marche le ricaviamo da quello che c'e'
+    davvero in elenco, cosi' il filtro non mostra mai una scelta vuota.
+  */
+  const marche = Array.from(new Set(elenco.map((b) => b.brand))).sort();
+
+  const moto = elenco.filter(
+    (b) =>
+      (marca === 'tutte' || b.brand === marca) &&
+      (categoria === 'all' || b.category === categoria),
+  );
+
+  // Cambiando reparto o marca si riparte da tutte le categorie: altrimenti
+  // si resta su un filtro che non seleziona piu' niente.
+  const cambiaMarca = (nuova: string) => {
+    setMarca(nuova);
+    setCategoria('all');
+  };
 
   const specs = selectedBike.specs;
   const hasAnySpec = Object.values(specs).some((v) => v !== undefined && v !== '');
   const hasFeatures = selectedBike.features.length > 0;
   const isUsato = selectedBike.condition === 'usato';
 
-  // La galleria usa le immagini indicate, oppure la sola foto principale.
-  const galleria =
-    selectedBike.gallery && selectedBike.gallery.length > 0
-      ? selectedBike.gallery
-      : selectedBike.image
-        ? [selectedBike.image]
-        : [];
+  // Nel dettaglio si mostrano SOLO le viste studio delle livree.
+  const haViste = (selectedBike.colorways?.length ?? 0) > 0;
 
   const apriDettaglio = (bike: Motorcycle) => {
     onSelectBike(bike);
@@ -146,6 +163,26 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
           </div>
         )}
 
+        {/* Filtri per marca */}
+        {marche.length > 1 && (
+          <div className="flex items-center justify-start sm:justify-center gap-1.5 overflow-x-auto pb-4 mb-3">
+            {['tutte', ...marche].map((m) => (
+              <button
+                key={m}
+                onClick={() => cambiaMarca(m)}
+                aria-pressed={marca === m}
+                className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg whitespace-nowrap transition-all ${
+                  marca === m
+                    ? 'bg-white text-slate-900'
+                    : 'bg-transparent text-slate-400 hover:text-white border border-white/10'
+                }`}
+              >
+                {m === 'tutte' ? 'Tutte le marche' : m}
+              </button>
+            ))}
+          </div>
+        )}
+
         {/* Filtri per categoria */}
         {moto.length > 0 && (
           <div className="flex items-center justify-start sm:justify-center gap-1.5 overflow-x-auto pb-4 mb-8">
@@ -182,20 +219,28 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
           <CatalogoVuoto reparto={reparto} categoria={categoria} />
         )}
 
-        {/* Gli altri marchi trattati non sono ancora a catalogo qui */}
-        {reparto === 'nuovo' && moto.length > 0 && (
-          <p className="max-w-2xl mx-auto -mt-6 mb-14 text-center text-xs text-slate-400 leading-relaxed">
-            A catalogo trovi per ora la gamma Moto Morini. Trattiamo anche{' '}
-            <strong className="text-slate-200">
-              {SITE.brands.filter((b) => b !== 'Moto Morini').join(', ')}
-            </strong>
-            : per questi marchi chiamaci e ti diciamo cosa abbiamo in salone e cosa
-            possiamo ordinarti.{' '}
-            <a href={SITE.phone.href} className="text-[#D00020] font-semibold hover:underline">
-              {SITE.phone.display}
-            </a>
-          </p>
-        )}
+        {/*
+          Gli altri marchi trattati ma non ancora a catalogo.
+          L'elenco e' calcolato, non scritto a mano: man mano che carichiamo
+          una gamma, quella marca sparisce da sola da questa riga.
+        */}
+        {reparto === 'nuovo' &&
+          moto.length > 0 &&
+          (() => {
+            const mancanti = SITE.brands.filter((b) => !marche.includes(b));
+            if (mancanti.length === 0) return null;
+            return (
+              <p className="max-w-2xl mx-auto -mt-6 mb-14 text-center text-xs text-slate-400 leading-relaxed">
+                Trattiamo anche{' '}
+                <strong className="text-slate-200">{mancanti.join(', ')}</strong>: per questi
+                marchi chiamaci e ti diciamo cosa abbiamo in salone e cosa possiamo
+                ordinarti.{' '}
+                <a href={SITE.phone.href} className="text-[#D00020] font-semibold hover:underline">
+                  {SITE.phone.display}
+                </a>
+              </p>
+            );
+          })()}
 
         {/* Dettaglio della moto scelta */}
         <div
@@ -234,8 +279,8 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
             >
               {/* Colonna sinistra: fotografie, descrizione e scheda */}
               <div className="lg:col-span-8">
-                {galleria.length > 0 ? (
-                  <BikeGallery images={galleria} alt={`${selectedBike.brand} ${selectedBike.name}`} />
+                {haViste ? (
+                  <BikeGallery bike={selectedBike} />
                 ) : (
                   <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-gradient-to-br from-[#181920] to-[#0a0a0d] border border-white/5 flex items-center justify-center">
                     <div className="flex flex-col items-center justify-center p-6 text-center">

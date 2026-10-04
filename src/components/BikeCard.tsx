@@ -33,10 +33,12 @@ export const BikeCard: React.FC<BikeCardProps> = ({ bike, onSelect, selected = f
     >
       {/* Immagine */}
       <div className="relative aspect-[4/3] bg-gradient-to-br from-[#181920] to-[#0a0a0d] flex items-center justify-center overflow-hidden">
-        {bike.image ? (
+        {/* Nel catalogo la moto si mostra su strada: e' la fotografia che
+            fa innamorare. Le viste studio stanno nel dettaglio. */}
+        {bike.roadImage ?? bike.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={bike.image}
+            src={bike.roadImage ?? bike.image}
             alt={`${bike.brand} ${bike.name}`}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />

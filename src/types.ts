@@ -51,6 +51,24 @@ export interface UsedDetails {
   sold?: boolean;
 }
 
+/**
+ * Una livrea con le sue viste studio.
+ *
+ * Le viste sono le sei fotografie ufficiali scontornate su fondo bianco:
+ * fronte, retro, i due profili e le due inclinate. I file stanno in
+ * public/moto/<modello>/<slug>/<vista>.webp
+ */
+export interface BikeColorway {
+  /** Cartella della livrea. */
+  slug: string;
+  /** Nome ufficiale del colore, mostrato all'utente. */
+  name: string;
+  /** Pastiglia di colore nel selettore. */
+  hex: string;
+  /** Viste disponibili, nell'ordine di visualizzazione. */
+  views: { id: string; label: string; src: string }[];
+}
+
 export interface Motorcycle {
   id: string;
   /** Marchio: Moto Morini, Voge, Suzuki e gli altri trattati. */
@@ -83,6 +101,15 @@ export interface Motorcycle {
   image?: string;
   /** Galleria fotografica del modello, percorsi dentro /public. */
   gallery?: string[];
+  /**
+   * Fotografia ambientata su strada.
+   * Compare come immagine della scheda nel catalogo e dietro il pulsante
+   * "Vedila su strada" nello showcase. Nel dettaglio NON si mostra:
+   * li' vanno solo le viste studio.
+   */
+  roadImage?: string;
+  /** Livree con le rispettive viste studio. */
+  colorways?: BikeColorway[];
   colors: BikeColorOption[];
   specs: BikeSpec;
   features: string[];

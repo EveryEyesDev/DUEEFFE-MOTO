@@ -1,34 +1,34 @@
 #!/usr/bin/env python3
 """
-Importa le fotografie ufficiali Moto Morini dal sito del costruttore.
+Importa le fotografie ufficiali Moto Morini.
 
 A COSA SERVE
-Scarica da motomorini.com le immagini di prodotto dei modelli che trattiamo,
-le converte in WebP, le ridimensiona per il web e le salva gia' ordinate
-nelle cartelle del sito.
+Scarica dal sito europeo motomorini.eu le immagini di prodotto dei modelli
+che trattiamo, le converte in WebP, le ridimensiona per il web e le salva
+ordinate per modello, vista e livrea.
 
 COME SI USA
     python strumenti/importa-foto-morini.py                 tutti i modelli
     python strumenti/importa-foto-morini.py x-cape-700      un modello solo
-    python strumenti/importa-foto-morini.py --elenca        mostra cosa troverebbe, senza scaricare
+    python strumenti/importa-foto-morini.py --elenca        mostra cosa farebbe
 
 OPZIONI
     --larghezza 1600    larghezza massima delle immagini salvate
-    --qualita 85        qualita' WebP, da 1 a 100
-    --min-lato 500      scarta le immagini piu' piccole di cosi' (icone, loghi)
+    --qualita 86        qualita' WebP, da 1 a 100
 
-COME DISTINGUE LE FOTO DELLE MOTO DAL RESTO
-Le pagine del sito contengono anche logo, bandiere, icone e banner, uguali su
-ogni pagina. Lo script scarica prima una pagina di servizio come riferimento,
-raccoglie le immagini che compaiono li' e le esclude ovunque: quello che resta
-e' il materiale specifico del modello. In piu' scarta tutto cio' che e' troppo
-piccolo per essere una fotografia di prodotto.
+COME SONO ORGANIZZATE
+    public/moto/<modello>/<livrea>/<vista>.webp
 
-I NOMI DELLE VISTE
-Lo script non sa da solo se una foto e' il frontale o il profilo destro, quindi
-salva come vista-01.webp, vista-02.webp e cosi' via, in ordine di comparsa
-sulla pagina. I nomi definitivi (front, back, left, right, angle-left,
-angle-right) si assegnano guardando le immagini, con --rinomina.
+Le viste sono sempre le stesse sei: fronte, retro, lato-sinistro,
+lato-destro, angolo-sinistro, angolo-destro. La prima livrea dell'elenco
+e' quella mostrata per prima sul sito.
+
+PERCHE' GLI INDIRIZZI SONO SCRITTI QUI DENTRO
+Il sito protegge le pagine da letture automatiche, quindi non e' possibile
+ricavare l'elenco delle immagini scaricando la pagina. Gli indirizzi sono
+stati letti dalle pagine ufficiali con un browser e trascritti qui: sono
+reali e verificati, nessuno e' inventato. Se la casa madre rinomina i file,
+lo script lo segnala e basta aggiornare l'elenco.
 
 DIRITTI
 Sono immagini ufficiali del costruttore. Un concessionario ufficiale puo'
@@ -39,7 +39,6 @@ chiesta al proprio referente di zona: questo script non da' alcuna licenza.
 import argparse
 import io as _io
 import os
-import re
 import shutil
 import subprocess
 import sys
@@ -50,55 +49,205 @@ try:
 except ImportError:
     sys.exit("Manca la libreria Pillow.\nInstallala con:  pip install Pillow")
 
-BASE = "https://www.motomorini.com"
+BASE = "https://motomorini.eu/wp-content/uploads/"
 
-# Pagina senza moto, usata per riconoscere il materiale comune a tutto il sito.
-PAGINA_RIFERIMENTO = "/about"
-
+# Il sito rifiuta i programmi che non si presentano come un browser.
 INTESTAZIONI = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/131.0 Safari/537.36"
+        "(KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
     ),
-    "Accept": "text/html,application/xhtml+xml,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "it-IT,it;q=0.9,en;q=0.8",
-    "Referer": BASE + "/",
+    "Accept": "image/avif,image/webp,image/apng,*/*;q=0.8",
+    "Accept-Language": "it-IT,it;q=0.9",
+    "Referer": "https://motomorini.eu/it/",
+    "Cookie": "wp-wpml_current_language=it",
+    "Sec-Fetch-Dest": "image",
+    "Sec-Fetch-Mode": "no-cors",
+    "Sec-Fetch-Site": "same-origin",
 }
 
-# Modelli trattati in concessionaria, con la pagina ufficiale corrispondente.
-# I percorsi sono stati ricavati dall'elenco dei modelli pubblicato sulla home
-# del sito ufficiale, non inventati.
+# Le sei viste, nell'ordine in cui vanno mostrate nella galleria.
+VISTE = ["lato-destro", "lato-sinistro", "fronte", "retro", "angolo-destro", "angolo-sinistro"]
+
+# Modelli, livree e file ufficiali. Gli indirizzi sono relativi a BASE.
 MODELLI = {
-    "x-cape-700": {"nome": "X-Cape 700", "pagina": "/xcape_700"},
-    "x-cape-1200": {"nome": "X-Cape 1200", "pagina": "/xcape_1200"},
-    "alltrhike-450": {"nome": "Alltrhike 450", "pagina": "/alltrhike_450"},
-    "seiemmezzo-str": {"nome": "Seiemmezzo STR", "pagina": "/str_trolley"},
-    "calibro-custom": {"nome": "Calibro Custom", "pagina": "/bobber_calibro"},
-    "calibro-bagger": {"nome": "Calibro Bagger", "pagina": "/bobber_bagger"},
+    "x-cape-700": {
+        "nome": "X-Cape 700",
+        "livree": {
+            "rosso-passion": {
+                "etichetta": "Red Passion",
+                "lato-destro": "2024/10/X-Cape-700-right-profile_red-passion-3.png",
+                "lato-sinistro": "2024/10/X-Cape-700-left-profile_red-passion-1.png",
+                "fronte": "2024/10/X-Cape-700-Front_red-passion-1.png",
+                "retro": "2024/10/X-Cape-700-Back_red-passion-1.png",
+                "angolo-destro": "2024/10/X-Cape-700-angle-right_red-passion-1.png",
+                "angolo-sinistro": "2024/10/X-Cape-700-angle-left_red-passion-1.png",
+            },
+            "nero-ebony": {
+                "etichetta": "Black Ebony",
+                "lato-destro": "2024/10/X-Cape-700-right-profile_black-ebony_alloy.png",
+                "lato-sinistro": "2024/10/X-Cape-700-left-profile_black-ebony_alloy.png",
+                "fronte": "2024/10/X-Cape-700-Front_black-ebony_alloy.png",
+                "retro": "2024/10/X-Cape-700-Back_black-ebony_alloy.png",
+                "angolo-destro": "2024/10/X-Cape-700-angle-right_black-ebony_alloy.png",
+                "angolo-sinistro": "2024/10/X-Cape-700-angle-left_black-ebony_alloy.png",
+            },
+            "bianco-carrara": {
+                "etichetta": "Carrara White",
+                "lato-destro": "2024/10/X-Cape-700-right-profile_carrara-White.png",
+                "lato-sinistro": "2024/10/X-Cape-700-left-profile_carrara-White.png",
+                "fronte": "2024/10/X-Cape-700-Front_carrara-White.png",
+                "retro": "2024/10/X-Cape-700-Back_carrara-White.png",
+                "angolo-destro": "2024/10/X-Cape-700-angle-right_carrara-White.png",
+                "angolo-sinistro": "2024/10/X-Cape-700-angle-left_carrara-White.png",
+            },
+        },
+    },
+    "x-cape-1200": {
+        "nome": "X-Cape 1200",
+        "livree": {
+            "bianco-artic": {
+                "etichetta": "Arctic White",
+                "lato-destro": "2024/11/X-CAPE_Artic-White-right-profile.png",
+                # Il sinistro della bianca si chiama solo "profile", senza lato
+                "lato-sinistro": "2024/11/X-CAPE_Artic-White-profile.png",
+                "fronte": "2024/11/X-CAPE_Artic-White-Front-1.png",
+                "retro": "2024/11/X-CAPE_Artic-White-Back.png",
+                "angolo-destro": "2024/11/X-CAPE_Artic-White-angle-right.png",
+                "angolo-sinistro": "2024/11/X-CAPE_Artic-White-angle-left.png",
+            },
+            "rosso-energy": {
+                "etichetta": "Energy Red",
+                "lato-destro": "2024/11/X-CAPE_Energy-Red-right-profile.png",
+                "lato-sinistro": "2024/11/X-CAPE_Energy-Red-profile-left.png",
+                "fronte": "2024/11/X-CAPE_Energy-Red-Front-1.png",
+                "retro": "2024/11/X-CAPE_Energy-Red-Back.png",
+                "angolo-destro": "2024/11/X-CAPE_Energy-Red-angle-right.png",
+                "angolo-sinistro": "2024/11/X-CAPE_Energy-Red-angle-left.png",
+            },
+            "nero-viper": {
+                "etichetta": "Viper Black",
+                "lato-destro": "2024/11/X-CAPE_Black-Viper-right-profile.png",
+                "lato-sinistro": "2024/11/X-CAPE_Black-Viper-profile-left.png",
+                "fronte": "2024/11/X-CAPE_Black-Viper-Front-1.png",
+                "retro": "2024/11/X-CAPE_Black-Viper-Back.png",
+                "angolo-destro": "2024/11/X-CAPE_Black-Viper-angle-right.png",
+                "angolo-sinistro": "2024/11/X-CAPE_Black-Viper-angle-left.png",
+            },
+        },
+    },
+    "alltrhike-450": {
+        "nome": "Alltrhike 450",
+        "livree": {
+            "verde-jungle": {
+                "etichetta": "Jungle Green",
+                "lato-destro": "2025/07/Allthrike-right-profile_green.png",
+                "lato-sinistro": "2025/07/Allthrike-left-profile_green.png",
+                "fronte": "2025/07/Allthrike-Front_green.png",
+                "retro": "2025/07/Allthrike-Back_green.png",
+                # Moto Morini ha chiamato "angle-right" entrambe le inclinate:
+                # quella senza suffisso mostra il fianco SINISTRO, la "-2" il destro.
+                "angolo-sinistro": "2025/07/Alltrhike-angle-right_green.png",
+                "angolo-destro": "2025/07/Alltrhike-angle-right_green-2.png",
+            },
+            "nero": {
+                "etichetta": "Night Black",
+                "lato-destro": "2025/07/Allthrike-right-profile_black.png",
+                "lato-sinistro": "2025/07/Allthrike-left-profile_black.png",
+                "fronte": "2025/07/Allthrike-Front_black.png",
+                "retro": "2025/07/Allthrike-Back_black.png",
+                "angolo-sinistro": "2025/07/Alltrhike-angle-right_black.png",
+                "angolo-destro": "2025/07/Alltrhike-angle-right_black-2.png",
+            },
+        },
+    },
+    "seiemmezzo-str": {
+        "nome": "Seiemmezzo STR",
+        "livree": {
+            "bianco-carrara": {
+                "etichetta": "Starlight White",
+                "lato-destro": "2023/10/Seiemmezzo-STR-right-profile_carrara-White.png",
+                "lato-sinistro": "2023/10/Seiemmezzo-STR-left-profile_carrara-White.png",
+                "fronte": "2023/10/Seiemmezzo-STR-Front_carrara-White.png",
+                "retro": "2023/10/Seiemmezzo-STR-Back_carrara-White.png",
+                "angolo-destro": "2023/10/Seiemmezzo-STR-angle-right_carrara-White.png",
+                "angolo-sinistro": "2023/10/Seiemmezzo-STR-angle-left_carrara-White.png",
+            },
+            "rosso-passion": {
+                "etichetta": "Fire Red",
+                "lato-destro": "2023/10/seiemmezzo-STR-right-profile_red-passion.png",
+                "lato-sinistro": "2023/10/seiemmezzo-STR-left-profile_red-passion.png",
+                "fronte": "2023/10/Seiemmezzo-STR-Front_red-passion.png",
+                "retro": "2023/10/Seiemmezzo-STR-Back_red-passion.png",
+                "angolo-destro": "2023/10/Seiemmezzo-STR-angle-right_red-passion.png",
+                "angolo-sinistro": "2023/10/Seiemmezzo-STR-angle-left_red-passion.png",
+            },
+            "grigio": {
+                "etichetta": "Smoky Anthracite",
+                "lato-destro": "2023/10/Seiemmezzo-STR-right-profile_grigia.png",
+                "lato-sinistro": "2023/10/Seiemmezzo-STR-left-profile_grigia.png",
+                "fronte": "2023/10/Seiemmezzo-STR-Front_grigia.png",
+                "retro": "2023/10/Seiemmezzo-STR-Back_grigia.png",
+                "angolo-destro": "2023/10/Seiemmezzo-STR-angle-right_grigia.png",
+                "angolo-sinistro": "2023/10/Seiemmezzo-STR-angle-left_Grigia.png",
+            },
+        },
+    },
+    "calibro-custom": {
+        "nome": "Calibro Custom",
+        "livree": {
+            "nero": {
+                "etichetta": "Black Ebony",
+                "lato-destro": "2023/10/calibro-profile-right.png",
+                "lato-sinistro": "2023/10/calibro-profile-left.png",
+                "fronte": "2023/10/calibro-front.png",
+                "retro": "2023/10/calibro-back.png",
+                "angolo-destro": "2023/10/calibro-angle-right.png",
+                "angolo-sinistro": "2023/10/calibro-angle-left.png",
+            },
+            "rosso": {
+                "etichetta": "Red",
+                "lato-destro": "2024/05/calibro-profile-right_red.png",
+                "lato-sinistro": "2024/05/calibro-profile-left_red.png",
+                "fronte": "2023/10/calibro-red-front-1.png",
+                "retro": "2023/10/calibro-red-back-1.png",
+                "angolo-destro": "2024/05/calibro-angle-right_red.png",
+                "angolo-sinistro": "2024/05/calibro-angle-left_red.png",
+            },
+        },
+    },
+    "calibro-bagger": {
+        "nome": "Calibro Bagger",
+        "livree": {
+            "grigio-garage": {
+                "etichetta": "Garage Grey",
+                "lato-destro": "2025/10/Bagger-right-profile_grey.png",
+                "lato-sinistro": "2025/10/Bagger-left-profile_grey.png",
+                "fronte": "2025/10/Bagger-Front_grey.png",
+                "retro": "2025/10/Bagger-Back_grey.png",
+                "angolo-destro": "2025/10/Bagger-angle-right_grey.png",
+                "angolo-sinistro": "2025/10/Bagger-angle-left_grey.png",
+            },
+            "nero": {
+                "etichetta": "Black Ebony",
+                "fronte": "2023/10/calibro-bagger-front.png",
+                "retro": "2023/10/calibro-bagger-back.png",
+                "angolo-destro": "2023/10/calibro-bagger-angle-right.png",
+            },
+        },
+    },
 }
 
 DESTINAZIONE = os.path.join("public", "moto")
-
-# Le sei viste che vorremmo, nell'ordine in cui si assegnano con --rinomina.
-VISTE = ["front", "back", "left", "right", "angle-left", "angle-right"]
-
-
 CURL = shutil.which("curl")
 
 
 def scarica(url: str, tentativi: int = 3) -> bytes:
-    """
-    Scarica un indirizzo, riprovando se la rete fa i capricci.
-
-    Usiamo curl invece delle librerie di Python perche' il certificato del
-    sito Moto Morini ha una catena che Python rifiuta ("Basic Constraints of
-    CA cert not marked critical"), mentre curl, che si appoggia al deposito
-    certificati del sistema, lo accetta senza problemi.
-    """
+    """Scarica un indirizzo. Usiamo curl perche' gestisce bene questo sito."""
     if CURL is None:
-        raise RuntimeError("curl non e' installato: serve per scaricare da questo sito")
+        raise RuntimeError("curl non e' installato")
 
-    comando = [CURL, "-sL", "--max-time", "45", "--fail"]
+    comando = [CURL, "-sL", "--max-time", "60", "--fail", "--compressed"]
     for chiave, valore in INTESTAZIONI.items():
         comando += ["-H", f"{chiave}: {valore}"]
     comando.append(url)
@@ -110,165 +259,93 @@ def scarica(url: str, tentativi: int = 3) -> bytes:
             return esito.stdout
         ultimo = f"curl uscito con {esito.returncode}"
         time.sleep(1.5 * (n + 1))
-    raise RuntimeError(f"non scaricato dopo {tentativi} tentativi: {url} ({ultimo})")
+    raise RuntimeError(f"{ultimo}")
 
 
-def immagini_nella_pagina(html: str) -> list[str]:
-    """Tutti i percorsi /data/image/... citati nella pagina, nell'ordine."""
-    trovati = re.findall(r"/data/image/[0-9]{4}/[0-9]{2}/[0-9]{2}/[A-Za-z0-9_.-]+", html)
-    # JSON incorporato: le barre arrivano con la barra rovescia davanti
-    trovati += [
-        p.replace("\\/", "/")
-        for p in re.findall(r"\\/data\\/image\\/[0-9]{4}\\/[0-9]{2}\\/[0-9]{2}\\/[A-Za-z0-9_.-]+", html)
-    ]
-    ordinati = []
-    for p in trovati:
-        p = p.split("?")[0]
-        if p.lower().endswith((".jpg", ".jpeg", ".png", ".webp")) and p not in ordinati:
-            ordinati.append(p)
-    return ordinati
-
-
-def materiale_comune() -> set[str]:
-    """Immagini presenti anche su una pagina senza moto: logo, icone, banner."""
-    try:
-        html = scarica(BASE + PAGINA_RIFERIMENTO).decode("utf-8", "replace")
-        return set(immagini_nella_pagina(html))
-    except RuntimeError as e:
-        print(f"  avviso: pagina di riferimento non raggiunta ({e}); filtro solo per dimensione")
-        return set()
-
-
-def salva_webp(dati: bytes, destinazione: str, larghezza: int, qualita: int, min_lato: int):
-    """Converte in WebP e ridimensiona. Torna (larghezza, altezza) oppure None se scartata."""
+def salva_webp(dati: bytes, destinazione: str, larghezza: int, qualita: int):
+    """Converte in WebP sopra fondo bianco. Torna le dimensioni, o None."""
     try:
         im = Image.open(_io.BytesIO(dati))
         im.load()
     except Exception:
         return None
 
-    if min(im.size) < min_lato:
-        return None
-
-    # Le PNG del sito hanno spesso la trasparenza: la teniamo.
+    # Le immagini ufficiali sono PNG con lo sfondo trasparente: la
+    # trasparenza va CONSERVATA, perche' sul sito la moto viene appoggiata
+    # su fondo scuro e deve risultare scontornata, non dentro un riquadro
+    # bianco. Il WebP supporta il canale alfa, quindi non si perde nulla.
     im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
 
-    w, h = im.size
-    if w > larghezza:
-        im = im.resize((larghezza, round(h * larghezza / w)), Image.LANCZOS)
+    # RITAGLIO DEL VUOTO ATTORNO ALLA MOTO
+    # I file ufficiali hanno margini trasparenti di ampiezza diversa da una
+    # vista all'altra: senza ritaglio la stessa moto appare grande nel profilo
+    # e piccola nel frontale. Qui togliamo il vuoto e lasciamo un margine
+    # uniforme, cosi' tutte le viste risultano della stessa dimensione.
+    if im.mode == "RGBA":
+        riquadro = im.split()[-1].getbbox()
+        if riquadro:
+            im = im.crop(riquadro)
+            margine = round(max(im.size) * 0.04)
+            tela = Image.new("RGBA", (im.width + margine * 2, im.height + margine * 2), (0, 0, 0, 0))
+            tela.paste(im, (margine, margine))
+            im = tela
 
+    if im.width > larghezza:
+        im = im.resize((larghezza, round(im.height * larghezza / im.width)), Image.LANCZOS)
+
+    os.makedirs(os.path.dirname(destinazione), exist_ok=True)
     im.save(destinazione, "WEBP", quality=qualita, method=6)
     return im.size
 
 
-def importa(slug: str, larghezza: int, qualita: int, min_lato: int, comuni: set[str], solo_elenco: bool):
+def importa(slug: str, larghezza: int, qualita: int, solo_elenco: bool) -> int:
     info = MODELLI[slug]
-    print(f"\n{info['nome']}  ({BASE}{info['pagina']})")
-
-    try:
-        html = scarica(BASE + info["pagina"]).decode("utf-8", "replace")
-    except RuntimeError as e:
-        print(f"  pagina non raggiunta: {e}")
-        return 0
-
-    candidate = [p for p in immagini_nella_pagina(html) if p not in comuni]
-    if not candidate:
-        print("  nessuna immagine specifica trovata")
-        return 0
-
-    if solo_elenco:
-        for p in candidate:
-            print(f"  {BASE}{p}")
-        return len(candidate)
-
-    cartella = os.path.join(DESTINAZIONE, slug)
-    os.makedirs(cartella, exist_ok=True)
-    for vecchio in os.listdir(cartella):
-        if vecchio.lower().endswith(".webp"):
-            os.remove(os.path.join(cartella, vecchio))
-
+    print(f"\n{info['nome']}")
     salvate = 0
-    for percorso in candidate:
-        try:
-            dati = scarica(BASE + percorso)
-        except RuntimeError as e:
-            print(f"  salto {percorso}: {e}")
-            continue
 
-        nome = f"vista-{salvate + 1:02d}.webp"
-        esito = salva_webp(dati, os.path.join(cartella, nome), larghezza, qualita, min_lato)
-        if esito is None:
-            continue
-
-        salvate += 1
-        peso = os.path.getsize(os.path.join(cartella, nome)) // 1024
-        print(f"  {nome}  {esito[0]}x{esito[1]}  {peso} KB   <- {percorso}")
-
-    if salvate == 0:
-        try:
-            os.rmdir(cartella)
-        except OSError:
-            pass
-        print("  nessuna immagine abbastanza grande da tenere")
+    for livrea, voci in info["livree"].items():
+        etichetta = voci.get("etichetta", livrea)
+        print(f"  {etichetta}")
+        for vista in VISTE:
+            percorso = voci.get(vista)
+            if not percorso:
+                continue
+            url = BASE + percorso
+            if solo_elenco:
+                print(f"    {vista:17} {url}")
+                salvate += 1
+                continue
+            try:
+                dati = scarica(url)
+            except RuntimeError as e:
+                print(f"    {vista:17} non scaricata ({e})")
+                continue
+            out = os.path.join(DESTINAZIONE, slug, livrea, f"{vista}.webp")
+            esito = salva_webp(dati, out, larghezza, qualita)
+            if esito is None:
+                print(f"    {vista:17} immagine non leggibile")
+                continue
+            salvate += 1
+            print(f"    {vista:17} {esito[0]}x{esito[1]}  {os.path.getsize(out)//1024} KB")
 
     return salvate
 
 
-def rinomina(slug: str, viste: list[str]):
-    """Assegna i nomi definitivi delle viste alle immagini gia' scaricate."""
-    cartella = os.path.join(DESTINAZIONE, slug)
-    presenti = sorted(f for f in os.listdir(cartella) if re.fullmatch(r"vista-\d+\.webp", f))
-    if len(viste) > len(presenti):
-        sys.exit(f"{slug}: hai indicato {len(viste)} viste ma ci sono {len(presenti)} immagini")
-    for file, vista in zip(presenti, viste):
-        if vista in ("-", "scarta"):
-            os.remove(os.path.join(cartella, file))
-            print(f"  tolta  {file}")
-            continue
-        os.replace(os.path.join(cartella, file), os.path.join(cartella, f"{vista}.webp"))
-        print(f"  {file} -> {vista}.webp")
-
-
-def main():
-    p = argparse.ArgumentParser(
-        description="Importa le fotografie ufficiali Moto Morini.",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-    )
+def main() -> None:
+    p = argparse.ArgumentParser(description="Importa le fotografie ufficiali Moto Morini.")
     p.add_argument("modelli", nargs="*", help=f"uno o piu' fra: {', '.join(MODELLI)}")
     p.add_argument("--elenca", action="store_true", help="mostra gli indirizzi senza scaricare")
-    p.add_argument("--rinomina", nargs="+", metavar="VISTA",
-                   help="assegna i nomi delle viste a un modello gia' scaricato, nell'ordine; "
-                        "usa - per scartare un'immagine")
     p.add_argument("--larghezza", type=int, default=1600)
-    p.add_argument("--qualita", type=int, default=85)
-    p.add_argument("--min-lato", type=int, default=500)
+    p.add_argument("--qualita", type=int, default=86)
     a = p.parse_args()
 
     scelti = a.modelli or list(MODELLI)
-    sconosciuti = [m for m in scelti if m not in MODELLI]
-    if sconosciuti:
-        sys.exit(f"modello non riconosciuto: {', '.join(sconosciuti)}\nvalidi: {', '.join(MODELLI)}")
+    ignoti = [m for m in scelti if m not in MODELLI]
+    if ignoti:
+        sys.exit(f"modello non riconosciuto: {', '.join(ignoti)}\nvalidi: {', '.join(MODELLI)}")
 
-    if a.rinomina:
-        if len(scelti) != 1:
-            sys.exit("--rinomina vuole un modello solo")
-        rinomina(scelti[0], a.rinomina)
-        return
-
-    print(f"Viste desiderate: {', '.join(VISTE)}")
-    comuni = set() if a.elenca else materiale_comune()
-    if comuni:
-        print(f"Materiale comune a tutto il sito da ignorare: {len(comuni)} immagini")
-
-    totale = 0
-    for slug in scelti:
-        totale += importa(slug, a.larghezza, a.qualita, a.min_lato, comuni, a.elenca)
-
+    totale = sum(importa(s, a.larghezza, a.qualita, a.elenca) for s in scelti)
     print(f"\nTotale: {totale} immagini.")
-    if not a.elenca and totale:
-        print("Ora guarda le immagini e assegna le viste, per esempio:")
-        print("  python strumenti/importa-foto-morini.py x-cape-700 --rinomina "
-              "angle-right left front - back right")
 
 
 if __name__ == "__main__":

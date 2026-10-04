@@ -1,78 +1,128 @@
 # Fotografie delle moto
 
-Qui dentro vanno le immagini dei modelli. Una cartella per moto, già pronte.
+## Cosa serve, in breve
+
+**Cinque fotografie per modello**, sempre le stesse cinque:
+
+| File | Cosa inquadra |
+| --- | --- |
+| `fronte.jpg` | La moto vista davanti, in asse |
+| `retro.jpg` | La moto vista da dietro, in asse |
+| `lato-sinistro.jpg` | Profilo sinistro, moto perfettamente di lato |
+| `lato-destro.jpg` | Profilo destro, moto perfettamente di lato |
+| `in-strada.jpg` | La moto in ambiente: strada, sterrato, panorama |
+
+Le prime quattro su **fondo chiaro e uniforme**, meglio se bianco.
+L'ultima è quella che fa innamorare: moto intera, ambiente riconoscibile,
+luce bella.
+
+---
+
+## I sei modelli e le loro cartelle
 
 ```
 public/moto/
 ├── x-cape-700/
-│   ├── scheda-principale.jpg      <- la foto grande, la prima che si vede
-│   ├── tre-quarti-anteriore.jpg
-│   ├── tre-quarti-posteriore.jpg
-│   └── frontale.jpg
 ├── x-cape-1200/
-├── alltrhike/
+├── alltrhike-450/
 ├── seiemmezzo-str/
-├── calibro-cruiser/
+├── calibro-custom/
 └── calibro-bagger/
 ```
 
----
-
-## Quante ne servono
-
-Da **quattro a sei per moto** bastano e avanzano. Le più utili, in ordine:
-
-1. **Profilo laterale** destro, la più leggibile di tutte
-2. **Tre quarti anteriore**, quella che fa innamorare
-3. **Tre quarti posteriore**
-4. **Frontale**
-5. Un dettaglio del cruscotto, se la moto ne ha uno bello
-6. La sella, utile a chi è basso di statura
+Trenta fotografie in tutto, cinque per cartella.
 
 ---
 
-## Da dove prenderle
+## Cosa c'è già e cosa manca davvero
 
-**Kit stampa ufficiale.** È la via più semplice e non costa niente. Come
-concessionari avete accesso all'area dealer delle case madri: le immagini sono
-professionali, in alta risoluzione e fatte apposta perché voi le usiate.
-Una telefonata al referente di zona e arrivano.
+Per **tutti e sei** i modelli abbiamo già, prese dal sito ufficiale:
 
-**Fotografie vostre.** Vanno benissimo anche col telefono. Moto pulita, fondo
-uniforme, luce diffusa senza sole diretto, e la moto che riempie bene
-l'inquadratura.
+- il **profilo sinistro** su fondo bianco
+- una **fotografia su strada**
 
-**Non dal web e non da Google Maps.** Quelle immagini appartengono a chi le ha
-fatte e non si possono riutilizzare su un sito commerciale.
+Quindi, se vuoi fare il minimo indispensabile, mancano **tre viste per
+modello**, diciotto fotografie in tutto:
+
+- `fronte.jpg`
+- `retro.jpg`
+- `lato-destro.jpg`
+
+Se però il kit stampa ti dà tutte e cinque le viste nello stesso stile,
+**mandale tutte**: una galleria dove le cinque foto hanno la stessa luce e
+lo stesso fondo rende molto meglio di una dove quattro vengono da una
+fonte e una da un'altra.
 
 ---
 
-## Come collegarle al sito
+## Come mandarmele
 
-Metti i file nella cartella del modello, poi apri `src/data/motorcycles.ts`,
-trova la moto e scrivi:
+Il modo più semplice: una cartella sola, tutte le foto dentro, con il nome
+che dica modello e vista. Per esempio:
+
+```
+x-cape-700-fronte.jpg
+x-cape-700-retro.jpg
+x-cape-1200-lato-destro.jpg
+calibro-bagger-in-strada.jpg
+```
+
+Al resto penso io: ridimensionamento, conversione in WebP, compressione,
+nomi definitivi e collegamento alle schede del sito.
+
+In alternativa, se ti viene comodo, crea direttamente le sei sottocartelle
+con i nomi qui sopra e metti dentro i cinque file già nominati.
+
+---
+
+## Requisiti tecnici
+
+**Dimensione**: lato lungo da 1600 pixel in su. Se sono più grandi le
+riduco io, non sprecare tempo a ritoccarle.
+
+**Formato**: JPG o PNG vanno benissimo. Converto io in WebP.
+
+**Cosa evitare**: ritagli tondi o sagomati, scritte e loghi sovrapposti,
+moto tagliata ai bordi, accessori aftermarket se la moto a listino non li
+ha. Niente immagini prese dal web o da schede Google: appartengono a chi
+le ha scattate.
+
+---
+
+## Dove prenderle
+
+**Area dealer e kit stampa ufficiali.** È la via giusta e non costa
+niente: le case madri mettono a disposizione dei concessionari fotografie
+professionali, in alta risoluzione, fatte apposta per questo uso. I kit
+contengono quasi sempre più angolazioni di quelle pubblicate sul sito
+pubblico. Una telefonata al referente di zona.
+
+**Fotografie vostre**, per le moto che avete fisicamente in salone. Vanno
+bene anche col telefono: moto pulita, fondo uniforme, luce diffusa senza
+sole diretto, moto che riempie l'inquadratura, stessa altezza di ripresa
+per tutte e quattro le viste.
+
+---
+
+## Come si collegano al sito
+
+Quando le foto sono nelle cartelle, in `src/data/motorcycles.ts` ogni
+modello punta alle sue immagini:
 
 ```ts
-image: '/moto/x-cape-700/scheda-principale.jpg',
+image: '/moto/x-cape-700/lato-sinistro.webp',
 gallery: [
-  '/moto/x-cape-700/scheda-principale.jpg',
-  '/moto/x-cape-700/tre-quarti-anteriore.jpg',
-  '/moto/x-cape-700/tre-quarti-posteriore.jpg',
-  '/moto/x-cape-700/frontale.jpg',
+  '/moto/x-cape-700/lato-sinistro.webp',
+  '/moto/x-cape-700/lato-destro.webp',
+  '/moto/x-cape-700/fronte.webp',
+  '/moto/x-cape-700/retro.webp',
+  '/moto/x-cape-700/in-strada.webp',
 ],
 ```
 
-`image` è la foto che compare nella scheda del catalogo.
+`image` è la foto che compare nella scheda del catalogo e nello showcase a
+tutto schermo: deve essere un profilo, è la più leggibile.
 `gallery` è l'elenco sfogliabile nel dettaglio, con le miniature sotto.
-Se metti solo `image`, la galleria mostra quella.
 
----
-
-## Dimensioni
-
-Lato lungo intorno ai **1600 pixel** va benissimo. Più grandi rallentano solo
-il caricamento senza che si veda la differenza. Se le tue sono più grandi,
-dimmelo e le riduco io.
-
-Dove manca la fotografia il sito non lascia un buco: mostra un riquadro che
-dice che le immagini sono in arrivo e invita a passare in salone.
+Dove manca la fotografia il sito non lascia un buco: mostra un riquadro
+che dice che le immagini sono in arrivo e invita a passare in salone.
