@@ -1441,6 +1441,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-8t/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-8t/in-strada.webp',
+    price: 9690,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -1509,6 +1511,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-gsx-8tt/livrea-1/lato-destro.webp',
     roadImage: '/moto/suzuki-gsx-8tt/in-strada.webp',
+    price: 9990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'livrea-1',
@@ -1798,6 +1802,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Suzuki. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/suzuki-rm-z450/giallo-petra/lato-destro.webp',
     roadImage: '/moto/suzuki-rm-z450/in-strada.webp',
+    price: 8890,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'giallo-petra',

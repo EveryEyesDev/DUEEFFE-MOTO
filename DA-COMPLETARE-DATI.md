@@ -10,13 +10,9 @@ Se di un dato non disponi, lascia vuoto: in pagina compare
 
 Nessuno: le schede sono complete.
 
-## Suzuki — 23 modelli, 3 da completare
+## Suzuki — 23 modelli, 0 da completare
 
-| Modello | Cosa manca |
-|---|---|
-| **GSX-8T** | prezzo |
-| **GSX-8TT** | prezzo |
-| **RM-Z450** | prezzo |
+Nessuno: le schede sono complete.
 
 ## Voge — 24 modelli, 11 da completare
 

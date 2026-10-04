@@ -10,7 +10,7 @@ Generato da `strumenti/controllo-finale.py`. Una riga per moto.
 | Con foto di scena vera | 39 |
 | Con tutte e sei le viste | 26 |
 | Con scheda tecnica completa | 43 |
-| Con prezzo pubblicato | 49 |
+| Con prezzo pubblicato | 52 |
 
 ## Moto Morini (6 modelli)
 
@@ -38,13 +38,13 @@ Generato da `strumenti/controllo-finale.py`. Una riga per moto.
 | DR-Z4S | scena ok | 2 | 6/6 | 7990 € | nessuno |
 | DR-Z4SM | scena ok | 2 | 6/6 | 7990 € | nessuno |
 | GSX-S1000 EVO | scena ok | 3 | 6/6 | 12990 € | nessuno |
-| GSX-8T | scena ok | 3 | 6/6 | — | nessuno |
-| GSX-8TT | scena ok | 2 | 6/6 | — | nessuno |
+| GSX-8T | scena ok | 3 | 6/6 | 9690 € | nessuno |
+| GSX-8TT | scena ok | 2 | 6/6 | 9990 € | nessuno |
 | GSX-R1000R | scena ok | 3 | 6/6 | 20490 € | nessuno |
 | SV-7GX | scena ok | 3 | 6/6 | 8290 € | nessuno |
 | GSX-R125 | scena ok | 2 | 1/6 | 4390 € | nessuno |
 | GSX-S125 | scena ok | 2 | 1/6 | 4190 € | nessuno |
-| RM-Z450 | scena ok | 1 | 1/6 | — | nessuno |
+| RM-Z450 | scena ok | 1 | 1/6 | 8890 € | nessuno |
 | KATANA | scena ok | 4 | 6/6 | 14390 € | nessuno |
 | HAYABUSA | scena ok | 3 | 6/6 | 19990 € | nessuno |
 | GSX-S1000GT | scena ok | 5 | 6/6 | 13990 € | nessuno |
