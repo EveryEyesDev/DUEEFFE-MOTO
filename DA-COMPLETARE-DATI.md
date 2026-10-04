@@ -14,21 +14,9 @@ Nessuno: le schede sono complete.
 
 Nessuno: le schede sono complete.
 
-## Voge — 24 modelli, 11 da completare
+## Voge — 24 modelli, 0 da completare
 
-| Modello | Cosa manca |
-|---|---|
-| **SFIDA SR1 ADV** | potenza |
-| **SFIDA SR1** | potenza |
-| **SFIDA SR16 125 AIR** | potenza |
-| **SFIDA SR16 200** | potenza |
-| **SFIDA SR16 125** | potenza |
-| **SFIDA SR2 ADV** | potenza |
-| **SFIDA SR3** | potenza |
-| **Valico 300 RALLY** | potenza |
-| **Valico 800DSX RALLY** | potenza |
-| **XWOLF 300** | altezza sella |
-| **XWOLF 550** | prezzo |
+Nessuno: le schede sono complete.
 
 ## Nomi commerciali dei colori
 

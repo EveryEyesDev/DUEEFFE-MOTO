@@ -118,7 +118,32 @@ VOGE = {
     "voge-xwolf-550": (53, 348, "Monocilindrico 4T 500 cc", "4 dischi", 900),
 }
 
-PREZZI_EXTRA = {"voge-xwolf-300": 4990}
+PREZZI_EXTRA = {
+    "voge-xwolf-300": 4990,
+    # Voge Italy non pubblica il listino per l'XWolf 550: questo e' il prezzo
+    # che indicano i concessionari italiani. Va confermato col distributore
+    # prima di considerarlo definitivo.
+    "voge-xwolf-550": 6990,
+}
+
+# Le potenze arrivate dal cliente, in cavalli.
+POTENZE_VOGE = {
+    "voge-sfida-sr1": 11.6,
+    "voge-sfida-sr1-adv": 11.6,
+    "voge-sfida-sr16": 11.6,
+    "voge-sfida-sr16-125-air": 10.9,
+    "voge-sfida-sr16-200": 17.0,
+    "voge-sfida-sr2-adv": 17.0,
+    "voge-sfida-sr3-2": 25.9,
+    "voge-sfida-sr4-max": 34.0,
+    "voge-sfida-sr450x": 42.2,
+    "voge-valico-300-rally": 28.6,
+    "voge-valico-800rally": 95.2,
+}
+
+# L'altezza sella dell'XWolf 300: la prima indicazione, 202 mm, era un
+# refuso. Questa viene dal manuale del costruttore.
+SELLE_EXTRA = {"voge-xwolf-300": 990}
 
 sospetti = []
 
@@ -198,6 +223,14 @@ def main():
                                   ("seatHeightMm", sella)]:
                 blocco, fatto = scrivi_spec(blocco, campo, valore, ident)
                 cambiato |= fatto
+
+        if ident in POTENZE_VOGE:
+            blocco, fatto = scrivi_spec(blocco, "powerHp", POTENZE_VOGE[ident], ident)
+            cambiato |= fatto
+
+        if ident in SELLE_EXTRA:
+            blocco, fatto = scrivi_spec(blocco, "seatHeightMm", SELLE_EXTRA[ident], ident)
+            cambiato |= fatto
 
         if ident in PREZZI_EXTRA:
             blocco, fatto = scrivi_prezzo(blocco, PREZZI_EXTRA[ident], ident)

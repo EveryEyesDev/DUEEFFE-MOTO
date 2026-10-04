@@ -348,7 +348,24 @@ const PREFERENZA = [
   'fronte',
 ];
 
-/** Le viste prese dal lato sinistro mostrano la moto rivolta a sinistra. */
+/**
+ * Da che parte guarda la moto, in base alla vista.
+ *
+ * PERCHE' NON LA RIBALTIAMO PIU'
+ * Prima, per farle guardare tutte dalla stessa parte, ribaltavamo come
+ * allo specchio le viste prese da sinistra. Sembrava innocuo: su una
+ * fotografia di profilo il ribaltamento non si nota.
+ *
+ * Non e' vero. Si nota benissimo, perche' sul serbatoio c'e' scritto il
+ * nome del costruttore, e specchiato diventa illeggibile: la GSX-8S
+ * mostrava "SUZUKI" al contrario. Un marchio scritto al rovescio sul sito
+ * di un concessionario ufficiale non si puo' vedere.
+ *
+ * Percio' adesso ogni moto si mostra come e' stata fotografata, e a
+ * cambiare verso e' la strada sotto di lei: se la moto guarda a sinistra
+ * l'asfalto scorre verso destra, e il senso di marcia torna giusto. Ogni
+ * schermata resta coerente, e nessuna scritta e' al contrario.
+ */
 const GUARDA_A_SINISTRA = ['lato-sinistro', 'angolo-sinistro'];
 
 /** Una moto, a tutta schermata. */
@@ -373,7 +390,7 @@ const Schermata: React.FC<{
   const viste = bike.colorways?.[0]?.views ?? [];
   const scelta = PREFERENZA.map((id) => viste.find((v) => v.id === id)).find(Boolean);
   const vistaStudio = scelta?.src ?? viste[0]?.src ?? bike.image;
-  const daRibaltare = scelta ? GUARDA_A_SINISTRA.includes(scelta.id) : false;
+  const guardaASinistra = scelta ? GUARDA_A_SINISTRA.includes(scelta.id) : false;
 
   /*
     LO SFONDO AMBIENTATO
@@ -454,7 +471,12 @@ const Schermata: React.FC<{
       */}
       <div className="absolute inset-x-0 bottom-[4%] lg:bottom-[9%] h-[22vh] lg:h-[30vh] pointer-events-none">
         <div className="absolute inset-0">
-          <HorizontalRoad direction="left" speedSeconds={1.6} />
+          {/* L'asfalto scorre contro il muso della moto: e' quello che
+              fa sembrare che stia viaggiando. */}
+          <HorizontalRoad
+            direction={guardaASinistra ? 'right' : 'left'}
+            speedSeconds={1.6}
+          />
         </div>
 
         {/* L'ombra a terra: una sfumatura ovale, non un filtro sull'immagine. */}
@@ -476,7 +498,7 @@ const Schermata: React.FC<{
               loading={indice < 3 ? 'eager' : 'lazy'}
               decoding="async"
               className={`h-[30vh] lg:h-[58vh] w-auto max-w-[92vw] lg:max-w-[48vw] object-contain object-bottom transition-opacity duration-300 ease-out motion-reduce:transition-none ${
-                daRibaltare ? '-scale-x-100' : ''
+                ''
               } ${attiva ? 'opacity-100' : 'opacity-0'}`}
             />
           ) : (

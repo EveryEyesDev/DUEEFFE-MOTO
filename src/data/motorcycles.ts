@@ -2438,6 +2438,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      powerHp: 11.6,
       frontBrakes: 'Disco 220 mm',
       engineType: 'Monocilindrico 4T 124,9 cc',
       weightKg: 134,
@@ -2475,6 +2476,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      powerHp: 11.6,
       frontBrakes: 'Disco 220 mm',
       engineType: 'Monocilindrico 4T 124,9 cc',
       weightKg: 133,
@@ -2513,6 +2515,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      powerHp: 10.9,
       frontBrakes: 'Disco 220 mm',
       engineType: 'Monocilindrico 4T 124,9 cc',
       weightKg: 136,
@@ -2550,6 +2553,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      powerHp: 17.0,
       frontBrakes: 'Disco 220 mm',
       engineType: 'Monocilindrico 4T 174 cc',
       weightKg: 137,
@@ -2587,6 +2591,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      powerHp: 11.6,
       frontBrakes: 'Disco 220 mm',
       engineType: 'Monocilindrico 4T 124,9 cc',
       weightKg: 136,
@@ -2624,6 +2629,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      powerHp: 17.0,
       frontBrakes: 'Disco 220 mm',
       engineType: 'Monocilindrico 4T 174 cc',
       weightKg: 140,
@@ -2661,6 +2667,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      powerHp: 25.9,
       seatHeightMm: 770,
       frontBrakes: 'Disco 260 mm',
       engineType: 'Monocilindrico 4T 244 cc',
@@ -2973,6 +2980,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      powerHp: 28.6,
       frontBrakes: 'Disco 265 mm',
       engineType: 'Monocilindrico 4T 292 cc',
       weightKg: 190,
@@ -3049,6 +3057,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      powerHp: 95.2,
       frontBrakes: 'Doppio disco 310 mm',
       engineType: 'Bicilindrico 4T 798 cc',
       weightKg: 234,
@@ -3164,6 +3173,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
     ],
     colors: [],
     specs: {
+      seatHeightMm: 990,
       frontBrakes: '4 dischi CBS',
       engineType: 'Monocilindrico 4T 271 cc',
       weightKg: 245,
@@ -3187,6 +3197,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     description: 'Modello della gamma Voge. Dati tecnici e prezzo te li diamo in concessionaria: chiamaci o passa a trovarci.',
     image: '/moto/voge-xwolf-550/unica/lato-destro.webp',
     roadImage: '/moto/voge-xwolf-550/in-strada.webp',
+    price: 6990,
+    priceNote: 'Franco concessionario, IVA inclusa. Escluse spese di immatricolazione.',
     colorways: [
       {
         slug: 'unica',

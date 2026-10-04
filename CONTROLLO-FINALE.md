@@ -9,8 +9,8 @@ Generato da `strumenti/controllo-finale.py`. Una riga per moto.
 | Modelli a catalogo | 53 |
 | Con foto di scena vera | 39 |
 | Con tutte e sei le viste | 26 |
-| Con scheda tecnica completa | 43 |
-| Con prezzo pubblicato | 52 |
+| Con scheda tecnica completa | 53 |
+| Con prezzo pubblicato | 53 |
 
 ## Moto Morini (6 modelli)
 
@@ -58,13 +58,13 @@ Generato da `strumenti/controllo-finale.py`. Una riga per moto.
 | Brivido 125R | da studio | 1 | 1/6 | 2790 € | nessuno |
 | Brivido 125S | da studio | 1 | 2/6 | 3290 € | nessuno |
 | Brivido 625R | da studio | 1 | 1/6 | 5990 € | nessuno |
-| SFIDA SR1 ADV | scena ok | 1 | 1/6 | 3190 € | potenza |
-| SFIDA SR1 | da studio | 1 | 1/6 | 2690 € | potenza |
-| SFIDA SR16 125 AIR | da studio | 1 | 2/6 | 2390 € | potenza |
-| SFIDA SR16 200 | da studio | 1 | 1/6 | 2890 € | potenza |
-| SFIDA SR16 125 | da studio | 1 | 1/6 | 2790 € | potenza |
-| SFIDA SR2 ADV | scena ok | 1 | 1/6 | 3190 € | potenza |
-| SFIDA SR3 | da studio | 1 | 1/6 | 3990 € | potenza |
+| SFIDA SR1 ADV | scena ok | 1 | 1/6 | 3190 € | nessuno |
+| SFIDA SR1 | da studio | 1 | 1/6 | 2690 € | nessuno |
+| SFIDA SR16 125 AIR | da studio | 1 | 2/6 | 2390 € | nessuno |
+| SFIDA SR16 200 | da studio | 1 | 1/6 | 2890 € | nessuno |
+| SFIDA SR16 125 | da studio | 1 | 1/6 | 2790 € | nessuno |
+| SFIDA SR2 ADV | scena ok | 1 | 1/6 | 3190 € | nessuno |
+| SFIDA SR3 | da studio | 1 | 1/6 | 3990 € | nessuno |
 | SFIDA SR4 MAX | scena ok | 1 | 1/6 | 5490 € | nessuno |
 | SFIDA SR450X | scena ok | 1 | 2/6 | 6490 € | nessuno |
 | Trofeo 300AC | scena ok | 1 | 2/6 | 3890 € | nessuno |
@@ -72,11 +72,11 @@ Generato da `strumenti/controllo-finale.py`. Una riga per moto.
 | Trofeo 350AC | scena ok | 1 | 1/6 | 4590 € | nessuno |
 | Trofeo 500AC | scena ok | 1 | 2/6 | 6490 € | nessuno |
 | Trofeo 525 ACX Scrambler | scena ok | 1 | 1/6 | 6790 € | nessuno |
-| Valico 300 RALLY | da studio | 1 | 1/6 | 4290 € | potenza |
+| Valico 300 RALLY | da studio | 1 | 1/6 | 4290 € | nessuno |
 | Valico 625DSX | da studio | 1 | 1/6 | 5990 € | nessuno |
-| Valico 800DSX RALLY | da studio | 1 | 1/6 | 7990 € | potenza |
+| Valico 800DSX RALLY | da studio | 1 | 1/6 | 7990 € | nessuno |
 | Valico 900DSX | scena ok | 1 | 1/6 | 8990 € | nessuno |
 | Valico 525DSX | da studio | 1 | 2/6 | 5690 € | nessuno |
-| XWOLF 300 | da studio | 1 | 1/6 | 4990 € | sella |
-| XWOLF 550 | da studio | 1 | 1/6 | — | nessuno |
+| XWOLF 300 | da studio | 1 | 1/6 | 4990 € | nessuno |
+| XWOLF 550 | da studio | 1 | 1/6 | 6990 € | nessuno |
 
