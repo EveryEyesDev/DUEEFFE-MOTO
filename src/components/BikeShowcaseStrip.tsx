@@ -335,14 +335,14 @@ export const BikeShowcaseStrip: React.FC<BikeShowcaseStripProps> = ({
  * quarti sono quelli che la raccontano meglio.
  */
 const PREFERENZA = [
-  // Il profilo pieno viene prima di tutto: e' l'inquadratura che fa
-  // sembrare la moto una moto. Nel giro a 360 gradi di Suzuki il profilo
-  // pulito e' quello da sinistra; quello da destra e' in realta' un tre
-  // quarti posteriore, e a tutta schermata la moto sembrava storta. Tanto
-  // le viste da sinistra le ribaltiamo, quindi guarda comunque a destra.
-  'lato-sinistro',
+  // Il profilo destro per primo: tutte le moto guardano nello stesso verso,
+  // e nessuna va specchiata. Specchiare sembrava una scorciatoia innocua,
+  // ma sul serbatoio c'e' il nome del costruttore e al rovescio e'
+  // illeggibile. Nel giro a 360 gradi di Suzuki il profilo destro e' il
+  // fotogramma 18, che a tutta schermata si legge benissimo.
   'lato-destro',
   'angolo-destro',
+  'lato-sinistro',
   'angolo-sinistro',
   'retro',
   'fronte',
