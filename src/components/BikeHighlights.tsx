@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Motorcycle } from '../types';
-import { getVetrina, MOTO_NUOVE, MOTO_USATE } from '../data/motorcycles';
+import { useCatalogo, vetrina as scegliVetrina } from '../lib/catalogo-contesto';
 import { BikeCard } from './BikeCard';
 import { ArrowRight } from 'lucide-react';
 
@@ -20,8 +20,9 @@ interface BikeHighlightsProps {
  * `featured: true` sulla moto. Se non ne e' segnata nessuna, prende le prime.
  */
 export const BikeHighlights: React.FC<BikeHighlightsProps> = ({ onVediTutte, onSelectBike }) => {
-  const vetrina = getVetrina(3);
-  const totale = MOTO_NUOVE.length + MOTO_USATE.length;
+  const { nuove, usate, tutte } = useCatalogo();
+  const vetrina = scegliVetrina(nuove, []).slice(0, 3);
+  const totale = tutte.length;
 
   if (vetrina.length === 0) return null;
 

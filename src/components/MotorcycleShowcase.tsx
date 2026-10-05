@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Motorcycle, BikeCategory, BikeCondition } from '../types';
-import { MOTO_NUOVE, MOTO_USATE } from '../data/motorcycles';
+import { useCatalogo } from '../lib/catalogo-contesto';
 import { BikeCard } from './BikeCard';
 import { BikeGallery } from './BikeGallery';
 import {
@@ -61,7 +61,8 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
   const [fascia, setFascia] = useState<string>('tutte');
   const [cerca, setCerca] = useState('');
 
-  const elenco = reparto === 'nuovo' ? MOTO_NUOVE : MOTO_USATE;
+  const { nuove, usate } = useCatalogo();
+  const elenco = reparto === 'nuovo' ? nuove : usate;
 
   /*
     I FILTRI
@@ -179,7 +180,7 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
                 setCategoria('all');
               }}
               label="Moto nuove"
-              conteggio={MOTO_NUOVE.length}
+              conteggio={nuove.length}
             />
             <RepartoTab
               attivo={reparto === 'usato'}
@@ -188,7 +189,7 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
                 setCategoria('all');
               }}
               label="Usato"
-              conteggio={MOTO_USATE.length}
+              conteggio={usate.length}
             />
           </div>
         </div>

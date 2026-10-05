@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from 'react';
 import { Motorcycle } from '../types';
-import { MOTORCYCLES } from '../data/motorcycles';
+import { useCatalogo } from '../lib/catalogo-contesto';
 import { Calculator, Info, PhoneCall } from 'lucide-react';
 import { SITE } from '../config/site';
 import { formatEuro } from '../utils/format';
@@ -41,14 +41,17 @@ function calcolaRata(
 }
 
 export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initialBike }) => {
-  const [selectedBikeId, setSelectedBikeId] = useState<string>(initialBike?.id ?? MOTORCYCLES[0].id);
+  const { tutte } = useCatalogo();
+  const [selectedBikeId, setSelectedBikeId] = useState<string>(
+    initialBike?.id ?? tutte[0]?.id ?? '',
+  );
   const [importo, setImporto] = useState<number>(initialBike?.price ?? IMPORTO_PREDEFINITO);
   const [anticipoPercent, setAnticipoPercent] = useState<number>(20);
   const [durataMesi, setDurataMesi] = useState<number>(36);
   const [maxiRataAttiva, setMaxiRataAttiva] = useState<boolean>(false);
   const [tan, setTan] = useState<number>(TAN_PREDEFINITO);
 
-  const selectedBike = MOTORCYCLES.find((m) => m.id === selectedBikeId) ?? MOTORCYCLES[0];
+  const selectedBike = tutte.find((m) => m.id === selectedBikeId) ?? tutte[0];
 
   const { anticipo, capitale, maxiRata, rata, totaleRate } = useMemo(() => {
     const anticipoCalc = (importo * anticipoPercent) / 100;
@@ -101,12 +104,12 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initia
                 value={selectedBike.id}
                 onChange={(e) => {
                   setSelectedBikeId(e.target.value);
-                  const b = MOTORCYCLES.find((m) => m.id === e.target.value);
+                  const b = tutte.find((m) => m.id === e.target.value);
                   if (b?.price !== undefined) setImporto(b.price);
                 }}
                 className="w-full bg-[#181920] border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#D00020] transition-colors"
               >
-                {MOTORCYCLES.map((bike) => (
+                {tutte.map((bike) => (
                   <option key={bike.id} value={bike.id}>
                     {bike.brand} {bike.name}
                     {bike.price !== undefined ? ` — ${formatEuro(bike.price)}` : ''}

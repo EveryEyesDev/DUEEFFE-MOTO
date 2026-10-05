@@ -4,16 +4,17 @@ import React from 'react';
 import Link from 'next/link';
 import { DueffeLogo } from './DueffeLogo';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { MOTO_NUOVE } from '../data/motorcycles';
+import { useCatalogo } from '../lib/catalogo-contesto';
 import { SITE } from '../config/site';
 import { SocialLinks } from './SocialLinks';
 
 
 export const Footer: React.FC = () => {
+  const { nuove } = useCatalogo();
   // Le marche che trattiamo: quelle gia' a catalogo per prime, poi le
   // altre dichiarate in configurazione, senza ripetizioni.
   const marche = Array.from(
-    new Set([...MOTO_NUOVE.map((m) => m.brand).sort(), ...SITE.brands]),
+    new Set([...nuove.map((m) => m.brand).sort(), ...SITE.brands]),
   );
 
   return (

@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Motorcycle } from '../types';
-import { MOTO_NUOVE } from '../data/motorcycles';
+import { useCatalogo, vetrina } from '../lib/catalogo-contesto';
 import { ArrowRight, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 import { HorizontalRoad } from './HorizontalRoad';
 import { formatNumero } from '../utils/format';
@@ -60,20 +60,11 @@ export const BikeShowcaseStrip: React.FC<BikeShowcaseStripProps> = ({
     moto di quella marca che ha la scheda completa: cosi' la vetrina non
     resta mai vuota e non va aggiornata a mano quando cambia il catalogo.
   */
-  const moto = useMemo(() => {
-    const preferite = ['moto-morini-x-cape-700', 'suzuki-gsx-8s', 'voge-valico525dsx'];
-    const marche = Array.from(new Set(MOTO_NUOVE.map((m) => m.brand)));
-
-    return marche
-      .map((marca) => {
-        const dellaMarca = MOTO_NUOVE.filter((m) => m.brand === marca);
-        const scelta = dellaMarca.find((m) => preferite.includes(m.id));
-        if (scelta) return scelta;
-        const completa = dellaMarca.find((m) => m.specs.displacementCc !== undefined);
-        return completa ?? dellaMarca[0];
-      })
-      .filter((m): m is Motorcycle => m !== undefined);
-  }, []);
+  const { nuove } = useCatalogo();
+  const moto = useMemo(
+    () => vetrina(nuove, ['moto-morini-x-cape-700', 'suzuki-gsx-8s', 'voge-valico525dsx']),
+    [nuove],
+  );
 
   const totale = moto.length;
 
