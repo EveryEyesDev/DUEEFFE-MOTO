@@ -41,7 +41,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'bianco-carrara',
         name: 'Carrara White',
-        hex: '#cecece',
+        hex: '#cececd',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/bianco-carrara/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/bianco-carrara/lato-sinistro.webp' },
@@ -54,7 +54,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-ebony',
         name: 'Black Ebony',
-        hex: '#3c3b39',
+        hex: '#3b3b39',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/nero-ebony/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/nero-ebony/lato-sinistro.webp' },
@@ -67,7 +67,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-passion',
         name: 'Red Passion',
-        hex: '#b73f3c',
+        hex: '#b63f3b',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-700/rosso-passion/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-700/rosso-passion/lato-sinistro.webp' },
@@ -139,7 +139,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-viper',
         name: 'Viper Black',
-        hex: '#3c3b39',
+        hex: '#3c3c3a',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/nero-viper/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/nero-viper/lato-sinistro.webp' },
@@ -152,7 +152,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-energy',
         name: 'Energy Red',
-        hex: '#c95950',
+        hex: '#c55b52',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/x-cape-1200/rosso-energy/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/x-cape-1200/rosso-energy/lato-sinistro.webp' },
@@ -298,7 +298,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio',
         name: 'Smoky Anthracite',
-        hex: '#545454',
+        hex: '#3b3b3b',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/seiemmezzo-str/grigio/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/seiemmezzo-str/grigio/lato-sinistro.webp' },
@@ -311,7 +311,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'rosso-passion',
         name: 'Red Passion',
-        hex: '#822426',
+        hex: '#832526',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/seiemmezzo-str/rosso-passion/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/seiemmezzo-str/rosso-passion/lato-sinistro.webp' },
@@ -369,7 +369,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero',
         name: 'Nero',
-        hex: '#3d3c3b',
+        hex: '#3c3c3a',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/calibro-custom/nero/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/calibro-custom/nero/lato-sinistro.webp' },
@@ -440,7 +440,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-garage',
         name: 'Garage Grey',
-        hex: '#3c3a37',
+        hex: '#3c3a36',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/calibro-bagger/grigio-garage/lato-destro.webp' },
           { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/calibro-bagger/grigio-garage/lato-sinistro.webp' },
@@ -453,7 +453,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero',
         name: 'Nero',
-        hex: '#3b3b3b',
+        hex: '#3c3b3b',
         views: [
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/calibro-bagger/nero/angolo-destro.webp' },
           { id: 'fronte', label: 'Fronte', src: '/moto/calibro-bagger/nero/fronte.webp' },
@@ -508,7 +508,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Giallo',
-        hex: '#eddc10',
+        hex: '#e8dc0d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-1/angolo-destro.webp' },
@@ -521,7 +521,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#383b3b',
+        hex: '#393c3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-2/angolo-destro.webp' },
@@ -534,7 +534,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Giallo',
-        hex: '#e3c222',
+        hex: '#e8dd10',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-3/angolo-destro.webp' },
@@ -547,7 +547,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Argento',
-        hex: '#b7bcc2',
+        hex: '#d2dfe0',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-4/angolo-destro.webp' },
@@ -560,7 +560,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Grigio',
-        hex: '#393b3c',
+        hex: '#3a3c3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050de/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050de/livrea-5/angolo-destro.webp' },
@@ -617,7 +617,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#383b3c',
+        hex: '#383c3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-2/angolo-destro.webp' },
@@ -669,7 +669,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-6',
         name: 'Grigio',
-        hex: '#383b3d',
+        hex: '#383c3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-1050se/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-1050se/livrea-6/angolo-destro.webp' },
@@ -783,7 +783,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Argento',
-        hex: '#f8f9f8',
+        hex: '#f7faf7',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-2/angolo-destro.webp' },
@@ -796,7 +796,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Grigio',
-        hex: '#3c3e3e',
+        hex: '#3c3f3e',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-3/angolo-destro.webp' },
@@ -822,7 +822,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Argento',
-        hex: '#fdfefa',
+        hex: '#fcfefa',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-5/angolo-destro.webp' },
@@ -835,7 +835,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-6',
         name: 'Blu',
-        hex: '#213f69',
+        hex: '#1f4169',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-6/angolo-destro.webp' },
@@ -879,7 +879,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-san-diego',
         name: 'BLU SAN DIEGO',
-        hex: '#0595e6',
+        hex: '#0697e5',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/blu-san-diego/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/blu-san-diego/angolo-destro.webp' },
@@ -918,7 +918,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-capri',
         name: 'BLU CAPRI',
-        hex: '#0794dd',
+        hex: '#0a96dc',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/blu-capri/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/blu-capri/angolo-destro.webp' },
@@ -931,7 +931,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'argento-austin',
         name: 'ARGENTO AUSTIN',
-        hex: '#c7cccf',
+        hex: '#c8cfd0',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/argento-austin/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/argento-austin/angolo-destro.webp' },
@@ -944,7 +944,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-houston',
         name: 'NERO HOUSTON',
-        hex: '#363b3a',
+        hex: '#363c3b',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/nero-houston/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/nero-houston/angolo-destro.webp' },
@@ -988,7 +988,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#3641b2',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-1/angolo-destro.webp' },
@@ -1001,7 +1001,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#505457',
+        hex: '#4f5456',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-2/angolo-destro.webp' },
@@ -1014,7 +1014,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Grigio',
-        hex: '#393b3d',
+        hex: '#383b3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-3/angolo-destro.webp' },
@@ -1027,7 +1027,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Grigio',
-        hex: '#515355',
+        hex: '#515455',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-4/angolo-destro.webp' },
@@ -1040,7 +1040,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Giallo',
-        hex: '#f3ec27',
+        hex: '#e8e50e',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800se/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800se/livrea-5/angolo-destro.webp' },
@@ -1193,7 +1193,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'grigio-berlino',
         name: 'GRIGIO BERLINO',
-        hex: '#3a3c3e',
+        hex: '#3a3d3e',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/angolo-destro.webp' },
@@ -1206,7 +1206,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#2c3735',
+        hex: '#2b3634',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/angolo-destro.webp' },
@@ -1219,7 +1219,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Rosso',
-        hex: '#c01727',
+        hex: '#e73851',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/livrea-4/angolo-destro.webp' },
@@ -1263,7 +1263,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Giallo',
-        hex: '#f5e703',
+        hex: '#f4e905',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4s/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4s/livrea-1/angolo-destro.webp' },
@@ -1276,7 +1276,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#3c3e40',
+        hex: '#3b3e40',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4s/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4s/livrea-2/angolo-destro.webp' },
@@ -1320,7 +1320,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#5889ae',
+        hex: '#578aad',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4sm/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4sm/livrea-1/angolo-destro.webp' },
@@ -1333,7 +1333,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Argento',
-        hex: '#dfe3e9',
+        hex: '#e1e5e9',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-dr-z4sm/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-dr-z4sm/livrea-2/angolo-destro.webp' },
@@ -1403,7 +1403,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#383a3c',
+        hex: '#383c3b',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000-evo/nero-dubai/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000-evo/nero-dubai/angolo-destro.webp' },
@@ -1530,7 +1530,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#383b3d',
+        hex: '#4a4e55',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8tt/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8tt/livrea-2/angolo-destro.webp' },
@@ -1574,7 +1574,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#04113d',
+        hex: '#06123d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-r1000r/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-r1000r/livrea-1/angolo-destro.webp' },
@@ -1644,7 +1644,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#0368b4',
+        hex: '#0669b3',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-sv-7gx/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-sv-7gx/livrea-1/angolo-destro.webp' },
@@ -1657,7 +1657,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Argento',
-        hex: '#b6b3af',
+        hex: '#b5b3af',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-sv-7gx/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-sv-7gx/livrea-2/angolo-destro.webp' },
@@ -1714,7 +1714,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-zante',
         name: 'BLU ZANTE',
-        hex: '#046cb7',
+        hex: '#056db6',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-r125/blu-zante/lato-destro.webp' },
         ],
@@ -1761,7 +1761,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-zante',
         name: 'BLU ZANTE',
-        hex: '#03519e',
+        hex: '#04519f',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s125/blu-zante/lato-destro.webp' },
         ],
@@ -1846,7 +1846,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Blu',
-        hex: '#0c2039',
+        hex: '#0c2038',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-1/angolo-destro.webp' },
@@ -1859,7 +1859,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Grigio',
-        hex: '#4f5254',
+        hex: '#4f5354',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-2/angolo-destro.webp' },
@@ -1872,7 +1872,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Argento',
-        hex: '#c8cccf',
+        hex: '#c9cdcf',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-3/angolo-destro.webp' },
@@ -1885,7 +1885,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Blu',
-        hex: '#2d3caf',
+        hex: '#3444ac',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-katana/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-katana/livrea-4/angolo-destro.webp' },
@@ -1999,7 +1999,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'blu-montreal',
         name: 'BLU MONTREAL',
-        hex: '#1d3f8f',
+        hex: '#229be1',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/angolo-destro.webp' },
@@ -2025,7 +2025,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'nero-dubai',
         name: 'NERO DUBAI',
-        hex: '#393b3d',
+        hex: '#393c3c',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/angolo-destro.webp' },
@@ -2095,7 +2095,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Livrea 1',
-        hex: '#dde3e9',
+        hex: '#c8ced1',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-1/angolo-destro.webp' },
@@ -2108,7 +2108,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Livrea 2',
-        hex: '#959ba0',
+        hex: '#969c9f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-2/angolo-destro.webp' },
@@ -2121,7 +2121,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Livrea 3',
-        hex: '#515657',
+        hex: '#525857',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-3/angolo-destro.webp' },
@@ -2134,7 +2134,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Livrea 4',
-        hex: '#364242',
+        hex: '#364342',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-4/angolo-destro.webp' },
@@ -2147,7 +2147,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Livrea 5',
-        hex: '#3f5281',
+        hex: '#3e527f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-5/angolo-destro.webp' },
@@ -2160,7 +2160,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-6',
         name: 'Livrea 6',
-        hex: '#393c3d',
+        hex: '#515757',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-6/angolo-destro.webp' },
@@ -2204,7 +2204,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-1',
         name: 'Livrea 1',
-        hex: '#3c4067',
+        hex: '#25284d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-1/angolo-destro.webp' },
@@ -2217,7 +2217,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-2',
         name: 'Livrea 2',
-        hex: '#e5dd0b',
+        hex: '#e2de0b',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-2/angolo-destro.webp' },
@@ -2230,7 +2230,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-3',
         name: 'Livrea 3',
-        hex: '#3c4066',
+        hex: '#252a4d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-3/angolo-destro.webp' },
@@ -2243,7 +2243,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-4',
         name: 'Livrea 4',
-        hex: '#27294f',
+        hex: '#22253d',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-4/angolo-destro.webp' },
@@ -2256,7 +2256,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-5',
         name: 'Livrea 5',
-        hex: '#3c4066',
+        hex: '#3a3f63',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-5/angolo-destro.webp' },
@@ -2269,7 +2269,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
       {
         slug: 'livrea-6',
         name: 'Livrea 6',
-        hex: '#3b3d3f',
+        hex: '#3d3f40',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-6/angolo-destro.webp' },
