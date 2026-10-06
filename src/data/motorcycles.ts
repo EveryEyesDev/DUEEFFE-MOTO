@@ -776,12 +776,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'BLU TOKYO',
         hex: '#1d3f8f',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-address-125/blu-tokyo/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-address-125/blu-tokyo/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-address-125/blu-tokyo/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-address-125/blu-tokyo/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-address-125/blu-tokyo/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-address-125/blu-tokyo/lato-sinistro.webp' },
         ],
       },
       {
@@ -833,12 +828,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'Grigio',
         hex: '#4a4e55',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-burgman-street-125-executive/livrea-1/lato-sinistro.webp' },
         ],
       },
       {
@@ -955,12 +945,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'ROSSO PECHINO',
         hex: '#c01727',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8s/rosso-pechino/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8s/rosso-pechino/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8s/rosso-pechino/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-8s/rosso-pechino/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-8s/rosso-pechino/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-8s/rosso-pechino/lato-sinistro.webp' },
         ],
       },
       {
@@ -1173,12 +1158,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'BIANCO OSLO',
         hex: '#eef0f2',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8r/bianco-oslo/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8r/bianco-oslo/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r/bianco-oslo/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-8r/bianco-oslo/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-8r/bianco-oslo/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-8r/bianco-oslo/lato-sinistro.webp' },
         ],
       },
       {
@@ -1186,12 +1166,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'NERO PARIGI',
         hex: '#141418',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8r/nero-parigi/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8r/nero-parigi/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r/nero-parigi/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-8r/nero-parigi/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-8r/nero-parigi/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-8r/nero-parigi/lato-sinistro.webp' },
         ],
       },
       {
@@ -1256,12 +1231,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'GRIGIO BERLINO',
         hex: '#3a3d3e',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-s1000gx/grigio-berlino/lato-sinistro.webp' },
         ],
       },
       {
@@ -1269,12 +1239,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'NERO DUBAI',
         hex: '#2b3634',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-s1000gx/nero-dubai/lato-sinistro.webp' },
         ],
       },
       {
@@ -1453,12 +1418,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'ROSSO MADRID',
         hex: '#c01727',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000-evo/rosso-madrid/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000-evo/rosso-madrid/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000-evo/rosso-madrid/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-s1000-evo/rosso-madrid/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-s1000-evo/rosso-madrid/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-s1000-evo/rosso-madrid/lato-sinistro.webp' },
         ],
       },
       {
@@ -1992,12 +1952,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'GRIGIO PITTSBURGH',
         hex: '#4a4e55',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-hayabusa/grigio-pittsburgh/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-hayabusa/grigio-pittsburgh/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-hayabusa/grigio-pittsburgh/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-hayabusa/grigio-pittsburgh/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-hayabusa/grigio-pittsburgh/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-hayabusa/grigio-pittsburgh/lato-sinistro.webp' },
         ],
       },
       {
@@ -2005,12 +1960,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'BLU RODI',
         hex: '#1d3f8f',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-hayabusa/blu-rodi/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-hayabusa/blu-rodi/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-hayabusa/blu-rodi/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-hayabusa/blu-rodi/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-hayabusa/blu-rodi/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-hayabusa/blu-rodi/lato-sinistro.webp' },
         ],
       },
       {
@@ -2018,12 +1968,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'NERO MEMPHIS',
         hex: '#141418',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-hayabusa/nero-memphis/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-hayabusa/nero-memphis/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-hayabusa/nero-memphis/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-hayabusa/nero-memphis/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-hayabusa/nero-memphis/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-hayabusa/nero-memphis/lato-sinistro.webp' },
         ],
       },
     ],
@@ -2062,12 +2007,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'BLU MONTREAL',
         hex: '#229be1',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-s1000gt/blu-montreal/lato-sinistro.webp' },
         ],
       },
       {
@@ -2088,12 +2028,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'NERO DUBAI',
         hex: '#393c3c',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-s1000gt/nero-dubai/lato-sinistro.webp' },
         ],
       },
       {
@@ -2101,12 +2036,7 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'GRIGIO SEATTLE',
         hex: '#4a4e55',
         views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-s1000gt/grigio-seattle/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-s1000gt/grigio-seattle/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-s1000gt/grigio-seattle/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-s1000gt/grigio-seattle/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-s1000gt/grigio-seattle/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-s1000gt/grigio-seattle/lato-sinistro.webp' },
         ],
       },
       {
@@ -2417,7 +2347,6 @@ export const MOTO_NUOVE: Motorcycle[] = [
         hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-brivido-125s/unica/lato-destro.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-brivido-125s/unica/angolo-destro.webp' },
         ],
       },
     ],
@@ -2455,7 +2384,12 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'Total Black',
         hex: '#141418',
         views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/voge-brivido-625r/unica/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-brivido-625r/unica/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-brivido-625r/unica/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/voge-brivido-625r/unica/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/voge-brivido-625r/unica/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/voge-brivido-625r/unica/lato-sinistro.webp' },
         ],
       },
     ],
@@ -2570,7 +2504,6 @@ export const MOTO_NUOVE: Motorcycle[] = [
         hex: '#69696d',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16-125-air/unica/lato-destro.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-sfida-sr16-125-air/unica/angolo-destro.webp' },
         ],
       },
     ],
@@ -2799,8 +2732,10 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'Livrea ufficiale',
         hex: '#5d5e61',
         views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/voge-sfida-sr450x/unica/fronte.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr450x/unica/lato-destro.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-sfida-sr450x/unica/angolo-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/voge-sfida-sr450x/unica/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/voge-sfida-sr450x/unica/angolo-sinistro.webp' },
         ],
       },
     ],
@@ -2839,7 +2774,6 @@ export const MOTO_NUOVE: Motorcycle[] = [
         hex: '#5f6062',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-300ac/unica/lato-destro.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-trofeo-300ac/unica/angolo-destro.webp' },
         ],
       },
     ],
@@ -2957,7 +2891,6 @@ export const MOTO_NUOVE: Motorcycle[] = [
         hex: '#706f71',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-500ac/unica/lato-destro.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-trofeo-500ac/unica/angolo-destro.webp' },
         ],
       },
     ],
@@ -3074,7 +3007,11 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'Matt Sand',
         hex: '#9b8363',
         views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/voge-valico-625dsx/unica/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-valico-625dsx/unica/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-625dsx/unica/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/voge-valico-625dsx/unica/retro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/voge-valico-625dsx/unica/lato-sinistro.webp' },
         ],
       },
     ],
@@ -3112,7 +3049,12 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'Livrea ufficiale',
         hex: '#eed528',
         views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/voge-valico-800rally/unica/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-valico-800rally/unica/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico-800rally/unica/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/voge-valico-800rally/unica/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/voge-valico-800rally/unica/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/voge-valico-800rally/unica/lato-sinistro.webp' },
         ],
       },
     ],
@@ -3188,8 +3130,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'Black Knight',
         hex: '#141418',
         views: [
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico525dsx/unica/lato-destro.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-valico525dsx/unica/angolo-destro.webp' },
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-valico525dsx/unica/lato-destro.webp' },
         ],
       },
     ],
@@ -3228,7 +3170,11 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'Livrea ufficiale',
         hex: '#5e5f5f',
         views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/voge-xwolf-300/unica/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-xwolf-300/unica/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-xwolf-300/unica/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/voge-xwolf-300/unica/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/voge-xwolf-300/unica/angolo-sinistro.webp' },
         ],
       },
     ],

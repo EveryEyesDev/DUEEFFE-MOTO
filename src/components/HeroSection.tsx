@@ -13,8 +13,11 @@ interface HeroSectionProps {
 const HIGHLIGHTS = [
   {
     icon: Bike,
+    // Qui i nomi delle marche non si scrivono: poco piu' sotto c'e' la
+    // striscia degli stemmi, e ripeterli a due dita di distanza faceva
+    // sembrare la pagina a corto di cose da dire.
     value: `${SITE.brands.length} marchi`,
-    label: SITE.primaryBrands.join(' · '),
+    label: 'Tutti in salone',
   },
   {
     icon: Rotate3d,
@@ -97,7 +100,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreCatalog }) =>
           {HIGHLIGHTS.map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.label} className="flex items-center gap-3 p-2 text-left">
+              <div key={item.value} className="flex items-center gap-3 p-2 text-left">
                 <div className="p-2.5 rounded-lg bg-[#D00020]/10 text-[#D00020] shrink-0">
                   <Icon className="w-5 h-5" />
                 </div>
