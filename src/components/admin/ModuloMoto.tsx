@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Save, Trash2, ArrowLeft, Eye, EyeOff } from 'lucide-react';
+import { Save, Trash2, ArrowLeft, Eye, EyeOff, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Motorcycle, BikeCategory } from '../../types';
 import { CaricaFoto } from './CaricaFoto';
@@ -77,6 +77,23 @@ export const ModuloMoto: React.FC<Props> = ({ motoIniziale, nascostaIniziale, nu
     } finally {
       setSalvando(false);
     }
+  };
+
+  /**
+   * Apre il sito come sara', comprese le moto nascoste.
+   *
+   * Salva prima: altrimenti si guarderebbe l'anteprima di quello che c'era
+   * sul server, non di quello che si ha davanti, e sembrerebbe rotta.
+   */
+  const anteprima = async () => {
+    await salva();
+    const risposta = await fetch(
+      `/api/admin/anteprima?vai=${encodeURIComponent(`/moto?moto=${moto.id}`)}`,
+      { method: 'POST' },
+    );
+    const dati = await risposta.json().catch(() => ({}));
+    if (risposta.ok) window.open(dati.vai ?? '/moto', '_blank');
+    else setMessaggio({ testo: dati.errore ?? 'Anteprima non disponibile.', buono: false });
   };
 
   const elimina = async () => {
@@ -337,6 +354,18 @@ export const ModuloMoto: React.FC<Props> = ({ motoIniziale, nascostaIniziale, nu
             >
               {messaggio.testo}
             </span>
+          )}
+
+          {!nuova && (
+            <button
+              type="button"
+              onClick={anteprima}
+              disabled={salvando}
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-white/10 text-xs text-slate-300 hover:text-white hover:border-white/30 transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Anteprima
+            </button>
           )}
 
           {!nuova && (

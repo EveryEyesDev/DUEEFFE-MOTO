@@ -53,8 +53,15 @@ export const Stemma: React.FC<{ marca: string; classe?: string }> = ({ marca, cl
 /**
  * La striscia dei marchi, per la home.
  *
- * In grigio finche' non ci passi sopra: cosi' non rubano la scena alle
- * fotografie delle moto, che sono la cosa che deve attirare lo sguardo.
+ * A colori, perche' e' il posto dove devono farsi vedere: chi arriva sul
+ * sito di una concessionaria la prima cosa che vuole sapere e' quali
+ * marche ci trova. In grigio passavano inosservati, che e' l'opposto di
+ * quello che servono a fare.
+ *
+ * Nel filtro del catalogo, invece, restano spenti finche' non li scegli:
+ * li' sono comandi, e un comando acceso deve voler dire "questo e'
+ * selezionato".
+ *
  * Ogni stemma porta al catalogo gia' filtrato su quella marca.
  */
 export const LoghiMarchi: React.FC<{ marche: string[] }> = ({ marche }) => {
@@ -80,7 +87,7 @@ export const LoghiMarchi: React.FC<{ marche: string[] }> = ({ marche }) => {
                 <img
                   src={stemmaDi(marca) as string}
                   alt={marca}
-                  className="h-9 sm:h-11 w-auto object-contain opacity-55 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 motion-reduce:transition-none"
+                  className="h-10 sm:h-12 w-auto object-contain opacity-90 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 motion-reduce:transition-none"
                 />
               </Link>
             </li>

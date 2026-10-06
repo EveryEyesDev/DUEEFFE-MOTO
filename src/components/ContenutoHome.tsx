@@ -55,11 +55,12 @@ function Contenuto() {
       <main className="flex-1">
         <HeroSection onExploreCatalog={() => router.push('/moto')} />
 
-        {/* I marchi, subito sotto il racconto: e' la prima cosa che
-            chiede chi sta cercando una moto. */}
-        <LoghiMarchi marche={Array.from(new Set(nuove.map((m) => m.brand)))} />
 
         <ServicesMarquee />
+
+        {/* I marchi, subito sotto il nastro dei servizi: prima si legge
+            cosa facciamo, poi di chi sono le moto. */}
+        <LoghiMarchi marche={Array.from(new Set(nuove.map((m) => m.brand)))} />
 
         <BikeHighlights
           onVediTutte={() => router.push('/moto')}

@@ -1,5 +1,7 @@
 import React from 'react';
+import { draftMode } from 'next/headers';
 import { leggiCatalogo } from '../../src/lib/catalogo';
+import { BarraAnteprima } from '../../src/components/BarraAnteprima';
 import { CatalogoProvider } from '../../src/lib/catalogo-contesto';
 import ContenutoMoto from '../../src/components/ContenutoMoto';
 
@@ -20,9 +22,11 @@ import ContenutoMoto from '../../src/components/ContenutoMoto';
 export const revalidate = 60;
 
 export default async function PaginaMoto() {
-  const { nuove, usate } = await leggiCatalogo();
+  const { isEnabled: anteprima } = await draftMode();
+  const { nuove, usate } = await leggiCatalogo(anteprima);
   return (
     <CatalogoProvider nuove={nuove} usate={usate}>
+      {anteprima && <BarraAnteprima />}
       <ContenutoMoto />
     </CatalogoProvider>
   );

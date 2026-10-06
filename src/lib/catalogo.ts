@@ -46,7 +46,11 @@ async function daDatabase(): Promise<RigaMoto[] | null> {
 /**
  * Mette insieme catalogo scritto nel codice e modifiche dal database.
  */
-function unisci(base: Motorcycle[], righe: RigaMoto[] | null): Motorcycle[] {
+function unisci(
+  base: Motorcycle[],
+  righe: RigaMoto[] | null,
+  anteprima = false,
+): Motorcycle[] {
   if (!righe) return base;
 
   const perId = new Map(righe.map((r) => [r.id, r]));
@@ -60,26 +64,32 @@ function unisci(base: Motorcycle[], righe: RigaMoto[] | null): Motorcycle[] {
     }
     perId.delete(moto.id);
     // Una moto segnata come nascosta sparisce dal sito ma resta nel
-    // database: cosi' si puo' rimettere senza reinserire tutto.
-    if (!riga.nascosta) uscita.push(riga.dati);
+    // database: cosi' si puo' rimettere senza reinserire tutto. In
+    // anteprima si vede lo stesso, che e' il motivo per cui esiste.
+    if (!riga.nascosta || anteprima) uscita.push(riga.dati);
   }
 
   // Quello che resta nella mappa esiste solo nel database: sono le moto
   // aggiunte dal salone, soprattutto l'usato.
   for (const riga of perId.values()) {
-    if (!riga.nascosta) uscita.push(riga.dati);
+    if (!riga.nascosta || anteprima) uscita.push(riga.dati);
   }
 
   return uscita;
 }
 
-/** Tutte le moto, nuove e usate, come le vede chi visita il sito. */
-export async function leggiCatalogo(): Promise<{
+/**
+ * Tutte le moto, nuove e usate, come le vede chi visita il sito.
+ *
+ * Con l'anteprima accesa si vedono anche le moto nascoste: serve al
+ * responsabile per guardare come verra' una scheda prima di pubblicarla.
+ */
+export async function leggiCatalogo(anteprima = false): Promise<{
   nuove: Motorcycle[];
   usate: Motorcycle[];
 }> {
   const righe = await daDatabase();
-  const tutte = unisci([...MOTO_NUOVE, ...MOTO_USATE], righe);
+  const tutte = unisci([...MOTO_NUOVE, ...MOTO_USATE], righe, anteprima);
   return {
     nuove: tutte.filter((m) => m.condition !== 'usato'),
     usate: tutte.filter((m) => m.condition === 'usato'),

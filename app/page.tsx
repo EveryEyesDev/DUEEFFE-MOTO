@@ -1,5 +1,7 @@
 import React from 'react';
+import { draftMode } from 'next/headers';
 import { leggiCatalogo } from '../src/lib/catalogo';
+import { BarraAnteprima } from '../src/components/BarraAnteprima';
 import { CatalogoProvider } from '../src/lib/catalogo-contesto';
 import ContenutoHome from '../src/components/ContenutoHome';
 
@@ -9,9 +11,11 @@ import ContenutoHome from '../src/components/ContenutoHome';
 export const revalidate = 60;
 
 export default async function Home() {
-  const { nuove, usate } = await leggiCatalogo();
+  const { isEnabled: anteprima } = await draftMode();
+  const { nuove, usate } = await leggiCatalogo(anteprima);
   return (
     <CatalogoProvider nuove={nuove} usate={usate}>
+      {anteprima && <BarraAnteprima />}
       <ContenutoHome />
     </CatalogoProvider>
   );
