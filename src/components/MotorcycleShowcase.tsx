@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Motorcycle, BikeCategory, BikeCondition } from '../types';
 import { useCatalogo } from '../lib/catalogo-contesto';
 import { BikeCard } from './BikeCard';
-import { Stemma } from './LoghiMarchi';
+import { stemmaDi } from './LoghiMarchi';
 import { BikeGallery } from './BikeGallery';
 import {
   Search,
@@ -217,24 +217,65 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
           che si e' scelto.
         */}
         <div className="mb-8 space-y-3">
-          {/* Marca */}
+          {/*
+            MARCA
+            Il marchio e' il pulsante, non un'icona accanto al nome. Messo
+            piccolo di fianco a una scritta sembrava un'emoji, e un marchio
+            ridotto a decorazione non si legge ne' si riconosce. Qui e'
+            grande abbastanza da leggersi; il nome resta nell'etichetta per
+            chi usa un lettore di schermo, e compare al posto dello stemma
+            quando una marca non ne ha ancora uno.
+
+            Spento quando non e' scelto, acceso quando lo e': stessa logica
+            degli altri filtri, solo senza parole.
+          */}
           {marche.length > 1 && (
-            <div className="flex items-center justify-start sm:justify-center gap-1.5 overflow-x-auto pb-1">
-              {['tutte', ...marche].map((m) => (
-                <button
-                  key={m}
-                  onClick={() => cambiaMarca(m)}
-                  aria-pressed={marca === m}
-                  className={`inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg whitespace-nowrap transition-all ${
-                    marca === m
-                      ? 'bg-white text-slate-900'
-                      : 'bg-transparent text-slate-400 hover:text-white border border-white/10'
-                  }`}
-                >
-                  {m !== 'tutte' && <Stemma marca={m} classe="h-4" />}
-                  {m === 'tutte' ? 'Tutte le marche' : m}
-                </button>
-              ))}
+            <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-1">
+              <button
+                onClick={() => cambiaMarca('tutte')}
+                aria-pressed={marca === 'tutte'}
+                className={`shrink-0 h-12 px-5 text-xs font-bold uppercase tracking-wider rounded-xl whitespace-nowrap transition-all ${
+                  marca === 'tutte'
+                    ? 'bg-white text-slate-900'
+                    : 'bg-transparent text-slate-400 hover:text-white border border-white/10'
+                }`}
+              >
+                Tutte
+              </button>
+
+              {marche.map((m) => {
+                const scelta = marca === m;
+                const stemma = stemmaDi(m);
+                return (
+                  <button
+                    key={m}
+                    onClick={() => cambiaMarca(m)}
+                    aria-pressed={scelta}
+                    aria-label={`Mostra solo ${m}`}
+                    title={m}
+                    className={`shrink-0 h-12 px-5 rounded-xl border transition-all flex items-center justify-center ${
+                      scelta
+                        ? 'bg-white/10 border-white/40'
+                        : 'bg-transparent border-white/10 hover:border-white/30'
+                    }`}
+                  >
+                    {stemma ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={stemma}
+                        alt={m}
+                        className={`h-6 w-auto object-contain transition-all duration-200 ${
+                          scelta ? 'opacity-100 grayscale-0' : 'opacity-50 grayscale hover:opacity-80'
+                        }`}
+                      />
+                    ) : (
+                      <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                        {m}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           )}
 
