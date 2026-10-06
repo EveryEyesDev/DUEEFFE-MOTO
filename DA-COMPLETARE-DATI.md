@@ -6,15 +6,17 @@ qualcosa il dato ce l'ho gia' e non serve toccarlo.
 Se di un dato non disponi, lascia vuoto: in pagina compare
 «In arrivo» e l'invito a chiamare, mai un numero inventato.
 
-## Moto Morini — 6 modelli, 0 da completare
+## Moto Morini — 7 modelli, 1 da completare
 
-Nessuno: le schede sono complete.
+| Modello | Cosa manca |
+|---|---|
+| **3 1/2 Sport** | cambio |
 
 ## Suzuki — 23 modelli, 0 da completare
 
 Nessuno: le schede sono complete.
 
-## Voge — 24 modelli, 0 da completare
+## Voge — 22 modelli, 0 da completare
 
 Nessuno: le schede sono complete.
 
@@ -57,6 +59,4 @@ si vede («Nero», «Blu»). Se mi dai i nomi veri li metto.
 | Voge Trofeo 500AC | 1 | Livrea ufficiale |
 | Voge Trofeo 525 ACX Scrambler | 1 | Livrea ufficiale |
 | Voge Valico 800DSX RALLY | 1 | Livrea ufficiale |
-| Voge XWOLF 300 | 1 | Livrea ufficiale |
-| Voge XWOLF 550 | 1 | Livrea ufficiale |
 

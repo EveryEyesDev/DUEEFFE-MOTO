@@ -69,13 +69,16 @@ INTESTAZIONI = {
 DESTINAZIONE = os.path.join("public", "moto")
 
 # Le famiglie Voge: solo queste pagine sono schede di modello.
-FAMIGLIE = r"^(brivido|trofeo|valico|sfida|xwolf)"
+#
+# Gli XWolf restano fuori di proposito: sono quad, non moto, e il salone
+# non li tratta. Finivano nel catalogo perche' Voge li pubblica insieme
+# alla gamma, ma in un elenco di moto erano fuori posto.
+FAMIGLIE = r"^(brivido|trofeo|valico|sfida)"
 
 # Famiglie ricondotte alle categorie del nostro catalogo.
 CATEGORIE = [
     (r"^sfida", ("naked", "Scooter")),
     (r"^valico", ("adventure", "Adventure")),
-    (r"^xwolf", ("adventure", "Adventure")),
     (r"^trofeo", ("naked", "Classic")),
     (r"^brivido", ("naked", "Naked")),
 ]

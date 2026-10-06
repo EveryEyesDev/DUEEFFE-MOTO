@@ -103,7 +103,6 @@ GIA_GUARDATE_E_BUONE = {
     "suzuki-gsx-s1000-evo/blu-miami",
     "suzuki-gsx-s1000-evo/nero-dubai",
     "voge-sfida-sr450x/unica",            # vernice cangiante, vira col taglio di luce
-    "voge-xwolf-300/unica",
     "alltrhike-450/verde-jungle",
     "calibro-custom/nero",
     "suzuki-gsx-8s/nero-nairobi",

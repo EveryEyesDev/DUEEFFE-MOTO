@@ -54,8 +54,8 @@ export const SITE = {
     href: 'tel:+390832098110',
   },
 
-  /** DA COMPILARE: indirizzo email ufficiale. Finche' e' vuoto non viene mostrato. */
-  email: '',
+  /** Indirizzo email ufficiale, dato dal salone il 6 ottobre 2026. */
+  email: 'info@dueeffemoto.it',
 
   /** DA COMPILARE: numero WhatsApp in formato internazionale senza simboli, es. '393331234567'. */
   whatsapp: '',
