@@ -156,20 +156,6 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
           </p>
         </div>
 
-        {/* Marchi trattati */}
-        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mb-10 pb-8 border-b border-white/5">
-          <span className="text-[11px] uppercase tracking-wider text-slate-500 mr-1">
-            Marchi trattati
-          </span>
-          {SITE.brands.map((brand) => (
-            <span
-              key={brand}
-              className="px-3 py-1 text-xs font-semibold text-slate-300 bg-white/5 border border-white/10 rounded-full"
-            >
-              {brand}
-            </span>
-          ))}
-        </div>
 
         {/* Reparti: nuovo e usato */}
         <div className="flex justify-center mb-6">

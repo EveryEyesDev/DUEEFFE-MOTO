@@ -70,12 +70,12 @@ export const LoghiMarchi: React.FC<{ marche: string[] }> = ({ marche }) => {
 
   return (
     <section className="border-y border-white/10 bg-[#0a0a0e]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14">
         <p className="text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-500 mb-7">
           I marchi che trattiamo
         </p>
 
-        <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-7 sm:gap-x-16">
+        <ul className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:gap-x-20">
           {conStemma.map((marca) => (
             <li key={marca}>
               <Link
@@ -87,7 +87,7 @@ export const LoghiMarchi: React.FC<{ marche: string[] }> = ({ marche }) => {
                 <img
                   src={stemmaDi(marca) as string}
                   alt={marca}
-                  className="h-10 sm:h-12 w-auto object-contain opacity-90 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 motion-reduce:transition-none"
+                  className="h-14 sm:h-20 w-auto object-contain opacity-90 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 motion-reduce:transition-none"
                 />
               </Link>
             </li>

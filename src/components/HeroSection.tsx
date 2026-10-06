@@ -5,7 +5,6 @@ import { DueffeLogo } from './DueffeLogo';
 import { HeroBackground } from './HeroBackground';
 import { Rotate3d, ChevronRight, Wrench, ShieldCheck, Bike } from 'lucide-react';
 import { SITE } from '../config/site';
-import { stemmaDi } from './LoghiMarchi';
 
 interface HeroSectionProps {
   onExploreCatalog: () => void;
@@ -15,10 +14,7 @@ const HIGHLIGHTS = [
   {
     icon: Bike,
     value: `${SITE.brands.length} marchi`,
-    // Qui, al posto della riga di nomi, mettiamo gli stemmi: dicono la
-    // stessa cosa ma si riconoscono con un'occhiata, senza leggere.
     label: SITE.primaryBrands.join(' · '),
-    stemmi: true,
   },
   {
     icon: Rotate3d,
@@ -107,26 +103,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreCatalog }) =>
                 </div>
                 <div className="min-w-0">
                   <div className="text-sm font-bold text-white font-tech truncate">{item.value}</div>
-                  {'stemmi' in item && item.stemmi ? (
-                    <div className="flex items-center gap-2.5 mt-1">
-                      {SITE.primaryBrands.map((marca) => {
-                        const stemma = stemmaDi(marca);
-                        if (!stemma) return null;
-                        return (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            key={marca}
-                            src={stemma}
-                            alt={marca}
-                            title={marca}
-                            className="h-4 w-auto object-contain"
-                          />
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <div className="text-xs text-slate-400">{item.label}</div>
-                  )}
+                  <div className="text-xs text-slate-400">{item.label}</div>
                 </div>
               </div>
             );
