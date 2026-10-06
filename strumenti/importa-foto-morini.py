@@ -71,6 +71,29 @@ VISTE = ["lato-destro", "lato-sinistro", "fronte", "retro", "angolo-destro", "an
 
 # Modelli, livree e file ufficiali. Gli indirizzi sono relativi a BASE.
 MODELLI = {
+    "tre-mezzo-sport": {
+        "nome": "3 1/2 Sport",
+        "livree": {
+            "legacy-red": {
+                "etichetta": "Legacy Red",
+                "lato-destro": "2024/11/350-right-profile.png",
+                "lato-sinistro": "2024/11/350-left-profile.png",
+                "fronte": "2024/11/350-Front.png",
+                "retro": "2024/11/350-Back.png",
+                "angolo-destro": "2024/11/350-angle-right.png",
+                "angolo-sinistro": "2024/11/350-angle-left.png",
+            },
+            "pure-white": {
+                "etichetta": "Pure White",
+                "lato-destro": "2025/10/350-right-profile_purewhite.png",
+                "lato-sinistro": "2025/10/350-left-profile_purewhite.png",
+                "fronte": "2025/10/350-Front_purewhite.png",
+                "retro": "2025/10/350-Back_purewhite.png",
+                "angolo-destro": "2025/10/350-angle-right_purewhite.png",
+                "angolo-sinistro": "2025/10/350-angle-left_purewhite.png",
+            },
+        },
+    },
     "x-cape-700": {
         "nome": "X-Cape 700",
         "livree": {

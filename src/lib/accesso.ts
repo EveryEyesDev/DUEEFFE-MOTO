@@ -4,9 +4,19 @@ import { cookies } from 'next/headers';
  * L'accesso all'area riservata.
  *
  * COME FUNZIONA
- * C'e' una sola password, decisa da chi gestisce il sito e tenuta fra le
- * impostazioni di Vercel. Chi la indovina riceve un biglietto firmato che
- * resta nel suo browser per una settimana.
+ * C'e' una sola password. Quella scritta fra le impostazioni di Vercel e'
+ * soltanto la prima, quella con cui si entra il giorno dell'attivazione:
+ * dal momento in cui il responsabile la cambia, vale quella nuova, che sta
+ * nel database. Chi indovina riceve un biglietto firmato che resta nel suo
+ * browser per una settimana.
+ *
+ * LA PASSWORD NON E' SCRITTA DA NESSUNA PARTE
+ * Nel database finisce la sua impronta, non la password: un numero
+ * ricavato da essa che non si puo' rifare al contrario. Chi leggesse il
+ * database non saprebbe comunque entrare. All'impronta si aggiunge un
+ * pizzico di sale, un valore casuale diverso per ogni password, cosi' due
+ * persone che scegliessero la stessa password avrebbero impronte diverse e
+ * non si potrebbe dedurre nulla confrontandole.
  *
  * PERCHE' UN BIGLIETTO FIRMATO E NON LA PASSWORD NEL COOKIE
  * Se nel cookie mettessimo la password, chiunque metta le mani sul
@@ -55,11 +65,46 @@ async function firma(testo: string): Promise<string> {
     .join('');
 }
 
-/** La password e' quella giusta? */
-export function passwordGiusta(tentativo: string): boolean {
-  const vera = process.env.ADMIN_PASSWORD;
-  if (!vera) return false;
-  return confrontoCostante(tentativo, vera);
+/** L'impronta di una password, col suo pizzico di sale. */
+export async function improntaDi(password: string, sale: string): Promise<string> {
+  const chiave = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(sale),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign'],
+  );
+  const firmato = await crypto.subtle.sign('HMAC', chiave, new TextEncoder().encode(password));
+  return Array.from(new Uint8Array(firmato))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+/** Un pizzico di sale nuovo, diverso ogni volta. */
+export function saleNuovo(): string {
+  const byte = crypto.getRandomValues(new Uint8Array(16));
+  return Array.from(byte)
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+/**
+ * La password e' quella giusta?
+ *
+ * Se il responsabile ne ha impostata una sua, vale quella e solo quella:
+ * la password di partenza smette di funzionare, altrimenti cambiarla non
+ * servirebbe a niente.
+ */
+export async function passwordGiusta(
+  tentativo: string,
+  impostata?: { impronta: string; sale: string } | null,
+): Promise<boolean> {
+  if (impostata) {
+    return confrontoCostante(await improntaDi(tentativo, impostata.sale), impostata.impronta);
+  }
+  const prima = process.env.ADMIN_PASSWORD;
+  if (!prima) return false;
+  return confrontoCostante(tentativo, prima);
 }
 
 /** Vero se e' stata impostata una password: senza, l'area non si apre. */

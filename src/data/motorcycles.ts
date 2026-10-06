@@ -23,6 +23,67 @@ import { Motorcycle } from '../types';
 
 export const MOTO_NUOVE: Motorcycle[] = [
   {
+    id: 'moto-morini-tre-mezzo-sport',
+    brand: 'Moto Morini',
+    name: '3 1/2 Sport',
+    subtitle: 'La leggenda del futuro',
+    condition: 'nuovo',
+    category: 'naked',
+    categoryLabel: 'Sport',
+    tagline: 'Cinquant’anni dopo, la 3 1/2 torna',
+    claim: 'Cinquant’anni dopo, la 3 1/2 torna.',
+    description:
+      'Reinterpretazione moderna della 3 1/2 Sport del 1974, il modello che portò la firma di Franco Lambertini. Bicilindrica a V di 60 gradi, leggera e maneggevole, con le linee dell’originale e la tecnologia di oggi. In arrivo in concessionaria: chiamaci per prenotarla.',
+    price: 4190,
+    priceNote: 'Franco concessionario. In arrivo: la disponibilità va confermata in salone.',
+    // Moto Morini non pubblica ancora uno scatto in scena di questa moto:
+    // nel catalogo si presenta col profilo in studio, che e' la vista che
+    // la racconta meglio.
+    image: '/moto/tre-mezzo-sport/legacy-red/lato-destro.webp',
+    colorways: [
+      {
+        slug: 'legacy-red',
+        name: 'Legacy Red',
+        hex: '#c01727',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/tre-mezzo-sport/legacy-red/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/tre-mezzo-sport/legacy-red/lato-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/tre-mezzo-sport/legacy-red/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/tre-mezzo-sport/legacy-red/retro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/tre-mezzo-sport/legacy-red/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/tre-mezzo-sport/legacy-red/angolo-sinistro.webp' },
+        ],
+      },
+      {
+        slug: 'pure-white',
+        name: 'Pure White',
+        hex: '#eef0f2',
+        views: [
+          { id: 'lato-destro', label: 'Lato destro', src: '/moto/tre-mezzo-sport/pure-white/lato-destro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/tre-mezzo-sport/pure-white/lato-sinistro.webp' },
+          { id: 'fronte', label: 'Fronte', src: '/moto/tre-mezzo-sport/pure-white/fronte.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/tre-mezzo-sport/pure-white/retro.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/tre-mezzo-sport/pure-white/angolo-destro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/tre-mezzo-sport/pure-white/angolo-sinistro.webp' },
+        ],
+      },
+    ],
+    colors: [],
+    specs: {
+      displacementCc: 349.3,
+      powerHp: 32.6,
+      torqueNm: 31,
+      weightKg: 165,
+      seatHeightMm: 780,
+      fuelCapacityL: 15,
+      topSpeedKmH: 150,
+      engineType: 'Bicilindrico a V di 60 gradi, 4 tempi, raffreddamento a liquido',
+      frontBrakes: 'Monodisco 300 mm, pinza fissa a 4 pistoni',
+      suspension: 'Forcella a steli rovesciati 43 mm, escursione 120 mm',
+    },
+    features: [],
+  },
+  {
     id: 'moto-morini-x-cape-700',
     brand: 'Moto Morini',
     name: 'X-Cape 700',

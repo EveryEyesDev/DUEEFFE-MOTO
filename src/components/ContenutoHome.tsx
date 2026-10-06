@@ -13,6 +13,7 @@ import { Footer } from './Footer';
 import { ClosingCta } from './ClosingCta';
 import { Motorcycle } from '../types';
 import { useCatalogo } from '../lib/catalogo-contesto';
+import { LoghiMarchi } from './LoghiMarchi';
 
 /** Porta in vista una sezione della pagina con uno scorrimento morbido. */
 function scrollToSection(id: string) {
@@ -53,6 +54,10 @@ function Contenuto() {
 
       <main className="flex-1">
         <HeroSection onExploreCatalog={() => router.push('/moto')} />
+
+        {/* I marchi, subito sotto il racconto: e' la prima cosa che
+            chiede chi sta cercando una moto. */}
+        <LoghiMarchi marche={Array.from(new Set(nuove.map((m) => m.brand)))} />
 
         <ServicesMarquee />
 

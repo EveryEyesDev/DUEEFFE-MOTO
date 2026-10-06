@@ -5,6 +5,7 @@ import { leggiCatalogoCompleto } from '../../src/lib/catalogo';
 import { supabaseConfigurato } from '../../src/lib/supabase';
 import { DueffeLogo } from '../../src/components/DueffeLogo';
 import { EsciButton } from '../../src/components/admin/EsciButton';
+import { KeyRound } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -29,7 +30,16 @@ export default async function Admin() {
               Gestione catalogo
             </span>
           </div>
-          <EsciButton />
+          <div className="flex items-center gap-4">
+            <Link
+              href="/admin/password"
+              className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors"
+            >
+              <KeyRound className="w-3.5 h-3.5" />
+              Password
+            </Link>
+            <EsciButton />
+          </div>
         </div>
       </header>
 

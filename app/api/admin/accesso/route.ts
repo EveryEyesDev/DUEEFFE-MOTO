@@ -6,6 +6,7 @@ import {
   DURATA_GIORNI,
   accessoConfigurato,
 } from '../../../../src/lib/accesso';
+import { passwordImpostata } from '../../../../src/lib/impostazioni';
 
 /**
  * Entrata e uscita dall'area riservata.
@@ -28,7 +29,7 @@ export async function POST(richiesta: NextRequest) {
   const corpo = await richiesta.json().catch(() => ({}));
   const password = typeof corpo.password === 'string' ? corpo.password : '';
 
-  if (!passwordGiusta(password)) {
+  if (!(await passwordGiusta(password, await passwordImpostata()))) {
     await new Promise((r) => setTimeout(r, 500));
     return NextResponse.json({ errore: 'Password non corretta.' }, { status: 401 });
   }

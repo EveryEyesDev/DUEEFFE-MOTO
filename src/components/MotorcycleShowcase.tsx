@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Motorcycle, BikeCategory, BikeCondition } from '../types';
 import { useCatalogo } from '../lib/catalogo-contesto';
 import { BikeCard } from './BikeCard';
+import { Stemma } from './LoghiMarchi';
 import { BikeGallery } from './BikeGallery';
 import {
   Search,
@@ -224,12 +225,13 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
                   key={m}
                   onClick={() => cambiaMarca(m)}
                   aria-pressed={marca === m}
-                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg whitespace-nowrap transition-all ${
+                  className={`inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg whitespace-nowrap transition-all ${
                     marca === m
                       ? 'bg-white text-slate-900'
                       : 'bg-transparent text-slate-400 hover:text-white border border-white/10'
                   }`}
                 >
+                  {m !== 'tutte' && <Stemma marca={m} classe="h-4" />}
                   {m === 'tutte' ? 'Tutte le marche' : m}
                 </button>
               ))}

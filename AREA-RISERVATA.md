@@ -34,7 +34,7 @@ quello che salvi non viene conservato. Per quello serve il passo 2.
 3. Segnati la password del database che ti fa scegliere: non serve a noi,
    ma serve a te se un domani vorrai entrare da fuori.
 
-### Prepara la tabella
+### Prepara le tabelle
 
 Nel menù a sinistra apri **SQL Editor**, incolla questo e premi **Run**:
 
@@ -57,6 +57,19 @@ alter table moto enable row level security;
 
 create policy "chiunque puo' leggere" on moto
   for select using (true);
+
+-- Le impostazioni dell'area riservata. Per ora ne contiene una sola: la
+-- password scelta dal responsabile, conservata come impronta e non in
+-- chiaro, cosi' nemmeno chi legge il database puo' entrare.
+create table impostazioni (
+  chiave text primary key,
+  valore jsonb not null,
+  aggiornata timestamptz not null default now()
+);
+
+alter table impostazioni enable row level security;
+-- Nessuna regola di lettura pubblica: le impostazioni le tocca solo il
+-- server, con la chiave di servizio.
 ```
 
 ### Prepara l'archivio delle fotografie
@@ -90,6 +103,22 @@ Su Vercel, **Deployments** → l'ultimo → **Redeploy**. Le variabili nuove
 entrano in funzione solo con una pubblicazione nuova.
 
 ---
+
+## Come si entra
+
+L'indirizzo è **`iltuosito/entra`** — per adesso
+`dueffemoto.vercel.app/entra`. Non c'è nessun collegamento dal sito: ci si
+arriva solo scrivendo l'indirizzo, ed è voluto, perché un pulsante
+«Area riservata» in fondo alla pagina è un invito a provare password a
+chiunque passi.
+
+**Non serve nessuna e-mail.** C'è una password sola, condivisa: la mette
+chi gestisce il sito la prima volta, poi il responsabile se la cambia da
+solo dalla voce **Password** in alto a destra. Da quel momento vale la
+sua, e quella iniziale non funziona più — quindi nemmeno tu potrai
+rientrare senza fartela dire, ed è giusto così.
+
+Conviene che la prima password la cambi lui il giorno stesso.
 
 ## Come si usa
 
