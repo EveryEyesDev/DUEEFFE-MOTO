@@ -1,87 +1,60 @@
 'use client';
 
-import React, { useState } from 'react';
-import { MapPin, Navigation } from 'lucide-react';
+import React from 'react';
+import { Navigation, MapPin } from 'lucide-react';
 import { SITE, MAP_EMBED_URL, DIRECTIONS_URL } from '../config/site';
 
 /**
- * La mappa della sede, che si carica solo quando la si chiede.
+ * La mappa della sede, sempre aperta.
  *
- * PERCHE' NON PARTE DA SOLA
- * La mappa di Google e' un pezzo di sito di Google dentro il nostro:
- * appena si carica, Google sa che quella persona e' passata di qui e le
- * mette dei cookie, anche se lei la mappa non la guarda nemmeno.
+ * PERCHE' ADESSO SI VEDE SUBITO
+ * Prima c'era un riquadro con un pulsante, e la mappa partiva solo al
+ * clic. Non era un capriccio: la mappa era di Google, e Google appena si
+ * carica riceve l'indirizzo IP di chi guarda e gli mette dei cookie. Non
+ * sono tecnici, quindi vanno chiesti prima, e chiederli vuol dire la
+ * fascia del consenso che copre la pagina al primo accesso.
  *
- * Quei cookie non servono a far funzionare il sito, quindi per legge si
- * possono mettere solo dopo che la persona ha detto di si'. Un sito che
- * carica la mappa subito ha bisogno della fascia del consenso, con tutto
- * quello che si porta dietro: la finestra che copre la pagina, le scelte
- * da conservare, il registro di chi ha accettato cosa.
+ * Cambiando fornitore il problema sparisce invece di essere gestito.
+ * OpenStreetMap serve le mattonelle e basta: niente cookie, niente da far
+ * accettare, e la mappa puo' stare aperta come dev'essere. Il dettaglio
+ * sta in MAP_EMBED_URL, dentro config/site.ts.
  *
- * Qui si e' scelta la strada corta e piu' onesta: finche' non clicchi,
- * verso Google non parte niente. Il clic e' il consenso, dato per quella
- * volta e per quella cosa sola. Niente fascia, niente scelte da
- * conservare, e chi la mappa non la vuole non viene nemmeno contato.
+ * I COLORI
+ * Le mattonelle di OpenStreetMap sono chiare e il sito e' scuro: messe
+ * cosi' com'erano sembravano un foglio di carta appiccicato sopra. Il
+ * filtro le gira in negativo e ne ruota la tinta, che e' il modo
+ * consueto di ricavare una mappa notturna da una diurna senza doverne
+ * servire un'altra. Le strade restano chiare sul fondo scuro, come sul
+ * resto del sito.
  *
- * COSA VEDE CHI NON CLICCA
- * Il riquadro con l'indirizzo scritto e il pulsante per le indicazioni,
- * che porta su Google Maps in una scheda nuova. Chi cerca la strada la
- * trova lo stesso: non si perde niente, si sposta solo il momento in cui
- * Google entra in gioco.
+ * Le indicazioni stradali continuano ad andare su Google Maps, che le fa
+ * meglio: ma sono collegamenti, e finche' non ci si clicca verso Google
+ * non parte niente.
  */
-export const MappaSede: React.FC = () => {
-  const [caricata, setCaricata] = useState(false);
+export const MappaSede: React.FC = () => (
+  <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-black/40">
+    <iframe
+      title={`Mappa della sede di ${SITE.legalName} a ${SITE.address.city}`}
+      src={MAP_EMBED_URL}
+      loading="lazy"
+      className="w-full h-[300px] sm:h-[360px] border-0"
+      style={{ filter: 'invert(1) hue-rotate(180deg) brightness(0.92) contrast(1.05)' }}
+    />
 
-  if (caricata) {
-    return (
-      <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-black/40">
-        <iframe
-          title={`Mappa della sede di ${SITE.legalName} a ${SITE.address.city}`}
-          src={MAP_EMBED_URL}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="w-full h-[300px] sm:h-[360px] border-0 grayscale-[0.35] contrast-[1.1]"
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-black/40">
-      <div className="h-[300px] sm:h-[360px] flex flex-col items-center justify-center gap-4 px-6 text-center">
-        <MapPin className="w-7 h-7 text-[#D00020]" aria-hidden="true" />
-
-        <div>
-          <p className="text-sm font-semibold text-white">{SITE.address.street}</p>
-          <p className="text-xs text-slate-400 mt-0.5">
-            {SITE.address.postalCode} {SITE.address.city} ({SITE.address.province})
-          </p>
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-2.5">
-          <button
-            type="button"
-            onClick={() => setCaricata(true)}
-            className="px-4 py-2 rounded-lg bg-[#D00020] hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wider transition-colors"
-          >
-            Mostra la mappa
-          </button>
-          <a
-            href={DIRECTIONS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-white/15 hover:border-white/35 text-white text-xs font-bold uppercase tracking-wider transition-colors"
-          >
-            <Navigation className="w-3.5 h-3.5" aria-hidden="true" />
-            Indicazioni
-          </a>
-        </div>
-
-        <p className="text-[11px] leading-relaxed text-slate-500 max-w-sm">
-          La mappa &egrave; di Google: caricandola, Google riceve il tuo indirizzo IP e
-          pu&ograve; usare cookie. Finch&eacute; non premi, non parte nulla.
-        </p>
-      </div>
+    <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-t border-white/10">
+      <p className="inline-flex items-center gap-1.5 text-xs text-slate-400">
+        <MapPin className="w-3.5 h-3.5 text-[#D00020] shrink-0" aria-hidden="true" />
+        {SITE.address.street}, {SITE.address.city}
+      </p>
+      <a
+        href={DIRECTIONS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#D00020] hover:bg-red-700 text-white text-[11px] font-bold uppercase tracking-wider transition-colors"
+      >
+        <Navigation className="w-3.5 h-3.5" aria-hidden="true" />
+        Indicazioni
+      </a>
     </div>
-  );
-};
+  </div>
+);

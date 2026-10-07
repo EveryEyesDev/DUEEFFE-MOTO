@@ -149,12 +149,38 @@ export const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encod
 /**
  * Mappa incorporabile centrata sulla sede.
  *
- * Usiamo l'incorporamento classico di Google Maps, che disegna le mattonelle
- * come normali immagini: funziona anche sui browser con l'accelerazione
- * grafica disattivata. L'incorporamento di OpenStreetMap, invece, oggi
- * richiede WebGL e su quelle macchine mostrerebbe un riquadro di errore.
+ * E' OpenStreetMap e non Google, ed e' una scelta di sostanza.
+ *
+ * La mappa di Google e' un pezzo di sito di Google dentro al nostro:
+ * appena si carica, Google riceve l'indirizzo IP di chi sta guardando e
+ * gli mette dei cookie. Non sono cookie tecnici, quindi per legge vanno
+ * chiesti prima, e un sito che li mette da solo ha bisogno della fascia
+ * del consenso - quella finestra che copre la pagina al primo accesso.
+ *
+ * OpenStreetMap le mattonelle le serve e basta: nessun cookie, niente da
+ * far accettare. Cosi' la mappa si vede subito, aperta, senza bisogno di
+ * chiedere il permesso e senza la fascia, che sarebbe stata piu' brutta
+ * del riquadro che abbiamo tolto.
+ *
+ * Le mattonelle sono normali immagini, non serve l'accelerazione grafica.
+ * Per andare alle indicazioni stradali restano i collegamenti a Google
+ * Maps: quelli sono collegamenti, e finche' non ci si clicca non partono.
+ *
+ * Il riquadro si costruisce attorno al punto: mezzo centesimo di grado per
+ * lato sono all'incirca cinquecento metri, che e' la distanza giusta per
+ * riconoscere la zona senza perdere la via.
  */
 export const MAP_EMBED_URL = (() => {
   const { latitude, longitude } = SITE.geo;
-  return `https://maps.google.com/maps?q=${latitude},${longitude}&z=16&hl=it&output=embed`;
+  const lato = 0.005;
+  const riquadro = [
+    longitude - lato,
+    latitude - lato,
+    longitude + lato,
+    latitude + lato,
+  ].join(',');
+  return (
+    'https://www.openstreetmap.org/export/embed.html' +
+    `?bbox=${riquadro}&layer=mapnik&marker=${latitude},${longitude}`
+  );
 })();

@@ -60,15 +60,17 @@ prende un errore: e' l'unico errore davvero costoso di questa procedura.
 
 Vercel mostra ora i valori da copiare, con accanto una spia rossa
 "Invalid Configuration" finche' il DNS non e' a posto. **Usa i valori che
-vedi nel pannello**, non quelli scritti qui: sono questi da anni, ma se un
-giorno cambiassero il pannello avrebbe ragione lui.
-
-Di solito sono:
+vedi nel pannello**: Vercel ne assegna di diversi a progetti diversi, e il
+CNAME in particolare contiene un codice che vale solo per questo. Quelli
+letti sul pannello il 7 ottobre 2026 erano:
 
 | Nome | Tipo | Valore |
 |---|---|---|
-| `@` (il dominio nudo) | A | `76.76.21.21` |
-| `www` | CNAME | `cname.vercel-dns.com` |
+| `@` (il dominio nudo) | A | `216.198.79.1` |
+| `www` | CNAME | `7e0e0fe919a1d91e.vercel-dns-017.com.` |
+
+Il pannello avverte che i vecchi valori, `76.76.21.21` e
+`cname.vercel-dns.com`, continuano a funzionare. Meglio comunque i nuovi.
 
 ---
 
@@ -86,7 +88,15 @@ stesso indirizzo. Va sostituita con un **CNAME** verso
 `cname.vercel-dns.com`. Su Aruba spesso bisogna cancellare la riga A e poi
 crearne una CNAME: un nome non puo' avere tutti e due.
 
-**Il resto si lascia dov'e'.** MX, `mx`, SPF, DKIM, DMARC: non si toccano.
+**Vanno cancellati i due record AAAA**, quello del dominio nudo e quello
+di `www`. L'AAAA e' l'indirizzo IPv6, e Vercel ne da' solo uno IPv4: se
+restano, chi naviga su IPv6 - cioe' quasi tutti i telefoni - continua ad
+arrivare sul vecchio server Aruba. E' l'errore piu' insidioso di tutta la
+procedura, perche' dal computer di casa il sito nuovo si vede e sembra
+tutto a posto, mentre meta' dei visitatori vede ancora l'altro.
+
+**Il resto si lascia dov'e'.** MX, `mx`, `smtp`, `webmail`, `imap`,
+`autoconfig`, `_domainconnect`, `admin`, SPF, DKIM, DMARC: non si toccano.
 
 Se Aruba chiede il TTL, metti il valore piu' basso che offre (3600, cioe'
 un'ora). Si puo' rialzare dopo.
@@ -105,7 +115,9 @@ Per vedere a che punto siamo, da terminale:
 nslookup www.dueeffemoto.it
 ```
 
-Finche' risponde `89.46.105.58` sei ancora sul vecchio. Quando cambia, su
+Finche' risponde `89.46.105.58` sei ancora sul vecchio. Controlla che fra
+le risposte non resti nessun indirizzo che comincia per `2a00:`: se c'e',
+un AAAA e' rimasto. Quando cambia, su
 Vercel la spia diventa verde e il certificato HTTPS viene emesso da solo,
 nel giro di qualche minuto.
 

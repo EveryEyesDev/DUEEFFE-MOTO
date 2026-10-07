@@ -18,10 +18,13 @@ import { DueffeLogo } from '../../src/components/DueffeLogo';
  * PERCHE' NON C'E' LA FASCIA DEI COOKIE
  * Perche' non ci sono cookie da far accettare. L'unico cookie del sito e'
  * quello che tiene l'accesso all'area riservata, e lo riceve solo chi in
- * quell'area entra: e' tecnico, quindi esente dal consenso. La mappa di
- * Google, che invece i cookie li metterebbe, parte solo se la persona
- * clicca - vedi MappaSede.tsx. Niente si carica prima del consenso,
- * quindi non c'e' nulla da chiedere con una fascia.
+ * quell'area entra: e' tecnico, quindi esente dal consenso.
+ *
+ * La mappa e' di OpenStreetMap e non di Google proprio per questo: serve
+ * le mattonelle e basta, senza cookie. Era la condizione per poterla
+ * lasciare aperta invece che dietro a un pulsante. Se un domani si
+ * tornasse a Google, tornerebbe anche l'obbligo del consenso, e questa
+ * pagina andrebbe riscritta prima.
  *
  * DA FAR CONTROLLARE
  * E' scritta con attenzione ma non da un avvocato. Prima di considerarla
@@ -140,17 +143,17 @@ export default function Privacy() {
             i cookie: non c&rsquo;&egrave; niente da accettare.
           </p>
           <p className="mt-3">
-            <strong className="text-white">La mappa di Google parte solo se la chiedi.</strong>{' '}
-            Nella pagina dei contatti c&rsquo;&egrave; la mappa della sede. &Egrave; un pezzo
-            di sito di Google dentro al nostro, e appena si carica Google riceve il tuo
-            indirizzo IP e pu&ograve; metterti dei cookie suoi. Per questo non si carica da
-            sola: al suo posto trovi l&rsquo;indirizzo scritto e un pulsante. Finch&eacute;
-            non lo premi, verso Google non parte nulla. Se lo premi, vale l&rsquo;informativa
-            di Google.
+            <strong className="text-white">La mappa non ti mette cookie.</strong> Nella
+            pagina dei contatti c&rsquo;&egrave; la mappa della sede, ed &egrave; di
+            OpenStreetMap: serve le immagini della cartina e nient&rsquo;altro. Abbiamo
+            scelto quella al posto della mappa di Google proprio per questo, cos&igrave; si
+            pu&ograve; vedere subito senza doverti chiedere il permesso. Come per ogni
+            immagine presa da un altro sito, chi la serve vede il tuo indirizzo IP.
           </p>
           <p className="mt-3">
-            I collegamenti ai social e a Google Maps sono normali collegamenti: finch&eacute;
-            non ci clicchi, quei siti non sanno che sei passato di qui.
+            I collegamenti ai social e alle indicazioni stradali su Google Maps sono
+            normali collegamenti: finch&eacute; non ci clicchi, quei siti non sanno che sei
+            passato di qui.
           </p>
         </Sezione>
 
@@ -170,7 +173,8 @@ export default function Privacy() {
               visita il sito.
             </li>
             <li>
-              <strong className="text-white">Google</strong>, solo se carichi la mappa.
+              <strong className="text-white">OpenStreetMap</strong>, che serve le immagini
+              della cartina nella pagina dei contatti.
             </li>
           </ul>
           <p className="mt-3">
