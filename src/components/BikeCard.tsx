@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Motorcycle } from '../types';
 import { Camera, Calendar, Gauge, ShieldCheck, ChevronRight } from 'lucide-react';
 import { formatEuro, formatKm } from '../utils/format';
@@ -94,7 +95,16 @@ export const BikeCard: React.FC<BikeCardProps> = ({ bike, onSelect, selected = f
       {/* Testo */}
       <div className="flex flex-col flex-1 p-4">
         <span className="text-[10px] uppercase tracking-wider text-slate-500">{bike.brand}</span>
-        <h3 className="text-base font-bold text-white font-display leading-tight">{bike.name}</h3>
+        {/* Il nome porta alla pagina della moto. E' il collegamento da cui
+            Google raggiunge le cinquantadue schede: senza, per lui qui
+            c'e' una pagina sola con dentro un elenco che non puo'
+            nominare. Il pulsante "Dettagli" continua ad aprire la scheda
+            qui sotto, per chi sta sfogliando. */}
+        <h3 className="text-base font-bold text-white font-display leading-tight">
+          <Link href={`/moto/${encodeURIComponent(bike.id)}`} className="hover:text-[#D00020] transition-colors">
+            {bike.name}
+          </Link>
+        </h3>
         <p className="text-xs text-slate-400 mt-1 line-clamp-2">{bike.subtitle}</p>
 
         {/* Dati dell'usato */}

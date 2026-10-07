@@ -20,6 +20,7 @@ import { MappaSede } from './MappaSede';
 /** Interventi che si fanno in officina, mostrati come etichette. */
 const INTERVENTI = [
   'Tagliandi',
+  'Ricambi',
   'Pneumatici',
   'Revisioni',
   'Diagnosi elettronica',

@@ -60,10 +60,17 @@ export function vetrina(nuove: Motorcycle[], preferite: string[]): Motorcycle[] 
   return marche
     .map((marca) => {
       const dellaMarca = nuove.filter((m) => m.brand === marca);
+      // In vetrina ci va solo chi ha la fotografia su strada. Senza, il
+      // riquadro mostra "Foto in arrivo": va benissimo in mezzo al
+      // catalogo, dove si capisce che e' un modello appena uscito, ma in
+      // evidenza no - la' ci sono tre moto in tutto e una e' un quadrato
+      // grigio. La moto resta a catalogo come le altre.
+      const conFoto = dellaMarca.filter((m) => m.roadImage);
+      const fra = conFoto.length > 0 ? conFoto : dellaMarca;
       return (
-        dellaMarca.find((m) => preferite.includes(m.id)) ??
-        dellaMarca.find((m) => m.specs.displacementCc !== undefined) ??
-        dellaMarca[0]
+        fra.find((m) => preferite.includes(m.id)) ??
+        fra.find((m) => m.specs.displacementCc !== undefined) ??
+        fra[0]
       );
     })
     .filter((m): m is Motorcycle => m !== undefined);
