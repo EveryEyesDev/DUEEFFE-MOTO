@@ -10,6 +10,14 @@ che cosa serve per quella moto, tutto insieme. Questo file e' fatto cosi':
 una voce per modello, e dentro il prezzo, i campi vuoti della scheda, la
 fotografia su strada e le viste che mancano, livrea per livrea.
 
+In cima pero' c'e' dell'altro, e conta di piu'. Le cose che mancano al
+catalogo si vedono solo se uno apre quella moto; le cose che mancano al
+sito le vede chiunque, e qualcuna la vede Google. I testi di presentazione
+copiati uguali su quaranta moto, il reparto usato con un mezzo dentro, la
+pagina che invita a passare in salone senza una fotografia del salone:
+sono quelle a fare la differenza fra un sito finito e uno che sembra in
+costruzione.
+
 PERCHE' LE VISTE SI CONTANO PER LIVREA E NON PER MODELLO
 Perche' e' cosi' che vanno chieste. Dire "alla GSX-8S mancano otto viste"
 non serve a nessuno: le fotografie si fanno o si chiedono per un colore
@@ -60,6 +68,83 @@ CAMPI = [
     ("transmission", "cambio"),
     ("frontBrakes", "freno anteriore"),
 ]
+
+
+# Le frasi che l'importatore mette quando dalla fonte non arriva niente.
+# Sono scritte per non lasciare il vuoto, ma ripetute su decine di moto si
+# notano, e Google le legge come pagine tutte uguali.
+SEGNAPOSTO = [
+    ("tagline", "Chiedici tutto in salone"),
+    ("subtitle", "Scheda tecnica da completare"),
+]
+DESCRIZIONE_SEGNAPOSTO = "Modello della gamma"
+# Come comincia ogni scheda nel file del catalogo.
+APERTURA = "\n  {\n    id: \'"
+
+
+def conta_segnaposto(testo):
+    """Quante schede hanno ancora i testi messi dall'importatore."""
+    blocchi = testo.split(APERTURA)[1:]
+    esito = {frase: 0 for _, frase in SEGNAPOSTO}
+    esito["descrizione"] = 0
+    esito["dotazione vuota"] = 0
+    for blocco in blocchi:
+        for chiave, frase in SEGNAPOSTO:
+            if "\n    %s: '%s'" % (chiave, frase) in blocco:
+                esito[frase] += 1
+        if DESCRIZIONE_SEGNAPOSTO in blocco:
+            esito["descrizione"] += 1
+        if "features: []," in blocco:
+            esito["dotazione vuota"] += 1
+    return esito, len(blocchi)
+
+
+def sul_sito(testo):
+    """Le cose che mancano al sito, non alle singole moto."""
+    config = open(os.path.join("src", "config", "site.ts"), encoding="utf-8").read()
+    voci = []
+
+    conte, totale = conta_segnaposto(testo)
+    ripetuti = conte["Chiedici tutto in salone"]
+    if ripetuti:
+        voci.append(
+            "**I testi di presentazione sono gli stessi su %d moto su %d.** Sotto il "
+            "nome di ognuna c'e' scritto «%s», e come descrizione la stessa "
+            "frase che cambia solo la marca. Si vede nel catalogo e si vede su Google, "
+            "che legge quaranta pagine quasi identiche. Bastano due righe per moto "
+            "scritte da chi la conosce: a chi è adatta, cosa ha di suo."
+            % (ripetuti, totale, "Chiedici tutto in salone")
+        )
+    if conte["dotazione vuota"]:
+        voci.append(
+            "**La dotazione è vuota su %d moto.** È l'elenco di cosa monta di "
+            "serie: ABS, controllo di trazione, quadro a colori, manopole riscaldate. "
+            "È la prima cosa che un cliente confronta fra due moto simili."
+            % conte["dotazione vuota"]
+        )
+
+    usate = testo.count("condition: 'usato'")
+    if usate <= 1:
+        voci.append(
+            "**Il reparto usato ha %d mezzo.** La sezione c'è, funziona, e "
+            "l'area riservata serve soprattutto a tenerla aggiornata: così però "
+            "sembra che di usato non ne trattiate. È anche la parte che porta più "
+            "gente, perché chi cerca l'usato cerca il prezzo e arriva da fuori." % usate
+        )
+
+    if "heroImage: ''" in config:
+        voci.append(
+            "**Non c'è nessuna fotografia del salone.** La pagina dice «vieni a "
+            "vederle dal vivo in salone» e del salone non si vede niente. Ne bastano "
+            "poche: la facciata, l'interno con le moto, l'officina, chi ci lavora."
+        )
+    if "whatsapp: ''" in config:
+        voci.append(
+            "**Manca il numero WhatsApp.** Il campo c'è già nella configurazione: "
+            "appena lo scrivi compare il pulsante. Per chi guarda moto dal telefono "
+            "è il modo più facile di farsi vivo, più di una telefonata."
+        )
+    return voci
 
 
 def schede():
@@ -124,7 +209,22 @@ def mancanti(blocco):
 
 
 def main():
-    righe = ["# Che cosa serve per completare il catalogo", ""]
+    testo_catalogo = open(CATALOGO, encoding="utf-8").read()
+    righe = ["# Che cosa manca per chiudere il sito", ""]
+
+    generali = sul_sito(testo_catalogo)
+    if generali:
+        righe += [
+            "## Prima di tutto il resto",
+            "",
+            "Queste non riguardano una moto sola: le vede chiunque apra il sito.",
+            "",
+        ]
+        for voce in generali:
+            righe += ["- " + voce, ""]
+        righe += ["---", ""]
+
+    righe += ["## Moto per moto", ""]
     righe += [
         "Una voce per moto, con tutto quello che manca per quella moto.",
         "Le fotografie vanno chieste per livrea, non per modello: la stessa",

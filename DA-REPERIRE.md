@@ -1,4 +1,22 @@
-# Che cosa serve per completare il catalogo
+# Che cosa manca per chiudere il sito
+
+## Prima di tutto il resto
+
+Queste non riguardano una moto sola: le vede chiunque apra il sito.
+
+- **I testi di presentazione sono gli stessi su 45 moto su 52.** Sotto il nome di ognuna c'e' scritto «Chiedici tutto in salone», e come descrizione la stessa frase che cambia solo la marca. Si vede nel catalogo e si vede su Google, che legge quaranta pagine quasi identiche. Bastano due righe per moto scritte da chi la conosce: a chi è adatta, cosa ha di suo.
+
+- **La dotazione è vuota su 46 moto.** È l'elenco di cosa monta di serie: ABS, controllo di trazione, quadro a colori, manopole riscaldate. È la prima cosa che un cliente confronta fra due moto simili.
+
+- **Il reparto usato ha 1 mezzo.** La sezione c'è, funziona, e l'area riservata serve soprattutto a tenerla aggiornata: così però sembra che di usato non ne trattiate. È anche la parte che porta più gente, perché chi cerca l'usato cerca il prezzo e arriva da fuori.
+
+- **Non c'è nessuna fotografia del salone.** La pagina dice «vieni a vederle dal vivo in salone» e del salone non si vede niente. Ne bastano poche: la facciata, l'interno con le moto, l'officina, chi ci lavora.
+
+- **Manca il numero WhatsApp.** Il campo c'è già nella configurazione: appena lo scrivi compare il pulsante. Per chi guarda moto dal telefono è il modo più facile di farsi vivo, più di una telefonata.
+
+---
+
+## Moto per moto
 
 Una voce per moto, con tutto quello che manca per quella moto.
 Le fotografie vanno chieste per livrea, non per modello: la stessa
