@@ -149,38 +149,23 @@ export const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encod
 /**
  * Mappa incorporabile centrata sulla sede.
  *
- * E' OpenStreetMap e non Google, ed e' una scelta di sostanza.
+ * E' l'incorporamento classico di Google Maps, che disegna le mattonelle
+ * come normali immagini: funziona anche sui browser con l'accelerazione
+ * grafica disattivata.
  *
- * La mappa di Google e' un pezzo di sito di Google dentro al nostro:
- * appena si carica, Google riceve l'indirizzo IP di chi sta guardando e
- * gli mette dei cookie. Non sono cookie tecnici, quindi per legge vanno
- * chiesti prima, e un sito che li mette da solo ha bisogno della fascia
- * del consenso - quella finestra che copre la pagina al primo accesso.
+ * ATTENZIONE, HA UNA CONSEGUENZA
+ * Appena la pagina si apre, questa mappa manda l'indirizzo IP del
+ * visitatore a Google e gli fa mettere dei cookie. Non sono cookie
+ * tecnici, quindi la legge vuole che siano chiesti prima: finche' la mappa
+ * si carica da sola il sito avrebbe bisogno della fascia del consenso, e
+ * quella fascia non c'e'.
  *
- * OpenStreetMap le mattonelle le serve e basta: nessun cookie, niente da
- * far accettare. Cosi' la mappa si vede subito, aperta, senza bisogno di
- * chiedere il permesso e senza la fascia, che sarebbe stata piu' brutta
- * del riquadro che abbiamo tolto.
- *
- * Le mattonelle sono normali immagini, non serve l'accelerazione grafica.
- * Per andare alle indicazioni stradali restano i collegamenti a Google
- * Maps: quelli sono collegamenti, e finche' non ci si clicca non partono.
- *
- * Il riquadro si costruisce attorno al punto: mezzo centesimo di grado per
- * lato sono all'incirca cinquecento metri, che e' la distanza giusta per
- * riconoscere la zona senza perdere la via.
+ * Chi ci rimette mano lo sappia: o si costruisce la fascia, o la mappa
+ * torna a caricarsi al clic, oppure si passa a un fornitore che non metta
+ * cookie. Vedi app/privacy/page.tsx, che va tenuta allineata a qualunque
+ * di queste tre strade si prenda.
  */
 export const MAP_EMBED_URL = (() => {
   const { latitude, longitude } = SITE.geo;
-  const lato = 0.005;
-  const riquadro = [
-    longitude - lato,
-    latitude - lato,
-    longitude + lato,
-    latitude + lato,
-  ].join(',');
-  return (
-    'https://www.openstreetmap.org/export/embed.html' +
-    `?bbox=${riquadro}&layer=mapnik&marker=${latitude},${longitude}`
-  );
+  return `https://maps.google.com/maps?q=${latitude},${longitude}&z=16&hl=it&output=embed`;
 })();

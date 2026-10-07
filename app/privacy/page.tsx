@@ -15,16 +15,20 @@ import { DueffeLogo } from '../../src/components/DueffeLogo';
  * moduli di contatto che qui non esistono, e dire di raccogliere dati che
  * non si raccolgono e' sbagliato quanto tacere quelli veri.
  *
- * PERCHE' NON C'E' LA FASCIA DEI COOKIE
- * Perche' non ci sono cookie da far accettare. L'unico cookie del sito e'
- * quello che tiene l'accesso all'area riservata, e lo riceve solo chi in
- * quell'area entra: e' tecnico, quindi esente dal consenso.
+ * IL PUNTO SCOPERTO, DETTO COM'E'
+ * La mappa dei contatti e' quella di Google, e si carica da sola con la
+ * pagina: Google riceve l'indirizzo IP di chi visita e gli mette dei
+ * cookie suoi, prima che la persona abbia detto alcunche'. Quelli non sono
+ * cookie tecnici, e per i non tecnici la legge vuole il consenso prima.
  *
- * La mappa e' di OpenStreetMap e non di Google proprio per questo: serve
- * le mattonelle e basta, senza cookie. Era la condizione per poterla
- * lasciare aperta invece che dietro a un pulsante. Se un domani si
- * tornasse a Google, tornerebbe anche l'obbligo del consenso, e questa
- * pagina andrebbe riscritta prima.
+ * Il sito la fascia del consenso non ce l'ha. E' una scelta del salone,
+ * non una svista, e qui sotto e' scritta apertamente: chi legge deve
+ * sapere che aprendo la pagina dei contatti Google lo vede. Tacerlo
+ * sarebbe la cosa peggiore - una pagina che dichiara un cookie solo
+ * mentre il sito ne fa mettere altri non e' un'informativa, e' una bugia.
+ *
+ * Vedi src/components/MappaSede.tsx per le tre strade che chiudono il
+ * punto. Quando se ne prendera' una, questa pagina va riscritta.
  *
  * DA FAR CONTROLLARE
  * E' scritta con attenzione ma non da un avvocato. Prima di considerarla
@@ -138,22 +142,25 @@ export default function Privacy() {
           </div>
           <p className="mt-4">
             &Egrave; un cookie tecnico: senza non si potrebbe restare dentro all&rsquo;area
-            riservata. Per i cookie tecnici la legge non chiede il consenso, ed &egrave;
-            il motivo per cui su questo sito non trovi la fascia che chiede di accettare
-            i cookie: non c&rsquo;&egrave; niente da accettare.
+            riservata. Per i cookie tecnici la legge non chiede il consenso.
           </p>
           <p className="mt-3">
-            <strong className="text-white">La mappa non ti mette cookie.</strong> Nella
-            pagina dei contatti c&rsquo;&egrave; la mappa della sede, ed &egrave; di
-            OpenStreetMap: serve le immagini della cartina e nient&rsquo;altro. Abbiamo
-            scelto quella al posto della mappa di Google proprio per questo, cos&igrave; si
-            pu&ograve; vedere subito senza doverti chiedere il permesso. Come per ogni
-            immagine presa da un altro sito, chi la serve vede il tuo indirizzo IP.
+            <strong className="text-white">
+              La mappa di Google, invece, dei cookie te li mette.
+            </strong>{' '}
+            Nella pagina dei contatti c&rsquo;&egrave; la mappa della sede, ed &egrave; un
+            pezzo di sito di Google dentro al nostro. Si carica insieme alla pagina: da
+            quel momento Google conosce il tuo indirizzo IP e pu&ograve; scrivere sul tuo
+            browser dei cookie suoi, su cui noi non abbiamo voce. Succede anche se la mappa
+            non la guardi. Per sapere cosa ci fa, vale l&rsquo;informativa di Google.
           </p>
           <p className="mt-3">
-            I collegamenti ai social e alle indicazioni stradali su Google Maps sono
-            normali collegamenti: finch&eacute; non ci clicchi, quei siti non sanno che sei
-            passato di qui.
+            Se non li vuoi, puoi bloccare i cookie di terze parti dalle impostazioni del
+            browser: la mappa smetter&agrave; di funzionare, il resto del sito no.
+          </p>
+          <p className="mt-3">
+            I collegamenti ai social e alle indicazioni stradali sono normali collegamenti:
+            finch&eacute; non ci clicchi, quei siti non sanno che sei passato di qui.
           </p>
         </Sezione>
 
@@ -173,8 +180,8 @@ export default function Privacy() {
               visita il sito.
             </li>
             <li>
-              <strong className="text-white">OpenStreetMap</strong>, che serve le immagini
-              della cartina nella pagina dei contatti.
+              <strong className="text-white">Google</strong>, che serve la mappa nella
+              pagina dei contatti.
             </li>
           </ul>
           <p className="mt-3">
