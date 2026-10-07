@@ -19,6 +19,18 @@ interface BikeCardProps {
  * Funziona sia per il nuovo sia per l'usato: se la moto e' usata
  * mostra anno, chilometri ed eventuale garanzia.
  */
+/**
+ * L'indirizzo della copia ridotta, quella fatta su misura del riquadro.
+ *
+ * La copia la scrive strumenti/foto-elenco.py accanto all'originale. Se
+ * per qualche moto non ci fosse, il riquadro resterebbe vuoto: e' il
+ * motivo per cui quello strumento va rilanciato quando si cambia una
+ * fotografia su strada.
+ */
+function perElenco(percorso: string | undefined): string | undefined {
+  return percorso?.replace('/in-strada.webp', '/in-strada-elenco.webp');
+}
+
 export const BikeCard: React.FC<BikeCardProps> = ({ bike, onSelect, selected = false }) => {
   const isUsato = bike.condition === 'usato';
   const venduta = bike.used?.sold === true;
@@ -38,8 +50,13 @@ export const BikeCard: React.FC<BikeCardProps> = ({ bike, onSelect, selected = f
         {bike.roadImage ?? bike.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={bike.roadImage ?? bike.image}
+            src={perElenco(bike.roadImage ?? bike.image)}
             alt={`${bike.brand} ${bike.name}`}
+            // Pigro e asincrono: in pagina ci sono cinquanta riquadri e se ne
+            // vedono quattro. Senza, il browser scaricava tutto subito e la
+            // prima schermata aspettava anche le moto in fondo all'elenco.
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (

@@ -13,8 +13,9 @@ import {
   Star,
   Navigation,
 } from 'lucide-react';
-import { SITE, MAPS_URL, MAP_EMBED_URL, DIRECTIONS_URL } from '../config/site';
+import { SITE, MAPS_URL, DIRECTIONS_URL } from '../config/site';
 import { SocialLinks } from './SocialLinks';
+import { MappaSede } from './MappaSede';
 
 /** Interventi che si fanno in officina, mostrati come etichette. */
 const INTERVENTI = [
@@ -249,16 +250,8 @@ export const ServicesSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Mappa della sede */}
-          <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 bg-black/40">
-            <iframe
-              title={`Mappa della sede di ${SITE.legalName} a ${SITE.address.city}`}
-              src={MAP_EMBED_URL}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-[300px] sm:h-[360px] border-0 grayscale-[0.35] contrast-[1.1]"
-            />
-          </div>
+          {/* Mappa della sede: si carica al clic, vedi MappaSede */}
+          <MappaSede />
         </div>
       </div>
     </section>

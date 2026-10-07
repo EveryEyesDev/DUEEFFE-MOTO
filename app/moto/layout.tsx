@@ -7,7 +7,18 @@ const DESCRIPTION = `Catalogo moto nuove e usate di ${SITE.legalName} a ${SITE.a
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  openGraph: { title: TITLE, description: DESCRIPTION, type: 'website', locale: 'it_IT' },
+  // Il canonico dice a Google qual e' l'indirizzo buono di questa pagina.
+  // Serve perche' il catalogo si apre anche con il filtro nell'indirizzo,
+  // /moto?marca=Suzuki: senza, Google vedrebbe quattro pagine quasi uguali
+  // e si dividerebbe fra loro il peso che dovrebbe andare tutto a una.
+  alternates: { canonical: '/moto' },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    type: 'website',
+    locale: 'it_IT',
+    url: '/moto',
+  },
 };
 
 export default function LayoutMoto({ children }: { children: React.ReactNode }) {

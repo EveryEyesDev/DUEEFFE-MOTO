@@ -120,13 +120,16 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} {SITE.legalName} · P.IVA {SITE.legal.vatNumber} · Codice SDI{' '}
             {SITE.legal.sdiCode} · Tutti i diritti riservati.
           </div>
+          {/* Una pagina sola: i cookie sono una sezione dell'informativa,
+              perche' ce n'e' uno e spiegarlo altrove lo farebbe sembrare
+              piu' di quello che e'. */}
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-slate-300">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-slate-300">
-              Cookie Policy
-            </a>
+            <Link href="/privacy" className="hover:text-slate-300">
+              Privacy
+            </Link>
+            <Link href="/privacy#cookie" className="hover:text-slate-300">
+              Cookie
+            </Link>
           </div>
         </div>
       </div>

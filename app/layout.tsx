@@ -6,6 +6,12 @@ const TITLE = `${SITE.brandName} | Concessionaria e officina moto a ${SITE.addre
 const DESCRIPTION = `${SITE.legalName}: concessionaria ${SITE.primaryBrands.join(', ')} a ${SITE.address.city}, ${SITE.address.provinceName}. Vendita moto, officina e assistenza. ${SITE.address.street}. Tel. ${SITE.phone.display}.`;
 
 export const metadata: Metadata = {
+  // L'indirizzo di casa del sito. Senza, Next scrive i collegamenti per i
+  // social in forma relativa, e WhatsApp o Facebook non sanno da dove
+  // prendere l'immagine dell'anteprima: il collegamento condiviso esce
+  // nudo, senza titolo ne' figura.
+  metadataBase: new URL(SITE.website),
+  alternates: { canonical: '/' },
   title: TITLE,
   description: DESCRIPTION,
   openGraph: {
@@ -14,6 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'it_IT',
     siteName: SITE.brandName,
+    url: '/',
   },
   twitter: {
     card: 'summary_large_image',
