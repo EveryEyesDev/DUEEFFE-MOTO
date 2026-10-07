@@ -114,13 +114,18 @@ export const BagliorePuntatore: React.FC = () => {
     <div
       ref={alone}
       aria-hidden="true"
-      className="pointer-events-none fixed left-0 top-0 z-[60] h-[40rem] w-[40rem] rounded-full opacity-0 transition-opacity duration-500 will-change-transform"
+      className="pointer-events-none fixed left-0 top-0 z-[60] h-[22rem] w-[22rem] rounded-full opacity-0 transition-opacity duration-500 will-change-transform"
       style={{
         // Rosso del marchio. Con `screen` i valori si sommano alla pagina
         // invece di coprirla, quindi si puo' tenere piu' acceso di quanto
         // si potrebbe con un velo normale senza spegnere le scritte.
+        //
+        // Stretto e acceso invece che largo e smorto: un alone grande e
+        // tenue si confondeva con le sfumature che il sito ha gia' di suo e
+        // sembrava una macchia, uno piccolo si legge come un fascio che
+        // viene dal puntatore.
         background:
-          'radial-gradient(circle, rgba(208,0,32,0.22) 0%, rgba(208,0,32,0.10) 38%, rgba(208,0,32,0) 70%)',
+          'radial-gradient(circle, rgba(208,0,32,0.38) 0%, rgba(208,0,32,0.16) 40%, rgba(208,0,32,0) 70%)',
         mixBlendMode: 'screen',
       }}
     />
