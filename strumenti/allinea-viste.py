@@ -20,6 +20,14 @@ passando da una scheda all'altra le fotografie non saltino.
 Le viste che su disco non ci sono vengono semplicemente saltate: nessun
 buco e nessun collegamento rotto.
 
+CONTROLLA ANCHE I DOPPIONI DI LIVREA
+Due livree con lo stesso slug dentro la stessa moto fanno comparire il
+colore due volte nel selettore della scheda, e React se ne lamenta in
+console perche' due figli finiscono con la stessa chiave. E' successo
+davvero: la GSX-8R aveva BLU MIAMI elencata due volte, uguale identica, e
+nessuno se n'era accorto fino a quando non si e' guardata la console per
+un altro motivo. Qui viene segnalato.
+
 COME SI USA
     python strumenti/allinea-viste.py voge-xwolf-300 voge-brivido-625r
     python strumenti/allinea-viste.py --tutte
@@ -99,6 +107,18 @@ def riscrivi(testo, modello):
     return testo[:inizio] + "".join(pezzi) + testo[fine:], cambiate
 
 
+def doppioni_di_livrea(testo):
+    """Le moto che elencano due volte la stessa livrea."""
+    apertura = chr(10) + "  {" + chr(10) + "    id: '"
+    esito = []
+    for blocco in testo.split(apertura)[1:]:
+        slug = re.findall(r"slug: '([^']+)'", blocco)
+        ripetuti = sorted({s for s in slug if slug.count(s) > 1})
+        if ripetuti:
+            esito.append((blocco.split("'")[0], ripetuti))
+    return esito
+
+
 def main():
     testo = open(CATALOGO, encoding="utf-8").read()
     if sys.argv[1:] == ["--tutte"]:
@@ -114,6 +134,9 @@ def main():
         totale += n
     open(CATALOGO, "w", encoding="utf-8").write(testo)
     print("Livree aggiornate: %d" % totale)
+
+    for modello, ripetuti in doppioni_di_livrea(testo):
+        print("  ATTENZIONE  %s elenca due volte: %s" % (modello, ", ".join(ripetuti)))
 
 
 if __name__ == "__main__":

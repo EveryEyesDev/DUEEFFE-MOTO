@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from 'react';
 import { Motorcycle } from '../types';
 import { useCatalogo } from '../lib/catalogo-contesto';
-import { Calculator, Info, PhoneCall } from 'lucide-react';
+import { Calculator, Info, PhoneCall, GitCompare } from 'lucide-react';
 import { SITE } from '../config/site';
 import { formatEuro } from '../utils/format';
 
@@ -51,23 +51,51 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initia
   const [maxiRataAttiva, setMaxiRataAttiva] = useState<boolean>(false);
   const [tan, setTan] = useState<number>(TAN_PREDEFINITO);
 
+  // Il confronto: una seconda moto, le stesse condizioni.
+  const [confronto, setConfronto] = useState<boolean>(false);
+  const [secondaId, setSecondaId] = useState<string>('');
+
   const selectedBike = tutte.find((m) => m.id === selectedBikeId) ?? tutte[0];
 
-  const { anticipo, capitale, maxiRata, rata, totaleRate } = useMemo(() => {
-    const anticipoCalc = (importo * anticipoPercent) / 100;
-    const capitaleCalc = Math.max(0, importo - anticipoCalc);
-    const maxiRataCalc = maxiRataAttiva ? capitaleCalc * 0.3 : 0;
-    const tassoMensile = tan / 100 / 12;
-    const rataCalc = calcolaRata(capitaleCalc, tassoMensile, durataMesi, maxiRataCalc);
+  /**
+   * Le moto proponibili per il confronto: quelle con un prezzo, tolta
+   * quella gia' scelta. Senza prezzo non c'e' niente da confrontare, e
+   * mostrarle vorrebbe dire far scegliere una voce che poi non calcola.
+   */
+  const confrontabili = useMemo(
+    () => tutte.filter((m) => m.price !== undefined && m.id !== selectedBike?.id),
+    [tutte, selectedBike?.id],
+  );
 
-    return {
-      anticipo: anticipoCalc,
-      capitale: capitaleCalc,
-      maxiRata: maxiRataCalc,
-      rata: rataCalc,
-      totaleRate: rataCalc * durataMesi,
+  const secondaBike = confrontabili.find((m) => m.id === secondaId);
+
+  const esito = useMemo(() => {
+    const conto = (prezzo: number) => {
+      const anticipoCalc = (prezzo * anticipoPercent) / 100;
+      const capitaleCalc = Math.max(0, prezzo - anticipoCalc);
+      const maxiRataCalc = maxiRataAttiva ? capitaleCalc * 0.3 : 0;
+      const rataCalc = calcolaRata(capitaleCalc, tan / 100 / 12, durataMesi, maxiRataCalc);
+      return {
+        importo: prezzo,
+        anticipo: anticipoCalc,
+        capitale: capitaleCalc,
+        maxiRata: maxiRataCalc,
+        rata: rataCalc,
+        totaleRate: rataCalc * durataMesi,
+      };
     };
-  }, [importo, anticipoPercent, durataMesi, maxiRataAttiva, tan]);
+    // La seconda moto entra col suo prezzo di listino, non con il cursore:
+    // il confronto ha senso se le condizioni sono le stesse e cambia la
+    // moto. Se cambiasse anche l'importo non si capirebbe piu' da dove
+    // viene la differenza.
+    return {
+      prima: conto(importo),
+      seconda: secondaBike?.price !== undefined ? conto(secondaBike.price) : null,
+    };
+  }, [importo, anticipoPercent, durataMesi, maxiRataAttiva, tan, secondaBike?.price]);
+
+  const { anticipo, capitale, maxiRata, rata, totaleRate } = esito.prima;
+  const confrontoAttivo = confronto && esito.seconda !== null && secondaBike !== undefined;
 
   return (
     <section id="finanziamento" className="py-20 bg-[#0a0a0d] border-b border-white/10 relative">
@@ -116,6 +144,56 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initia
                   </option>
                 ))}
               </select>
+            </div>
+
+            {/* Il confronto. Sta qui, sotto il modello, perche' e' un modo
+                di scegliere la moto: non un'altra impostazione del
+                finanziamento. */}
+            <div className="mb-6">
+              <button
+                type="button"
+                aria-expanded={confronto}
+                onClick={() => {
+                  const acceso = !confronto;
+                  setConfronto(acceso);
+                  if (acceso && !secondaId && confrontabili[0]) setSecondaId(confrontabili[0].id);
+                }}
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+              >
+                <GitCompare className="w-3.5 h-3.5" aria-hidden="true" />
+                {/* L'apostrofo tipografico va scritto per quello che e':
+                    dentro una stringa JavaScript &rsquo; non e' un'entita',
+                    e in pagina si leggerebbe tale e quale. */}
+                {confronto ? 'Togli il confronto' : 'Confronta con un’altra moto'}
+              </button>
+
+              {confronto && (
+                <div className="mt-3">
+                  <label
+                    htmlFor="modello-confronto"
+                    className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2"
+                  >
+                    Confronta con
+                  </label>
+                  <select
+                    id="modello-confronto"
+                    value={secondaId}
+                    onChange={(e) => setSecondaId(e.target.value)}
+                    className="w-full bg-[#181920] border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#D00020] transition-colors"
+                  >
+                    {confrontabili.map((bike) => (
+                      <option key={bike.id} value={bike.id}>
+                        {bike.brand} {bike.name} &mdash; {formatEuro(bike.price as number)}
+                      </option>
+                    ))}
+                  </select>
+                  <p className="text-[11px] text-slate-500 mt-2 leading-relaxed">
+                    La seconda moto entra col suo prezzo di listino. Anticipo, durata e tasso
+                    restano quelli qui sotto: cos&igrave; la differenza che vedi &egrave; solo la
+                    moto.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Importo */}
@@ -269,28 +347,75 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initia
               Risultato della simulazione
             </div>
 
-            <div className="my-4 pb-4 border-b border-white/10">
-              <div className="text-xs text-slate-400">Rata mensile indicativa</div>
-              <div className="flex items-baseline gap-2 mt-1">
-                <span className="text-4xl sm:text-5xl font-extrabold text-white font-tech tabular-nums">
-                  {formatEuro(rata)}
-                </span>
-                <span className="text-sm text-slate-400">/mese</span>
-              </div>
-              <div className="text-[11px] text-slate-400 mt-2">
-                Su {durataMesi} mesi, con tasso annuo nominale al{' '}
-                {tan.toFixed(1).replace('.', ',')}%.
-              </div>
-            </div>
+            {confrontoAttivo && esito.seconda ? (
+              <>
+                {/* Due colonne: la rata grande di ciascuna, affiancate. Il
+                    confronto si fa guardando due numeri vicini, non
+                    ricordandosi il primo mentre si legge il secondo. */}
+                <div className="my-4 grid grid-cols-2 gap-3 pb-4 border-b border-white/10">
+                  <ColonnaRata
+                    nome={`${selectedBike.brand} ${selectedBike.name}`}
+                    rata={esito.prima.rata}
+                    prezzo={esito.prima.importo}
+                  />
+                  <ColonnaRata
+                    nome={`${secondaBike.brand} ${secondaBike.name}`}
+                    rata={esito.seconda.rata}
+                    prezzo={esito.seconda.importo}
+                  />
+                </div>
 
-            <dl className="space-y-2 text-xs py-2">
-              <Riga label="Importo moto" value={formatEuro(importo)} />
-              <Riga label={`Anticipo (${anticipoPercent}%)`} value={formatEuro(anticipo)} />
-              <Riga label="Capitale finanziato" value={formatEuro(capitale)} />
-              <Riga label="Numero rate" value={`${durataMesi} mensilità`} />
-              {maxiRataAttiva && <Riga label="Maxi rata finale" value={formatEuro(maxiRata)} />}
-              <Riga label="Totale rate" value={formatEuro(totaleRate)} />
-            </dl>
+                <div className="mb-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                  <div className="text-[10px] uppercase tracking-widest text-slate-500">
+                    Differenza al mese
+                  </div>
+                  <div className="text-xl font-extrabold font-tech text-white tabular-nums mt-0.5">
+                    {formatEuro(Math.abs(esito.prima.rata - esito.seconda.rata))}
+                  </div>
+                  <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
+                    {esito.prima.rata === esito.seconda.rata
+                      ? 'Stessa rata: a parità di condizioni le due moto si equivalgono.'
+                      : `La ${
+                          esito.prima.rata < esito.seconda.rata ? selectedBike.name : secondaBike.name
+                        } costa meno al mese. Su ${durataMesi} mesi fanno ${formatEuro(
+                          Math.abs(esito.prima.totaleRate - esito.seconda.totaleRate),
+                        )} di differenza.`}
+                  </p>
+                </div>
+
+                <dl className="space-y-2 text-xs py-2">
+                  <Riga label={`Anticipo (${anticipoPercent}%)`} value={`${formatEuro(esito.prima.anticipo)} · ${formatEuro(esito.seconda.anticipo)}`} />
+                  <Riga label="Capitale finanziato" value={`${formatEuro(esito.prima.capitale)} · ${formatEuro(esito.seconda.capitale)}`} />
+                  <Riga label="Numero rate" value={`${durataMesi} mensilità`} />
+                  <Riga label="Totale rate" value={`${formatEuro(esito.prima.totaleRate)} · ${formatEuro(esito.seconda.totaleRate)}`} />
+                </dl>
+              </>
+            ) : (
+              <>
+                <div className="my-4 pb-4 border-b border-white/10">
+                  <div className="text-xs text-slate-400">Rata mensile indicativa</div>
+                  <div className="flex items-baseline gap-2 mt-1">
+                    <span className="text-4xl sm:text-5xl font-extrabold text-white font-tech tabular-nums">
+                      {formatEuro(rata)}
+                    </span>
+                    <span className="text-sm text-slate-400">/mese</span>
+                  </div>
+                  <div className="text-[11px] text-slate-400 mt-2">
+                    Su {durataMesi} mesi, con tasso annuo nominale al{' '}
+                    {tan.toFixed(1).replace('.', ',')}%.
+                  </div>
+                </div>
+
+                <dl className="space-y-2 text-xs py-2">
+                  <Riga label="Importo moto" value={formatEuro(importo)} />
+                  <Riga label={`Anticipo (${anticipoPercent}%)`} value={formatEuro(anticipo)} />
+                  <Riga label="Capitale finanziato" value={formatEuro(capitale)} />
+                  <Riga label="Numero rate" value={`${durataMesi} mensilità`} />
+                  {maxiRataAttiva && <Riga label="Maxi rata finale" value={formatEuro(maxiRata)} />}
+                  <Riga label="Totale rate" value={formatEuro(totaleRate)} />
+                </dl>
+              </>
+            )}
 
             {/* Avvertenza */}
             <div className="mt-5 p-3 rounded-xl bg-amber-950/30 border border-amber-500/30 flex gap-2.5">
@@ -316,6 +441,25 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initia
     </section>
   );
 };
+
+/** Una delle due colonne del confronto: nome, rata grande, prezzo sotto. */
+const ColonnaRata: React.FC<{ nome: string; rata: number; prezzo: number }> = ({
+  nome,
+  rata,
+  prezzo,
+}) => (
+  <div className="min-w-0">
+    <div className="text-[11px] text-slate-400 truncate" title={nome}>
+      {nome}
+    </div>
+    <div className="text-2xl sm:text-3xl font-extrabold text-white font-tech tabular-nums mt-1 leading-none">
+      {formatEuro(rata)}
+    </div>
+    <div className="text-[10px] text-slate-500 mt-1">
+      al mese &middot; {formatEuro(prezzo)}
+    </div>
+  </div>
+);
 
 const Riga: React.FC<{ label: string; value: string }> = ({ label, value }) => (
   <div className="flex justify-between text-slate-400">

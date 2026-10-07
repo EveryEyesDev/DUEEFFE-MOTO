@@ -1169,19 +1169,6 @@ export const MOTO_NUOVE: Motorcycle[] = [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r/nero-parigi/lato-destro.webp' },
         ],
       },
-      {
-        slug: 'blu-miami',
-        name: 'BLU MIAMI',
-        hex: '#1d3f8f',
-        views: [
-          { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-gsx-8r/blu-miami/fronte.webp' },
-          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-gsx-8r/blu-miami/angolo-destro.webp' },
-          { id: 'lato-destro', label: 'Lato destro', src: '/moto/suzuki-gsx-8r/blu-miami/lato-destro.webp' },
-          { id: 'retro', label: 'Retro', src: '/moto/suzuki-gsx-8r/blu-miami/retro.webp' },
-          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/suzuki-gsx-8r/blu-miami/angolo-sinistro.webp' },
-          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/suzuki-gsx-8r/blu-miami/lato-sinistro.webp' },
-        ],
-      },
     ],
     colors: [],
     specs: {
