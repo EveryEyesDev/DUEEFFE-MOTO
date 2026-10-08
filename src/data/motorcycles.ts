@@ -2094,8 +2094,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#c8ced1',
+        name: 'Argento',
+        hex: '#b8bcc2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-1/angolo-destro.webp' },
@@ -2107,8 +2107,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#969c9f',
+        name: 'Grigio',
+        hex: '#5e6168',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-2/angolo-destro.webp' },
@@ -2120,8 +2120,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#525857',
+        name: 'Nero cerchi blu',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-3/angolo-destro.webp' },
@@ -2133,8 +2133,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-4',
-        name: 'Livrea 4',
-        hex: '#364342',
+        name: 'Verde',
+        hex: '#2e4a39',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-4/angolo-destro.webp' },
@@ -2146,8 +2146,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-5',
-        name: 'Livrea 5',
-        hex: '#3e527f',
+        name: 'Blu',
+        hex: '#1d3f8f',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-5/angolo-destro.webp' },
@@ -2159,8 +2159,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-6',
-        name: 'Livrea 6',
-        hex: '#515757',
+        name: 'Nero cerchi arancio',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-burgman-400/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-burgman-400/livrea-6/angolo-destro.webp' },
@@ -2204,8 +2204,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'livrea-1',
-        name: 'Livrea 1',
-        hex: '#25284d',
+        name: 'Giallo cerchi oro',
+        hex: '#e8c21a',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-1/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-1/angolo-destro.webp' },
@@ -2217,8 +2217,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-2',
-        name: 'Livrea 2',
-        hex: '#e2de0b',
+        name: 'Verde salvia',
+        hex: '#7d9183',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-2/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-2/angolo-destro.webp' },
@@ -2230,8 +2230,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-3',
-        name: 'Livrea 3',
-        hex: '#252a4d',
+        name: 'Bianco e blu cerchi oro',
+        hex: '#eef0f2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-3/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-3/angolo-destro.webp' },
@@ -2243,8 +2243,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-4',
-        name: 'Livrea 4',
-        hex: '#22253d',
+        name: 'Giallo cerchi blu',
+        hex: '#e8c21a',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-4/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-4/angolo-destro.webp' },
@@ -2256,8 +2256,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-5',
-        name: 'Livrea 5',
-        hex: '#3a3f63',
+        name: 'Bianco e blu cerchi blu',
+        hex: '#eef0f2',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-5/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-5/angolo-destro.webp' },
@@ -2269,8 +2269,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
       },
       {
         slug: 'livrea-6',
-        name: 'Livrea 6',
-        hex: '#3d3f40',
+        name: 'Nero',
+        hex: '#141418',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/suzuki-v-strom-800de/livrea-6/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/suzuki-v-strom-800de/livrea-6/angolo-destro.webp' },
@@ -2438,8 +2438,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#686767',
+        name: 'Grigio',
+        hex: '#5e6168',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr1-adv/unica/lato-destro.webp' },
         ],
@@ -2477,8 +2477,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#7f7f7e',
+        name: 'Argento',
+        hex: '#b8bcc2',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr1/unica/lato-destro.webp' },
         ],
@@ -2516,8 +2516,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#69696d',
+        name: 'Nero',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16-125-air/unica/lato-destro.webp' },
         ],
@@ -2555,8 +2555,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#6d6e72',
+        name: 'Nero',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16-200/unica/lato-destro.webp' },
         ],
@@ -2594,8 +2594,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#949598',
+        name: 'Bianco',
+        hex: '#eef0f2',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr16/unica/lato-destro.webp' },
         ],
@@ -2633,8 +2633,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#6b6b6b',
+        name: 'Nero e bianco',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr2-adv/unica/lato-destro.webp' },
         ],
@@ -2672,8 +2672,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#656466',
+        name: 'Grigio',
+        hex: '#5e6168',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr3-2/unica/lato-destro.webp' },
         ],
@@ -2711,8 +2711,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#777778',
+        name: 'Nero',
+        hex: '#141418',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr4-max/unica/lato-destro.webp' },
         ],
@@ -2751,8 +2751,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#5d5e61',
+        name: 'Blu petrolio',
+        hex: '#1f4a52',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/voge-sfida-sr450x/unica/fronte.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr450x/unica/lato-destro.webp' },
@@ -2793,8 +2793,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#5f6062',
+        name: 'Verde',
+        hex: '#2e4a39',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-300ac/unica/lato-destro.webp' },
         ],
@@ -2833,8 +2833,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#6f6f70',
+        name: 'Argento',
+        hex: '#b8bcc2',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-300acx-scrambler/unica/lato-destro.webp' },
         ],
@@ -2873,8 +2873,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#e9d105',
+        name: 'Giallo',
+        hex: '#e8c21a',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-350ac/unica/lato-destro.webp' },
         ],
@@ -2913,8 +2913,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#706f71',
+        name: 'Argento',
+        hex: '#b8bcc2',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-500ac/unica/lato-destro.webp' },
         ],
@@ -2953,8 +2953,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#6b6b6f',
+        name: 'Argento',
+        hex: '#b8bcc2',
         views: [
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-trofeo-525acx/unica/lato-destro.webp' },
         ],
@@ -3076,8 +3076,8 @@ export const MOTO_NUOVE: Motorcycle[] = [
     colorways: [
       {
         slug: 'unica',
-        name: 'Livrea ufficiale',
-        hex: '#eed528',
+        name: 'Giallo',
+        hex: '#e8c21a',
         views: [
           { id: 'fronte', label: 'Fronte', src: '/moto/voge-valico-800rally/unica/fronte.webp' },
           { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-valico-800rally/unica/angolo-destro.webp' },

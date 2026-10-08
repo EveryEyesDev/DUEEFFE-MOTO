@@ -250,8 +250,18 @@ export const MotorcycleShowcase: React.FC<MotorcycleShowcaseProps> = ({
                       <img
                         src={stemma}
                         alt={m}
+                        /* Lo stemma spento e' in scala di grigi, come era,
+                           ma schiarito. In grigio il rosso e il blu Suzuki
+                           cadono a una luminanza di circa 50 su 255, e al
+                           50% di opacita' su fondo scuro sparivano: accanto
+                           all'oro Moto Morini e al bianco Voge restava una
+                           macchia illeggibile. Il bianco non si schiarisce
+                           oltre il bianco, quindi gli altri due non
+                           cambiano. */
                         className={`h-6 w-auto object-contain transition-all duration-200 ${
-                          scelta ? 'opacity-100 grayscale-0' : 'opacity-50 grayscale hover:opacity-80'
+                          scelta
+                            ? 'opacity-100 grayscale-0'
+                            : 'opacity-70 grayscale brightness-[2.2] hover:opacity-90'
                         }`}
                       />
                     ) : (

@@ -57,18 +57,10 @@ l'avete sul listino, scrivetelo e lo mettiamo.
 
 ## Suzuki
 
-13 modelli da completare su 23.
+11 modelli da completare su 23.
 
 ### ADDRESS 125
 - Livrea «BLU TOKYO» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro; **le avevamo e le abbiamo tolte**: erano di un altro colore, il costruttore per questa livrea non le pubblica
-
-### BURGMAN 400
-- Livrea «Livrea 1» — **serve il nome del colore**
-- Livrea «Livrea 2» — **serve il nome del colore**
-- Livrea «Livrea 3» — **serve il nome del colore**
-- Livrea «Livrea 4» — **serve il nome del colore**
-- Livrea «Livrea 5» — **serve il nome del colore**
-- Livrea «Livrea 6» — **serve il nome del colore**
 
 ### BURGMAN STREET 125 EXECUTIVE
 - Livrea «Grigio» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro; **le avevamo e le abbiamo tolte**: erano di un altro colore, il costruttore per questa livrea non le pubblica
@@ -108,14 +100,6 @@ l'avete sul listino, scrivetelo e lo mettiamo.
 ### RM-Z450
 - Livrea «GIALLO PETRA» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
-### V-STROM 800DE
-- Livrea «Livrea 1» — **serve il nome del colore**
-- Livrea «Livrea 2» — **serve il nome del colore**
-- Livrea «Livrea 3» — **serve il nome del colore**
-- Livrea «Livrea 4» — **serve il nome del colore**
-- Livrea «Livrea 5» — **serve il nome del colore**
-- Livrea «Livrea 6» — **serve il nome del colore**
-
 ## Voge
 
 21 modelli da completare su 21.
@@ -133,51 +117,51 @@ l'avete sul listino, scrivetelo e lo mettiamo.
 
 ### SFIDA SR1
 - Fotografia su strada — ce n'e' una ma e' uno scatto da studio (fondo da studio (33% quasi bianco)): da sostituire se ne trovate una vera
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Argento» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### SFIDA SR1 ADV
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Grigio» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### SFIDA SR16 125
 - Fotografia su strada — ce n'e' una ma e' uno scatto da studio (senza trama (53% liscio)): da sostituire se ne trovate una vera
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Bianco» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### SFIDA SR16 125 AIR
 - Fotografia su strada — ce n'e' una ma e' uno scatto da studio (scatto piatto (varieta' 0.047)): da sostituire se ne trovate una vera
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Nero» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### SFIDA SR16 200
 - Fotografia su strada — ce n'e' una ma e' uno scatto da studio (senza trama (53% liscio)): da sostituire se ne trovate una vera
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Nero» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### SFIDA SR2 ADV
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Nero e bianco» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### SFIDA SR3
 - Fotografia su strada — ce n'e' una ma e' uno scatto da studio (scatto piatto (varieta' 0.055)): da sostituire se ne trovate una vera
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Grigio» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### SFIDA SR4 MAX
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Nero» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### SFIDA SR450X
 - Fotografia su strada — ce n'e' una ma e' uno scatto da studio (fondo da studio (77% quasi bianco)): da sostituire se ne trovate una vera
-- Livrea «Livrea ufficiale» — mancano 2 viste su 6: tre quarti destro, profilo sinistro
+- Livrea «Blu petrolio» — mancano 2 viste su 6: tre quarti destro, profilo sinistro
 
 ### TROFEO 300ACX Scrambler
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Argento» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### Trofeo 300AC
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Verde» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### Trofeo 350AC
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Giallo» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### Trofeo 500AC
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Argento» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### Trofeo 525 ACX Scrambler
-- Livrea «Livrea ufficiale» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
+- Livrea «Argento» — mancano 5 viste su 6: fronte, tre quarti destro, retro, tre quarti sinistro, profilo sinistro
 
 ### Valico 300 RALLY
 - Fotografia su strada — ce n'e' una ma e' uno scatto da studio (senza trama (49% liscio)): da sostituire se ne trovate una vera
@@ -202,6 +186,6 @@ l'avete sul listino, scrivetelo e lo mettiamo.
 | Fotografie su strada mancanti | 1 |
 | Fotografie su strada che sono scatti da studio | 12 |
 | Viste di scheda mancanti | 186 |
-| Nomi di colore da recuperare | 12 |
+| Nomi di colore da recuperare | 0 |
 | Campi di scheda tecnica vuoti | 4 |
 | Prezzi mancanti | 0 |
