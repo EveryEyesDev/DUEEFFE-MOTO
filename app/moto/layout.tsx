@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'it_IT',
     url: '/moto',
+    // L'immagine va ripetuta qui. Dichiarando openGraph in questo layout
+    // si sostituisce per intero quello della radice, immagine compresa:
+    // il catalogo restava l'unica pagina senza figura nell'anteprima.
+    // Le schede delle singole moto non la usano, hanno la loro
+    // fotografia su strada.
+    images: ['/opengraph-image.png'],
   },
 };
 
