@@ -203,9 +203,18 @@ def giudice_ambientate():
 
 
 def mancanti(blocco):
+    """
+    I campi della scheda tecnica che non ci sono.
+
+    Dopo i due punti si accetta anche un a capo. I valori lunghi -
+    "Doppio disco da 298 mm, pinze flottanti Brembo a 2 pistoncini, ABS
+    Bosch disinseribile" - il formattatore li manda a capo, e cercando
+    solo "campo: " si leggevano come mancanti: tre freni anteriori Moto
+    Morini risultavano da reperire mentre erano scritti due righe sotto.
+    """
     vuoti = []
     for chiave, etichetta in CAMPI:
-        if not re.search(r"\n      %s: " % chiave, blocco):
+        if not re.search(r"\n      %s:\s" % chiave, blocco):
             vuoti.append(etichetta)
     return vuoti
 

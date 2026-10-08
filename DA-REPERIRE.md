@@ -31,23 +31,14 @@ l'avete sul listino, scrivetelo e lo mettiamo.
 
 ## Moto Morini
 
-5 modelli da completare su 7.
+2 modelli da completare su 7.
 
 ### 3 1/2 Sport
 - **Scheda tecnica** — manca: cambio
 - **Fotografia su strada** — manca
 
-### Alltrhike 450
-- **Scheda tecnica** — manca: freno anteriore
-
 ### Calibro Bagger
 - Livrea «Nero» — mancano 3 viste su 6: profilo destro, tre quarti sinistro, profilo sinistro
-
-### X-Cape 1200
-- **Scheda tecnica** — manca: freno anteriore
-
-### X-Cape 700
-- **Scheda tecnica** — manca: freno anteriore
 
 ## Suzuki
 
@@ -181,7 +172,7 @@ l'avete sul listino, scrivetelo e lo mettiamo.
 | Fotografie su strada che sono scatti da studio | 12 |
 | Viste di scheda mancanti | 186 |
 | Nomi di colore da recuperare | 0 |
-| Campi di scheda tecnica vuoti | 4 |
+| Campi di scheda tecnica vuoti | 1 |
 | Prezzi mancanti | 0 |
 
 ---
