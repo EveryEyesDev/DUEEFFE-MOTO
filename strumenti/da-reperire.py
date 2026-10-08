@@ -105,16 +105,17 @@ def sul_sito(testo):
     voci = []
 
     conte, totale = conta_segnaposto(testo)
-    ripetuti = conte["Chiedici tutto in salone"]
-    if ripetuti:
-        voci.append(
-            "**I testi di presentazione sono gli stessi su %d moto su %d.** Sotto il "
-            "nome di ognuna c'e' scritto «%s», e come descrizione la stessa "
-            "frase che cambia solo la marca. Si vede nel catalogo e si vede su Google, "
-            "che legge quaranta pagine quasi identiche. Bastano due righe per moto "
-            "scritte da chi la conosce: a chi è adatta, cosa ha di suo."
-            % (ripetuti, totale, "Chiedici tutto in salone")
-        )
+
+    # Il campo "tagline" di molte moto ha ancora la frase dell'importatore,
+    # ma qui non si segnala: quel campo il sito non lo mostra da nessuna
+    # parte - l'unico tagline in pagina e' quello della societa', nel
+    # fondo. Segnalare un dato che nessuno legge manderebbe il salone a
+    # cercare quaranta frasi per niente.
+    #
+    # Sottotitolo e descrizione, che invece si vedono, sono gia' stati
+    # rifatti sui dati tecnici: vedi strumenti/testi-da-dati.py. Restano da
+    # scrivere a mano quando il salone avra' due righe per moto da dire,
+    # ed e' una cosa che vale, ma non e' un buco.
     if conte["dotazione vuota"]:
         voci.append(
             "**La dotazione è vuota su %d moto.** È l'elenco di cosa monta di "
@@ -132,19 +133,20 @@ def sul_sito(testo):
             "gente, perché chi cerca l'usato cerca il prezzo e arriva da fuori." % usate
         )
 
-    if "heroImage: ''" in config:
-        voci.append(
-            "**Non c'è nessuna fotografia del salone.** La pagina dice «vieni a "
-            "vederle dal vivo in salone» e del salone non si vede niente. Ne bastano "
-            "poche: la facciata, l'interno con le moto, l'officina, chi ci lavora."
-        )
-    if "whatsapp: ''" in config:
-        voci.append(
-            "**Manca il numero WhatsApp.** Il campo c'è già nella configurazione: "
-            "appena lo scrivi compare il pulsante. Per chi guarda moto dal telefono "
-            "è il modo più facile di farsi vivo, più di una telefonata."
-        )
+
     return voci
+
+
+# Cose che mancano ma che il salone ha gia' deciso di rimandare. Restano
+# scritte, perche' un elenco di quello che manca che le omette racconta un
+# sito piu' completo di quello che e', ma stanno in fondo e si vede che
+# sono una scelta, non una dimenticanza.
+RIMANDATE = [
+    "**Il numero WhatsApp.** Il campo c'è già nella configurazione: appena lo "
+    "scrivi compare il pulsante.",
+    "**Le fotografie del salone.** La pagina dice «vieni a vederle dal vivo in "
+    "salone» e del salone non si vede niente.",
+]
 
 
 def schede():
@@ -338,6 +340,18 @@ def main():
         "| Prezzi mancanti | %d |" % totali["prezzi"],
         "",
     ]
+
+    righe += [
+        "---",
+        "",
+        "## Messe da parte dal salone",
+        "",
+        "Mancano, ma per ora si è scelto di non farle. Restano scritte perché",
+        "un elenco che le omette racconta un sito più completo di quello che è.",
+        "",
+    ]
+    for voce in RIMANDATE:
+        righe += ["- " + voce, ""]
 
     open(USCITA, "w", encoding="utf-8").write("\n".join(righe))
     print("Scritto %s" % USCITA)
