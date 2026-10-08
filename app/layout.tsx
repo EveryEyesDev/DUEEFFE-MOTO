@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { SITE } from '../src/config/site';
-import { BagliorePuntatore } from '../src/components/BagliorePuntatore';
 import { IntroOverlay } from '../src/components/IntroOverlay';
 
 const TITLE = `${SITE.brandName} | Concessionaria e officina moto a ${SITE.address.city} (${SITE.address.provinceName})`;
@@ -71,7 +70,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-[#070709] text-slate-100 antialiased selection:bg-[#D00020] selection:text-white">
         <IntroOverlay />
-        <BagliorePuntatore />
         {children}
       </body>
     </html>

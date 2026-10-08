@@ -54,9 +54,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreCatalog }) =>
           <span>Nel cuore del Salento</span>
         </div>
 
-        {/* Logo in evidenza */}
-        <div className="mb-8">
-          <DueffeLogo size="xl" />
+        {/* Logo in evidenza.
+            Su telefono scende a "lg": a 215 pixel fissi spingeva il titolo
+            e tutto quello che segue piu' in basso, dentro la fascia rossa
+            dello sfondo, e la pagina diventava una colonna lunghissima da
+            scorrere prima di arrivare ai pulsanti. */}
+        <div className="mb-6 sm:mb-8">
+          <span className="sm:hidden">
+            <DueffeLogo size="lg" />
+          </span>
+          <span className="hidden sm:inline">
+            <DueffeLogo size="xl" />
+          </span>
         </div>
 
         {/* Titolo */}

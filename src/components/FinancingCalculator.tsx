@@ -97,6 +97,8 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initia
   const { anticipo, capitale, maxiRata, rata, totaleRate } = esito.prima;
   const confrontoAttivo = confronto && esito.seconda !== null && secondaBike !== undefined;
 
+
+
   return (
     <section id="finanziamento" className="py-20 bg-[#0a0a0d] border-b border-white/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -150,22 +152,43 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initia
                 di scegliere la moto: non un'altra impostazione del
                 finanziamento. */}
             <div className="mb-6">
-              <button
-                type="button"
-                aria-expanded={confronto}
-                onClick={() => {
-                  const acceso = !confronto;
-                  setConfronto(acceso);
-                  if (acceso && !secondaId && confrontabili[0]) setSecondaId(confrontabili[0].id);
-                }}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white transition-colors"
-              >
-                <GitCompare className="w-3.5 h-3.5" aria-hidden="true" />
-                {/* L'apostrofo tipografico va scritto per quello che e':
-                    dentro una stringa JavaScript &rsquo; non e' un'entita',
-                    e in pagina si leggerebbe tale e quale. */}
-                {confronto ? 'Togli il confronto' : 'Confronta con un’altra moto'}
-              </button>
+              {/* Due stati affiancati, nel linguaggio dei pulsanti della
+                  durata qui sotto: pieno rosso quello attivo.
+
+                  Prima era una scritta grigia da 12 pixel senza cornice,
+                  uguale alle etichette dei campi, e l'unico segnale che
+                  fosse cliccabile era il passaggio del mouse - che su
+                  telefono non esiste. Il risultato e' che il confronto
+                  c'era da giorni e il salone ha chiesto di aggiungerlo. */}
+              <span className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                Quante moto
+              </span>
+              <div className="grid grid-cols-2 gap-2" role="group" aria-label="Quante moto confrontare">
+                {[
+                  { acceso: false, testo: 'Una moto' },
+                  { acceso: true, testo: 'Confronta due moto' },
+                ].map((voce) => (
+                  <button
+                    key={voce.testo}
+                    type="button"
+                    aria-pressed={confronto === voce.acceso}
+                    onClick={() => {
+                      setConfronto(voce.acceso);
+                      if (voce.acceso && !secondaId && confrontabili[0]) {
+                        setSecondaId(confrontabili[0].id);
+                      }
+                    }}
+                    className={`inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider border transition-colors ${
+                      confronto === voce.acceso
+                        ? 'bg-[#D00020] border-[#D00020] text-white'
+                        : 'bg-[#181920] border-white/10 text-slate-300 hover:border-white/30 hover:text-white'
+                    }`}
+                  >
+                    {voce.acceso && <GitCompare className="w-3.5 h-3.5" aria-hidden="true" />}
+                    {voce.testo}
+                  </button>
+                ))}
+              </div>
 
               {confronto && (
                 <div className="mt-3">
@@ -340,8 +363,17 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initia
             </div>
           </div>
 
-          {/* Colonna destra: il risultato */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-[#15161c] to-[#0c0d12] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl">
+          {/* Il risultato.
+              Su schermo stretto sta SOPRA i comandi. Impilato nell'ordine
+              naturale finiva dopo modello, confronto, importo, anticipo,
+              durata, tasso e maxi rata: chi toccava un comando non vedeva
+              cambiare niente e pensava che non funzionasse. Sopra, la
+              risposta e' sempre sott'occhio e i comandi stanno sotto, dove
+              si armeggia. Da lg in su torna a destra, come prima. */}
+          <div
+            id="esito-rata"
+            className="order-first lg:order-none lg:col-span-5 bg-gradient-to-b from-[#15161c] to-[#0c0d12] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl"
+          >
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D00020] mb-2 font-mono">
               <Calculator className="w-4 h-4" />
               Risultato della simulazione
@@ -387,6 +419,15 @@ export const FinancingCalculator: React.FC<FinancingCalculatorProps> = ({ initia
                   <Riga label={`Anticipo (${anticipoPercent}%)`} value={`${formatEuro(esito.prima.anticipo)} · ${formatEuro(esito.seconda.anticipo)}`} />
                   <Riga label="Capitale finanziato" value={`${formatEuro(esito.prima.capitale)} · ${formatEuro(esito.seconda.capitale)}`} />
                   <Riga label="Numero rate" value={`${durataMesi} mensilità`} />
+                  {/* La maxi rata veniva applicata al calcolo anche qui ma
+                      non era scritta da nessuna parte: chi la accendeva
+                      vedeva le rate scendere senza capire perche'. */}
+                  {maxiRataAttiva && (
+                    <Riga
+                      label="Maxi rata finale"
+                      value={`${formatEuro(esito.prima.maxiRata)} · ${formatEuro(esito.seconda.maxiRata)}`}
+                    />
+                  )}
                   <Riga label="Totale rate" value={`${formatEuro(esito.prima.totaleRate)} · ${formatEuro(esito.seconda.totaleRate)}`} />
                 </dl>
               </>

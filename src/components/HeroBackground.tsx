@@ -70,8 +70,18 @@ export const HeroBackground: React.FC = () => {
           </radialGradient>
         </defs>
 
-        {/* Alone sopra la linea d'orizzonte */}
-        <rect width="1200" height="500" fill="url(#aloneOrizzonte)" />
+        {/* Alone sopra la linea d'orizzonte.
+            Su telefono e' tenuto a meta': la fascia piu' accesa sta a un
+            terzo dell'altezza e non si sposta, mentre il contenuto - logo,
+            titolo su tre righe, punti di forza incolonnati - si allunga e
+            ci finisce dentro. Sul largo il contenuto sta sopra la fascia e
+            il rosso puo' restare pieno. */}
+        <rect
+          width="1200"
+          height="500"
+          fill="url(#aloneOrizzonte)"
+          className="opacity-45 sm:opacity-100"
+        />
 
         <g mask="url(#mascheraStrada)">
           {/* Linee che convergono nel punto di fuga (600, 0) */}
@@ -100,7 +110,12 @@ export const HeroBackground: React.FC = () => {
       </svg>
 
       {/* Scie di velocita' */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.5]" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      {/* Scie di velocita'.
+          Il ritaglio "slice" su schermo stretto e' governato dall'altezza
+          invece che dalla larghezza: le barre si ingrossano rispetto a
+          quello che si vede e scivolano sul titolo. Smorzarle sotto sm
+          costa meno che riposizionarle, e sono decorazione. */}
+      <svg className="absolute inset-0 w-full h-full opacity-[0.22] sm:opacity-[0.5]" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="scia" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#D00020" stopOpacity="0" />
@@ -122,10 +137,14 @@ export const HeroBackground: React.FC = () => {
         </g>
       </svg>
 
-      {/* Aloni morbidi del colore del marchio */}
-      <div className="absolute top-[18%] left-1/2 -translate-x-1/2 w-[760px] h-[420px] bg-[#D00020]/10 blur-[130px] rounded-full" />
-      <div className="absolute -bottom-20 right-[8%] w-[520px] h-[320px] bg-red-900/20 blur-[110px] rounded-full" />
-      <div className="absolute top-[10%] left-[6%] w-[380px] h-[260px] bg-slate-500/5 blur-[90px] rounded-full" />
+      {/* Aloni morbidi del colore del marchio.
+          Erano in pixel fissi: 760 su un telefono da 390 vuol dire il
+          doppio dello schermo, e un alone piu' largo del display non e'
+          piu' un alone, e' un velo di tinta steso sul titolo. Sotto sm
+          rientrano nella larghezza e perdono intensita'. */}
+      <div className="absolute top-[18%] left-1/2 -translate-x-1/2 w-[88vw] sm:w-[760px] h-[300px] sm:h-[420px] bg-[#D00020]/5 sm:bg-[#D00020]/10 blur-[100px] sm:blur-[130px] rounded-full" />
+      <div className="absolute -bottom-20 right-[8%] w-[70vw] sm:w-[520px] h-[240px] sm:h-[320px] bg-red-900/10 sm:bg-red-900/20 blur-[90px] sm:blur-[110px] rounded-full" />
+      <div className="absolute top-[10%] left-[6%] w-[60vw] sm:w-[380px] h-[200px] sm:h-[260px] bg-slate-500/5 blur-[90px] rounded-full" />
 
       {/* Vignettatura: scurisce i bordi e porta l'occhio al centro */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(7,7,9,0.85)_100%)]" />

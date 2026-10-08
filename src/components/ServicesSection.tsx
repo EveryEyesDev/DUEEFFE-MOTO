@@ -181,12 +181,33 @@ export const ServicesSection: React.FC = () => {
                 <Clock className="w-4 h-4 text-[#D00020]" />
                 Orari di apertura
               </div>
+              {/* Su telefono giorni e orario stanno incolonnati, non
+                  affiancati. Affiancati non ci stanno: dentro il riquadro
+                  restano circa 227 pixel, e "09:15 - 13:00 / 16:00 -
+                  19:30" in carattere a larghezza fissa ne occupa da solo
+                  piu' di 200. Il testo andava a capo dove capitava, anche
+                  in mezzo a un intervallo, e si leggeva "09:15 -" con
+                  sotto "13:00 / 16:00".
+
+                  Ogni intervallo e' tenuto intero da whitespace-nowrap: se
+                  proprio deve andare a capo, va a capo fra la mattina e il
+                  pomeriggio, che e' l'unico punto dove ha senso. */}
               {hasOrari ? (
-                <dl className="space-y-1.5 text-xs">
+                <dl className="space-y-2.5 sm:space-y-1.5 text-xs">
                   {SITE.openingHours.map((slot) => (
-                    <div key={slot.days} className="flex justify-between gap-3 text-slate-300">
-                      <dt>{slot.days}</dt>
-                      <dd className="font-mono text-white text-right">{slot.hours}</dd>
+                    <div
+                      key={slot.days}
+                      className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-3 text-slate-300"
+                    >
+                      <dt className="whitespace-nowrap">{slot.days}</dt>
+                      <dd className="font-mono text-white sm:text-right">
+                        {slot.hours.split(' / ').map((fascia, i, tutte) => (
+                          <span key={fascia} className="whitespace-nowrap">
+                            {fascia}
+                            {i < tutte.length - 1 && <span className="text-slate-500"> / </span>}
+                          </span>
+                        ))}
+                      </dd>
                     </div>
                   ))}
                 </dl>
