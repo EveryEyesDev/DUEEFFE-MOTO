@@ -45,23 +45,46 @@ export const IntroOverlay: React.FC = () => {
         leaving ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      <div className="relative flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/10 bg-[#0e0f14]">
+      {/* La ruota.
+          Disegnata come una ruota vera e non come un cerchio che gira:
+          gomma scura con il battistrada, cerchio in lega chiaro, sei
+          razze, disco del freno e mozzo rosso. A sessantaquattro pixel
+          sono i dettagli che la fanno leggere come una ruota di moto
+          invece che come una rotella qualunque.
+
+          Il battistrada e' una riga tratteggiata lungo la circonferenza:
+          piu' economico di venti trattini disegnati uno per uno, e
+          girando da' lo stesso l'impressione della gomma che scorre. */}
+      <div className="relative flex h-16 w-16 items-center justify-center">
         <svg
-          className="dueffe-intro-key"
-          width="20"
-          height="46"
-          viewBox="0 0 56 130"
+          className="dueffe-intro-wheel"
+          width="64"
+          height="64"
+          viewBox="0 0 100 100"
           fill="none"
-          stroke="#D00020"
-          strokeWidth={4.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
         >
-          <circle cx="28" cy="22" r="18" />
-          <circle cx="28" cy="22" r="5" fill="#D00020" stroke="none" />
-          <line x1="28" y1="40" x2="28" y2="100" />
-          <line x1="28" y1="80" x2="40" y2="80" />
-          <line x1="28" y1="92" x2="38" y2="92" />
+          <circle cx="50" cy="50" r="45" stroke="#17171c" strokeWidth="10" />
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            stroke="#2e2e36"
+            strokeWidth="10"
+            strokeDasharray="4 7"
+          />
+          <circle cx="50" cy="50" r="38" stroke="#9aa1ad" strokeWidth="3.5" />
+          <circle cx="50" cy="50" r="20" stroke="#5c626d" strokeWidth="2" />
+
+          {/* Sei razze: con meno la ruota sembra ferma anche mentre gira,
+              con piu' a questa misura diventano una macchia. */}
+          <g stroke="#c3c9d4" strokeWidth="4" strokeLinecap="round">
+            <line x1="50" y1="14" x2="50" y2="86" />
+            <line x1="18.8" y1="32" x2="81.2" y2="68" />
+            <line x1="18.8" y1="68" x2="81.2" y2="32" />
+          </g>
+
+          <circle cx="50" cy="50" r="9" fill="#0e0f14" />
+          <circle cx="50" cy="50" r="5" fill="#D00020" />
         </svg>
       </div>
 
@@ -76,15 +99,23 @@ export const IntroOverlay: React.FC = () => {
       </div>
 
       <style jsx>{`
-        @keyframes dueffeIntroKeyTurn {
-          0% { transform: rotate(-28deg); }
-          16% { transform: rotate(-28deg); }
-          26% { transform: rotate(32deg); }
-          100% { transform: rotate(32deg); }
+        /* La ruota parte ferma, prende velocita' e resta in moto: una
+           ruota che gira a velocita' costante dal primo istante sembra
+           una rotella di caricamento, una che accelera sembra una moto
+           che parte. */
+        @keyframes dueffeIntroWheelSpin {
+          0%   { transform: rotate(0deg); }
+          22%  { transform: rotate(70deg); }
+          100% { transform: rotate(1100deg); }
         }
-        .dueffe-intro-key {
-          transform-origin: 50% 72%;
-          animation: dueffeIntroKeyTurn 1.9s ease-in-out forwards;
+        .dueffe-intro-wheel {
+          transform-origin: 50% 50%;
+          animation: dueffeIntroWheelSpin 1.9s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+        }
+        /* Chi ha chiesto meno animazioni vede la ruota ferma: il
+           caricamento dura lo stesso e non si perde niente. */
+        @media (prefers-reduced-motion: reduce) {
+          .dueffe-intro-wheel { animation: none; }
         }
         @keyframes dueffeIntroLightOn {
           0%, 24% { background: #3a0a10; box-shadow: none; }
