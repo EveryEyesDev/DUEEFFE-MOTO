@@ -67,6 +67,10 @@ elenco_modelli = _voge.elenco_modelli
 scarica = _voge.scarica
 
 PROVINI = os.path.join("strumenti", "_scarico", "provini")
+
+# Memoria di quante pagine Voge mostrano ciascuna fotografia. Si riempie
+# alla prima richiesta e serve a scartare le sorelle: vedi solo_sue.
+_quante_pagine = {}
 DESTINAZIONE = os.path.join("public", "moto")
 
 # Sotto questa misura non e' una fotografia di scena: e' una miniatura.
@@ -86,21 +90,57 @@ def scatti_di(html):
     return trovati
 
 
+def solo_sue(indirizzi):
+    """
+    Tiene le fotografie che compaiono su una pagina sola.
+
+    Ogni pagina Voge porta in fondo il menu delle moto sorelle con le loro
+    fotografie: sulla pagina della SFIDA SR16 compaiono anche la SR16 200
+    e la SR1, in tutte le livree. Prese cosi', la galleria di un modello
+    finirebbe piena di un altro - ed e' un errore peggiore di una vista
+    mancante, perche' non si vede che e' sbagliato.
+
+    Il criterio e' quello dell'importatore: si leggono tutte le pagine, si
+    conta su quante compare ciascuna fotografia, e si tengono solo quelle
+    che stanno su una pagina sola. Le immagini del menu, per definizione,
+    si ripetono; quella del modello sta solo a casa sua.
+    """
+    if not _quante_pagine:
+        for url, _ in elenco_modelli():
+            try:
+                html = scarica(url).decode("utf-8", "replace")
+            except RuntimeError:
+                continue
+            for immagine in scatti_di(html):
+                _quante_pagine[immagine] = _quante_pagine.get(immagine, 0) + 1
+    return [u for u in indirizzi if _quante_pagine.get(u, 0) == 1]
+
+
 def pagina_di(slug):
+    """
+    L'indirizzo della pagina Voge, o None se quel nome non esiste.
+
+    Torna None invece di fermare tutto: lanciato su venti modelli, un nome
+    sbagliato faceva morire l'intera raccolta a meta' strada e i modelli
+    dopo non venivano nemmeno provati. Meglio saltarlo e dirlo.
+    """
     for url, s in elenco_modelli():
         if s == slug:
             return url
-    raise SystemExit("Non trovo la pagina Voge per '%s'." % slug)
+    return None
 
 
 def raccogli(slug):
     """Scarica i candidati e torna l'elenco dei file su disco."""
+    pagina = pagina_di(slug)
+    if pagina is None:
+        return None
+
     cartella = os.path.join(PROVINI, slug)
     os.makedirs(cartella, exist_ok=True)
-
-    html = scarica(pagina_di(slug)).decode("utf-8", "replace")
+    html = scarica(pagina).decode("utf-8", "replace")
     file = []
-    for n, url in enumerate(scatti_di(html), 1):
+    for n, url in enumerate(solo_sue(scatti_di(html)), 1):
         percorso = os.path.join(cartella, "%02d.jpg" % n)
         if not os.path.exists(percorso):
             try:
@@ -125,6 +165,9 @@ def raccogli(slug):
 
 def provino(slug):
     file = raccogli(slug)
+    if file is None:
+        print("  %-22s questo nome non e' fra le pagine Voge" % slug)
+        return
     if not file:
         print("  %-22s nessun candidato" % slug)
         return

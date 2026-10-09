@@ -2480,7 +2480,12 @@ export const MOTO_NUOVE: Motorcycle[] = [
         name: 'Argento',
         hex: '#b8bcc2',
         views: [
+          { id: 'fronte', label: 'Fronte', src: '/moto/voge-sfida-sr1/unica/fronte.webp' },
+          { id: 'angolo-destro', label: 'Inclinata a destra', src: '/moto/voge-sfida-sr1/unica/angolo-destro.webp' },
           { id: 'lato-destro', label: 'Lato destro', src: '/moto/voge-sfida-sr1/unica/lato-destro.webp' },
+          { id: 'retro', label: 'Retro', src: '/moto/voge-sfida-sr1/unica/retro.webp' },
+          { id: 'angolo-sinistro', label: 'Inclinata a sinistra', src: '/moto/voge-sfida-sr1/unica/angolo-sinistro.webp' },
+          { id: 'lato-sinistro', label: 'Lato sinistro', src: '/moto/voge-sfida-sr1/unica/lato-sinistro.webp' },
         ],
       },
     ],
